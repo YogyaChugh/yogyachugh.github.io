@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work — Yogya Chugh | Projects, Experience &amp; Stack</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="canonical" href="https://yogya.dev/work.html">
+  <meta name="description" content="Projects, client work, the stack Yogya Chugh actually reaches for, and the wins along the way — AnyStudio, Webelo, Vardhman Saathi, and more.">
+  <meta name="author" content="Yogya Chugh">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#ff6eb4">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yogya.dev/work.html">
+  <meta property="og:title" content="Yogya Chugh — Work">
+  <meta property="og:description" content="Projects, client work, stack, and wins. IDEs in Rust, browser engines in C++, and production software for real clients.">
+  <meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Yogya Chugh">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yogya Chugh — Work">
+  <meta name="twitter:description" content="Projects, client work, stack, and wins.">
+  <meta name="twitter:image" content="https://yogya.dev/assets/og-cover.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://yogya.dev/work.html#projects",
+    "name": "Yogya Chugh — Projects",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "SoftwareSourceCode", "name": "AnyStudio", "description": "Native desktop IDE in Rust + egui for building Android apps with a visual UI builder, compiling straight to APKs via a direct DEX pipeline.", "url": "https://github.com/YogyaChugh", "codeRepository": "https://github.com/YogyaChugh", "programmingLanguage": "Rust" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "SoftwareSourceCode", "name": "Webelo", "description": "C++ DOM library and HTML visualiser strictly following the WhatWG DOM Standard, foundation for an upcoming browser.", "url": "https://github.com/YogyaChugh/Webelo", "codeRepository": "https://github.com/YogyaChugh/Webelo", "programmingLanguage": "C++" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "SoftwareApplication", "name": "Vardhman Saathi", "description": "Production business suite for a salesperson credit system, with desktop and Android apps sharing one TypeScript codebase.", "url": "https://vardhmansaathi.shop", "applicationCategory": "BusinessApplication" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "SoftwareSourceCode", "name": "AgroLens", "description": "Computer-vision model classifying plant-leaf diseases, including dataset pipeline, training, and deployment.", "url": "https://github.com/YogyaChughCoder/AgroLens", "programmingLanguage": "Python" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "VideoGame", "name": "Snake Hustle", "description": "Browser-based snake game.", "url": "https://snakehustle.netlify.app" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "VideoGame", "name": "Timberly", "description": "Casual lumberjack game with multiplayer support, playable in-browser with downloads for Windows, macOS, and Linux.", "url": "https://yogya-chugh.itch.io/timberly" } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "SoftwareSourceCode", "name": "Webber", "description": "Desktop crawler that downloads any website for offline rendering, built with Pygame, PyWebview, and BeautifulSoup.", "url": "https://github.com/YogyaChugh/Webber", "programmingLanguage": "Python" } },
+      { "@type": "ListItem", "position": 8, "item": { "@type": "SoftwareSourceCode", "name": "SIH Travel Security", "description": "Blockchain system for encrypted tourist tracking with SSO to local authorities.", "url": "https://github.com/YogyaChugh" } },
+      { "@type": "ListItem", "position": 9, "item": { "@type": "SoftwareSourceCode", "name": "Django · Open Source", "description": "Merged pull requests into Django core and third-party libraries.", "url": "https://github.com/django/django/pulls?q=is%3Apr+author%3Ayogyachugh+" } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="grain relative min-h-screen bg-paper text-ink overflow-x-hidden">
+
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-20" style="background-image: radial-gradient(700px 500px at 15% 0%, rgba(255,110,180,0.22), transparent 55%), radial-gradient(600px 450px at 90% 25%, rgba(192,132,252,0.18), transparent 55%), radial-gradient(650px 500px at 5% 90%, rgba(253,164,175,0.20), transparent 55%);"></div>
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10" style="background-image: linear-gradient(to right, rgba(26,26,46,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(26,26,46,0.05) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);"></div>
+
+  <div id="cursor-dot"></div>
+
+  <div id="command-palette-backdrop" class="fixed inset-0 z-50 hidden flex items-start justify-center pt-20" style="background: rgba(26,26,46,0.45); backdrop-filter: blur(6px);">
+    <div id="command-palette" class="w-full max-w-lg rounded-2xl border-2 border-ink overflow-hidden" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+      <div class="border-b-2 border-ink p-3 flex items-center">
+        <input type="text" id="cmd-input" placeholder="Search sections, projects, links..." class="w-full font-body text-ink outline-none text-[16px] px-2" style="background: transparent;" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="max-h-[300px] overflow-y-auto p-2" id="cmd-results"></div>
+    </div>
+  </div>
+
+  <header class="fixed inset-x-0 top-0 z-40">
+    <div class="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-3 md:px-8">
+      <a href="index.html" data-cursor="top" class="flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1.5 backdrop-blur-md" style="background: rgba(253,240,252,0.75);">
+        <span class="block h-2.5 w-2.5 rounded-full bg-chrome"></span>
+        <span class="font-display text-[12px] uppercase tracking-[0.22em]">Yogya Chugh</span>
+      </a>
+      <nav class="hidden items-center gap-0 rounded-full border border-ink/20 p-1 backdrop-blur-md md:flex" style="background: rgba(253,240,252,0.75);">
+        <a href="index.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Home</a>
+        <a href="work.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--ink); color: var(--paper);">Work</a>
+        <a href="play.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Play</a>
+        <a href="blog.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Writing</a>
+        <a href="index.html#contact" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button data-cursor="⌘K" id="btn-cmd" class="flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1.5 backdrop-blur-md" style="background: rgba(253,240,252,0.75);">
+          <span class="font-display text-[12px] uppercase tracking-[0.18em]">Search</span>
+          <kbd class="font-mono hidden rounded border border-ink/20 px-1.5 py-0.5 text-[10px] md:inline" style="background: var(--paper);">⌘K</kbd>
+        </button>
+        <button id="btn-menu" class="flex h-9 w-9 items-center justify-center rounded-full border border-ink/20 backdrop-blur-md md:hidden" style="background: rgba(253,240,252,0.75);" aria-label="Toggle menu">
+          <span class="font-display text-[18px] leading-none">☰</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mx-4 mt-1 overflow-hidden rounded-2xl border-2 border-ink hidden md:hidden" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+      <nav class="flex flex-col p-2">
+        <a href="index.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Home</a>
+        <a href="work.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Work</a>
+        <a href="play.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Play</a>
+        <a href="blog.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Writing</a>
+        <a href="index.html#contact" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative px-4 pb-6 pt-28 md:px-8 md:pt-32">
+    <div class="mx-auto max-w-[1400px]">
+      <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+        <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>Work
+      </span>
+      <h1 class="font-display mt-2 text-[clamp(2.8rem,9vw,6.5rem)] leading-[0.9]">Everything I've<br><span class="text-chrome">built &amp; shipped.</span></h1>
+      <p class="font-body mt-4 max-w-xl text-[16px] leading-[1.5] text-ink/75">The full story, the stack, the client work, the projects, and the receipts. <a href="index.html" class="underline underline-offset-4 hover:text-ink">← Back home</a> if this is more than you wanted.</p>
+    </div>
+  </section>
+
+  <section id="about" class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto grid max-w-[1400px] grid-cols-12 gap-6">
+      <aside class="col-span-12 lg:col-span-4">
+        <div class="sticky top-28">
+          <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+            <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>About
+          </span>
+          <h2 class="font-display mt-3 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95]">
+            <span class="text-chrome">Just ME.</span>
+          </h2>
+          <div class="font-display mt-6 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.2em]">
+          </div>
+        </div>
+      </aside>
+      <article class="col-span-12 columns-1 gap-8 text-[17px] leading-[1.55] text-ink/85 md:columns-2 lg:col-span-8">
+        <p class="mb-4">
+          <span class="font-display hidden sm:float-left sm:inline mr-3 text-[80px] leading-[0.8] text-chrome">F</span>
+          <span class="sm:hidden font-display text-chrome">F</span>ive years ago, I started programming with tiny terminal games and random experiments on GitHub. Since then, every project has become an excuse to dive one layer deeper into software.
+        </p>
+        <p class="mb-4">
+          That curiosity has taken me from building cross-platform apps and Android projects to working with MySQL, PostgreSQL, Firebase, Firestore, Google Cloud Storage, Cloudflare R2, deployment platforms, and modern TypeScript stacks. Eventually I discovered systems programming, which led me to Rust and C++, where I'm building ambitious projects like a browser engine from scratch, a Rust IDE that compiles directly to Android DEX, and tools that explore how the web actually works.
+        </p>
+        <p class="mb-4">
+          Open source became a major turning point after my brother-in-law encouraged me to start contributing instead of just consuming. Since then I've merged pull requests into Django and the Django ecosystem, spent countless hours reading unfamiliar codebases, and applied to Google Summer of Code twice—each attempt teaching me more than the last. I'll be back for GSoC 2027.
+        </p>
+        <p class="mb-4">
+          I enjoy building software across the entire stack—from databases and cloud infrastructure to systems programming and web standards. Whether it's a weekend experiment or a months-long project, my goal is always the same: understand how things work by building them myself.
+        </p>
+        <p class="mb-0 text-ink">
+          Currently looking for an SDE internship where I can write code that ships, learn from great engineers, and keep tackling problems that seem just a little beyond my current abilities.
+          <span class="font-display uppercase tracking-[0.18em]">↳ Hit ⌘K to say hi.</span>
+        </p>
+      </article>
+    </div>
+  </section>
+  <section id="stack" class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap items-end justify-between gap-4 border-b-2 border-ink pb-4">
+        <div>
+          <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+            <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>Stack
+          </span>
+          <h2 class="font-display mt-2 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95]">Tools I actually reach for.</h2>
+        </div>
+      </div>
+      <div class="mt-8 grid grid-cols-12 gap-3">
+
+        <div data-cursor="kit" class="col-span-12 rounded-3xl border-2 border-ink p-6 transition-transform md:hover:-translate-y-1 md:col-span-6 tilt-l" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+          <div class="flex items-baseline justify-between mb-2">
+            <h3 class="font-display text-[24px] uppercase tracking-wide">Languages</h3>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">C++</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Rust</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Python</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">TypeScript</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">C</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">SQL</span>
+          </div>
+        </div>
+
+        <div data-cursor="kit" class="col-span-12 rounded-3xl border-2 border-ink p-6 transition-transform md:hover:-translate-y-1 md:col-span-6 tilt-r" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+          <div class="flex items-baseline justify-between mb-2">
+            <h3 class="font-display text-[24px] uppercase tracking-wide">Systems & Graphics</h3>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">SDL</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">SFML</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">PyGame</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">egui</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Electron</span>
+          </div>
+        </div>
+
+        <div data-cursor="kit" class="col-span-12 rounded-3xl border-2 border-ink p-6 transition-transform md:hover:-translate-y-1 md:col-span-6 tilt-l" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+          <div class="flex items-baseline justify-between mb-2">
+            <h3 class="font-display text-[24px] uppercase tracking-wide">Web & App Dev</h3>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">React Native</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Django</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">FastAPI</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Node.js</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Hono</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Flask</span>
+          </div>
+        </div>
+
+        <div data-cursor="kit" class="col-span-12 rounded-3xl border-2 border-ink p-6 transition-transform md:hover:-translate-y-1 md:col-span-6 tilt-r" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+          <div class="flex items-baseline justify-between mb-2">
+            <h3 class="font-display text-[24px] uppercase tracking-wide">Cloud, Data & AI</h3>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">MySQL</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Postgres</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Supabase</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Firebase</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Firestore</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">GCS</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Cloudflare R2</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">Render</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">PyTorch</span>
+            <span class="font-display rounded-full border-2 border-ink/20 px-3 py-1.5 text-[13px] uppercase tracking-[0.12em] text-ink" style="background:var(--paper);">TensorFlow</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap items-end justify-between gap-3 border-b-2 border-ink pb-4">
+        <div>
+          <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+            <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>Experience
+          </span>
+          <h2 class="font-display mt-2 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95]">Work that <span class="text-chrome">shipped.</span></h2>
+        </div>
+      </div>
+      <div class="mt-12 space-y-16 lg:space-y-24 border-b-2 border-ink pb-16">
+  
+        <!-- PROJECT 1: Vardhman Electricals -->
+        <div data-cursor="entry" class="grid grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="col-span-12 lg:col-span-7 order-1 lg:order-1">
+            <a href="https://vardhmansaathi.shop" target="_blank" rel="noreferrer" class="exp-card block rounded-2xl border-2 border-ink overflow-hidden transition-transform md:hover:-translate-y-1 md:hover:-rotate-1 duration-300" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+              <div class="exp-card-header border-b-2 border-ink px-4 py-2 flex items-center justify-between gap-2" style="background: var(--card-bg);">
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-rose"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#f9c784]"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#d4edda]"></div>
+                </div>
+                <div class="mx-auto font-mono text-[10px] uppercase tracking-widest text-ink/50 bg-paper border-2 border-ink rounded-full px-3 py-0.5 truncate max-w-[150px] sm:max-w-none text-center">
+                  vardhmansaathi.shop
+                </div>
+                <div class="w-[42px] shrink-0 hidden sm:block"></div>
+              </div>
+              <img src="assets/vardhman.png" alt="Vardhman Saathi" class="exp-card-img w-full h-[250px] sm:h-[350px] object-cover transition-all duration-500">
+            </a>
+          </div>
+          <div class="col-span-12 lg:col-span-5 order-2 lg:order-2 lg:pl-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display rounded-full border-2 border-ink px-2.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink" style="background:#fde8de;">live</span>
+              <span class="font-display text-[13px] uppercase tracking-[0.18em] text-ink/70">Nov '25 — Jun '26</span>
+            </div>
+            <h3 class="font-display text-[clamp(2rem,4vw,3rem)] leading-tight mb-2">Freelance Software Developer</h3>
+            <p class="font-body text-[14px] uppercase tracking-[0.18em] text-rose">Vardhman Electricals</p>
+            <p class="font-body mt-4 text-[16px] leading-[1.6] text-ink/80">A business application featuring a desktop app and mobile app, sharing a TypeScript codebase.</p>
+            <ul class="mt-4 space-y-1 font-body text-[14px] text-ink/80">
+              <li><strong class="text-ink">Desktop:</strong> Electron, React, Vite, Tailwind CSS</li>
+              <li><strong class="text-ink">Mobile:</strong> Expo, React Native</li>
+              <li><strong class="text-ink">Server:</strong> Hono.js, Node.js, Node-cron, Nodemailer</li>
+              <li><strong class="text-ink">Data & Processing:</strong> Supabase, Cloudflare R2 (via AWS S3 SDK), Sharp (image processing)</li>
+              <li><strong class="text-ink">Deployment:</strong> Server on Render.com, DB on Supabase, Storage on Cloudflare R2</li>
+            </ul>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a href="https://vardhmansaathi.shop" target="_blank" rel="noreferrer" class="font-display inline-flex items-center gap-1.5 rounded-full border-2 border-ink bg-ink px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-paper transition-opacity hover:opacity-75">Visit live site ↗</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- PROJECT 2: Hack Club -->
+        <div data-cursor="entry" class="grid grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="col-span-12 lg:col-span-5 order-2 lg:order-1">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display rounded-full border-2 border-ink px-2.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink" style="background:#f9c784;">prize</span>
+              <span class="font-display text-[13px] uppercase tracking-[0.18em] text-ink/70">Summer '25</span>
+            </div>
+            <h3 class="font-display text-[clamp(2rem,4vw,3rem)] leading-tight mb-2">Independent Developer</h3>
+            <div class="flex flex-wrap items-center gap-2 mt-2 mb-2">
+              <p class="font-body text-[14px] uppercase tracking-[0.18em] text-rose">Hack Club · Summer of Making</p>
+            </div>
+            <span class="font-display rounded-full border border-ink/25 px-2.5 py-1 text-[10px] uppercase tracking-[0.15em] text-ink/70 inline-block mb-4" style="background:#f0f6ff;">Funded by GitHub</span>
+            <p class="font-body text-[16px] leading-[1.6] text-ink/80">Won a <strong class="text-ink">$1,649 laptop (RTX 5070 · 32 GB · Ryzen AI 7)</strong> with 450+ tracked hours across 4+ shipped OSS projects in 3 months.
+              <br> Most shells on the global leaderboard.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="https://summer.hackclub.com" target="_blank" rel="noreferrer" class="font-display inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.18em] text-ink hover:underline underline-offset-4">summer.hackclub.com ↗</a>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-7 order-1 lg:order-2">
+            <a href="https://summer.hackclub.com" target="_blank" rel="noreferrer" class="exp-card block rounded-2xl border-2 border-ink overflow-hidden transition-transform md:hover:-translate-y-1 md:hover:rotate-1 duration-300" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+              <div class="exp-card-header border-b-2 border-ink px-4 py-2 flex items-center justify-between gap-2" style="background: var(--card-bg);">
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-rose"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#f9c784]"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#d4edda]"></div>
+                </div>
+                <div class="mx-auto font-mono text-[10px] uppercase tracking-widest text-ink/50 bg-paper border-2 border-ink rounded-full px-3 py-0.5 truncate max-w-[150px] sm:max-w-none text-center">
+                  summer-of-making.git
+                </div>
+                <div class="w-[42px] shrink-0 hidden sm:block"></div>
+              </div>
+              <img src="assets/leaderboard.png" alt="Hack Club leaderboard" class="exp-card-img w-full h-[250px] sm:h-[350px] object-cover object-top transition-all duration-500">
+            </a>
+          </div>
+        </div>
+  
+        <!-- PROJECT 3: Mobile App Client -->
+        <div data-cursor="entry" class="grid grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="col-span-12 lg:col-span-5 order-2 lg:order-1">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display rounded-full border-2 border-ink px-2.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink" style="background:#d4edda;">current</span>
+              <span class="font-display text-[13px] uppercase tracking-[0.18em] text-ink/70">Jun '26 — Now</span>
+            </div>
+            <h3 class="font-display text-[clamp(2rem,4vw,3rem)] leading-tight mb-2">Freelance Software Developer</h3>
+            <p class="font-body text-[14px] uppercase tracking-[0.18em] text-rose">Mobile App Client</p>
+            <p class="font-body mt-4 text-[16px] leading-[1.6] text-ink/80">Shipping an iOS + Android app with postgres db on Supabase along with auth (Google + Apple), + the whole pipeline.</p>
+          </div>
+          <div class="col-span-12 lg:col-span-7 order-1 lg:order-2">
+            <a href="#" class="exp-card block rounded-2xl border-2 border-ink overflow-hidden transition-transform md:hover:-translate-y-1 md:hover:rotate-1 duration-300" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+              <div class="exp-card-header border-b-2 border-ink px-4 py-2 flex items-center justify-between gap-2" style="background: var(--card-bg);">
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-rose"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#f9c784]"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#d4edda]"></div>
+                </div>
+                <div class="mx-auto font-mono text-[10px] uppercase tracking-widest text-ink/50 bg-paper border-2 border-ink rounded-full px-3 py-0.5 truncate max-w-[150px] sm:max-w-none text-center">
+                  mobile-client-app
+                </div>
+                <div class="w-[42px] shrink-0 hidden sm:block"></div>
+              </div>
+              <img src="assets/mobile_client.jpg" alt="Mobile App preview" class="exp-card-img w-full h-[250px] sm:h-[350px] object-cover transition-all duration-500">
+            </a>
+          </div>
+        </div>
+  
+        <!-- PROJECT 4: Pippo Robotics -->
+        <div data-cursor="entry" class="grid grid-cols-12 gap-6 lg:gap-10 items-center">
+          <div class="col-span-12 lg:col-span-7 order-1 lg:order-1">
+            <div class="exp-card rounded-2xl border-2 border-ink overflow-hidden transition-transform md:hover:-translate-y-1 md:hover:-rotate-1 duration-300" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+              <div class="exp-card-header border-b-2 border-ink px-4 py-2 flex items-center justify-between gap-2" style="background: var(--card-bg);">
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-rose"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#f9c784]"></div>
+                  <div class="h-3 w-3 rounded-full border-2 border-ink bg-[#d4edda]"></div>
+                </div>
+                <div class="mx-auto font-mono text-[10px] uppercase tracking-widest text-ink/50 bg-paper border-2 border-ink rounded-full px-3 py-0.5 truncate max-w-[150px] sm:max-w-none text-center">
+                  pippo-robotics
+                </div>
+                <div class="w-[42px] shrink-0 hidden sm:block"></div>
+              </div>
+              <img src="assets/pippo.jpg" alt="Pippo Robot" class="exp-card-img w-full h-[250px] sm:h-[350px] object-cover transition-all duration-500">
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-5 order-2 lg:order-2 lg:pl-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-display rounded-full border-2 border-ink px-2.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink" style="background:#fde8de;">Hardware</span>
+              <span class="font-display text-[13px] uppercase tracking-[0.18em] text-ink/70">2026</span>
+            </div>
+            <h3 class="font-display text-[clamp(2rem,4vw,3rem)] leading-tight mb-2">Pippo</h3>
+            <p class="font-body text-[14px] uppercase tracking-[0.18em] text-rose">Multilingual Navigator Robot</p>
+            <p class="font-body mt-4 text-[16px] leading-[1.6] text-ink/80">An automated multilingual robot companion designed for colleges and tourist spots. Features a smart navigation chassis, conversational capabilities, and a companion app backed by a Central Knowledge API and ElevenLabs along with my team.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap items-end justify-between gap-3 border-b-2 border-ink pb-4">
+        <div>
+          <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+            <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>Projects
+          </span>
+          <h2 class="font-display mt-2 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95]">Things I built<br>on purpose.</h2>
+        </div>
+        <a href="https://github.com/YogyaChugh" target="_blank" rel="noreferrer" data-cursor="github" class="font-display rounded-full border-2 border-ink px-4 py-2 text-[12px] uppercase tracking-[0.22em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">All on GitHub ↗</a>
+      </div>
+      <div id="projects-grid" class="mt-8 grid grid-cols-12 gap-4">
+        </div>
+    </div>
+  </section>
+
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-ink/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div id="project-modal-container" class="w-full h-full max-w-6xl max-h-[92vh] bg-paper border-2 border-ink rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col relative shadow-[var(--shadow-hard)] transform scale-95 transition-transform duration-300">
+      <button id="btn-close-project-modal" class="absolute top-4 right-4 sm:top-6 sm:right-6 font-display rounded-full border-2 border-ink px-4 py-2 text-[11px] uppercase tracking-widest hover:bg-ink hover:text-paper transition-colors z-50" style="background:var(--paper);">Close ✕</button>
+      <div id="project-modal-body" class="flex-1 overflow-y-auto">
+        </div>
+    </div>
+  </div>
+<section id="achievements" class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap items-end justify-between gap-3 border-b-2 border-ink pb-4">
+        <div>
+          <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+            <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>Achievements
+          </span>
+          <h2 class="font-display mt-2 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95]">Wins &amp; receipts.</h2>
+        </div>
+      </div>
+      <div class="mt-8 grid grid-cols-12 auto-rows-[180px] gap-4">
+
+        <div data-cursor="win" class="group col-span-12 md:col-span-8 row-span-1 md:row-span-2 relative rounded-3xl border-2 border-ink overflow-hidden p-6 sm:p-8 flex flex-col justify-end min-h-[180px] md:min-h-0 transition-transform md:hover:-translate-y-1" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+           <img src="assets/laptop.png" alt="Laptop" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+           <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent"></div>
+           <div class="relative z-10">
+             <span class="font-display inline-block mb-2 rounded-full border border-paper/30 bg-paper/20 backdrop-blur-md px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-paper">Hardware Prize</span>
+             <h3 class="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-paper mb-1">Free Laptop · Hack Club</h3>
+             <p class="font-body text-[15px] text-paper/80">Gigabyte laptop, 32 GB RAM, RTX 5070, Ryzen AI 7 and 1 TB SSD</p>
+           </div>
+        </div>
+
+        <div data-cursor="win" class="group col-span-12 sm:col-span-6 md:col-span-4 row-span-1 relative rounded-3xl border-2 border-ink overflow-hidden p-5 flex flex-col justify-center items-center text-center transition-transform md:hover:-translate-y-1" style="background: #fde8de; box-shadow: var(--shadow-hard);">
+           <span class="font-display text-[48px] leading-none text-ink mb-2">3rd</span>
+           <h3 class="font-display text-[16px] leading-tight text-ink">Cyber AI Hackathon</h3>
+           <p class="font-body text-[12px] text-ink/70 uppercase tracking-wider mt-1">University of Derby, UK</p>
+        </div>
+
+        <div data-cursor="win" class="group col-span-12 sm:col-span-6 md:col-span-4 row-span-1 relative rounded-3xl border-2 border-ink overflow-hidden p-5 flex flex-col justify-center items-center text-center transition-transform md:hover:-translate-y-1" style="background: #e0f2fe; box-shadow: var(--shadow-hard);">
+           <span class="font-display text-[48px] leading-none text-ink mb-2">3rd</span>
+           <h3 class="font-display text-[16px] leading-tight text-ink">Agentic AI Hackathon</h3>
+           <p class="font-body text-[12px] text-ink/70 uppercase tracking-wider mt-1">Ulster University, UK</p>
+        </div>
+
+        <div data-cursor="win" class="group col-span-12 md:col-span-8 row-span-1 relative rounded-3xl border-2 border-ink overflow-hidden p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-transform md:hover:-translate-y-1" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+           <div>
+             <span class="font-display inline-block mb-3 rounded-full border-2 border-ink bg-chrome px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-paper">Open Source</span>
+             <h3 class="font-display text-[22px] sm:text-[26px] leading-tight text-ink">Merged PRs into Django core</h3>
+             <p class="font-body text-[14px] text-ink/70 mt-1.5">and various third-party packages</p>
+           </div>
+           <a href="https://github.com/django/django/pulls?q=is%3Apr+author%3Ayogyachugh+" class="font-display shrink-0 rounded-full border-2 border-ink bg-ink px-4 py-2.5 text-[12px] uppercase tracking-[0.22em] text-paper transition-opacity hover:opacity-75">View PRs ↗</a>
+        </div>
+
+        <div data-cursor="win" class="group col-span-6 md:col-span-4 row-span-1 relative rounded-3xl border-2 border-ink overflow-hidden p-5 flex flex-col justify-center items-center text-center transition-transform md:hover:-translate-y-1" style="background: #d4edda; box-shadow: var(--shadow-hard);">
+           <span class="font-display text-[36px] leading-none text-ink mb-2">SIH ×2</span>
+           <p class="font-body text-[13px] text-ink/80 leading-snug">Internal-round qualifier<br>2024 & 2025</p>
+        </div>
+
+        <div data-cursor="win" class="group col-span-6 md:col-span-4 row-span-1 relative rounded-3xl border-2 border-ink overflow-hidden p-5 flex flex-col justify-center items-center text-center transition-transform md:hover:-translate-y-1" style="background: #fce7f3; box-shadow: var(--shadow-hard);">
+           <span class="font-display text-[48px] leading-none text-ink mb-2">8.38</span>
+           <p class="font-body text-[13px] text-ink/80 leading-snug">Current CGPA<br>zero backlogs</p>
+        </div>
+
+        <div data-cursor="win" class="group col-span-12 md:col-span-8 row-span-1 relative rounded-3xl border-2 border-ink overflow-hidden p-6 flex flex-col justify-center items-center text-center transition-transform md:hover:-translate-y-1" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+           <span class="font-display text-[28px] leading-none text-ink mb-2">Technical Club President</span>
+           <p class="font-body text-[14px] text-ink/80 leading-snug">Organized the Frontend Frenzy inter-college event</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto max-w-[1400px] flex flex-wrap items-center justify-between gap-4 rounded-[28px] border-2 border-ink p-8" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+      <div>
+        <h2 class="font-display text-[clamp(1.6rem,3vw,2.2rem)] leading-tight">Want to see me actually play?</h2>
+        <p class="font-body mt-1 text-[14px] text-ink/70">Or read the write-ups behind some of this.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="play.html" class="font-display rounded-full border-2 border-ink bg-ink px-5 py-2.5 text-[12px] uppercase tracking-[0.2em] text-paper transition-opacity hover:opacity-80">Play →</a>
+        <a href="blog.html" class="font-display rounded-full border-2 border-ink px-5 py-2.5 text-[12px] uppercase tracking-[0.2em] text-ink transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">Read →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t-2 border-ink px-4 py-6 md:px-8">
+    <div class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3">
+      <span class="font-display text-[11px] uppercase tracking-[0.22em] text-ink/60">Brain used, messed-up, optimized and working ... hehe</span>
+      <span class="font-display text-[11px] uppercase tracking-[0.22em] text-ink/40"><a href="https://www.flaticon.com/free-icons/suit" title="suit icons">Suit icons created by andinur - Flaticon</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

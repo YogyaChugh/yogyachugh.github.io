@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Play — Yogya Chugh | Timberly &amp; Hangman</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="canonical" href="https://yogya.dev/play.html">
+  <meta name="description" content="Play Timberly and Hangman right in your browser — the first two games Yogya Chugh ever built.">
+  <meta name="author" content="Yogya Chugh">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#ff6eb4">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yogya.dev/play.html">
+  <meta property="og:title" content="Yogya Chugh — Play">
+  <meta property="og:description" content="Play Timberly and Hangman right in your browser.">
+  <meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Yogya Chugh">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yogya Chugh — Play">
+  <meta name="twitter:description" content="Play Timberly and Hangman right in your browser.">
+  <meta name="twitter:image" content="https://yogya.dev/assets/og-cover.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://yogya.dev/play.html#games",
+    "name": "Yogya Chugh — Browser Games",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "VideoGame", "name": "Timberly", "description": "Casual lumberjack game playable directly in the browser with a realtime leaderboard.", "url": "https://yogya.dev/play.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "VideoGame", "name": "Hangman", "description": "Classic terminal-style hangman game playable directly in the browser.", "url": "https://yogya.dev/play.html" } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="grain relative min-h-screen bg-paper text-ink overflow-x-hidden">
+
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-20" style="background-image: radial-gradient(700px 500px at 15% 0%, rgba(255,110,180,0.22), transparent 55%), radial-gradient(600px 450px at 90% 25%, rgba(192,132,252,0.18), transparent 55%), radial-gradient(650px 500px at 5% 90%, rgba(253,164,175,0.20), transparent 55%);"></div>
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10" style="background-image: linear-gradient(to right, rgba(26,26,46,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(26,26,46,0.05) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);"></div>
+
+  <div id="cursor-dot"></div>
+
+  <div id="command-palette-backdrop" class="fixed inset-0 z-50 hidden flex items-start justify-center pt-20" style="background: rgba(26,26,46,0.45); backdrop-filter: blur(6px);">
+    <div id="command-palette" class="w-full max-w-lg rounded-2xl border-2 border-ink overflow-hidden" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+      <div class="border-b-2 border-ink p-3 flex items-center">
+        <input type="text" id="cmd-input" placeholder="Search sections, projects, links..." class="w-full font-body text-ink outline-none text-[16px] px-2" style="background: transparent;" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="max-h-[300px] overflow-y-auto p-2" id="cmd-results"></div>
+    </div>
+  </div>
+
+  <header class="fixed inset-x-0 top-0 z-40">
+    <div class="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-3 md:px-8">
+      <a href="index.html" data-cursor="top" class="flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1.5 backdrop-blur-md" style="background: rgba(253,240,252,0.75);">
+        <span class="block h-2.5 w-2.5 rounded-full bg-chrome"></span>
+        <span class="font-display text-[12px] uppercase tracking-[0.22em]">Yogya Chugh</span>
+      </a>
+      <nav class="hidden items-center gap-0 rounded-full border border-ink/20 p-1 backdrop-blur-md md:flex" style="background: rgba(253,240,252,0.75);">
+        <a href="index.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Home</a>
+        <a href="work.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Work</a>
+        <a href="play.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--ink); color: var(--paper);">Play</a>
+        <a href="blog.html" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Writing</a>
+        <a href="index.html#contact" class="font-display rounded-full px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:bg-ink hover:text-paper">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button data-cursor="⌘K" id="btn-cmd" class="flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1.5 backdrop-blur-md" style="background: rgba(253,240,252,0.75);">
+          <span class="font-display text-[12px] uppercase tracking-[0.18em]">Search</span>
+          <kbd class="font-mono hidden rounded border border-ink/20 px-1.5 py-0.5 text-[10px] md:inline" style="background: var(--paper);">⌘K</kbd>
+        </button>
+        <button id="btn-menu" class="flex h-9 w-9 items-center justify-center rounded-full border border-ink/20 backdrop-blur-md md:hidden" style="background: rgba(253,240,252,0.75);" aria-label="Toggle menu">
+          <span class="font-display text-[18px] leading-none">☰</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mx-4 mt-1 overflow-hidden rounded-2xl border-2 border-ink hidden md:hidden" style="background: var(--paper); box-shadow: var(--shadow-hard);">
+      <nav class="flex flex-col p-2">
+        <a href="index.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Home</a>
+        <a href="work.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Work</a>
+        <a href="play.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Play</a>
+        <a href="blog.html" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Writing</a>
+        <a href="index.html#contact" class="mobile-nav-link font-display rounded-xl px-4 py-3 text-[13px] uppercase tracking-[0.18em] text-ink/80 transition-colors hover:bg-ink hover:text-paper">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative px-4 pb-2 pt-28 md:px-8 md:pt-32">
+    <div class="mx-auto max-w-[1400px]">
+      <span class="font-display inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.24em] text-ink/70">
+        <span class="inline-block h-1.5 w-6 bg-chrome rounded-full"></span>Play
+      </span>
+      <h1 class="font-display mt-2 text-[clamp(2.8rem,9vw,6.5rem)] leading-[0.9]">Actually,<br><span class="text-chrome">play one.</span></h1>
+      <p class="font-body mt-4 max-w-xl text-[16px] leading-[1.5] text-ink/75">Simple and kiddo style, but close to my heart — my first ever games.</p>
+    </div>
+  </section>
+
+  <section id="games" class="relative px-4 py-14 md:px-8 md:py-20">
+    <div class="mx-auto max-w-[1400px]">
+      <div class="flex flex-wrap gap-2 border-b-2 border-ink pb-6">
+        <button id="game-tab-timberly" data-game="timberly" class="game-tab font-display rounded-full border-2 border-ink px-4 py-2 text-[12px] uppercase tracking-[0.18em] transition-colors" style="background: var(--ink); color: var(--paper);">
+          🌲 Timberly <span class="opacity-60 normal-case tracking-normal">— the first game I built</span>
+        </button>
+        <button id="game-tab-hangman" data-game="hangman" class="game-tab font-display rounded-full border-2 border-ink px-4 py-2 text-[12px] uppercase tracking-[0.18em] transition-colors" style="background: var(--paper); color: var(--ink);">
+          🪢 Hangman
+        </button>
+      </div>
+
+      <div id="stage-timberly" class="game-stage mt-4 rounded-2xl border-2 border-ink overflow-hidden" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+        <div class="flex items-center gap-2 border-b-2 border-ink px-4 py-3" style="background: var(--gradient-chrome-soft);">
+          <span class="h-2.5 w-2.5 rounded-full" style="background:#ff5f56;"></span>
+          <span class="h-2.5 w-2.5 rounded-full" style="background:#ffbd2e;"></span>
+          <span class="h-2.5 w-2.5 rounded-full" style="background:#27c93f;"></span>
+          <span class="font-mono ml-2 text-[11px] uppercase tracking-[0.18em] text-ink/50">timberly</span>
+          <button id="timberly-fullscreen-btn" class="hidden md:block ml-auto font-display rounded-full border-2 border-ink px-3 py-1 text-[10px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">⛶ Fullscreen</button>
+        </div>
+
+        <div class="md:hidden flex flex-col items-center justify-center p-8 text-center" style="min-height: 280px; background: #15151c;">
+          <span class="text-[40px] mb-3">🖥️</span>
+          <h3 class="font-display text-[15px] uppercase tracking-[0.18em] text-rose mb-2">Desktop Required</h3>
+          <p class="font-body text-[13px] text-paper/70 leading-relaxed max-w-[280px]">Interactive in-browser play requires a physical keyboard and a larger screen. Please visit on a desktop to play!</p>
+        </div>
+
+        <div class="hidden md:flex relative items-center justify-center w-full" style="background:#15151c; height: min(70vh, 600px); min-height: 320px; background-image:url('timberly/loading_extra.png'); background-size:cover; background-position:center;">
+          <div id="timberly-host" class="w-full h-full"></div>
+          <div id="timberly-overlay" class="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-6" style="background:#15151c;">
+            <span class="font-display text-[13px] uppercase tracking-[0.2em]" style="color:#ff6eb4;">My first game, click to load it</span>
+            <button id="timberly-start-btn" class="font-display rounded-full border-2 px-6 py-2.5 text-[12px] uppercase tracking-[0.2em] transition-colors" style="border-color:#ff6eb4; color:#ff6eb4;">▶ Play Timberly</button>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center justify-between gap-3 px-4 py-3 border-t-2 border-ink bg-card-bg">
+          <span id="timberly-status" class="font-mono text-[11px] text-ink/50"></span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 px-4 pb-4 pt-4 md:pt-0 bg-card-bg">
+          <span class="font-display text-[11px] uppercase tracking-[0.18em] text-ink/50 mr-1">Download:</span>
+          <a href="https://github.com/YogyaChugh/Timberly/releases/download/v2.0/Timberly.exe" target="_blank" rel="noreferrer" class="font-display rounded-full border-2 border-ink px-3.5 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">Windows</a>
+          <a href="https://github.com/YogyaChugh/Timberly/releases/download/v2.0/Timberly-Linux" target="_blank" rel="noreferrer" class="font-display rounded-full border-2 border-ink px-3.5 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">Linux</a>
+          <a href="https://github.com/YogyaChugh/Timberly/releases/download/v2.0/Timberly-Mac" target="_blank" rel="noreferrer" class="font-display rounded-full border-2 border-ink px-3.5 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">macOS</a>
+        </div>
+      </div>
+
+      <div id="stage-hangman" class="game-stage mt-4 rounded-2xl border-2 border-ink overflow-hidden hidden" style="background: var(--card-bg); box-shadow: var(--shadow-hard);">
+        <div class="flex items-center gap-2 border-b-2 border-ink px-4 py-3" style="background: var(--gradient-chrome-soft);">
+          <span class="h-2.5 w-2.5 rounded-full" style="background:#ff5f56;"></span>
+          <span class="h-2.5 w-2.5 rounded-full" style="background:#ffbd2e;"></span>
+          <span class="h-2.5 w-2.5 rounded-full" style="background:#27c93f;"></span>
+          <span class="font-mono ml-2 text-[11px] uppercase tracking-[0.18em] text-ink/50">hangman</span>
+          <button id="hangman-fullscreen-btn" class="hidden md:block ml-auto font-display rounded-full border-2 border-ink px-3 py-1 text-[10px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">⛶ Fullscreen</button>
+        </div>
+
+        <div class="md:hidden flex flex-col items-center justify-center p-8 text-center" style="min-height: 280px; background: #15151c;">
+          <span class="text-[40px] mb-3">🖥️</span>
+          <h3 class="font-display text-[15px] uppercase tracking-[0.18em] text-rose mb-2">Desktop Required</h3>
+          <p class="font-body text-[13px] text-paper/70 leading-relaxed max-w-[280px]">Interactive in-browser play requires a physical keyboard and a larger screen. Please visit on a desktop to play!</p>
+        </div>
+
+        <div class="hidden md:block relative" style="background:#15151c;">
+          <div id="hangman-terminal" class="w-full" style="height: 520px;"></div>
+          <div id="hangman-keyboard" class="flex flex-wrap gap-1.5 justify-center px-3 pb-3 pt-1" style="background:#15151c;"></div>
+          <div id="hangman-overlay" class="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-6" style="background:#15151c;">
+            <span class="font-display text-[13px] uppercase tracking-[0.2em]" style="color:#ff6eb4;">Click to load the game</span>
+            <button id="hangman-start-btn" class="font-display rounded-full border-2 px-6 py-2.5 text-[12px] uppercase tracking-[0.2em] transition-colors" style="border-color:#ff6eb4; color:#ff6eb4;">▶ Play Hangman</button>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center justify-between gap-3 px-4 py-3 border-t-2 border-ink bg-card-bg">
+          <span id="hangman-status" class="font-mono text-[11px] text-ink/50"></span>
+          <button id="hangman-restart-btn" class="font-display rounded-full border-2 border-ink px-4 py-1.5 text-[11px] uppercase tracking-[0.18em] transition-colors hover:bg-ink hover:text-paper hidden" style="background: var(--paper);">Restart</button>
+        </div>
+        
+        <div class="flex flex-wrap items-center gap-2 px-4 pb-4 pt-4 md:pt-0 bg-card-bg">
+          <span class="font-display text-[11px] uppercase tracking-[0.18em] text-ink/50 mr-1">Download:</span>
+          <a href="https://github.com/YogyaChugh/Hangman-Game/releases/download/v1.0.0/Hangman.exe" target="_blank" rel="noreferrer" class="font-display rounded-full border-2 border-ink px-3.5 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">Windows</a>
+          <a href="https://github.com/YogyaChugh/Hangman-Game/releases/download/v1.0.0/Hangman-Linux" target="_blank" rel="noreferrer" class="font-display rounded-full border-2 border-ink px-3.5 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper" style="background: var(--paper);">Linux</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t-2 border-ink px-4 py-6 md:px-8">
+    <div class="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3">
+      <span class="font-display text-[11px] uppercase tracking-[0.22em] text-ink/60">Brain used, messed-up, optimized and working ... hehe</span>
+      <span class="font-display text-[11px] uppercase tracking-[0.22em] text-ink/40"><a href="https://www.flaticon.com/free-icons/suit" title="suit icons">Suit icons created by andinur - Flaticon</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
