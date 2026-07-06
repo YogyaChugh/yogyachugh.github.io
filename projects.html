@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-edition="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects &mdash; The Yogya Gazette</title>
+  <meta name="description" content="Yogya Chugh's projects: AnyStudio (Rust Android IDE), Webelo (C++ DOM engine), Vardhman Saathi, Django open-source, AgroLens, Timberly, and more.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">The Yogya Gazette</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Front Page</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="writing.html" class="nav-link">Writing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" class="nav-link nav-link--resume" target="_blank" rel="noopener">R&eacute;sum&eacute; &#8599;</a>
+    </div>
+    <button class="edition-toggle" id="edition-toggle">&#9789; Evening Edition</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-label">The Workshop</div>
+  <h1 class="page-title">Projects &amp; Builds</h1>
+  <p class="page-deck">Nine shipped projects spanning systems programming, open source, web, and games &mdash; all built by one person.</p>
+</div>
+
+<div class="projects-container">
+
+  <!-- FEATURED: AnyStudio -->
+  <div class="reveal">
+    <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="project-featured" style="text-decoration:none; color:inherit;">
+      <img src="assets/projects/anystudio.jpg" alt="AnyStudio IDE" class="project-featured-img">
+      <div class="project-featured-body">
+        <span class="project-category">Systems &nbsp;&middot;&nbsp; Featured Build</span>
+        <div class="project-title">AnyStudio</div>
+        <p class="project-snippet">
+          A native desktop Android IDE written entirely in Rust with an egui interface. The headline: a direct DEX compilation pipeline that bypasses the JDK entirely &mdash; producing the smallest possible APKs without a 500MB Java runtime. No JDK. No Gradle. Just Rust and determination.
+        </p>
+        <div class="project-tech">
+          <span class="stack-tag">Rust</span>
+          <span class="stack-tag">egui</span>
+          <span class="stack-tag">Android</span>
+          <span class="stack-tag">DEX Bytecode</span>
+          <span class="stack-tag">Systems</span>
+        </div>
+        <span class="project-link">View on GitHub &#8599;</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="ornament reveal">&#10022; &mdash; &#10022; &mdash; &#10022;</div>
+
+  <!-- PROJECT GRID -->
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <img src="assets/projects/webelo.jpg" alt="Webelo DOM Library" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Systems &nbsp;&middot;&nbsp; C++</span>
+        <div class="project-title">Webelo</div>
+        <p class="project-snippet">A C++ DOM library and HTML visualizer implemented strictly to the WhatWG DOM Living Standard. Preorder DFS traversal, event dispatch, mutation observers &mdash; from the spec, not from shortcuts.</p>
+        <div class="project-tech">
+          <span class="stack-tag">C++</span>
+          <span class="stack-tag">DOM</span>
+          <span class="stack-tag">WhatWG</span>
+        </div>
+        <a href="https://github.com/YogyaChugh/Webelo" target="_blank" rel="noopener" class="project-link">GitHub &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/vardhman.jpg" alt="Vardhman Saathi" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Product &nbsp;&middot;&nbsp; TypeScript</span>
+        <div class="project-title">Vardhman Saathi</div>
+        <p class="project-snippet">Full business suite for Vardhman Electricals &mdash; desktop app (Electron), Android client, and Hono backend. Credit tracking for field salespersons. Total infra cost: $7/month on Supabase + Cloudflare R2 + Render.</p>
+        <div class="project-tech">
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">Electron</span>
+          <span class="stack-tag">Hono</span>
+          <span class="stack-tag">Supabase</span>
+        </div>
+        <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener" class="project-link">Live Site &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/django-oss.jpg" alt="Django Open Source" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Open Source &nbsp;&middot;&nbsp; Python</span>
+        <div class="project-title">Django Core Contribution</div>
+        <p class="project-snippet">Pull requests merged into Django&rsquo;s core codebase. Ticket 36271: traced a bug in form rendering, wrote the fix and comprehensive test cases, and worked through review with maintainer Sarah Boyce until merge.</p>
+        <div class="project-tech">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Django</span>
+          <span class="stack-tag">Open Source</span>
+        </div>
+        <a href="https://github.com/django/django/pulls?q=is%3Apr+author%3Ayogyachugh+" target="_blank" rel="noopener" class="project-link">View PRs &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/agrolens.jpg" alt="AgroLens" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">AI/CV &nbsp;&middot;&nbsp; Python</span>
+        <div class="project-title">AgroLens</div>
+        <p class="project-snippet">Computer vision plant disease detection system built in Python. Analyzes leaf images to identify diseases early, helping farmers take corrective action before crop loss.</p>
+        <div class="project-tech">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">OpenCV</span>
+          <span class="stack-tag">ML</span>
+        </div>
+        <a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank" rel="noopener" class="project-link">GitHub &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/timberly.jpg" alt="Timberly Game" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Game &nbsp;&middot;&nbsp; JavaScript</span>
+        <div class="project-title">Timberly</div>
+        <p class="project-snippet">Multiplayer lumberjack browser game. Shipped during Hack Club Summer of Making. Built for the web with real-time multiplayer mechanics and a clean pixel aesthetic.</p>
+        <div class="project-tech">
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">WebGL</span>
+          <span class="stack-tag">Multiplayer</span>
+        </div>
+        <a href="https://yogya-chugh.itch.io/timberly" target="_blank" rel="noopener" class="project-link">Play on itch.io &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/webber.jpg" alt="Webber Web Crawler" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Tool &nbsp;&middot;&nbsp; Python</span>
+        <div class="project-title">Webber</div>
+        <p class="project-snippet">A Python desktop web crawler with a clean GUI. Point it at a URL, define your crawl depth and rules, and extract structured data from the web &mdash; no command line needed.</p>
+        <div class="project-tech">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Scrapy</span>
+          <span class="stack-tag">Desktop</span>
+        </div>
+        <a href="https://github.com/YogyaChugh/Webber" target="_blank" rel="noopener" class="project-link">GitHub &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/snake-hustle.jpg" alt="Snake Hustle Game" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Game &nbsp;&middot;&nbsp; JavaScript</span>
+        <div class="project-title">Snake Hustle</div>
+        <p class="project-snippet">A modern browser take on the classic snake game. Fast-paced, styled, and playable instantly in any browser with no install required.</p>
+        <div class="project-tech">
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Canvas</span>
+          <span class="stack-tag">Browser</span>
+        </div>
+        <a href="https://snakehustle.netlify.app" target="_blank" rel="noopener" class="project-link">Play Online &#8599;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <img src="assets/projects/sih-travel.jpg" alt="SIH Travel Security" class="project-card-img">
+      <div class="project-card-body">
+        <span class="project-category">Blockchain &nbsp;&middot;&nbsp; Hackathon</span>
+        <div class="project-title">SIH Travel Security</div>
+        <p class="project-snippet">Blockchain-based tourist tracking system built for Smart India Hackathon. Uses distributed ledger technology to ensure verifiable, tamper-proof records of tourist movements for security.</p>
+        <div class="project-tech">
+          <span class="stack-tag">Blockchain</span>
+          <span class="stack-tag">Smart Contracts</span>
+          <span class="stack-tag">Web3</span>
+        </div>
+        <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="project-link">GitHub &#8599;</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  &copy; 2026 Yogya Chugh &nbsp;&middot;&nbsp; Suit icons created by andinur &mdash; <a href="https://www.flaticon.com/free-icons/suit" target="_blank" rel="noopener">Flaticon</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

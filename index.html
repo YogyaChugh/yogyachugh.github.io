@@ -3,16 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yogya Chugh</title>
-  <meta name="description" content="Yogya Chugh — Systems Developer and Open Source Contributor building IDEs in Rust, browser engines in C++, and shipping production software.">
-  <meta name="keywords" content="Yogya Chugh, developer, portfolio, systems, Rust, TypeScript, C++, Django">
-  <meta name="author" content="Yogya Chugh">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Yogya Chugh">
-  <meta property="og:description" content="Systems Developer building IDEs in Rust, browser engines in C++, and production software.">
-  <meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
+  <title>The Yogya Gazette &mdash; Yogya Chugh, Systems Developer</title>
+  <meta name="description" content="Yogya Chugh &mdash; 19-year-old systems developer from Delhi. Building native Android IDEs in Rust, C++ DOM engines, and open-source Django contributions.">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -20,333 +13,214 @@
 </head>
 <body>
 
-  <!-- TICKER -->
-  <div class="ticker-bar">
-    <span class="ticker-label">BREAKING</span>
-    <div class="ticker-track">
-      <div class="ticker-items" id="ticker-items">
-        <span>Delhi developer, 19, builds full Android IDE in Rust with no JDK required</span>
-        <span class="ticker-sep">&#9670;</span>
-        <span>Hack Club Summer of Making: 450+ hours logged, $1,322 hardware grant awarded</span>
-        <span class="ticker-sep">&#9670;</span>
-        <span>Pull request merged into Django core — code now running for millions of developers</span>
-        <span class="ticker-sep">&#9670;</span>
-        <span>Webelo: C++ browser engine following WhatWG DOM Living Standard</span>
-        <span class="ticker-sep">&#9670;</span>
-        <span>Open to SDE internship opportunities — contact desk open</span>
-        <span class="ticker-sep">&#9670;</span>
-        <span>3rd place at Cyber AI Hackathon (Derby, UK) and Agentic AI Hackathon (Ulster, UK)</span>
-        <span class="ticker-sep">&#9670;</span>
-      </div>
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">The Yogya Gazette</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Front Page</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="writing.html" class="nav-link">Writing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" class="nav-link nav-link--resume" target="_blank" rel="noopener">R&eacute;sum&eacute; &#8599;</a>
+    </div>
+    <button class="edition-toggle" id="edition-toggle" title="Toggle Evening Edition">&#9789; Evening Edition</button>
+  </div>
+</nav>
+
+<!-- MASTHEAD -->
+<div class="front-masthead">
+  <div class="masthead-title">The Yogya Gazette</div>
+  <div class="masthead-meta">
+    <span>Est. 2023 &nbsp;&middot;&nbsp; Delhi, India</span>
+    <span>B.Tech CSE &nbsp;&middot;&nbsp; PIET, Class of 2027</span>
+    <span>Vol. III &nbsp;&middot;&nbsp; Edition: <span id="edition-label">Day</span></span>
+  </div>
+</div>
+
+<!-- ABOVE THE FOLD: 3-column -->
+<div class="front-above-fold">
+
+  <!-- LEFT COL: Bio + Stack -->
+  <div class="fold-col">
+    <div class="bio-name">Systems Developer &nbsp;&middot;&nbsp; Delhi, India</div>
+    <h2 class="bio-headline">Yogya Chugh, 19</h2>
+    <p class="bio-body">
+      CS undergrad at PIET building things that most wouldn&rsquo;t dare &mdash; native desktop IDEs in Rust, C++ DOM engines from scratch, and contributing to Django&rsquo;s core codebase. Hackathon finalist on two continents.
+    </p>
+    <p class="bio-body">
+      Currently freelancing in React Native while shipping personal projects that push the boundary of what a college student &ldquo;should&rdquo; be building.
+    </p>
+    <div class="stack-tags">
+      <span class="stack-tag">Rust</span>
+      <span class="stack-tag">C++</span>
+      <span class="stack-tag">TypeScript</span>
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">React Native</span>
+      <span class="stack-tag">Electron</span>
+      <span class="stack-tag">Django</span>
+      <span class="stack-tag">egui</span>
+      <span class="stack-tag">Hono</span>
+      <span class="stack-tag">Supabase</span>
     </div>
   </div>
 
-  <!-- MASTHEAD -->
-  <header class="masthead" id="top">
-    <div class="masthead-meta-bar">
-      <div class="masthead-meta-l">Est. 2027 &nbsp;&#183;&nbsp; Delhi, India &nbsp;&#183;&nbsp; B.Tech CSE</div>
-      <div class="masthead-meta-c" id="edition-date">Loading edition&#8230;</div>
-      <div class="masthead-meta-r">Systems &amp; Software Edition &nbsp;&#183;&nbsp; Vol.&#8201;I No.&#8201;1</div>
+  <!-- CENTER COL: Photo + Headline -->
+  <div class="fold-col fold-col--center">
+    <img src="favicon.png" alt="Yogya Chugh" class="front-photo">
+    <h1 class="front-headline">
+      DELHI DEVELOPER, 19, BUILDS ANDROID IDE IN RUST &mdash; WINS $1,322 HARDWARE GRANT
+    </h1>
+    <p class="front-deck">
+      From Django core contributions to a custom C++ DOM engine &mdash; this CS sophomore from Panipat is shipping systems-level software that most engineers don&rsquo;t attempt in a career.
+    </p>
+    <div class="front-cta-group">
+      <a href="projects.html" class="btn-primary">View Projects</a>
+      <a href="contact.html" class="btn-outline">Get in Touch</a>
     </div>
-    <div class="masthead-title-wrap">
-      <button class="edition-toggle" id="edition-toggle">&#9790; Evening Edition</button>
-      <div class="mast-ornament">&#8213; &#10022; &#8213;</div>
-      <h1 class="masthead-title">The Yogya Gazette</h1>
-      <p class="masthead-tagline">All The Code That&rsquo;s Fit To Ship</p>
-      <div class="mast-ornament">&#8213; &#10022; &#8213;</div>
+  </div>
+
+  <!-- RIGHT COL: Achievements + Contact Mini -->
+  <div class="fold-col">
+    <div class="section-label">Key Achievements</div>
+
+    <div class="achievement-item">
+      <div class="achievement-num">450+</div>
+      <div class="achievement-label">Hours coded in a single summer &mdash; Hack Club Summer of Making</div>
     </div>
-    <nav class="masthead-nav">
-      <a href="#front-page">Front Page</a>
-      <a href="#projects">Projects</a>
-      <a href="#writing">Writing</a>
-      <a href="#experience">The Record</a>
-      <a href="#contact">Contact</a>
-      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener" class="nav-resume">R&eacute;sum&eacute; &#8599;</a>
-    </nav>
-  </header>
-
-  <main class="newspaper-main">
-
-    <!-- FRONT PAGE -->
-    <section id="front-page" class="newspaper-section front-page-section reveal">
-      <div class="front-grid">
-
-        <!-- LEFT -->
-        <div class="front-col front-col-bio">
-          <div class="col-label">Who Is He</div>
-          <h2 class="col-headline">Systems Developer. Builder. Open Source Contributor.</h2>
-          <p class="article-body drop-cap">Yogya Chugh is a 19-year-old Computer Science undergraduate at PIET (Class of 2027) building things most people assume require a team &mdash; IDEs in Rust, browser engines in C++, and production-grade software for real clients.</p>
-          <p class="article-body">Based in Delhi, he has shipped over nine projects spanning systems programming, game development, machine learning, and full-stack web &mdash; and has contributed merged pull requests into Django, used by millions of developers worldwide.</p>
-          <div class="stack-list">
-            <div class="stack-label">Languages on the Desk</div>
-            <div class="stack-tags">
-              <span class="stack-tag" style="--tc:#dea584">Rust</span>
-              <span class="stack-tag" style="--tc:#00599c">C++</span>
-              <span class="stack-tag" style="--tc:#3178c6">TypeScript</span>
-              <span class="stack-tag" style="--tc:#3572A5">Python</span>
-              <span class="stack-tag" style="--tc:#555555">C</span>
-              <span class="stack-tag" style="--tc:#336791">SQL</span>
-            </div>
-          </div>
-          <div class="stack-list" style="margin-top:0.75rem">
-            <div class="stack-label">Currently Building</div>
-            <p class="building-item">&#9657; <strong>AnyStudio</strong> &mdash; Android IDE in Rust (egui, direct DEX)</p>
-            <p class="building-item">&#9657; <strong>Webelo</strong> &mdash; C++ browser engine (WhatWG DOM)</p>
-          </div>
-        </div>
-
-        <!-- CENTER -->
-        <div class="front-col front-col-hero">
-          <div class="hero-stamp">Open to Internships</div>
-          <figure class="profile-figure">
-            <img src="favicon.png" alt="Yogya Chugh" class="profile-photo">
-            <figcaption>Yogya Chugh, 19, systems developer &mdash; Delhi, India</figcaption>
-          </figure>
-          <h2 class="hero-headline">&ldquo;I Build IDEs for Fun &mdash; and Win Hardware Grants While at It.&rdquo;</h2>
-          <p class="hero-sub">Systems &amp; Software Developer &nbsp;&#183;&nbsp; Delhi, India</p>
-          <div class="hero-divider"></div>
-          <div class="contact-mini">
-            <a href="mailto:yogya.developer@gmail.com" class="contact-mini-link">&#9993; yogya.developer@gmail.com</a>
-            <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="contact-mini-link">&#9417; github.com/YogyaChugh</a>
-            <a href="tel:+919650029959" class="contact-mini-link">&#9742; +91-9650029959</a>
-          </div>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="front-col front-col-highlights">
-          <div class="col-label">Today&rsquo;s Highlights</div>
-          <div class="highlight-item">
-            <span class="hl-num">01</span>
-            <div class="hl-body"><strong>$1,322 Hardware Grant</strong><p>Top earner in Hack Club Summer of Making &mdash; 6,612 shells, 450+ tracked hours. Prize: GIGABYTE AERO X16 (Ryzen AI 7, RTX 5070, 32GB DDR5).</p></div>
-          </div>
-          <div class="highlight-item">
-            <span class="hl-num">02</span>
-            <div class="hl-body"><strong>AnyStudio: Android IDE in Rust</strong><p>Full native desktop IDE producing APKs via a direct DEX pipeline &mdash; no JDK required. Built from scratch in Rust + egui.</p></div>
-          </div>
-          <div class="highlight-item">
-            <span class="hl-num">03</span>
-            <div class="hl-body"><strong>Django Core Contributor</strong><p>Pull requests merged into Django, fixing Ticket 36271 &mdash; code now running for millions of developers worldwide.</p></div>
-          </div>
-          <div class="highlight-item">
-            <span class="hl-num">04</span>
-            <div class="hl-body"><strong>Webelo: Browser from Scratch</strong><p>C++ DOM library strictly implementing the WhatWG Living Standard &mdash; preorder DFS, event dispatch, full spec compliance.</p></div>
-          </div>
-          <div class="highlight-item">
-            <span class="hl-num">05</span>
-            <div class="hl-body"><strong>Production at $7/Month</strong><p>Shipped Vardhman Saathi &mdash; a full business suite on Supabase + Cloudflare R2 + Render, running live in production.</p></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="newspaper-section reveal">
-      <div class="section-divider"><span class="section-name">Projects</span></div>
-      <div class="projects-grid">
-        <article class="project-card project-featured">
-          <img src="assets/projects/anystudio.jpg" alt="AnyStudio" class="project-img">
-          <div class="project-content">
-            <span class="project-tag">Rust &nbsp;&#183;&nbsp; egui &nbsp;&#183;&nbsp; Android &nbsp;&#183;&nbsp; No JDK</span>
-            <h3 class="project-headline">AnyStudio: The Android IDE That Doesn&rsquo;t Need Java</h3>
-            <p class="project-body">A native desktop IDE written entirely in Rust using egui for building Android apps. Produces APKs via a direct DEX pipeline &mdash; bypassing the JDK entirely. Built to eliminate toolchain bloat.</p>
-            <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="project-link">View Project &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects/webelo.jpg" alt="Webelo" class="project-img">
-          <div class="project-content">
-            <span class="project-tag">C++ &nbsp;&#183;&nbsp; WhatWG DOM &nbsp;&#183;&nbsp; Browser Engine</span>
-            <h3 class="project-headline">Webelo: A Browser Engine, Built from Spec</h3>
-            <p class="project-body">C++ DOM library and HTML visualizer following the WhatWG Living Standard &mdash; event dispatch, preorder DFS, strict spec compliance. Foundation for a full browser.</p>
-            <a href="https://github.com/YogyaChugh/Webelo" target="_blank" rel="noopener" class="project-link">View Project &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects/vardhman.jpg" alt="Vardhman Saathi" class="project-img">
-          <div class="project-content">
-            <span class="project-tag">TypeScript &nbsp;&#183;&nbsp; Electron &nbsp;&#183;&nbsp; Hono &nbsp;&#183;&nbsp; Supabase</span>
-            <h3 class="project-headline">Vardhman Saathi: Production on $7/Month</h3>
-            <p class="project-body">Full business suite for a salesperson credit system &mdash; desktop and Android apps sharing one TypeScript codebase. Running live on near-zero infrastructure cost.</p>
-            <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener" class="project-link">Visit Site &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects/django-oss.jpg" alt="Django Open Source" class="project-img">
-          <div class="project-content">
-            <span class="project-tag">Python &nbsp;&#183;&nbsp; Django &nbsp;&#183;&nbsp; Open Source</span>
-            <h3 class="project-headline">Merged into Django Core</h3>
-            <p class="project-body">Fixed Ticket 36271 &mdash; PRs merged into Django and third-party libraries. Code now ships in production for millions of developers worldwide.</p>
-            <a href="https://github.com/django/django/pulls?q=is%3Apr+author%3Ayogyachugh+" target="_blank" rel="noopener" class="project-link">View PRs &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects/agrolens.jpg" alt="AgroLens" class="project-img">
-          <div class="project-content">
-            <span class="project-tag">Python &nbsp;&#183;&nbsp; Computer Vision &nbsp;&#183;&nbsp; ML</span>
-            <h3 class="project-headline">AgroLens: AI Plant Disease Detection</h3>
-            <p class="project-body">Computer-vision model classifying plant-leaf diseases &mdash; full dataset pipeline, model training, and deployment included.</p>
-            <a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank" rel="noopener" class="project-link">View Project &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="assets/projects/timberly.jpg" alt="Timberly" class="project-img">
-          <div class="project-content">
-            <span class="project-tag">Game Dev &nbsp;&#183;&nbsp; Multiplayer &nbsp;&#183;&nbsp; Browser</span>
-            <h3 class="project-headline">Timberly: Multiplayer Lumberjack in the Browser</h3>
-            <p class="project-body">Casual lumberjack game with real-time multiplayer &mdash; playable in-browser with downloads for Windows, macOS, and Linux.</p>
-            <a href="https://yogya-chugh.itch.io/timberly" target="_blank" rel="noopener" class="project-link">Play Now &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card project-small">
-          <div class="project-content">
-            <span class="project-tag">Python &nbsp;&#183;&nbsp; Web Crawler</span>
-            <h3 class="project-headline">Webber</h3>
-            <p class="project-body">Desktop crawler that downloads any website for offline rendering &mdash; Pygame, PyWebview, BeautifulSoup.</p>
-            <a href="https://github.com/YogyaChugh/Webber" target="_blank" rel="noopener" class="project-link">View &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card project-small">
-          <div class="project-content">
-            <span class="project-tag">Browser Game</span>
-            <h3 class="project-headline">Snake Hustle</h3>
-            <p class="project-body">The OG obsession &mdash; browser-based snake game, playable in one click.</p>
-            <a href="https://snakehustle.netlify.app" target="_blank" rel="noopener" class="project-link">Play &#8594;</a>
-          </div>
-        </article>
-        <article class="project-card project-small">
-          <img src="assets/projects/sih-travel.jpg" alt="SIH Travel Security" class="project-img project-img-small">
-          <div class="project-content">
-            <span class="project-tag">Blockchain &nbsp;&#183;&nbsp; Security</span>
-            <h3 class="project-headline">SIH Travel Security</h3>
-            <p class="project-body">Blockchain system for encrypted tourist tracking with SSO to local authorities.</p>
-            <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="project-link">View &#8594;</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- WRITING -->
-    <section id="writing" class="newspaper-section reveal">
-      <div class="section-divider"><span class="section-name">From the Desk</span></div>
-      <div class="writing-grid">
-        <article class="article-card article-featured">
-          <div class="article-label">Feature</div>
-          <h3 class="article-headline">My First Open Source Contribution</h3>
-          <p class="article-dateline">Django Codebase &nbsp;&#183;&nbsp; August 2024</p>
-          <p class="article-body">Contributing to a massive open-source project like Django can feel intimidating. The codebase is enormous, the maintainers are brilliant &mdash; and my first PR taught me what open source collaboration really means.</p>
-          <blockquote class="pull-quote">&ldquo;The hardest part wasn&rsquo;t writing the code; it was ensuring the fix was robust enough for thousands of developers.&rdquo;</blockquote>
-          <p class="article-body">After finding Ticket 36271, diving into Django&rsquo;s internals, and working with core maintainer Sarah Boyce &mdash; the magical word appeared: <strong>&ldquo;Merged.&rdquo;</strong></p>
-          <a href="blogs/first_open_source.html" class="article-link">Read Full Story &#8594;</a>
-        </article>
-        <article class="article-card">
-          <div class="article-label">Feature</div>
-          <h3 class="article-headline">450 Hours, 4 Ships, One Laptop</h3>
-          <p class="article-dateline">Hack Club Summer of Making &nbsp;&#183;&nbsp; Summer 2025</p>
-          <p class="article-body">One random email from GitHub changed an entire summer &mdash; and ended with a free RTX 5070 laptop and 6,612 earned shells.</p>
-          <a href="blogs/summer_of_making.html" class="article-link">Read Full Story &#8594;</a>
-        </article>
-        <article class="article-card">
-          <div class="article-label">Technical Deep-Dive</div>
-          <h3 class="article-headline">How I Cracked the DEX Code</h3>
-          <p class="article-dateline">AnyStudio &nbsp;&#183;&nbsp; In Progress</p>
-          <p class="article-body">Building AnyStudio&rsquo;s direct DEX pipeline &mdash; bypassing the JDK entirely to compile the smallest possible Android APKs straight from Rust.</p>
-          <a href="blogs/classes_dex.html" class="article-link">Read Full Story &#8594;</a>
-        </article>
-        <article class="article-card">
-          <div class="article-label">Technical Deep-Dive</div>
-          <h3 class="article-headline">Implementing the WhatWG DOM in C++</h3>
-          <p class="article-dateline">Webelo &nbsp;&#183;&nbsp; In Progress</p>
-          <p class="article-body">Preorder DFS, event dispatch, and the parts of the spec nobody warns you about &mdash; building Webelo&rsquo;s DOM engine strictly to the Living Standard.</p>
-          <a href="blogs/whatwg_dom.html" class="article-link">Read Full Story &#8594;</a>
-        </article>
-        <article class="article-card">
-          <div class="article-label">Case Study</div>
-          <h3 class="article-headline">Running a Real Product on $7/Month</h3>
-          <p class="article-dateline">Vardhman Electricals &nbsp;&#183;&nbsp; 2025&ndash;2026</p>
-          <p class="article-body">How Vardhman Saathi stays alive on free tiers &mdash; Supabase, Cloudflare R2, Render &mdash; a full production product that costs next to nothing to run.</p>
-          <a href="blogs/vardhman.html" class="article-link">Read Full Story &#8594;</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="newspaper-section reveal">
-      <div class="section-divider"><span class="section-name">The Record</span></div>
-      <div class="experience-grid">
-        <div class="exp-col">
-          <h3 class="exp-col-head">Employment</h3>
-          <div class="exp-item">
-            <div class="exp-date">Jun 2026 &ndash; Present</div>
-            <h4>Freelance Mobile App Developer</h4>
-            <p>Shipping an iOS + Android app with full authentication and delivery pipeline. Stack: React Native, Supabase, PostgreSQL.</p>
-          </div>
-          <div class="exp-item">
-            <div class="exp-date">Nov 2025 &ndash; Jun 2026</div>
-            <h4>Vardhman Electricals</h4>
-            <p>Built a full business suite and salesperson credit system from scratch. Stack: TypeScript, Electron, Hono. Running on $7/month infrastructure.</p>
-          </div>
-        </div>
-        <div class="exp-col">
-          <h3 class="exp-col-head">Honours &amp; Awards</h3>
-          <div class="exp-item">
-            <div class="exp-date">Summer 2025</div>
-            <h4>Hack Club Summer of Making</h4>
-            <p>Top earner &mdash; 6,612 shells, ~$1,322 grant. Awarded GIGABYTE AERO X16 (Ryzen AI 7, RTX 5070, 32GB DDR5, 1TB SSD).</p>
-          </div>
-          <div class="exp-item">
-            <div class="exp-date">2024</div>
-            <h4>International Hackathon Placements</h4>
-            <p>3rd place &mdash; Cyber AI Hackathon (University of Derby, UK).<br>3rd place &mdash; Agentic AI Hackathon (Ulster University, UK).</p>
-          </div>
-        </div>
-        <div class="exp-col">
-          <h3 class="exp-col-head">Education</h3>
-          <div class="exp-item">
-            <div class="exp-date">2023 &ndash; 2027</div>
-            <h4>Panipat Institute of Engineering &amp; Technology</h4>
-            <p>B.Tech in Computer Science Engineering. Class of 2027.</p>
-          </div>
-          <div class="exp-item">
-            <div class="exp-date">Open Source</div>
-            <h4>Django Core Contributor</h4>
-            <p>Merged pull requests into Django core &mdash; code running in production for millions worldwide.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="newspaper-section reveal">
-      <div class="section-divider"><span class="section-name">Contact the Correspondent</span></div>
-      <div class="contact-grid">
-        <div class="contact-classified">
-          <div class="classified-header">&mdash; CLASSIFIED &mdash;</div>
-          <h3 class="classified-title">SEEKING: SDE INTERNSHIP OPPORTUNITY</h3>
-          <p class="classified-body">Experienced systems developer (Rust, C++, TypeScript, Python) available for immediate engagement. Specialises in native desktop tools, browser engine internals, Android toolchain, and full-stack web products. Ships production-grade software solo. No ego. All output.</p>
-          <p class="classified-note">Respond to this notice via any channel opposite.</p>
-        </div>
-        <div class="contact-details">
-          <div class="contact-row"><span class="contact-label">Email</span><a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a></div>
-          <div class="contact-row"><span class="contact-label">GitHub</span><a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">@YogyaChugh</a></div>
-          <div class="contact-row"><span class="contact-label">LinkedIn</span><a href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener">@yogyachugh</a></div>
-          <div class="contact-row"><span class="contact-label">Instagram</span><a href="https://instagram.com/opyogaychugh" target="_blank" rel="noopener">@opyogaychugh</a></div>
-          <div class="contact-row"><span class="contact-label">Mobile</span><a href="tel:+919650029959">+91-9650029959</a></div>
-          <div class="contact-row"><span class="contact-label">R&eacute;sum&eacute;</span><a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener">View Document &#8599;</a></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="newspaper-footer">
-    <div class="footer-rule-thick"></div>
-    <div class="footer-inner">
-      <span>&copy; 2026 Yogya Chugh &nbsp;&#183;&nbsp; All rights reserved.</span>
-      <span><a href="https://www.flaticon.com/free-icons/suit" title="suit icons" target="_blank" rel="noreferrer">Suit icons created by andinur &mdash; Flaticon</a></span>
+    <div class="achievement-item">
+      <div class="achievement-num">$1,322</div>
+      <div class="achievement-label">Hardware grant won (6,612 shells). Got a GIGABYTE AERO X16 with RTX 5070</div>
     </div>
-  </footer>
+    <div class="achievement-item">
+      <div class="achievement-num">2&times; 3rd</div>
+      <div class="achievement-label">Hackathon podiums &mdash; Cyber AI (Derby, UK) &amp; Agentic AI (Ulster, UK)</div>
+    </div>
+    <div class="achievement-item">
+      <div class="achievement-num">$7/mo</div>
+      <div class="achievement-label">Infrastructure cost for a full production business suite (Vardhman Saathi)</div>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="contact-mini">
+      <div class="contact-mini-title">Contact</div>
+      <div class="contact-mini-item">&#9993; <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a></div>
+      <div class="contact-mini-item">&#128222; <a href="tel:+919650029959">+91-9650029959</a></div>
+      <div class="contact-mini-item">&#128279; <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">github.com/YogyaChugh</a></div>
+      <div class="contact-mini-item">&#128279; <a href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener">linkedin.com/in/yogyachugh</a></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BELOW FOLD -->
+
+<!-- EXPERIENCE -->
+<div class="front-section reveal">
+  <div class="front-section-header">
+    <span class="front-section-title">Experience &amp; Background</span>
+    <span class="front-section-rule"></span>
+    <a href="contact.html" class="front-section-more">Hire &rarr;</a>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-period">JUN 2026 &ndash; PRESENT</div>
+      <div class="exp-role">Freelance Mobile Developer</div>
+      <div class="exp-org">Independent &middot; Delhi, India</div>
+      <div class="exp-desc">Building cross-platform mobile applications for clients using React Native, Supabase, and PostgreSQL. Full-stack from database schema to App Store deployment.</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-period">NOV 2025 &ndash; JUN 2026</div>
+      <div class="exp-role">Software Developer</div>
+      <div class="exp-org">Vardhman Electricals &middot; Delhi, India</div>
+      <div class="exp-desc">Built Vardhman Saathi &mdash; a full business suite with desktop app (Electron), mobile client, and backend (Hono) running on $7/month infrastructure. Used by field staff daily.</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-period">SUMMER 2025</div>
+      <div class="exp-role">Hack Club &mdash; Summer of Making</div>
+      <div class="exp-org">Hack Club (Remote) &middot; 450+ Hours</div>
+      <div class="exp-desc">Shipped 5 projects over 3 months. Earned 6,612 shells ($1,322 grant), placing among top coders by hours. Won a GIGABYTE AERO X16 (Ryzen AI 7, RTX 5070, 32GB DDR5, 1TB SSD).</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-period">2023 &ndash; 2027</div>
+      <div class="exp-role">B.Tech Computer Science</div>
+      <div class="exp-org">PIET &middot; Panipat, Haryana</div>
+      <div class="exp-desc">Class of 2027. Focusing on systems programming, compilers, and low-level software engineering alongside coursework.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ornament reveal">&#10022; &mdash; &#10022; &mdash; &#10022;</div>
+
+<!-- FEATURED PROJECT -->
+<div class="front-section reveal">
+  <div class="front-section-header">
+    <span class="front-section-title">Featured Project</span>
+    <span class="front-section-rule"></span>
+    <a href="projects.html" class="front-section-more">All Projects &rarr;</a>
+  </div>
+  <a href="projects.html" class="project-featured" style="text-decoration:none; display:grid;">
+    <img src="assets/projects/anystudio.jpg" alt="AnyStudio IDE" class="project-featured-img">
+    <div class="project-featured-body">
+      <span class="project-category">Systems &nbsp;&middot;&nbsp; Featured</span>
+      <div class="project-title">AnyStudio</div>
+      <p class="project-snippet">
+        A native desktop Android IDE written entirely in Rust with an egui interface. The headline feature: a direct DEX compilation pipeline that bypasses the JDK entirely &mdash; producing the smallest possible APKs without installing a 500MB Java runtime. No JDK. No Gradle. Just Rust.
+      </p>
+      <div class="project-tech">
+        <span class="stack-tag">Rust</span>
+        <span class="stack-tag">egui</span>
+        <span class="stack-tag">Android</span>
+        <span class="stack-tag">DEX</span>
+        <span class="stack-tag">Bytecode</span>
+      </div>
+      <span class="project-link">View on GitHub &#8599;</span>
+    </div>
+  </a>
+</div>
+
+<div class="ornament reveal">&#10022; &mdash; &#10022; &mdash; &#10022;</div>
+
+<!-- LATEST WRITING -->
+<div class="front-section reveal">
+  <div class="front-section-header">
+    <span class="front-section-title">From the Desk</span>
+    <span class="front-section-rule"></span>
+    <a href="writing.html" class="front-section-more">All Writing &rarr;</a>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.5rem;">
+    <div class="writing-card">
+      <div class="writing-card-date">SUMMER 2025</div>
+      <div class="writing-card-title"><a href="blogs/summer_of_making.html" style="color: inherit;">450 Hours, 4 Ships, One Laptop</a></div>
+      <p class="writing-card-excerpt">What three months of non-stop building during Hack Club Summer of Making actually looks like &mdash; the grind, the shells, and the dream laptop.</p>
+    </div>
+    <div class="writing-card">
+      <div class="writing-card-date">AUGUST 2024</div>
+      <div class="writing-card-title"><a href="blogs/first_open_source.html" style="color: inherit;">My First Open Source Contribution</a></div>
+      <p class="writing-card-excerpt">How I found Django Ticket 36271, wrote the fix, worked with maintainer Sarah Boyce, and landed my first merged pull request into a framework used by millions.</p>
+    </div>
+    <div class="writing-card">
+      <div class="writing-card-date">IN PROGRESS</div>
+      <div class="writing-card-title"><a href="blogs/classes_dex.html" style="color: inherit;">How I Cracked the DEX Code</a></div>
+      <p class="writing-card-excerpt">Building AnyStudio&rsquo;s direct DEX pipeline &mdash; bypassing the JDK entirely to compile Android APKs from Rust.</p>
+      <span class="writing-wip-badge">WIP</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  &copy; 2026 Yogya Chugh &nbsp;&middot;&nbsp; Suit icons created by andinur &mdash; <a href="https://www.flaticon.com/free-icons/suit" target="_blank" rel="noopener">Flaticon</a>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Update edition label in masthead meta
+  const el = document.getElementById('edition-label');
+  function updateLabel() {
+    if (el) el.textContent = document.documentElement.getAttribute('data-edition') === 'evening' ? 'Evening' : 'Day';
+  }
+  updateLabel();
+  document.getElementById('edition-toggle') && document.getElementById('edition-toggle').addEventListener('click', function(){ setTimeout(updateLabel, 50); });
+</script>
 </body>
 </html>

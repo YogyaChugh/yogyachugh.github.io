@@ -1,69 +1,48 @@
-﻿/* ================================================================
-   THE YOGYA GAZETTE — script.js
-   ================================================================ */
+﻿// The Yogya Gazette — script.js
+// Evening Edition toggle + scroll reveal
 
-'use strict';
+(function () {
+  'use strict';
 
-/* Edition date */
-const dateEl = document.getElementById('edition-date');
-if (dateEl) {
-  const d = new Date();
-  const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  dateEl.textContent = d.toLocaleDateString('en-GB', opts);
-}
+  // --- Edition Toggle ---
+  const html = document.documentElement;
+  const btn = document.getElementById('edition-toggle');
+  const KEY = 'gazette-edition';
 
-/* Evening Edition toggle */
-const toggleBtn = document.getElementById('edition-toggle');
-if (toggleBtn) {
-  const saved = localStorage.getItem('gazette-edition') || 'day';
-  document.documentElement.setAttribute('data-edition', saved);
-  updateToggle(saved);
-  toggleBtn.addEventListener('click', () => {
-    const cur  = document.documentElement.getAttribute('data-edition');
-    const next = cur === 'evening' ? 'day' : 'evening';
-    document.documentElement.setAttribute('data-edition', next);
-    localStorage.setItem('gazette-edition', next);
-    updateToggle(next);
-  });
-}
+  function applyEdition(edition) {
+    html.setAttribute('data-edition', edition);
+    if (btn) {
+      btn.textContent = edition === 'evening' ? '\u2600 Day Edition' : '\u263D Evening Edition';
+    }
+  }
 
-function updateToggle(ed) {
-  if (!toggleBtn) return;
-  toggleBtn.textContent = ed === 'evening' ? '\u2600 Day Edition' : '\u263E Evening Edition';
-}
+  const saved = localStorage.getItem(KEY) || 'day';
+  applyEdition(saved);
 
-/* Ticker: duplicate items for seamless loop */
-const tickerItems = document.getElementById('ticker-items');
-if (tickerItems) {
-  tickerItems.innerHTML += tickerItems.innerHTML;
-}
-
-/* Scroll reveal */
-const revealEls = document.querySelectorAll('.reveal');
-if (revealEls.length) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      const current = html.getAttribute('data-edition') || 'day';
+      const next = current === 'day' ? 'evening' : 'day';
+      localStorage.setItem(KEY, next);
+      applyEdition(next);
     });
-  }, { threshold: 0.08 });
-  revealEls.forEach(el => io.observe(el));
-}
+  }
 
-/* Smooth active nav highlighting */
-const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.masthead-nav a');
-if (sections.length && navLinks.length) {
-  const sio = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => a.classList.remove('active'));
-        const link = document.querySelector(`.masthead-nav a[href="#${e.target.id}"]`);
-        if (link) link.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  sections.forEach(s => sio.observe(s));
-}
+  // --- Scroll Reveal ---
+  const revealEls = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+})();

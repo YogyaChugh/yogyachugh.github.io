@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Running a Real Product on $7/Month — The Yogya Gazette</title>
-  <meta name="description" content="How Vardhman Saathi stays alive on Supabase, Cloudflare R2, and Render — a full production product that costs next to nothing.">
+  <title>Running a Real Product on $7/Month &mdash; The Yogya Gazette</title>
+  <meta name="description" content="How Vardhman Saathi stays alive on Supabase, Cloudflare R2, and Render &mdash; a full production product that costs next to nothing.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,36 +12,47 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <div class="ticker-bar">
-    <span class="ticker-label">GAZETTE</span>
-    <div class="ticker-track"><div class="ticker-items" id="ticker-items"><span>You are reading The Yogya Gazette</span><span class="ticker-sep">&#9670;</span><span>Vardhman Saathi: production business suite on $7/month</span><span class="ticker-sep">&#9670;</span><span>This article is currently being written</span><span class="ticker-sep">&#9670;</span></div></div>
+
+<nav class="top-nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">The Yogya Gazette</a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Front Page</a>
+      <a href="../projects.html" class="nav-link">Projects</a>
+      <a href="../writing.html" class="nav-link">Writing</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" class="nav-link nav-link--resume" target="_blank" rel="noopener">R&eacute;sum&eacute; &#8599;</a>
+    </div>
+    <button class="edition-toggle" id="edition-toggle">&#9789; Evening Edition</button>
   </div>
-  <div class="blog-masthead-bar">
-    <a href="../index.html" class="blog-back">&#8592; Return to Front Page</a>
-    <a href="../index.html">The Yogya Gazette</a>
-  </div>
-  <div class="blog-page">
-    <header class="blog-header">
-      <span class="blog-section-label">Case Study &nbsp;&#183;&nbsp; Vardhman Electricals</span>
-      <h1 class="blog-title">Running a Real Product on $7/Month</h1>
-      <p class="blog-dateline">Vardhman Electricals &nbsp;&#183;&nbsp; Nov 2025 &ndash; Jun 2026 &nbsp;&#183;&nbsp; By Yogya Chugh</p>
-      <div class="blog-rule"></div>
-    </header>
-    <article class="blog-body">
-      <p class="drop-cap"><strong>This article is currently being written.</strong> Check back soon for the full story.</p>
-      <p>The story of building Vardhman Saathi &mdash; a comprehensive business suite and salesperson credit system using TypeScript, Electron, and Hono &mdash; and running the entire product on $7/month infrastructure from November 2025 to June 2026.</p>
-      <blockquote>&ldquo;You don&rsquo;t need a data center. You need the right architecture.&rdquo;</blockquote>
-      <p>The stack: Supabase (database + auth), Cloudflare R2 (file storage), Render (backend hosting). Desktop app in Electron + TypeScript. Android app sharing the same codebase. Visit the live product at <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener">vardhmansaathi.shop &#8599;</a>.</p>
-    </article>
-    <footer class="blog-footer">
-      <span>&copy; 2026 Yogya Chugh</span>
-      <a href="../index.html">&#8592; Back to Front Page</a>
-    </footer>
-  </div>
-  <script>
-    const ti = document.getElementById('ticker-items'); if(ti) ti.innerHTML += ti.innerHTML;
-    const saved = localStorage.getItem('gazette-edition') || 'day';
-    document.documentElement.setAttribute('data-edition', saved);
-  </script>
+</nav>
+
+<div class="blog-masthead-bar">
+  <a href="../writing.html" class="blog-back">&#8592; Back to Writing</a>
+  <a href="../index.html" class="blog-gazette-link">The Yogya Gazette</a>
+</div>
+
+<div class="blog-page">
+  <header class="blog-header">
+    <span class="blog-section-label">Case Study &nbsp;&middot;&nbsp; Vardhman Electricals</span>
+    <h1 class="blog-title">Running a Real Product on $7/Month</h1>
+    <p class="blog-dateline">Vardhman Electricals &nbsp;&middot;&nbsp; Nov 2025 &ndash; Jun 2026 &nbsp;&middot;&nbsp; By Yogya Chugh</p>
+    <div class="blog-rule"></div>
+  </header>
+
+  <article class="blog-body">
+    <p class="drop-cap"><strong>This article is currently being written.</strong> Check back soon for the full story.</p>
+    <p>The story of building Vardhman Saathi &mdash; a comprehensive business suite and salesperson credit system using TypeScript, Electron, and Hono &mdash; and running the entire product on $7/month infrastructure from November 2025 to June 2026.</p>
+    <blockquote>&ldquo;You don&rsquo;t need a data center. You need the right architecture.&rdquo;</blockquote>
+    <p>The stack: Supabase (database + auth), Cloudflare R2 (file storage), Render (backend hosting). Desktop app in Electron + TypeScript. Android app sharing the same codebase. Visit the live product at <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener">vardhmansaathi.shop &#8599;</a>.</p>
+  </article>
+
+  <footer class="blog-footer">
+    <span>&copy; 2026 Yogya Chugh</span>
+    <a href="../writing.html">&#8592; Back to Writing</a>
+  </footer>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>
