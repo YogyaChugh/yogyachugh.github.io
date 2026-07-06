@@ -1,364 +1,351 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark-plus">
+﻿<!DOCTYPE html>
+<html lang="en" data-edition="day">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yogya Chugh</title>
-  <meta name="description" content="Yogya Chugh — Systems Developer &amp; Open Source Contributor. Explore my portfolio in a VS Code-style IDE.">
-  <meta name="keywords" content="Yogya Chugh, developer, portfolio, systems, Rust, TypeScript, C++">
+  <meta name="description" content="Yogya Chugh — Systems Developer and Open Source Contributor building IDEs in Rust, browser engines in C++, and shipping production software.">
+  <meta name="keywords" content="Yogya Chugh, developer, portfolio, systems, Rust, TypeScript, C++, Django">
+  <meta name="author" content="Yogya Chugh">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="Yogya Chugh">
-  <meta property="og:description" content="Systems Developer portfolio in a VS Code-style IDE">
+  <meta property="og:description" content="Systems Developer building IDEs in Rust, browser engines in C++, and production software.">
+  <meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="ide-container" id="ide-container">
 
-    <!-- Title Bar -->
-    <div class="title-bar">
-
-      <div class="title-center">
-        <span class="title-icon">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 3v5h5"/></svg>
-        </span>
-        <span class="title-text" id="title-text">about.md — Yogya Chugh — IDE Portfolio</span>
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <span class="ticker-label">BREAKING</span>
+    <div class="ticker-track">
+      <div class="ticker-items" id="ticker-items">
+        <span>Delhi developer, 19, builds full Android IDE in Rust with no JDK required</span>
+        <span class="ticker-sep">&#9670;</span>
+        <span>Hack Club Summer of Making: 450+ hours logged, $1,322 hardware grant awarded</span>
+        <span class="ticker-sep">&#9670;</span>
+        <span>Pull request merged into Django core — code now running for millions of developers</span>
+        <span class="ticker-sep">&#9670;</span>
+        <span>Webelo: C++ browser engine following WhatWG DOM Living Standard</span>
+        <span class="ticker-sep">&#9670;</span>
+        <span>Open to SDE internship opportunities — contact desk open</span>
+        <span class="ticker-sep">&#9670;</span>
+        <span>3rd place at Cyber AI Hackathon (Derby, UK) and Agentic AI Hackathon (Ulster, UK)</span>
+        <span class="ticker-sep">&#9670;</span>
       </div>
-    </div>
-
-    <!-- IDE Body -->
-    <div class="ide-body">
-
-      <!-- Activity Bar -->
-      <div class="activity-bar">
-        <div class="activity-icon active" data-sidebar="explorer" title="Explorer (Ctrl+Shift+E)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
-            <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"/>
-          </svg>
-        </div>
-        <div class="activity-icon" data-sidebar="search" title="Search (Ctrl+Shift+F)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.3-4.3"/>
-          </svg>
-        </div>
-        <div class="activity-icon" data-sidebar="source-control" id="sc-icon" title="Source Control (Ctrl+Shift+G)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M6 3v12"/>
-            <circle cx="18" cy="6" r="3"/>
-            <circle cx="6" cy="18" r="3"/>
-            <path d="M18 9a9 9 0 0 1-9 9"/>
-          </svg>
-        </div>
-        <div class="activity-icon" data-sidebar="extensions" title="Extensions (Ctrl+Shift+X)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-            <line x1="12" y1="22.08" x2="12" y2="12"/>
-          </svg>
-        </div>
-        <div style="flex:1"></div>
-        <div class="activity-icon" id="accounts-icon" title="Accounts">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Sidebar -->
-      <div class="sidebar" id="sidebar">
-
-        <!-- Explorer -->
-        <div id="sidebar-explorer" class="sidebar-view active">
-          <div class="sidebar-title">
-            EXPLORER
-            <div class="sidebar-title-actions">
-              <button class="sidebar-action-btn" title="New File">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-              </button>
-              <button class="sidebar-action-btn" title="New Folder">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
-              </button>
-              <button class="sidebar-action-btn" title="Refresh">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-              </button>
-            </div>
-          </div>
-          <div id="explorer-content">
-            <div class="workspace-root">
-              <div class="workspace-root-label">
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-                YOGYA_CHUGH
-              </div>
-            </div>
-            <!-- Profile Folder -->
-            <div class="folder-group expanded">
-              <div class="folder-title">
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-                <svg class="folder-icon open" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                profile
-              </div>
-              <ul class="file-list">
-                <li data-file="about.md" class="active"><span class="file-badge-wrap"></span>about.md</li>
-                <li data-file="experience.md"><span class="file-badge-wrap"></span>experience.md</li>
-                <li data-file="contact.md"><span class="file-badge-wrap"></span>contact.md</li>
-              </ul>
-            </div>
-            <!-- Projects Folder -->
-            <div class="folder-group expanded">
-              <div class="folder-title">
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-                <svg class="folder-icon open" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                projects
-              </div>
-              <ul class="file-list">
-                <li data-file="anystudio.md"><span class="file-badge-wrap"></span>anystudio.md</li>
-                <li data-file="webelo.md"><span class="file-badge-wrap"></span>webelo.md</li>
-                <li data-file="pippo.md"><span class="file-badge-wrap"></span>pippo.md</li>
-                <li data-file="vardhmansaathi.md"><span class="file-badge-wrap"></span>vardhmansaathi.md</li>
-                <li data-file="agrolens.md"><span class="file-badge-wrap"></span>agrolens.md</li>
-                <li data-file="snake_hustle.md"><span class="file-badge-wrap"></span>snake_hustle.md</li>
-                <li data-file="timberly.md"><span class="file-badge-wrap"></span>timberly.md</li>
-                <li data-file="webber.md"><span class="file-badge-wrap"></span>webber.md</li>
-                <li data-file="sih_travel_security.md"><span class="file-badge-wrap"></span>sih_travel_security.md</li>
-                <li data-file="django_open_source.md"><span class="file-badge-wrap"></span>django_open_source.md</li>
-              </ul>
-            </div>
-            <!-- Writing Folder -->
-            <div class="folder-group collapsed">
-              <div class="folder-title">
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-                <svg class="folder-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                writing
-              </div>
-              <ul class="file-list">
-                <li data-file="first_open_source.md"><span class="file-badge-wrap"></span>first_open_source.md</li>
-                <li data-file="summer_of_making.md"><span class="file-badge-wrap"></span>summer_of_making.md</li>
-                <li data-file="classes_dex.md"><span class="file-badge-wrap"></span>classes_dex.md</li>
-                <li data-file="whatwg_dom.md"><span class="file-badge-wrap"></span>whatwg_dom.md</li>
-                <li data-file="vardhman.md"><span class="file-badge-wrap"></span>vardhman.md</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Search -->
-        <div id="sidebar-search" class="sidebar-view">
-          <div class="sidebar-title">SEARCH</div>
-          <div class="search-section">
-            <div class="search-input-wrap">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" class="search-icon-inner"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="search-input" placeholder="Search files..." autocomplete="off" spellcheck="false">
-            </div>
-            <div id="search-results" class="search-results"></div>
-          </div>
-        </div>
-
-        <!-- Source Control -->
-        <div id="sidebar-source-control" class="sidebar-view">
-          <div class="sidebar-title">SOURCE CONTROL</div>
-          <div class="source-control-section">
-            <div class="repo-filter-wrap">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="repo-filter" placeholder="Filter repositories..." autocomplete="off" spellcheck="false">
-            </div>
-            <div id="sc-status" class="sc-status"></div>
-            <div id="repos-list" class="repos-list"></div>
-          </div>
-        </div>
-
-        <!-- Extensions -->
-        <div id="sidebar-extensions" class="sidebar-view">
-          <div class="sidebar-title">EXTENSIONS — INSTALLED</div>
-          <div class="extensions-section">
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#dea584;">RS</div>
-              <div class="ext-info">
-                <div class="ext-name">rust-analyzer</div>
-                <div class="ext-meta">matklad <span class="ext-stars">★ 4.2M</span></div>
-                <div class="ext-desc">Rust language support for Visual Studio Code</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#3178c6;">TS</div>
-              <div class="ext-info">
-                <div class="ext-name">TypeScript</div>
-                <div class="ext-meta">Microsoft <span class="ext-stars">★ 5.1M</span></div>
-                <div class="ext-desc">TypeScript and JavaScript language features</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#00599c;">C+</div>
-              <div class="ext-info">
-                <div class="ext-name">C/C++</div>
-                <div class="ext-meta">Microsoft <span class="ext-stars">★ 60.5M</span></div>
-                <div class="ext-desc">C/C++ IntelliSense, debugging, and code browsing</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#4b89c3;">MD</div>
-              <div class="ext-info">
-                <div class="ext-name">Markdown All in One</div>
-                <div class="ext-meta">yzhang <span class="ext-stars">★ 8.9M</span></div>
-                <div class="ext-desc">All you need to write Markdown</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#6B8E23;">{}</div>
-              <div class="ext-info">
-                <div class="ext-name">Prettier</div>
-                <div class="ext-meta">Prettier <span class="ext-stars">★ 42M</span></div>
-                <div class="ext-desc">Code formatter using prettier</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#89e051;">SH</div>
-              <div class="ext-info">
-                <div class="ext-name">ShellCheck</div>
-                <div class="ext-meta">timonwong <span class="ext-stars">★ 2.1M</span></div>
-                <div class="ext-desc">Integrates ShellCheck into VS Code</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#f14e32;">GL</div>
-              <div class="ext-info">
-                <div class="ext-name">GitLens</div>
-                <div class="ext-meta">GitKraken <span class="ext-stars">★ 38M</span></div>
-                <div class="ext-desc">Supercharge your Git workflow in VS Code</div>
-              </div>
-            </div>
-            <div class="extension-item">
-              <div class="ext-icon" style="background:#a855f7;">OD</div>
-              <div class="ext-info">
-                <div class="ext-name">One Dark Pro</div>
-                <div class="ext-meta">binaryify <span class="ext-stars">★ 12M</span></div>
-                <div class="ext-desc">Atom's iconic One Dark theme for VS Code</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- end sidebar -->
-
-      <!-- Editor Group -->
-      <div class="editor-group">
-        
-        <!-- Tabs Header -->
-        <div class="tabs-header">
-          <div class="tabs" id="tabs"></div>
-          <div class="editor-actions">
-            <button class="editor-action-btn" id="dl-zip-btn" title="Download Repository ZIP" style="display:none;">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </button>
-            <button class="editor-action-btn" id="md-toggle-btn" title="Toggle Markdown Source/Preview" style="display:none;">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-            </button>
-            <button class="editor-action-btn" title="More Actions">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Breadcrumb -->
-        <div class="breadcrumb" id="breadcrumb">
-          <span class="breadcrumb-item">YOGYA_CHUGH</span>
-          <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-          <span class="breadcrumb-item" id="breadcrumb-folder">profile</span>
-          <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-          <span class="breadcrumb-item active" id="breadcrumb-file">about.md</span>
-        </div>
-
-        <!-- Editor Viewport -->
-        <div class="editor-viewport">
-          <div class="line-numbers" id="line-numbers"></div>
-          <div class="code-area" id="code-area">
-            <pre><code id="code-content"></code></pre>
-          </div>
-        </div>
-
-      </div><!-- end editor-group -->
-
-    </div><!-- end ide-body -->
-
-    <!-- Status Bar -->
-    <div class="status-bar">
-      <div class="status-left">
-        <span class="status-item status-branch" id="branch-status" title="YogyaChugh/Portfolio — Click to open command palette">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;vertical-align:middle"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-          main*
-        </span>
-        <span class="status-item status-sync" title="Synchronize Changes">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle"><path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.5L21 8"/><path d="M21 3v5h-5"/></svg>
-        </span>
-        <span class="status-item status-errors" title="0 Errors, 0 Warnings">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-          0
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:4px;vertical-align:middle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-          0
-        </span>
-      </div>
-      <div class="status-right">
-        <span class="status-item"><a href="https://www.flaticon.com/free-icons/suit" title="suit icons" target="_blank" rel="noreferrer" style="color:inherit;text-decoration:none;">Suit icons created by andinur - Flaticon</a></span>
-        <span class="status-item" title="Read Only Mode">Read Only</span>
-        <span class="status-item status-theme" id="theme-btn" title="Change Color Theme">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
-        </span>
-      </div>
-    </div>
-
-  </div><!-- end ide-container -->
-
-  <!-- Command Palette Overlay -->
-  <div id="command-palette-overlay" class="command-palette-overlay" style="display:none;">
-    <div id="command-palette" class="command-palette">
-      <div class="command-input-wrap">
-        <input type="text" id="command-input" placeholder="Type '>' to show commands..." autocomplete="off" spellcheck="false">
-      </div>
-      <ul id="command-list" class="command-list"></ul>
     </div>
   </div>
 
-  <!-- Accounts Context Menu -->
-  <div id="accounts-menu" class="context-menu" style="display:none;">
-    <div class="menu-header">
-      <img class="menu-avatar" src="favicon.png" alt="YC">
-      <div>
-        <div class="menu-name">Yogya Chugh</div>
-        <div class="menu-sub">yogya.developer@gmail.com</div>
+  <!-- MASTHEAD -->
+  <header class="masthead" id="top">
+    <div class="masthead-meta-bar">
+      <div class="masthead-meta-l">Est. 2027 &nbsp;&#183;&nbsp; Delhi, India &nbsp;&#183;&nbsp; B.Tech CSE</div>
+      <div class="masthead-meta-c" id="edition-date">Loading edition&#8230;</div>
+      <div class="masthead-meta-r">Systems &amp; Software Edition &nbsp;&#183;&nbsp; Vol.&#8201;I No.&#8201;1</div>
+    </div>
+    <div class="masthead-title-wrap">
+      <button class="edition-toggle" id="edition-toggle">&#9790; Evening Edition</button>
+      <div class="mast-ornament">&#8213; &#10022; &#8213;</div>
+      <h1 class="masthead-title">The Yogya Gazette</h1>
+      <p class="masthead-tagline">All The Code That&rsquo;s Fit To Ship</p>
+      <div class="mast-ornament">&#8213; &#10022; &#8213;</div>
+    </div>
+    <nav class="masthead-nav">
+      <a href="#front-page">Front Page</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#experience">The Record</a>
+      <a href="#contact">Contact</a>
+      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener" class="nav-resume">R&eacute;sum&eacute; &#8599;</a>
+    </nav>
+  </header>
+
+  <main class="newspaper-main">
+
+    <!-- FRONT PAGE -->
+    <section id="front-page" class="newspaper-section front-page-section reveal">
+      <div class="front-grid">
+
+        <!-- LEFT -->
+        <div class="front-col front-col-bio">
+          <div class="col-label">Who Is He</div>
+          <h2 class="col-headline">Systems Developer. Builder. Open Source Contributor.</h2>
+          <p class="article-body drop-cap">Yogya Chugh is a 19-year-old Computer Science undergraduate at PIET (Class of 2027) building things most people assume require a team &mdash; IDEs in Rust, browser engines in C++, and production-grade software for real clients.</p>
+          <p class="article-body">Based in Delhi, he has shipped over nine projects spanning systems programming, game development, machine learning, and full-stack web &mdash; and has contributed merged pull requests into Django, used by millions of developers worldwide.</p>
+          <div class="stack-list">
+            <div class="stack-label">Languages on the Desk</div>
+            <div class="stack-tags">
+              <span class="stack-tag" style="--tc:#dea584">Rust</span>
+              <span class="stack-tag" style="--tc:#00599c">C++</span>
+              <span class="stack-tag" style="--tc:#3178c6">TypeScript</span>
+              <span class="stack-tag" style="--tc:#3572A5">Python</span>
+              <span class="stack-tag" style="--tc:#555555">C</span>
+              <span class="stack-tag" style="--tc:#336791">SQL</span>
+            </div>
+          </div>
+          <div class="stack-list" style="margin-top:0.75rem">
+            <div class="stack-label">Currently Building</div>
+            <p class="building-item">&#9657; <strong>AnyStudio</strong> &mdash; Android IDE in Rust (egui, direct DEX)</p>
+            <p class="building-item">&#9657; <strong>Webelo</strong> &mdash; C++ browser engine (WhatWG DOM)</p>
+          </div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="front-col front-col-hero">
+          <div class="hero-stamp">Open to Internships</div>
+          <figure class="profile-figure">
+            <img src="favicon.png" alt="Yogya Chugh" class="profile-photo">
+            <figcaption>Yogya Chugh, 19, systems developer &mdash; Delhi, India</figcaption>
+          </figure>
+          <h2 class="hero-headline">&ldquo;I Build IDEs for Fun &mdash; and Win Hardware Grants While at It.&rdquo;</h2>
+          <p class="hero-sub">Systems &amp; Software Developer &nbsp;&#183;&nbsp; Delhi, India</p>
+          <div class="hero-divider"></div>
+          <div class="contact-mini">
+            <a href="mailto:yogya.developer@gmail.com" class="contact-mini-link">&#9993; yogya.developer@gmail.com</a>
+            <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="contact-mini-link">&#9417; github.com/YogyaChugh</a>
+            <a href="tel:+919650029959" class="contact-mini-link">&#9742; +91-9650029959</a>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="front-col front-col-highlights">
+          <div class="col-label">Today&rsquo;s Highlights</div>
+          <div class="highlight-item">
+            <span class="hl-num">01</span>
+            <div class="hl-body"><strong>$1,322 Hardware Grant</strong><p>Top earner in Hack Club Summer of Making &mdash; 6,612 shells, 450+ tracked hours. Prize: GIGABYTE AERO X16 (Ryzen AI 7, RTX 5070, 32GB DDR5).</p></div>
+          </div>
+          <div class="highlight-item">
+            <span class="hl-num">02</span>
+            <div class="hl-body"><strong>AnyStudio: Android IDE in Rust</strong><p>Full native desktop IDE producing APKs via a direct DEX pipeline &mdash; no JDK required. Built from scratch in Rust + egui.</p></div>
+          </div>
+          <div class="highlight-item">
+            <span class="hl-num">03</span>
+            <div class="hl-body"><strong>Django Core Contributor</strong><p>Pull requests merged into Django, fixing Ticket 36271 &mdash; code now running for millions of developers worldwide.</p></div>
+          </div>
+          <div class="highlight-item">
+            <span class="hl-num">04</span>
+            <div class="hl-body"><strong>Webelo: Browser from Scratch</strong><p>C++ DOM library strictly implementing the WhatWG Living Standard &mdash; preorder DFS, event dispatch, full spec compliance.</p></div>
+          </div>
+          <div class="highlight-item">
+            <span class="hl-num">05</span>
+            <div class="hl-body"><strong>Production at $7/Month</strong><p>Shipped Vardhman Saathi &mdash; a full business suite on Supabase + Cloudflare R2 + Render, running live in production.</p></div>
+          </div>
+        </div>
+
       </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="newspaper-section reveal">
+      <div class="section-divider"><span class="section-name">Projects</span></div>
+      <div class="projects-grid">
+        <article class="project-card project-featured">
+          <img src="assets/projects/anystudio.jpg" alt="AnyStudio" class="project-img">
+          <div class="project-content">
+            <span class="project-tag">Rust &nbsp;&#183;&nbsp; egui &nbsp;&#183;&nbsp; Android &nbsp;&#183;&nbsp; No JDK</span>
+            <h3 class="project-headline">AnyStudio: The Android IDE That Doesn&rsquo;t Need Java</h3>
+            <p class="project-body">A native desktop IDE written entirely in Rust using egui for building Android apps. Produces APKs via a direct DEX pipeline &mdash; bypassing the JDK entirely. Built to eliminate toolchain bloat.</p>
+            <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="project-link">View Project &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="assets/projects/webelo.jpg" alt="Webelo" class="project-img">
+          <div class="project-content">
+            <span class="project-tag">C++ &nbsp;&#183;&nbsp; WhatWG DOM &nbsp;&#183;&nbsp; Browser Engine</span>
+            <h3 class="project-headline">Webelo: A Browser Engine, Built from Spec</h3>
+            <p class="project-body">C++ DOM library and HTML visualizer following the WhatWG Living Standard &mdash; event dispatch, preorder DFS, strict spec compliance. Foundation for a full browser.</p>
+            <a href="https://github.com/YogyaChugh/Webelo" target="_blank" rel="noopener" class="project-link">View Project &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="assets/projects/vardhman.jpg" alt="Vardhman Saathi" class="project-img">
+          <div class="project-content">
+            <span class="project-tag">TypeScript &nbsp;&#183;&nbsp; Electron &nbsp;&#183;&nbsp; Hono &nbsp;&#183;&nbsp; Supabase</span>
+            <h3 class="project-headline">Vardhman Saathi: Production on $7/Month</h3>
+            <p class="project-body">Full business suite for a salesperson credit system &mdash; desktop and Android apps sharing one TypeScript codebase. Running live on near-zero infrastructure cost.</p>
+            <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener" class="project-link">Visit Site &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="assets/projects/django-oss.jpg" alt="Django Open Source" class="project-img">
+          <div class="project-content">
+            <span class="project-tag">Python &nbsp;&#183;&nbsp; Django &nbsp;&#183;&nbsp; Open Source</span>
+            <h3 class="project-headline">Merged into Django Core</h3>
+            <p class="project-body">Fixed Ticket 36271 &mdash; PRs merged into Django and third-party libraries. Code now ships in production for millions of developers worldwide.</p>
+            <a href="https://github.com/django/django/pulls?q=is%3Apr+author%3Ayogyachugh+" target="_blank" rel="noopener" class="project-link">View PRs &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="assets/projects/agrolens.jpg" alt="AgroLens" class="project-img">
+          <div class="project-content">
+            <span class="project-tag">Python &nbsp;&#183;&nbsp; Computer Vision &nbsp;&#183;&nbsp; ML</span>
+            <h3 class="project-headline">AgroLens: AI Plant Disease Detection</h3>
+            <p class="project-body">Computer-vision model classifying plant-leaf diseases &mdash; full dataset pipeline, model training, and deployment included.</p>
+            <a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank" rel="noopener" class="project-link">View Project &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="assets/projects/timberly.jpg" alt="Timberly" class="project-img">
+          <div class="project-content">
+            <span class="project-tag">Game Dev &nbsp;&#183;&nbsp; Multiplayer &nbsp;&#183;&nbsp; Browser</span>
+            <h3 class="project-headline">Timberly: Multiplayer Lumberjack in the Browser</h3>
+            <p class="project-body">Casual lumberjack game with real-time multiplayer &mdash; playable in-browser with downloads for Windows, macOS, and Linux.</p>
+            <a href="https://yogya-chugh.itch.io/timberly" target="_blank" rel="noopener" class="project-link">Play Now &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card project-small">
+          <div class="project-content">
+            <span class="project-tag">Python &nbsp;&#183;&nbsp; Web Crawler</span>
+            <h3 class="project-headline">Webber</h3>
+            <p class="project-body">Desktop crawler that downloads any website for offline rendering &mdash; Pygame, PyWebview, BeautifulSoup.</p>
+            <a href="https://github.com/YogyaChugh/Webber" target="_blank" rel="noopener" class="project-link">View &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card project-small">
+          <div class="project-content">
+            <span class="project-tag">Browser Game</span>
+            <h3 class="project-headline">Snake Hustle</h3>
+            <p class="project-body">The OG obsession &mdash; browser-based snake game, playable in one click.</p>
+            <a href="https://snakehustle.netlify.app" target="_blank" rel="noopener" class="project-link">Play &#8594;</a>
+          </div>
+        </article>
+        <article class="project-card project-small">
+          <img src="assets/projects/sih-travel.jpg" alt="SIH Travel Security" class="project-img project-img-small">
+          <div class="project-content">
+            <span class="project-tag">Blockchain &nbsp;&#183;&nbsp; Security</span>
+            <h3 class="project-headline">SIH Travel Security</h3>
+            <p class="project-body">Blockchain system for encrypted tourist tracking with SSO to local authorities.</p>
+            <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" class="project-link">View &#8594;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing" class="newspaper-section reveal">
+      <div class="section-divider"><span class="section-name">From the Desk</span></div>
+      <div class="writing-grid">
+        <article class="article-card article-featured">
+          <div class="article-label">Feature</div>
+          <h3 class="article-headline">My First Open Source Contribution</h3>
+          <p class="article-dateline">Django Codebase &nbsp;&#183;&nbsp; August 2024</p>
+          <p class="article-body">Contributing to a massive open-source project like Django can feel intimidating. The codebase is enormous, the maintainers are brilliant &mdash; and my first PR taught me what open source collaboration really means.</p>
+          <blockquote class="pull-quote">&ldquo;The hardest part wasn&rsquo;t writing the code; it was ensuring the fix was robust enough for thousands of developers.&rdquo;</blockquote>
+          <p class="article-body">After finding Ticket 36271, diving into Django&rsquo;s internals, and working with core maintainer Sarah Boyce &mdash; the magical word appeared: <strong>&ldquo;Merged.&rdquo;</strong></p>
+          <a href="blogs/first_open_source.html" class="article-link">Read Full Story &#8594;</a>
+        </article>
+        <article class="article-card">
+          <div class="article-label">Feature</div>
+          <h3 class="article-headline">450 Hours, 4 Ships, One Laptop</h3>
+          <p class="article-dateline">Hack Club Summer of Making &nbsp;&#183;&nbsp; Summer 2025</p>
+          <p class="article-body">One random email from GitHub changed an entire summer &mdash; and ended with a free RTX 5070 laptop and 6,612 earned shells.</p>
+          <a href="blogs/summer_of_making.html" class="article-link">Read Full Story &#8594;</a>
+        </article>
+        <article class="article-card">
+          <div class="article-label">Technical Deep-Dive</div>
+          <h3 class="article-headline">How I Cracked the DEX Code</h3>
+          <p class="article-dateline">AnyStudio &nbsp;&#183;&nbsp; In Progress</p>
+          <p class="article-body">Building AnyStudio&rsquo;s direct DEX pipeline &mdash; bypassing the JDK entirely to compile the smallest possible Android APKs straight from Rust.</p>
+          <a href="blogs/classes_dex.html" class="article-link">Read Full Story &#8594;</a>
+        </article>
+        <article class="article-card">
+          <div class="article-label">Technical Deep-Dive</div>
+          <h3 class="article-headline">Implementing the WhatWG DOM in C++</h3>
+          <p class="article-dateline">Webelo &nbsp;&#183;&nbsp; In Progress</p>
+          <p class="article-body">Preorder DFS, event dispatch, and the parts of the spec nobody warns you about &mdash; building Webelo&rsquo;s DOM engine strictly to the Living Standard.</p>
+          <a href="blogs/whatwg_dom.html" class="article-link">Read Full Story &#8594;</a>
+        </article>
+        <article class="article-card">
+          <div class="article-label">Case Study</div>
+          <h3 class="article-headline">Running a Real Product on $7/Month</h3>
+          <p class="article-dateline">Vardhman Electricals &nbsp;&#183;&nbsp; 2025&ndash;2026</p>
+          <p class="article-body">How Vardhman Saathi stays alive on free tiers &mdash; Supabase, Cloudflare R2, Render &mdash; a full production product that costs next to nothing to run.</p>
+          <a href="blogs/vardhman.html" class="article-link">Read Full Story &#8594;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="newspaper-section reveal">
+      <div class="section-divider"><span class="section-name">The Record</span></div>
+      <div class="experience-grid">
+        <div class="exp-col">
+          <h3 class="exp-col-head">Employment</h3>
+          <div class="exp-item">
+            <div class="exp-date">Jun 2026 &ndash; Present</div>
+            <h4>Freelance Mobile App Developer</h4>
+            <p>Shipping an iOS + Android app with full authentication and delivery pipeline. Stack: React Native, Supabase, PostgreSQL.</p>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Nov 2025 &ndash; Jun 2026</div>
+            <h4>Vardhman Electricals</h4>
+            <p>Built a full business suite and salesperson credit system from scratch. Stack: TypeScript, Electron, Hono. Running on $7/month infrastructure.</p>
+          </div>
+        </div>
+        <div class="exp-col">
+          <h3 class="exp-col-head">Honours &amp; Awards</h3>
+          <div class="exp-item">
+            <div class="exp-date">Summer 2025</div>
+            <h4>Hack Club Summer of Making</h4>
+            <p>Top earner &mdash; 6,612 shells, ~$1,322 grant. Awarded GIGABYTE AERO X16 (Ryzen AI 7, RTX 5070, 32GB DDR5, 1TB SSD).</p>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">2024</div>
+            <h4>International Hackathon Placements</h4>
+            <p>3rd place &mdash; Cyber AI Hackathon (University of Derby, UK).<br>3rd place &mdash; Agentic AI Hackathon (Ulster University, UK).</p>
+          </div>
+        </div>
+        <div class="exp-col">
+          <h3 class="exp-col-head">Education</h3>
+          <div class="exp-item">
+            <div class="exp-date">2023 &ndash; 2027</div>
+            <h4>Panipat Institute of Engineering &amp; Technology</h4>
+            <p>B.Tech in Computer Science Engineering. Class of 2027.</p>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Open Source</div>
+            <h4>Django Core Contributor</h4>
+            <p>Merged pull requests into Django core &mdash; code running in production for millions worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="newspaper-section reveal">
+      <div class="section-divider"><span class="section-name">Contact the Correspondent</span></div>
+      <div class="contact-grid">
+        <div class="contact-classified">
+          <div class="classified-header">&mdash; CLASSIFIED &mdash;</div>
+          <h3 class="classified-title">SEEKING: SDE INTERNSHIP OPPORTUNITY</h3>
+          <p class="classified-body">Experienced systems developer (Rust, C++, TypeScript, Python) available for immediate engagement. Specialises in native desktop tools, browser engine internals, Android toolchain, and full-stack web products. Ships production-grade software solo. No ego. All output.</p>
+          <p class="classified-note">Respond to this notice via any channel opposite.</p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-row"><span class="contact-label">Email</span><a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a></div>
+          <div class="contact-row"><span class="contact-label">GitHub</span><a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">@YogyaChugh</a></div>
+          <div class="contact-row"><span class="contact-label">LinkedIn</span><a href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener">@yogyachugh</a></div>
+          <div class="contact-row"><span class="contact-label">Instagram</span><a href="https://instagram.com/opyogaychugh" target="_blank" rel="noopener">@opyogaychugh</a></div>
+          <div class="contact-row"><span class="contact-label">Mobile</span><a href="tel:+919650029959">+91-9650029959</a></div>
+          <div class="contact-row"><span class="contact-label">R&eacute;sum&eacute;</span><a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener">View Document &#8599;</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="newspaper-footer">
+    <div class="footer-rule-thick"></div>
+    <div class="footer-inner">
+      <span>&copy; 2026 Yogya Chugh &nbsp;&#183;&nbsp; All rights reserved.</span>
+      <span><a href="https://www.flaticon.com/free-icons/suit" title="suit icons" target="_blank" rel="noreferrer">Suit icons created by andinur &mdash; Flaticon</a></span>
     </div>
-    <div class="menu-divider"></div>
-    <div class="menu-item"><a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-      GitHub: @YogyaChugh
-    </a></div>
-    <div class="menu-item"><a href="mailto:yogya.developer@gmail.com">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px;vertical-align:middle"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Email: yogya.developer@gmail.com
-    </a></div>
-    <div class="menu-item"><a href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn: @yogyachugh
-    </a></div>
-    <div class="menu-item"><a href="https://instagram.com/yogyachugh" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-      Instagram: @yogyachugh
-    </a></div>
-    <div class="menu-item"><a href="https://dev.to/yogyachugh" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="margin-right:8px;vertical-align:middle"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.29zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"/></svg>
-      Dev.to: @yogyachugh
-    </a></div>
-    <div class="menu-divider"></div>
-    <div class="menu-item menu-item-plain">
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px;vertical-align:middle"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Mobile: +91-XXXXXXXXXX
-    </div>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

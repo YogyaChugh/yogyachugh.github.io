@@ -1,65 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-edition="day">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My First Open Source Contribution - Yogya Chugh</title>
-  <meta name="description" content="Contributing to a massive open-source project like Django can feel intimidating. Here's how I landed my first merged PR.">
+  <title>My First Open Source Contribution — The Yogya Gazette</title>
+  <meta name="description" content="How I found Django Ticket 36271, wrote the fix, worked with maintainer Sarah Boyce, and landed my first merged pull request.">
   <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <div class="grain"></div>
-
-  <div class="nav-container fade-up">
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../work.html">Work</a>
-      <a href="../projects.html">Projects</a>
-      <a href="../blog.html" class="active">Writing</a>
-    </nav>
+  <div class="ticker-bar">
+    <span class="ticker-label">GAZETTE</span>
+    <div class="ticker-track"><div class="ticker-items" id="ticker-items"><span>You are reading The Yogya Gazette</span><span class="ticker-sep">&#9670;</span><span>Django Ticket 36271 — merged into core</span><span class="ticker-sep">&#9670;</span><span>Open to SDE internship opportunities</span><span class="ticker-sep">&#9670;</span></div></div>
   </div>
-
-  <main>
-    <header class="fade-up">
-      <p class="meta-subtitle">Open Source • August 24, 2024</p>
-      <h1>My First Open Source Contribution.</h1>
+  <div class="blog-masthead-bar">
+    <a href="../index.html" class="blog-back">&#8592; Return to Front Page</a>
+    <a href="../index.html">The Yogya Gazette</a>
+  </div>
+  <div class="blog-page">
+    <header class="blog-header">
+      <span class="blog-section-label">Feature &nbsp;&#183;&nbsp; Open Source</span>
+      <h1 class="blog-title">My First Open Source Contribution</h1>
+      <p class="blog-dateline">Django Codebase &nbsp;&#183;&nbsp; August 24, 2024 &nbsp;&#183;&nbsp; By Yogya Chugh</p>
+      <div class="blog-rule"></div>
     </header>
-    
-    <article class="fade-up">
-      <p><strong>Contributing to a massive open-source project like Django can feel intimidating. The codebase is enormous, the maintainers are brilliant, and you're just hoping your pull request doesn't break something critical. But the open-source community is built on collaboration, and my first major contribution taught me exactly that.</strong></p>
-      
+    <article class="blog-body">
+      <p class="drop-cap"><strong>Contributing to a massive open-source project like Django can feel intimidating.</strong> The codebase is enormous, the maintainers are brilliant, and you&rsquo;re just hoping your pull request doesn&rsquo;t break something critical. But the open-source community is built on collaboration, and my first major contribution taught me exactly that.</p>
       <h2>Discovering Ticket 36271</h2>
-      <p>I was browsing the Django issue tracker when I came across <strong>Ticket 36271</strong>. It detailed a specific bug related to form rendering and widgets. Since I had some experience working with Django's forms in my own projects, I felt this was the perfect opportunity to dive in.</p>
-      
+      <p>I was browsing the Django issue tracker when I came across <strong>Ticket 36271</strong>. It detailed a specific bug related to form rendering and widgets. Since I had some experience working with Django&rsquo;s forms in my own projects, I felt this was the perfect opportunity to dive in.</p>
       <p>Setting up the local environment was the first hurdle. Django has a comprehensive test suite, and getting everything running smoothly required carefully reading through the contributing documentation. Once the tests were passing locally, I started tracing the execution path of the bug.</p>
-
-      <h2>Writing the Fix & Tests</h2>
-      <p>Locating the exact module causing the issue took some deep diving into the framework's internals. When I finally pinpointed the problem, the actual fix only required modifying a few lines of code. However, in open source, writing the code is only half the battle.</p>
-
-      <blockquote>
-        "The hardest part wasn't writing the code; it was ensuring the fix was robust enough for thousands of developers."
-      </blockquote>
-
-      <p>I had to write comprehensive test cases to prove the bug was fixed and ensure it wouldn't regress in the future. Django's existing tests were a great reference point, allowing me to model my assertions correctly.</p>
-      
+      <h2>Writing the Fix &amp; Tests</h2>
+      <p>Locating the exact module causing the issue took some deep diving into the framework&rsquo;s internals. When I finally pinpointed the problem, the actual fix only required modifying a few lines of code. However, in open source, writing the code is only half the battle.</p>
+      <blockquote>&ldquo;The hardest part wasn&rsquo;t writing the code; it was ensuring the fix was robust enough for thousands of developers.&rdquo;</blockquote>
+      <p>I had to write comprehensive test cases to prove the bug was fixed and ensure it wouldn&rsquo;t regress in the future. Django&rsquo;s existing tests were a great reference point, allowing me to model my assertions correctly.</p>
       <h2>The Review Process</h2>
       <p>Submitting the pull request was exhilarating. Within a few days, <strong>Sarah Boyce</strong>, a Django core developer and maintainer, reviewed my code. Working with a seasoned maintainer was incredibly insightful. She provided excellent feedback, requesting a minor adjustment to how the test case was structured.</p>
-      
-      <p>After pushing the requested changes, the checks passed, and the magical word appeared: <strong>"Merged."</strong> Seeing my code become part of a framework used by millions of developers worldwide was an unforgettable milestone.</p>
-
+      <p>After pushing the requested changes, the checks passed, and the magical word appeared: <strong>&ldquo;Merged.&rdquo;</strong> Seeing my code become part of a framework used by millions of developers worldwide was an unforgettable milestone.</p>
       <hr>
-
-      <p><em>You can read the full, original technical deep-dive on my <a href="https://medium.com/@yogya.developer/my-first-open-source-contribution-67c08b88e674" target="_blank" style="text-decoration: underline;">Medium blog ↗</a>.</em></p>
+      <p><em>You can read the full original technical deep-dive on my <a href="https://medium.com/@yogya.developer/my-first-open-source-contribution-67c08b88e674" target="_blank" rel="noopener">Medium blog &#8599;</a>.</em></p>
     </article>
-
-  </main>
-
-  <footer class="fade-up">
-    <p>© 2026 Yogya Chugh. All rights reserved.</p>
-  </footer>
-
-  <script src="../script.js"></script>
+    <footer class="blog-footer">
+      <span>&copy; 2026 Yogya Chugh</span>
+      <a href="../index.html">&#8592; Back to Front Page</a>
+    </footer>
+  </div>
+  <script>
+    const ti = document.getElementById('ticker-items'); if(ti) ti.innerHTML += ti.innerHTML;
+    const saved = localStorage.getItem('gazette-edition') || 'day';
+    document.documentElement.setAttribute('data-edition', saved);
+  </script>
 </body>
 </html>
