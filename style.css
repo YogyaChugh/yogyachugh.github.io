@@ -2,7 +2,6 @@
    YOGYA CHUGH - EDITORIAL SWISS DESIGN
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap');
 
 :root {
   --bg: #ffffff;
@@ -348,3 +347,4 @@ pre code {
   .floating-dock { width: 90%; justify-content: space-between; }
   .dock-link { padding: 10px 15px; font-size: 0.75rem; }
 }
+
