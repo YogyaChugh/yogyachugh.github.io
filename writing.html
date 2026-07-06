@@ -13,43 +13,15 @@
 <div class="container">
   
   <header class="header fade-in">
-    <h1>Yogya Chugh</h1>
-    <div style="font-weight: 500; margin-bottom: 8px; color: var(--text);">Engineer &middot; Builder</div>
+    <div class="header-role">Engineer &middot; Builder</div>
+    <h1 class="decrypt-target">Authored Works</h1>
   </header>
 
-  <nav class="nav-tabs fade-in">
-    <a href="index.html" class="nav-tab">Overview</a>
-    <a href="projects.html" class="nav-tab">Projects</a>
-    <a href="writing.html" class="nav-tab active">Writing</a>
-    <a href="contact.html" class="nav-tab">Contact</a>
-  </nav>
-
   <main>
-    <section class="fade-in">
-      <h2>Authored Works</h2>
-
+    <section class="fade-in" style="margin-top: 4rem;">
       <div class="item-group">
         <div class="item-header">
-          <div class="item-title"><a href="blogs/summer_of_making.html">450 Hours, 4 Ships, One Laptop</a></div>
-          <div class="item-meta">Summer 2025</div>
-        </div>
-        <div class="item-body">
-          <p>Logged 450+ tracked coding hours across 4+ shipped open-source projects in 3 months, rapidly learning and applying new technologies across each project for the Hack Club Summer of Making.</p>
-        </div>
-      </div>
-
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title"><a href="blogs/first_open_source.html">My First Open Source Contribution</a></div>
-          <div class="item-meta">August 2024</div>
-        </div>
-        <div class="item-body">
-          <p>Merged pull requests in Django and Django third-party libraries on GitHub.</p>
-        </div>
-      </div>
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title"><a href="blogs/vardhman.html">Running a Real Product on $7/Month</a></div>
+          <div class="item-title"><a href="blogs/vardhman.html" class="decrypt-target">Running a Real Product on $7/Month</a></div>
           <div class="item-meta">Vardhman Electricals</div>
         </div>
         <div class="item-body">
@@ -59,7 +31,7 @@
 
       <div class="item-group">
         <div class="item-header">
-          <div class="item-title"><a href="blogs/whatwg_dom.html">Implementing the WhatWG DOM in C++</a></div>
+          <div class="item-title"><a href="blogs/whatwg_dom.html" class="decrypt-target">Implementing the WhatWG DOM in C++</a></div>
           <div class="item-meta">Webelo</div>
         </div>
         <div class="item-body">
@@ -67,10 +39,36 @@
         </div>
       </div>
 
-    </section>
+      <div class="item-group">
+        <div class="item-header">
+          <div class="item-title"><a href="blogs/summer_of_making.html" class="decrypt-target">450 Hours, 4 Ships, One Laptop</a></div>
+          <div class="item-meta">Summer 2025</div>
+        </div>
+        <div class="item-body">
+          <p>Logged 450+ tracked coding hours across 4+ shipped open-source projects in 3 months, rapidly learning and applying new technologies across each project for the Hack Club Summer of Making.</p>
+        </div>
+      </div>
 
+      <div class="item-group">
+        <div class="item-header">
+          <div class="item-title"><a href="blogs/first_open_source.html" class="decrypt-target">My First Open Source Contribution</a></div>
+          <div class="item-meta">August 2024</div>
+        </div>
+        <div class="item-body">
+          <p>Merged pull requests in Django and Django third-party libraries on GitHub.</p>
+        </div>
+      </div>
+    </section>
   </main>
 </div>
+
+<!-- Floating Dock -->
+<nav class="floating-dock">
+  <a href="index.html" class="dock-link">Overview</a>
+  <a href="projects.html" class="dock-link">Projects</a>
+  <a href="writing.html" class="dock-link active">Writing</a>
+  <a href="contact.html" class="dock-link">Contact</a>
+</nav>
 
 <script src="script.js"></script>
 </body>

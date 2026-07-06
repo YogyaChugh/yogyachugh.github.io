@@ -13,20 +13,12 @@
 <div class="container">
   
   <header class="header fade-in">
-    <h1>Yogya Chugh</h1>
-    <div style="font-weight: 500; margin-bottom: 8px; color: var(--text);">Engineer &middot; Builder</div>
+    <div class="header-role">Engineer &middot; Builder</div>
+    <h1 class="decrypt-target">Portfolio</h1>
   </header>
-
-  <nav class="nav-tabs fade-in">
-    <a href="index.html" class="nav-tab">Overview</a>
-    <a href="projects.html" class="nav-tab active">Projects</a>
-    <a href="writing.html" class="nav-tab">Writing</a>
-    <a href="contact.html" class="nav-tab">Contact</a>
-  </nav>
 
   <main>
     <section class="fade-in">
-      <h2>All Projects</h2>
       
       <div class="project-card fade-in">
         <div class="project-image-container">
@@ -34,10 +26,11 @@
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">AnyStudio &mdash; Rust IDE for Android Dev</div>
+            <div class="item-title decrypt-target">AnyStudio</div>
+            <div class="item-meta">Rust &middot; Desktop IDE</div>
           </div>
           <div class="item-body">
-            <p>Native desktop IDE in Rust and egui for building Android apps via a direct DEX pipeline &mdash; custom anystudio-dex crate writes classes.dex directly, bypassing Java compilation entirely; separate crates for block compiler, APK build pipeline, ADB wrapper, and Android SDK tool management.</p>
+            <p>Native desktop IDE in Rust and egui for building Android apps via a direct DEX pipeline &mdash; custom anystudio-dex crate writes classes.dex directly, bypassing Java compilation entirely.</p>
           </div>
         </div>
       </div>
@@ -48,11 +41,11 @@
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">Webelo &mdash; Browser Rendering Engine (C++)</div>
-            <div class="item-meta"><a href="https://github.com/YogyaChugh/Webelo" target="_blank">github.com/YogyaChugh/Webelo</a></div>
+            <div class="item-title decrypt-target"><a href="https://github.com/YogyaChugh/Webelo" target="_blank" class="decrypt-target">Webelo</a></div>
+            <div class="item-meta">C++ &middot; Browser Engine</div>
           </div>
           <div class="item-body">
-            <p>Building a DOM library and HTML visualizer in C++ that strictly follows the WhatWG DOM Standard &mdash; implements the full Document Object Model tree with preorder depth-first traversal, event handling (addEventListener, dispatchEvent), and HTML parsing; foundation for a full browser rendering engine.</p>
+            <p>Building a DOM library and HTML visualizer in C++ that strictly follows the WhatWG DOM Standard &mdash; implements the full tree traversal, event dispatch, and HTML parsing.</p>
           </div>
         </div>
       </div>
@@ -63,11 +56,11 @@
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">AgroLens &mdash; ML Plant Disease Detection</div>
-            <div class="item-meta"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank">github.com/YogyaChughCoder/AgroLens</a></div>
+            <div class="item-title decrypt-target"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank" class="decrypt-target">AgroLens</a></div>
+            <div class="item-meta">Python &middot; ML CV</div>
           </div>
           <div class="item-body">
-            <p>Trained and deployed a computer vision model to classify plant leaf diseases &mdash; handled dataset pipeline, model training, and deployment as a team; divided responsibilities across components and shipped together in a cooperative team environment.</p>
+            <p>Trained and deployed a computer vision model to classify plant leaf diseases &mdash; handled dataset pipeline, model training, and deployment as a cooperative team.</p>
           </div>
         </div>
       </div>
@@ -78,10 +71,11 @@
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">SIH &mdash; Blockchain Travel Security System</div>
+            <div class="item-title decrypt-target">SIH Security System</div>
+            <div class="item-meta">Blockchain &middot; SSO</div>
           </div>
           <div class="item-body">
-            <p>Built a blockchain system for encrypted tourist tracking with SSO to local authorities as a team &mdash; cleared SIH internal selection in both 2024 and 2025; coordinated across multiple system components in a cooperative team environment.</p>
+            <p>Built a blockchain system for encrypted tourist tracking with SSO to local authorities as a team &mdash; cleared SIH internal selection in both 2024 and 2025.</p>
           </div>
         </div>
       </div>
@@ -92,8 +86,8 @@
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">Webber &mdash; Offline Website Downloader</div>
-            <div class="item-meta"><a href="https://github.com/YogyaChugh/Webber" target="_blank">github.com/YogyaChugh/Webber</a></div>
+            <div class="item-title decrypt-target"><a href="https://github.com/YogyaChugh/Webber" target="_blank" class="decrypt-target">Webber</a></div>
+            <div class="item-meta">Python &middot; Crawler</div>
           </div>
           <div class="item-body">
             <p>Desktop app using Pygame, PyWebview, and BeautifulSoup that crawls and downloads any website for full offline rendering.</p>
@@ -107,21 +101,23 @@
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">Snake Hustle & Timberly &mdash; Live Games</div>
-            <div class="item-meta"><a href="https://snakehustle.netlify.app" target="_blank">snakehustle.netlify.app</a> | <a href="https://yogya-chugh.itch.io/timberly" target="_blank">yogya-chugh.itch.io/timberly</a></div>
+            <div class="item-title decrypt-target">Live Web Games</div>
+            <div class="item-meta">HTML5 &middot; WebGL</div>
           </div>
           <div class="item-body">
-            <p>Two fully playable games deployed live &mdash; both run in the browser. Timberly is also downloadable natively for Windows, macOS, Linux, and Android.</p>
+            <p>Two fully playable games deployed live: <a href="https://snakehustle.netlify.app" target="_blank" class="decrypt-target">Snake Hustle</a> and <a href="https://yogya-chugh.itch.io/timberly" target="_blank" class="decrypt-target">Timberly</a>. Both run directly in the browser.</p>
           </div>
         </div>
       </div>
+
       <div class="project-card fade-in">
         <div class="project-image-container">
           <img src="assets/pippo.jpg" alt="Pippo" class="project-image" loading="lazy">
         </div>
         <div class="project-content">
           <div class="item-header">
-            <div class="item-title">Pippo &mdash; Cross-Platform Framework</div>
+            <div class="item-title decrypt-target">Pippo</div>
+            <div class="item-meta">Cross-Platform Framework</div>
           </div>
           <div class="item-body">
             <p>An experimental cross-platform development framework built to test and learn low-level system integrations.</p>
@@ -130,9 +126,16 @@
       </div>
 
     </section>
-
   </main>
 </div>
+
+<!-- Floating Dock -->
+<nav class="floating-dock">
+  <a href="index.html" class="dock-link">Overview</a>
+  <a href="projects.html" class="dock-link active">Projects</a>
+  <a href="writing.html" class="dock-link">Writing</a>
+  <a href="contact.html" class="dock-link">Contact</a>
+</nav>
 
 <script src="script.js"></script>
 </body>
