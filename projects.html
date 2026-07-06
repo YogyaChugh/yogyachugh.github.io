@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects - Yogya Chugh</title>
+  <title>Systems - Yogya Chugh</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,102 +12,73 @@
 <div class="container">
   
   <header class="header">
-    <h1>Yogya Chugh</h1>
-    <div class="contact-info">
-      <span>Delhi, India</span>
-      <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a>
-      <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">github.com/YogyaChugh</a>
-      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener">Resume</a>
+    <h1>Implemented Systems and Projects</h1>
+    <div class="author-info">
+      <strong>Yogya Chugh</strong><br>
+      <span class="author-meta"><a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener">Curriculum Vitae</a></span>
     </div>
   </header>
 
   <nav class="nav-tabs">
-    <a href="index.html" class="nav-tab">Overview</a>
-    <a href="projects.html" class="nav-tab active">Projects</a>
-    <a href="writing.html" class="nav-tab">Writing</a>
+    <a href="index.html" class="nav-tab">1. Overview</a>
+    <a href="projects.html" class="nav-tab active">2. Systems</a>
+    <a href="writing.html" class="nav-tab">3. References</a>
   </nav>
 
   <main>
-    
+    <h2>Core Systems Infrastructure</h2>
+
     <div class="item-group">
       <div class="item-header">
-        <div class="item-title">AnyStudio &mdash; Rust IDE for Android Dev</div>
+        <div class="item-title">AnyStudio &mdash; Rust IDE for Android Development</div>
       </div>
-      <div class="item-body">
-        <p>Native desktop IDE in Rust and egui for building Android apps via a direct DEX pipeline. Custom anystudio-dex crate writes classes.dex directly, bypassing Java compilation entirely; separate crates for block compiler, APK build pipeline, ADB wrapper, and Android SDK tool management.</p>
-        <div>
-          <span class="tech-tag">Rust</span>
-          <span class="tech-tag">egui</span>
-        </div>
-      </div>
+      <p>A native desktop Integrated Development Environment engineered in Rust and the <code>egui</code> immediate mode GUI library. This system fundamentally shifts the Android build paradigm by compiling apps via a direct DEX pipeline.</p>
+      <ul>
+        <li>Implemented a custom <code>anystudio-dex</code> crate capable of writing <code>classes.dex</code> binaries directly, entirely bypassing the Java compilation step and Gradle daemon.</li>
+        <li>Architected separate modular crates for the block compiler, APK packaging pipeline, ADB device wrapper, and Android SDK tool management.</li>
+      </ul>
+      <p><em>Technologies:</em> <span class="tech-tag">Rust</span> <span class="tech-tag">egui</span> <span class="tech-tag">Dalvik Executable Format</span></p>
     </div>
 
     <div class="item-group">
       <div class="item-header">
         <div class="item-title">Webelo &mdash; Browser Rendering Engine</div>
-        <div class="item-meta"><a href="https://github.com/YogyaChugh/Webelo" target="_blank">github.com/YogyaChugh/Webelo</a></div>
+        <div class="item-meta"><a href="https://github.com/YogyaChugh/Webelo" target="_blank">Repository</a></div>
       </div>
-      <div class="item-body">
-        <p>Building a DOM library and HTML visualizer in C++ that strictly follows the WhatWG DOM Standard &mdash; implements the full Document Object Model tree with preorder depth-first traversal, event handling, and HTML parsing; foundation for a full browser rendering engine.</p>
-        <div>
-          <span class="tech-tag">C++</span>
-        </div>
-      </div>
+      <p>A ground-up implementation of a Document Object Model library and HTML visualizer written in C++. The engine is engineered to strictly follow the WhatWG DOM Standard.</p>
+      <ul>
+        <li>Implemented the full DOM tree structure with rigorous preorder depth-first traversal algorithms for rendering and event propagation.</li>
+        <li>Serves as the foundational architecture for a complete custom browser rendering engine.</li>
+      </ul>
+      <p><em>Technologies:</em> <span class="tech-tag">C++</span> <span class="tech-tag">WhatWG Standards</span></p>
     </div>
+
+    <h2>Applied Algorithms and Web Systems</h2>
 
     <div class="item-group">
       <div class="item-header">
         <div class="item-title">AgroLens &mdash; ML Plant Disease Detection</div>
-        <div class="item-meta"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank">github.com/YogyaChughCoder/AgroLens</a></div>
+        <div class="item-meta"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank">Repository</a></div>
       </div>
-      <div class="item-body">
-        <p>Trained and deployed a computer vision model to classify plant leaf diseases &mdash; handled dataset pipeline, model training, and deployment as a team.</p>
-        <div>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">TensorFlow</span>
-        </div>
-      </div>
+      <p>Trained and deployed a computer vision model to classify plant leaf diseases. Led a team effort handling the entire machine learning lifecycle from dataset pipelining to model deployment.</p>
+      <p><em>Technologies:</em> <span class="tech-tag">Python</span> <span class="tech-tag">TensorFlow</span></p>
     </div>
 
     <div class="item-group">
       <div class="item-header">
-        <div class="item-title">SIH &mdash; Blockchain Travel Security System</div>
+        <div class="item-title">Blockchain Travel Security System (SIH)</div>
       </div>
-      <div class="item-body">
-        <p>Built a blockchain system for encrypted tourist tracking with SSO to local authorities as a team &mdash; cleared SIH internal selection in both 2024 and 2025.</p>
-        <div>
-          <span class="tech-tag">Blockchain</span>
-          <span class="tech-tag">SSO</span>
-        </div>
-      </div>
+      <p>Constructed a distributed ledger system designed for encrypted tourist tracking. Integrated a Single Sign-On (SSO) protocol connecting directly to local authorities. Cleared Smart India Hackathon internal selections in both 2024 and 2025.</p>
+      <p><em>Technologies:</em> <span class="tech-tag">Blockchain</span> <span class="tech-tag">SSO</span></p>
     </div>
 
     <div class="item-group">
       <div class="item-header">
         <div class="item-title">Webber &mdash; Offline Website Downloader</div>
-        <div class="item-meta"><a href="https://github.com/YogyaChugh/Webber" target="_blank">github.com/YogyaChugh/Webber</a></div>
+        <div class="item-meta"><a href="https://github.com/YogyaChugh/Webber" target="_blank">Repository</a></div>
       </div>
-      <div class="item-body">
-        <p>Desktop app using Pygame, PyWebview, and BeautifulSoup that crawls and downloads any website for full offline rendering.</p>
-        <div>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Pygame</span>
-          <span class="tech-tag">BeautifulSoup</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="item-group">
-      <div class="item-header">
-        <div class="item-title">Snake Hustle and Timberly &mdash; Live Games</div>
-        <div class="item-meta">Live in browser</div>
-      </div>
-      <div class="item-body">
-        <p>Two playable games deployed live &mdash; both run in browser; Timberly also downloadable for Windows, macOS, Linux, and Android.</p>
-        <div>
-          <span class="tech-tag">Game Dev</span>
-        </div>
-      </div>
+      <p>A native desktop application that utilizes web crawling techniques to download arbitrary websites for full offline rendering. Built using Pygame for rendering, PyWebview, and BeautifulSoup for DOM parsing.</p>
+      <p><em>Technologies:</em> <span class="tech-tag">Python</span> <span class="tech-tag">Pygame</span> <span class="tech-tag">BeautifulSoup</span></p>
     </div>
 
   </main>

@@ -1,16 +1,14 @@
 /* =============================================
-   YOGYA CHUGH - ZERO SLOP MINIMALIST PORTFOLIO
+   YOGYA CHUGH - ACADEMIC PAPER (LaTeX) AESTHETIC
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman&display=swap');
 
 :root {
   --bg: #ffffff;
-  --text: #111111;
-  --text-muted: #555555;
-  --border: #e5e5e5;
-  --accent: #000000;
-  --link: #0055ff;
+  --text: #000000;
+  --link: #000000;
+  --border: #cccccc;
 }
 
 /* Base */
@@ -21,95 +19,125 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Mimic standard LaTeX font stack */
+  font-family: "Latin Modern Roman", "Computer Modern Roman", "Computer Modern", Georgia, "Times New Roman", serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 11pt; /* Classic academic font size */
   -webkit-font-smoothing: antialiased;
+  counter-reset: section;
 }
 
 /* Layout */
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px 80px;
+  padding: 50px 30px 100px;
+  text-align: justify;
 }
 
 /* Typography */
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.2rem;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
   font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: bold;
   margin: 2rem 0 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
+}
+h2::before {
+  counter-increment: section;
+  content: counter(section) ". ";
 }
 
 h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  margin-top: 1.5rem;
 }
 
 p {
-  color: var(--text-muted);
   margin-bottom: 1rem;
+  text-indent: 1.5em; /* Classic LaTeX paragraph indent */
+}
+p:first-of-type {
+  text-indent: 0; /* First paragraph in a section is not indented in standard LaTeX */
 }
 
 a {
   color: var(--link);
   text-decoration: none;
+  border-bottom: 1px dotted var(--text);
 }
 
 a:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--text);
 }
 
-/* Header / Nav */
+/* Header / Title block */
 .header {
-  margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.contact-info {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 1.5rem;
+.author-info {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+.author-meta {
+  font-style: italic;
+  font-size: 0.95rem;
 }
 
 .nav-tabs {
   display: flex;
+  justify-content: center;
   gap: 20px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 10px;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-
-.nav-tab {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
 .nav-tab.active {
-  color: var(--text);
-  box-shadow: 0 2px 0 0 var(--accent);
+  font-weight: bold;
+  border-bottom: 1px solid var(--text);
 }
 
-/* Lists & Items */
+/* Abstract */
+.abstract-container {
+  margin: 0 auto 3rem;
+  max-width: 85%;
+  font-size: 0.95rem;
+}
+.abstract-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* Sections */
 .item-group {
   margin-bottom: 1.5rem;
 }
-
 .item-header {
   display: flex;
   justify-content: space-between;
@@ -117,69 +145,43 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
 }
-
 .item-title {
-  font-weight: 600;
-  color: var(--text);
+  font-weight: bold;
 }
-
 .item-meta {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.item-body {
-  margin-top: 0.5rem;
+  font-style: italic;
   font-size: 0.95rem;
 }
 
-.item-body ul {
-  padding-left: 1.2rem;
-  margin-top: 0.5rem;
-  color: var(--text);
+/* Bibliography / References */
+.references-list {
+  list-style-type: none;
+  padding-left: 0;
 }
-
-.item-body li {
-  margin-bottom: 0.4rem;
-}
-
-/* Skills */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 10px;
-  font-size: 0.9rem;
-}
-.skills-category {
-  font-weight: 600;
-  color: var(--text);
-}
-.skills-list {
-  color: var(--text-muted);
+.references-list li {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+  margin-bottom: 0.8rem;
 }
 
 /* Utility */
 .tech-tag {
-  font-family: monospace;
-  font-size: 0.8rem;
-  background: #f4f4f5;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--text);
-  margin-right: 6px;
-  display: inline-block;
-  margin-bottom: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  background: #f8f8f8;
+  padding: 1px 4px;
+  border: 1px solid #ddd;
+  margin-right: 4px;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  h1 { font-size: 1.75rem; }
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 2px;
-    margin-bottom: 15px;
+  .container {
+    padding: 30px 15px 80px;
   }
-  .skills-category { margin-top: 8px; }
+  .abstract-container {
+    max-width: 100%;
+  }
   .item-header {
     flex-direction: column;
     gap: 2px;
