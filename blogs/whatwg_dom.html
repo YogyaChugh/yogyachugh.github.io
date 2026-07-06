@@ -13,15 +13,37 @@
     <a href="../writing.html">&larr; Back to Writing</a>
   </header>
   <main>
-    <h1 class="fade-in decrypt-target">Implementing the WhatWG DOM in C++</h1>
+    <h1 class="fade-in">Implementing the WhatWG DOM in C++</h1>
     <p class="fade-in"><strong>Webelo &middot; In Progress</strong></p>
-    <div class="item-body fade-in" style="margin-top: 2rem;">
-      <p><em>This article is currently being written. Check back soon for the full story.</em></p>
-      
-      <p>A deep dive into building Webelo&rsquo;s DOM engine &mdash; implementing the WhatWG DOM Living Standard in C++, including event dispatch, preorder DFS traversal, and the mutation observer algorithm. The parts of the spec nobody warns you about.</p>
-      
-      <p>In the meantime, you can explore the Webelo project on <a href="https://github.com/YogyaChugh/Webelo" target="_blank" rel="noopener">GitHub</a>.</p>
-    </div>
+    
+    <article class="blog-article fade-in">
+      <p><span class="drop-cap">T</span>he Document Object Model is something web developers take for granted. You call <code>document.getElementById()</code> and expect an element back. But when you are building a browser rendering engine from scratch in C++, you quickly realize the immense complexity hidden behind the WhatWG DOM Living Standard.</p>
+
+      <p>My project, Webelo, is an HTML visualizer and DOM library written purely in C++. The goal isn't just to parse HTML, but to implement the exact data structures and algorithms dictated by the WhatWG specification.</p>
+
+      <blockquote>"The spec is the truth. Everything else is an approximation."</blockquote>
+
+      <p>The core of the DOM is the node tree. Implementing this in C++ requires careful memory management, as nodes must maintain parent, child, and sibling pointers without creating circular memory leaks. I implemented the full Document Object Model tree structure, relying heavily on a strict preorder depth-first search (DFS) traversal algorithm.</p>
+
+      <pre><code>// Example of Preorder DFS in Webelo
+void traverseDOM(Node* root) {
+    if (!root) return;
+    
+    // Process current node
+    process(root);
+    
+    // Traverse children
+    for (Node* child : root->childNodes) {
+        traverseDOM(child);
+    }
+}</code></pre>
+
+      <p>The preorder DFS is critical because it mirrors how elements are sequentially evaluated and rendered on the screen. It is also the foundation for queries like <code>querySelector</code>.</p>
+
+      <p>Beyond structural traversal, I implemented the event dispatch mechanism. Following the spec, an event (like a click) doesn't just happen at a node. It goes through a Capture phase (down the tree), a Target phase (at the node), and a Bubble phase (up the tree). Implementing <code>addEventListener</code> and <code>dispatchEvent</code> in C++ meant building an event queue and propagation system that perfectly matched the WhatWG flow.</p>
+
+      <p>Webelo serves as the foundational architecture for a larger, fully-featured browser rendering engine. You can explore the source code directly on <a href="https://github.com/YogyaChugh/Webelo" target="_blank" rel="noopener">GitHub</a>.</p>
+    </article>
   </main>
 </div>
 
@@ -36,4 +58,3 @@
 <script src="../script.js"></script>
 </body>
 </html>
-

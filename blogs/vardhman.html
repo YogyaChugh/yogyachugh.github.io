@@ -13,15 +13,33 @@
     <a href="../writing.html">&larr; Back to Writing</a>
   </header>
   <main>
-    <h1 class="fade-in decrypt-target">Running a Real Product on $7/Month</h1>
+    <h1 class="fade-in">Running a Real Product on $7/Month</h1>
     <p class="fade-in"><strong>Vardhman Electricals &middot; Nov 2025 &ndash; Jun 2026</strong></p>
-    <div class="item-body fade-in" style="margin-top: 2rem;">
-      <p><em>This article is currently being written. Check back soon for the full story.</em></p>
+    
+    <article class="blog-article fade-in">
+      <p><span class="drop-cap">T</span>he challenge was straightforward but restrictive: build a comprehensive cross-platform business management suite and salesperson credit system for a real client without racking up massive monthly infrastructure costs. When building Vardhman Saathi, I needed an architecture that scaled down to zero cost when idle but could handle daily operations reliably.</p>
       
-      <p>The story of building Vardhman Saathi &mdash; a comprehensive business suite and salesperson credit system using TypeScript, Electron, and Hono &mdash; and running the entire product on $7/month infrastructure from November 2025 to June 2026.</p>
-      
-      <p>The stack: Supabase (database + auth), Cloudflare R2 (file storage), Render (backend hosting). Desktop app in Electron + TypeScript. Android app sharing the same codebase. Visit the live product at <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener">vardhmansaathi.shop</a>.</p>
-    </div>
+      <p>I opted for a highly decoupled, heavily optimized tech stack designed specifically to live within generous free tiers.</p>
+
+      <blockquote>"You don't need a data center. You need the right architecture."</blockquote>
+
+      <p>For the database and authentication, I used <strong>Supabase</strong>. By leveraging PostgreSQL Row Level Security (RLS) policies directly within Supabase, I eliminated the need for a massive middleware layer just to handle authorization. The database handled access control natively, keeping the backend lean.</p>
+
+      <p>The backend itself was written in TypeScript using <strong>Hono</strong>, deployed as a REST API on <strong>Render</strong>. It handles core business logic, Google OAuth integration, and Server-Sent Events (SSE) for real-time notifications to the desktop client. To ensure the mobile application (built in React Native) stayed perfectly synchronized, I integrated the Firebase Admin SDK to push real-time updates directly to the Android app.</p>
+
+      <p>Image storage is traditionally where costs spiral. Instead of AWS S3, I utilized <strong>Cloudflare R2</strong>, which offers 10 GB/month of free storage with zero egress fees. This single decision effectively nullified the client's asset hosting costs.</p>
+
+      <pre><code>// Example Hono route for secure asset retrieval
+app.get('/api/assets/:id', async (c) => {
+  const assetId = c.req.param('id');
+  const asset = await r2.get(assetId);
+  return c.body(asset.body);
+});</code></pre>
+
+      <p>By heavily researching cloud providers and writing efficient, decoupled code (Electron desktop, React Native mobile, Hono backend), I successfully brought the total monthly operating bill to just $7/month, completely eliminating database and storage costs.</p>
+
+      <p>You can see the final product architecture live at <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener">vardhmansaathi.shop</a>.</p>
+    </article>
   </main>
 </div>
 
@@ -36,4 +54,3 @@
 <script src="../script.js"></script>
 </body>
 </html>
-
