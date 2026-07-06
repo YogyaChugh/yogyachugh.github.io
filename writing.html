@@ -3,96 +3,63 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Writing &mdash; The Yogya Gazette</title>
-  <meta name="description" content="Articles and technical writing by Yogya Chugh &mdash; on open source, systems programming, Hack Club, and building real products.">
+  <title>Writing - Yogya Chugh</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="top-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">The Yogya Gazette</a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">Front Page</a>
-      <a href="projects.html" class="nav-link">Projects</a>
-      <a href="writing.html" class="nav-link">Writing</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" class="nav-link nav-link--resume" target="_blank" rel="noopener">R&eacute;sum&eacute; &#8599;</a>
+<div class="container">
+  
+  <header class="header">
+    <h1>Yogya Chugh</h1>
+    <div class="contact-info">
+      <span>Delhi, India</span>
+      <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a>
+      <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">github.com/YogyaChugh</a>
+      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" target="_blank" rel="noopener">Resume</a>
     </div>
-  </div>
-</nav>
+  </header>
 
-<div class="page-header">
-  <div class="page-header-label">From the Desk</div>
-  <h1 class="page-title">Writing &amp; Articles</h1>
-  <p class="page-deck">On open source, systems programming, shipping products, and the grind behind the code.</p>
-</div>
+  <nav class="nav-tabs">
+    <a href="index.html" class="nav-tab">Overview</a>
+    <a href="projects.html" class="nav-tab">Projects</a>
+    <a href="writing.html" class="nav-tab active">Writing</a>
+  </nav>
 
-<div class="writing-container">
+  <main>
 
-  <!-- FEATURED ARTICLE: Summer of Making -->
-  <div class="writing-featured reveal">
-    <div class="writing-featured-meta">
-      <span class="section-label">Feature &nbsp;&middot;&nbsp; Hack Club</span>
-      <h2 class="writing-featured-title">450 Hours, 4 Ships, One Laptop</h2>
-      <p class="writing-featured-excerpt">
-        What three months of building during Hack Club Summer of Making looks like &mdash; logging 450+ hours across open-source projects and earning a $1,649 laptop prize.
-      </p>
-      <div class="writing-pull-quote">
-        &ldquo;It started with a random email. It ended with me realising how far a few lines of code and some late nights can really go.&rdquo;
+    <div class="item-group">
+      <div class="item-header">
+        <div class="item-title"><a href="blogs/summer_of_making.html">Hack Club Summer of Making (GitHub-sponsored)</a></div>
+        <div class="item-meta">Summer 2025</div>
       </div>
-      <a href="blogs/summer_of_making.html" class="btn-primary">Read the Full Story &rarr;</a>
-    </div>
-    <img src="assets/laptop.png" alt="Summer of Making" class="writing-featured-img">
-  </div>
-
-  <div class="ornament reveal">&#10022; &mdash; &#10022; &mdash; &#10022;</div>
-
-  <!-- ARTICLE GRID -->
-  <div class="writing-grid">
-
-    <div class="writing-card reveal">
-      <div class="writing-card-date">AUGUST 2024</div>
-      <div class="writing-card-title"><a href="blogs/first_open_source.html" style="color:inherit;">My First Open Source Contribution</a></div>
-      <p class="writing-card-excerpt">How I found Django Ticket 36271, traced the bug through the framework internals, wrote the fix, and worked with maintainer Sarah Boyce until it was merged into a codebase used by millions of developers.</p>
-      <a href="blogs/first_open_source.html" class="project-link" style="margin-top:0.8rem; display:inline-block;">Read Article &rarr;</a>
+      <div class="item-body">
+        <p>Logged 450+ tracked coding hours across 4+ shipped open-source projects in 3 months, rapidly learning and applying new technologies across each project.</p>
+      </div>
     </div>
 
-    <div class="writing-card reveal">
-      <div class="writing-card-date">IN PROGRESS</div>
-      <div class="writing-card-title"><a href="blogs/classes_dex.html" style="color:inherit;">How I Cracked the DEX Code</a></div>
-      <p class="writing-card-excerpt">Building AnyStudio&rsquo;s direct DEX compilation pipeline in Rust. The DEX bytecode format, how JVM and Dalvik differ, and why bypassing the JDK produces dramatically smaller APKs.</p>
-      <span class="writing-wip-badge">WIP</span>
-      <a href="blogs/classes_dex.html" class="project-link" style="margin-top:0.5rem; display:inline-block;">Preview &rarr;</a>
+    <div class="item-group">
+      <div class="item-header">
+        <div class="item-title"><a href="blogs/first_open_source.html">Open-Source Contributions</a></div>
+        <div class="item-meta">August 2024</div>
+      </div>
+      <div class="item-body">
+        <p>Merged pull requests in Django and Django third-party libraries on GitHub.</p>
+      </div>
     </div>
 
-    <div class="writing-card reveal">
-      <div class="writing-card-date">IN PROGRESS</div>
-      <div class="writing-card-title"><a href="blogs/whatwg_dom.html" style="color:inherit;">Implementing the WhatWG DOM in C++</a></div>
-      <p class="writing-card-excerpt">A deep dive into building Webelo&rsquo;s DOM engine strictly to spec &mdash; event dispatch, preorder DFS, mutation observers. The parts of the WhatWG Living Standard nobody warns you about.</p>
-      <span class="writing-wip-badge">WIP</span>
-      <a href="blogs/whatwg_dom.html" class="project-link" style="margin-top:0.5rem; display:inline-block;">Preview &rarr;</a>
+    <div class="item-group">
+      <div class="item-header">
+        <div class="item-title"><a href="blogs/classes_dex.html">Android DEX Pipeline &amp; Rust</a></div>
+      </div>
+      <div class="item-body">
+        <p>Notes on building the anystudio-dex crate to write classes.dex directly, bypassing Java compilation entirely.</p>
+      </div>
     </div>
-
-    <div class="writing-card reveal">
-      <div class="writing-card-date">IN PROGRESS</div>
-      <div class="writing-card-title"><a href="blogs/vardhman.html" style="color:inherit;">Running a Real Product on $7/Month</a></div>
-      <p class="writing-card-excerpt">The story of Vardhman Saathi &mdash; a full business suite with Electron desktop app, mobile client, and Hono backend running on Supabase, Cloudflare R2, and Render for $7/month.</p>
-      <span class="writing-wip-badge">WIP</span>
-      <a href="blogs/vardhman.html" class="project-link" style="margin-top:0.5rem; display:inline-block;">Preview &rarr;</a>
-    </div>
-
-  </div>
+    
+  </main>
 </div>
 
-<footer class="site-footer">
-  &copy; 2026 Yogya Chugh &nbsp;&middot;&nbsp; Suit icons created by andinur &mdash; <a href="https://www.flaticon.com/free-icons/suit" target="_blank" rel="noopener">Flaticon</a>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>

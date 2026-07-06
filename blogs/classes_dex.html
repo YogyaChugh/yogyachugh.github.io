@@ -3,55 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How I Cracked the DEX Code &mdash; The Yogya Gazette</title>
-  <meta name="description" content="Building AnyStudio's direct DEX pipeline &mdash; bypassing the JDK entirely to compile Android APKs using Rust.">
+  <title>Android DEX Pipeline &amp; Rust - Yogya Chugh</title>
   <link rel="icon" type="image/png" href="../favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
-<nav class="top-nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">The Yogya Gazette</a>
-    <div class="nav-links">
-      <a href="../index.html" class="nav-link">Front Page</a>
-      <a href="../projects.html" class="nav-link">Projects</a>
-      <a href="../writing.html" class="nav-link">Writing</a>
-      <a href="../contact.html" class="nav-link">Contact</a>
-      <a href="https://docs.google.com/document/d/1ImsKn22rHe6A_k2lnV41Iz5zwUokPKYqUZvmozV3rWM/edit" class="nav-link nav-link--resume" target="_blank" rel="noopener">R&eacute;sum&eacute; &#8599;</a>
-    </div>
-  </div>
-</nav>
-
-<div class="blog-masthead-bar">
-  <a href="../writing.html" class="blog-back">&#8592; Back to Writing</a>
-  <a href="../index.html" class="blog-gazette-link">The Yogya Gazette</a>
-</div>
-
-<div class="blog-page">
-  <header class="blog-header">
-    <span class="blog-section-label">Technical Deep-Dive &nbsp;&middot;&nbsp; AnyStudio</span>
-    <h1 class="blog-title">How I Cracked the DEX Code</h1>
-    <p class="blog-dateline">AnyStudio &nbsp;&middot;&nbsp; In Progress &nbsp;&middot;&nbsp; By Yogya Chugh</p>
-    <div class="blog-rule"></div>
+<div class="container">
+  <header class="header">
+    <a href="../writing.html">&larr; Back to Writing</a>
   </header>
-
-  <article class="blog-body">
-    <p class="drop-cap"><strong>This article is currently being written.</strong> Check back soon for the full story.</p>
-    <p>The story of building AnyStudio&rsquo;s direct DEX pipeline &mdash; bypassing the JDK entirely to compile the smallest possible Android APKs using Rust. It covers the DEX bytecode format, how the JVM and Dalvik differ, and the architecture decisions behind AnyStudio&rsquo;s toolchain.</p>
-    <blockquote>&ldquo;Why install a 500MB runtime just to write Hello World for Android?&rdquo;</blockquote>
-    <p>In the meantime, you can explore the AnyStudio project on <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">GitHub &#8599;</a>.</p>
-  </article>
-
-  <footer class="blog-footer">
-    <span>&copy; 2026 Yogya Chugh</span>
-    <a href="../writing.html">&#8592; Back to Writing</a>
-  </footer>
+  <main>
+    <h1>Android DEX Pipeline &amp; Rust</h1>
+    <p><strong>Notes on AnyStudio</strong></p>
+    <div style="margin-top: 2rem;">
+      <p>As part of AnyStudio (a native desktop Android IDE built in Rust and egui), I needed a way to compile code without relying on Java or Gradle.</p>
+      <p>I built the custom `anystudio-dex` crate in Rust. This crate allows the IDE to write `classes.dex` files directly, bypassing Java compilation entirely.</p>
+      <p>The architecture separates the block compiler, the APK build pipeline, the ADB wrapper, and Android SDK tool management into distinct Rust crates.</p>
+    </div>
+  </main>
 </div>
-
-<script src="../script.js"></script>
 </body>
 </html>
