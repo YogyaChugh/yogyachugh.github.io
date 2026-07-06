@@ -1,19 +1,18 @@
 /* =============================================
-   YOGYA CHUGH - ZERO SLOP MINIMALIST PORTFOLIO
+   YOGYA CHUGH - PURE WHITE MINIMALIST
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #ffffff;
-  --text: #111111;
+  --text: #000000;
   --text-muted: #555555;
-  --border: #e5e5e5;
+  --border: #eaeaea;
   --accent: #000000;
   --link: #0055ff;
 }
 
-/* Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -25,30 +24,31 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 15px;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Layout */
 .container {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 40px 20px 80px;
+  padding: 80px 20px 120px;
 }
 
 /* Typography */
 h1 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.2rem;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 3rem 0 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
 }
@@ -60,7 +60,7 @@ h3 {
 }
 
 p {
-  color: var(--text-muted);
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
@@ -68,14 +68,13 @@ a {
   color: var(--link);
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
-/* Header / Nav */
+/* Header */
 .header {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .contact-info {
@@ -83,31 +82,25 @@ a:hover {
   color: var(--text-muted);
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 15px;
   margin-bottom: 1.5rem;
 }
-
-.nav-tabs {
-  display: flex;
-  gap: 20px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 10px;
-}
-
-.nav-tab {
-  font-size: 0.95rem;
-  font-weight: 500;
+.contact-info a {
   color: var(--text-muted);
 }
-
-.nav-tab.active {
+.contact-info a:hover {
   color: var(--text);
-  box-shadow: 0 2px 0 0 var(--accent);
 }
 
-/* Lists & Items */
+/* Section specific styling */
+.summary-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Grid & Items */
 .item-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .item-header {
@@ -116,39 +109,45 @@ a:hover {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 0.25rem;
 }
 
 .item-title {
   font-weight: 600;
+  font-size: 1.05rem;
   color: var(--text);
 }
 
 .item-meta {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
 .item-body {
-  margin-top: 0.5rem;
   font-size: 0.95rem;
+  color: var(--text);
 }
 
 .item-body ul {
   padding-left: 1.2rem;
   margin-top: 0.5rem;
-  color: var(--text);
+}
+.item-body li {
+  margin-bottom: 0.5rem;
 }
 
-.item-body li {
-  margin-bottom: 0.4rem;
+.item-body p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Skills */
 .skills-grid {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 10px;
-  font-size: 0.9rem;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
 }
 .skills-category {
   font-weight: 600;
@@ -158,34 +157,29 @@ a:hover {
   color: var(--text-muted);
 }
 
-/* Utility */
-.tech-tag {
-  font-family: monospace;
-  font-size: 0.8rem;
-  background: #f4f4f5;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--text);
-  margin-right: 6px;
-  display: inline-block;
-  margin-bottom: 4px;
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
-/* Unique Micro-Interaction: Hex-Decode Headers */
-.decode-text {
-  font-family: 'Space Mono', monospace;
-  opacity: 0.8;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  h1 { font-size: 1.75rem; }
+  .container {
+    padding: 40px 20px 80px;
+  }
+  h1 { font-size: 2rem; }
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 2px;
-    margin-bottom: 15px;
+    gap: 4px;
+    margin-bottom: 20px;
   }
-  .skills-category { margin-top: 8px; }
+  .skills-category { margin-top: 10px; }
   .item-header {
     flex-direction: column;
     gap: 2px;
