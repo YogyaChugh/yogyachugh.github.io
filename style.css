@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    THE YOGYA GAZETTE — Shared Stylesheet v2
    Newspaper-style portfolio
    ============================================ */
@@ -237,17 +237,46 @@ a:hover { color: var(--gold); }
   letter-spacing: 0.05em;
 }
 
+/* LEAD STORY */
+.front-lead {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 1.5rem;
+  text-align: center;
+}
+.front-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2rem;
+}
+.front-deck {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+
 /* 3-column above-fold */
 .front-above-fold {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: 1fr 1.8fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0;
   border-bottom: 3px double var(--ink);
+  min-height: 400px;
 }
-.fold-col { padding: 1.5rem 1.6rem; }
+.fold-col { padding: 2rem 2.5rem; }
 .fold-col--center {
   border-left: 1px solid var(--rule);
   border-right: 1px solid var(--rule);
@@ -255,37 +284,17 @@ a:hover { color: var(--gold); }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.8rem;
   text-align: center;
 }
 .front-photo {
-  width: 120px;
-  height: 120px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--ink);
-  box-shadow: 4px 4px 0 var(--crimson);
-  margin-bottom: 1.2rem;
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--crimson);
+  margin-bottom: 2rem;
   display: block;
-}
-.front-headline {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-  margin-bottom: 0.8rem;
-}
-.front-deck {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--ink-muted);
-  line-height: 1.6;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding: 0.7rem 0;
-  margin-bottom: 1rem;
 }
 .front-cta-group { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
 
