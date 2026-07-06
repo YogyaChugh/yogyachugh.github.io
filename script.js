@@ -1,48 +1,34 @@
-﻿// The Yogya Gazette — script.js
-// Evening Edition toggle + scroll reveal
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('[data-decode]');
+  const hexChars = '0123456789ABCDEF';
 
-(function () {
-  'use strict';
+  elements.forEach(el => {
+    const originalText = el.getAttribute('data-decode');
+    let iteration = 0;
+    
+    // Add decode-text class for monospace styling during animation
+    el.classList.add('decode-text');
 
-  // --- Edition Toggle ---
-  const html = document.documentElement;
-  const btn = document.getElementById('edition-toggle');
-  const KEY = 'gazette-edition';
+    const interval = setInterval(() => {
+      el.innerText = originalText
+        .split('')
+        .map((letter, index) => {
+          if (index < iteration) {
+            return originalText[index];
+          }
+          // Preserve spaces
+          if (letter === ' ') return ' ';
+          return hexChars[Math.floor(Math.random() * 16)];
+        })
+        .join('');
 
-  function applyEdition(edition) {
-    html.setAttribute('data-edition', edition);
-    if (btn) {
-      btn.textContent = edition === 'evening' ? '\u2600 Day Edition' : '\u263D Evening Edition';
-    }
-  }
+      if (iteration >= originalText.length) {
+        clearInterval(interval);
+        // Remove styling once complete
+        el.classList.remove('decode-text');
+      }
 
-  const saved = localStorage.getItem(KEY) || 'day';
-  applyEdition(saved);
-
-  if (btn) {
-    btn.addEventListener('click', function () {
-      const current = html.getAttribute('data-edition') || 'day';
-      const next = current === 'day' ? 'evening' : 'day';
-      localStorage.setItem(KEY, next);
-      applyEdition(next);
-    });
-  }
-
-  // --- Scroll Reveal ---
-  const revealEls = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('visible'); });
-  }
-})();
+      iteration += 1 / 3; // Controls speed (lower = slower)
+    }, 30);
+  });
+});
