@@ -157,6 +157,77 @@ a:hover {
   color: var(--text-muted);
 }
 
+/* Unique Micro-Interaction: Hex-Decode Headers */
+.decode-text {
+  font-family: 'Space Mono', monospace;
+  opacity: 0.8;
+}
+
+/* Project Images */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+@media (min-width: 650px) {
+  .project-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.project-image-container {
+  flex-shrink: 0;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+@media (min-width: 650px) {
+  .project-image-container {
+    width: 220px;
+  }
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  flex-grow: 1;
+}
+
+/* Personality Sections */
+.personality-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 600px) {
+  .personality-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.personality-card {
+  padding: 20px;
+  background-color: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.personality-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.personality-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
 /* Fade In Animation */
 .fade-in {
   opacity: 0;

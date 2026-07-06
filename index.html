@@ -14,6 +14,7 @@
   
   <header class="header fade-in">
     <h1>Yogya Chugh</h1>
+    <div style="font-weight: 500; margin-bottom: 8px; color: var(--text);">Engineer &middot; Builder</div>
     <div class="contact-info">
       <span>Delhi, India</span>
       <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a>
@@ -86,63 +87,85 @@
     <section class="fade-in">
       <h2>Projects</h2>
       
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title">AnyStudio &mdash; Rust IDE for Android Dev</div>
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/anystudio.jpg" alt="AnyStudio Screenshot" class="project-image" loading="lazy">
         </div>
-        <div class="item-body">
-          <ul>
-            <li>Native desktop IDE in Rust and egui for building Android apps via a direct DEX pipeline &mdash; custom anystudio-dex crate writes classes.dex directly, bypassing Java compilation entirely; separate crates for block compiler, APK build pipeline, ADB wrapper, and Android SDK tool management; uses SDK tools (zipalign, apksigner) only for final signing</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title">Webelo &mdash; Browser Rendering Engine (C++)</div>
-          <div class="item-meta"><a href="https://github.com/YogyaChugh/Webelo" target="_blank">github.com/YogyaChugh/Webelo</a></div>
-        </div>
-        <div class="item-body">
-          <ul>
-            <li>Building a DOM library and HTML visualizer in C++ that strictly follows the WhatWG DOM Standard &mdash; implements the full Document Object Model tree with preorder depth-first traversal, event handling (addEventListener, dispatchEvent), and HTML parsing; foundation for a full browser rendering engine (DOM to CSSOM to Render Tree pipeline in progress)</li>
-          </ul>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">AnyStudio &mdash; Rust IDE for Android Dev</div>
+          </div>
+          <div class="item-body">
+            <p>Native desktop IDE in Rust and egui for building Android apps via a direct DEX pipeline &mdash; custom anystudio-dex crate writes classes.dex directly, bypassing Java compilation entirely; separate crates for block compiler, APK build pipeline, ADB wrapper, and Android SDK tool management; uses SDK tools (zipalign, apksigner) only for final signing.</p>
+          </div>
         </div>
       </div>
 
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title">AgroLens &mdash; ML Plant Disease Detection</div>
-          <div class="item-meta"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank">github.com/YogyaChughCoder/AgroLens</a></div>
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/webelo.jpg" alt="Webelo Engine" class="project-image" loading="lazy">
         </div>
-        <div class="item-body">
-          <ul>
-            <li>Trained and deployed a computer vision model to classify plant leaf diseases &mdash; handled dataset pipeline, model training, and deployment as a team; divided responsibilities across components and shipped together in a cooperative team environment</li>
-          </ul>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">Webelo &mdash; Browser Rendering Engine (C++)</div>
+            <div class="item-meta"><a href="https://github.com/YogyaChugh/Webelo" target="_blank">github.com/YogyaChugh/Webelo</a></div>
+          </div>
+          <div class="item-body">
+            <p>Building a DOM library and HTML visualizer in C++ that strictly follows the WhatWG DOM Standard &mdash; implements the full Document Object Model tree with preorder depth-first traversal, event handling (addEventListener, dispatchEvent), and HTML parsing; foundation for a full browser rendering engine.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/agrolens.jpg" alt="AgroLens Dashboard" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">AgroLens &mdash; ML Plant Disease Detection</div>
+            <div class="item-meta"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank">github.com/YogyaChughCoder/AgroLens</a></div>
+          </div>
+          <div class="item-body">
+            <p>Trained and deployed a computer vision model to classify plant leaf diseases &mdash; handled dataset pipeline, model training, and deployment as a team; divided responsibilities across components and shipped together in a cooperative team environment.</p>
+          </div>
         </div>
       </div>
       
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title">SIH &mdash; Blockchain Travel Security System</div>
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/sih-travel.jpg" alt="Blockchain Travel Security" class="project-image" loading="lazy">
         </div>
-        <div class="item-body">
-          <ul>
-            <li>Built a blockchain system for encrypted tourist tracking with SSO to local authorities as a team &mdash; cleared SIH internal selection in both 2024 and 2025; coordinated across multiple system components in a cooperative team environment</li>
-          </ul>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">SIH &mdash; Blockchain Travel Security System</div>
+          </div>
+          <div class="item-body">
+            <p>Built a blockchain system for encrypted tourist tracking with SSO to local authorities as a team &mdash; cleared SIH internal selection in both 2024 and 2025; coordinated across multiple system components in a cooperative team environment.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="fade-in">
-      <h2>Achievements</h2>
-      <div class="item-group">
-        <div class="item-body">
-          <ul>
-            <li><strong>International Hackathons:</strong> 3rd place at Cyber AI Hackathon 2025 (University of Derby, UK) and Agentic AI Hackathon 2025 (Ulster University, UK) out of teams from multiple countries</li>
-            <li><strong>Open-Source Contributor:</strong> Merged pull requests in Django and Django third-party libraries on GitHub</li>
-            <li><strong>GSoC Aspirant:</strong> Applied in 2024 and 2025; preparing 3rd attempt in 2027 (Google Summer of Code)</li>
-          </ul>
+      <h2>The Digital Garden</h2>
+      <div class="personality-grid">
+        
+        <div class="personality-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+            Workspace & Tooling
+          </h3>
+          <p>My main driver is the laptop I earned from Hack Club: an RTX 5070 / Ryzen AI 7 rig. I use VS Code heavily configured, prefer Linux/macOS environments for systems programming, and rely on Git + GitHub for daily open-source workflows.</p>
         </div>
+
+        <div class="personality-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Off-Screen Interests
+          </h3>
+          <p>When I'm not writing C++ or Rust, I'm building games like <i>Snake Hustle</i> and <i>Timberly</i>. I'm also deeply interested in AI/ML research (Stanford Andrew Ng course), competitive programming, and swimming to keep the physical/mental balance.</p>
+        </div>
+        
       </div>
     </section>
 
