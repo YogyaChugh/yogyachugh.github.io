@@ -74,7 +74,27 @@ a:hover {
 
 /* Header */
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+/* Nav Tabs (Multi-Page) */
+.nav-tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.nav-tab {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.nav-tab.active {
+  color: var(--text);
+  box-shadow: 0 2px 0 0 var(--accent);
 }
 
 .contact-info {
@@ -90,6 +110,35 @@ a:hover {
 }
 .contact-info a:hover {
   color: var(--text);
+}
+
+/* Custom Cursor */
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+a, button, input {
+  cursor: none; /* Hide default cursor on links too */
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference; /* Inverts color of whatever is behind it */
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-dot.hovered {
+  width: 30px;
+  height: 30px;
 }
 
 /* Section specific styling */

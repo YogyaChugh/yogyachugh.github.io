@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects - Yogya Chugh</title>
+  <meta name="description" content="Projects by Yogya Chugh">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  
+  <header class="header fade-in">
+    <h1>Yogya Chugh</h1>
+    <div style="font-weight: 500; margin-bottom: 8px; color: var(--text);">Engineer &middot; Builder</div>
+  </header>
+
+  <nav class="nav-tabs fade-in">
+    <a href="index.html" class="nav-tab">Overview</a>
+    <a href="projects.html" class="nav-tab active">Projects</a>
+    <a href="writing.html" class="nav-tab">Writing</a>
+    <a href="contact.html" class="nav-tab">Contact</a>
+  </nav>
+
+  <main>
+    <section class="fade-in">
+      <h2>All Projects</h2>
+      
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/anystudio.jpg" alt="AnyStudio" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">AnyStudio &mdash; Rust IDE for Android Dev</div>
+          </div>
+          <div class="item-body">
+            <p>Native desktop IDE in Rust and egui for building Android apps via a direct DEX pipeline &mdash; custom anystudio-dex crate writes classes.dex directly, bypassing Java compilation entirely; separate crates for block compiler, APK build pipeline, ADB wrapper, and Android SDK tool management.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/webelo.jpg" alt="Webelo" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">Webelo &mdash; Browser Rendering Engine (C++)</div>
+            <div class="item-meta"><a href="https://github.com/YogyaChugh/Webelo" target="_blank">github.com/YogyaChugh/Webelo</a></div>
+          </div>
+          <div class="item-body">
+            <p>Building a DOM library and HTML visualizer in C++ that strictly follows the WhatWG DOM Standard &mdash; implements the full Document Object Model tree with preorder depth-first traversal, event handling (addEventListener, dispatchEvent), and HTML parsing; foundation for a full browser rendering engine.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/agrolens.jpg" alt="AgroLens" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">AgroLens &mdash; ML Plant Disease Detection</div>
+            <div class="item-meta"><a href="https://github.com/YogyaChughCoder/AgroLens" target="_blank">github.com/YogyaChughCoder/AgroLens</a></div>
+          </div>
+          <div class="item-body">
+            <p>Trained and deployed a computer vision model to classify plant leaf diseases &mdash; handled dataset pipeline, model training, and deployment as a team; divided responsibilities across components and shipped together in a cooperative team environment.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/sih-travel.jpg" alt="SIH Blockchain" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">SIH &mdash; Blockchain Travel Security System</div>
+          </div>
+          <div class="item-body">
+            <p>Built a blockchain system for encrypted tourist tracking with SSO to local authorities as a team &mdash; cleared SIH internal selection in both 2024 and 2025; coordinated across multiple system components in a cooperative team environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/webber.jpg" alt="Webber" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">Webber &mdash; Offline Website Downloader</div>
+            <div class="item-meta"><a href="https://github.com/YogyaChugh/Webber" target="_blank">github.com/YogyaChugh/Webber</a></div>
+          </div>
+          <div class="item-body">
+            <p>Desktop app using Pygame, PyWebview, and BeautifulSoup that crawls and downloads any website for full offline rendering.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-image-container">
+          <img src="assets/projects/snake-hustle.jpg" alt="Snake Hustle" class="project-image" loading="lazy">
+        </div>
+        <div class="project-content">
+          <div class="item-header">
+            <div class="item-title">Snake Hustle & Timberly &mdash; Live Games</div>
+            <div class="item-meta"><a href="https://snakehustle.netlify.app" target="_blank">snakehustle.netlify.app</a> | <a href="https://yogya-chugh.itch.io/timberly" target="_blank">yogya-chugh.itch.io/timberly</a></div>
+          </div>
+          <div class="item-body">
+            <p>Two fully playable games deployed live &mdash; both run in the browser. Timberly is also downloadable natively for Windows, macOS, Linux, and Android.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="cursor.js"></script>
+</body>
+</html>
