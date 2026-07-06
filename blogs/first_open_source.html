@@ -14,15 +14,30 @@
   </header>
   <main>
     <h1 class="fade-in">My First Open Source Contribution</h1>
-    <p class="fade-in"><strong>August 2024</strong></p>
+    <p class="fade-in"><strong>Django Codebase &middot; August 2024</strong></p>
+    
     <article class="blog-article fade-in">
-      <p><span class="drop-cap">C</span>ontributing to a massive, established open-source repository for the first time is daunting. My target was Django and its ecosystem of third-party libraries on GitHub.</p>
+      <p><span class="drop-cap">C</span>ontributing to a massive open-source project like Django can feel intimidating. The codebase is enormous, the maintainers are brilliant, and you&rsquo;re just hoping your pull request doesn&rsquo;t break something critical. But the open-source community is built on collaboration, and my first major contribution taught me exactly that.</p>
+
+      <h2>Discovering Ticket 36271</h2>
+      <p>I was browsing the Django issue tracker when I came across <strong>Ticket 36271</strong>. It detailed a specific bug related to form rendering and widgets. Since I had some experience working with Django&rsquo;s forms in my own projects, I felt this was the perfect opportunity to dive in.</p>
       
-      <p>I started by hunting through the issue tracker, specifically looking for bugs that required digging into the core logic rather than just fixing documentation typos. Setting up the local development environment for a massive project like Django taught me a lot about professional project structure and testing pipelines.</p>
+      <p>Setting up the local environment was the first hurdle. Django has a comprehensive test suite, and getting everything running smoothly required carefully reading through the contributing documentation. Once the tests were passing locally, I started tracing the execution path of the bug.</p>
+
+      <h2>Writing the Fix &amp; Tests</h2>
+      <p>Locating the exact module causing the issue took some deep diving into the framework&rsquo;s internals. When I finally pinpointed the problem, the actual fix only required modifying a few lines of code. However, in open source, writing the code is only half the battle.</p>
       
-      <p>After finding a suitable issue, I traced the bug through several layers of the framework, tested my fix against their massive test suite, and submitted my pull request.</p>
+      <blockquote>"The hardest part wasn't writing the code; it was ensuring the fix was robust enough for thousands of developers."</blockquote>
       
-      <p>Getting that first PR merged was a major milestone in my engineering journey.</p>
+      <p>I had to write comprehensive test cases to prove the bug was fixed and ensure it wouldn&rsquo;t regress in the future. Django&rsquo;s existing tests were a great reference point, allowing me to model my assertions correctly.</p>
+
+      <h2>The Review Process</h2>
+      <p>Submitting the pull request was exhilarating. Within a few days, <strong>Sarah Boyce</strong>, a Django core developer and maintainer, reviewed my code. Working with a seasoned maintainer was incredibly insightful. She provided excellent feedback, requesting a minor adjustment to how the test case was structured.</p>
+      
+      <p>After pushing the requested changes, the checks passed, and the magical word appeared: <strong>"Merged."</strong> Seeing my code become part of a framework used by millions of developers worldwide was an unforgettable milestone.</p>
+
+      <hr>
+      <p><em>You can read the full original technical deep-dive on my <a href="https://medium.com/@yogya.developer/my-first-open-source-contribution-67c08b88e674" target="_blank" rel="noopener">Medium blog</a>.</em></p>
     </article>
   </main>
 </div>
@@ -38,4 +53,3 @@
 <script src="../script.js"></script>
 </body>
 </html>
-
