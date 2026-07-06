@@ -112,34 +112,8 @@ a:hover {
   color: var(--text);
 }
 
-/* Custom Cursor */
-body {
-  cursor: none; /* Hide default cursor */
-}
+/* Custom Cursor Removed */
 
-a, button, input {
-  cursor: none; /* Hide default cursor on links too */
-}
-
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  background-color: #fff;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference; /* Inverts color of whatever is behind it */
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease;
-}
-
-.cursor-dot.hovered {
-  width: 30px;
-  height: 30px;
-}
 
 /* Section specific styling */
 .summary-text {
