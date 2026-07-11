@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -16,8 +17,14 @@
     <a href="/writing">&larr; Back to Writing</a>
   </header>
   <main>
-    <h1 class="fade-in">Implementing the WhatWG DOM in C++</h1>
-    <p class="fade-in"><strong>Webelo &middot; In Progress</strong></p>
+    <div class="blog-header fade-in">
+      <h1>Implementing the WhatWG DOM in C++</h1>
+      <div class="blog-meta">
+        <span><i class="ri-calendar-line"></i> May 28, 2026</span>
+        <span><i class="ri-time-line"></i> 4 min read</span>
+        <span><i class="ri-folder-open-line"></i> Webelo</span>
+      </div>
+    </div>
     
     <article class="blog-article fade-in">
       <p><span class="drop-cap">T</span>he Document Object Model is something web developers take for granted. You call <code>document.getElementById()</code> and expect an element back. But when you are building a browser rendering engine from scratch in C++, you quickly realize the immense complexity hidden behind the WhatWG DOM Living Standard.</p>
@@ -52,15 +59,13 @@ void traverseDOM(Node* root) {
 
 <!-- Floating Dock -->
 <nav class="floating-dock">
-  <a href="/" class="dock-link">Overview</a>
-  <a href="/projects" class="dock-link">Archive</a>
-  <a href="/writing" class="dock-link active">Writing</a>
-
+  <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
+  <a href="/projects" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
+  <a href="/writing" class="dock-link active"><i class="ri-quill-pen-line"></i> Writing</a>
 </nav>
 
 <script src="/script.js"></script>
 </body>
+
+
 </html>
-
-
-

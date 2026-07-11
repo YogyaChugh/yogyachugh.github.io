@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -16,8 +17,14 @@
     <a href="/writing">&larr; Back to Writing</a>
   </header>
   <main>
-    <h1 class="fade-in">Running a Real Product on $7/Month</h1>
-    <p class="fade-in"><strong>Vardhman Electricals &middot; Nov 2025 &ndash; Jun 2026</strong></p>
+    <div class="blog-header fade-in">
+      <h1>Running a Real Product on $7/Month</h1>
+      <div class="blog-meta">
+        <span><i class="ri-calendar-line"></i> June 6, 2026</span>
+        <span><i class="ri-time-line"></i> 5 min read</span>
+        <span><i class="ri-folder-open-line"></i> Vardhman Electricals</span>
+      </div>
+    </div>
     
     <article class="blog-article fade-in">
       <p><span class="drop-cap">T</span>he challenge was straightforward but restrictive: build a comprehensive cross-platform business management suite and salesperson credit system for a real client without racking up massive monthly infrastructure costs. When building Vardhman Saathi, I needed an architecture that scaled down to zero cost when idle but could handle daily operations reliably.</p>
@@ -48,15 +55,13 @@ app.get('/api/assets/:id', async (c) => {
 
 <!-- Floating Dock -->
 <nav class="floating-dock">
-  <a href="/" class="dock-link">Overview</a>
-  <a href="/projects" class="dock-link">Archive</a>
-  <a href="/writing" class="dock-link active">Writing</a>
-
+  <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
+  <a href="/projects" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
+  <a href="/writing" class="dock-link active"><i class="ri-quill-pen-line"></i> Writing</a>
 </nav>
 
 <script src="/script.js"></script>
 </body>
+
+
 </html>
-
-
-
