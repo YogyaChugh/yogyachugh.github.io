@@ -1,15 +1,16 @@
 /* =============================================
-   YOGYA CHUGH - MODERN MINIMALIST (RAMX.IN VIBE)
+   YOGYA CHUGH - CLEAN & ORGANIZED (RAMX VIBE)
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #ffffff;
+  --bg: #fafafa; /* Subtle off-white background */
+  --card-bg: #ffffff;
   --text-main: #111111;
-  --text-muted: #666666;
-  --border-light: #eaeaea;
-  --accent: #2563eb; /* Clean tech blue */
+  --text-muted: #737373; /* Smooth gray */
+  --border-light: #e5e5e5;
+  --accent: #111111;
 }
 
 * {
@@ -30,41 +31,35 @@ body {
 a {
   color: var(--text-main);
   text-decoration: none;
-  border-bottom: 1px solid var(--border-light);
   transition: all 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
 }
 
 /* Container */
 .container {
-  max-width: 680px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 60px 20px 100px;
+  padding: 80px 20px 100px;
 }
 
 /* Typography */
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
   color: var(--text-main);
+  letter-spacing: -0.02em;
 }
 
 p {
   color: var(--text-muted);
-  margin-bottom: 1rem;
 }
 
 /* Header / Masthead */
@@ -76,102 +71,149 @@ p {
 }
 
 .monogram-img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .header-role {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .contact-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   font-size: 0.9rem;
-  color: var(--text-muted);
   margin-top: 0.5rem;
 }
 
 .contact-info a {
-  border-bottom: none;
   color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .contact-info a:hover {
   color: var(--text-main);
 }
 
-/* Lists and Items */
-.item-group {
-  margin-bottom: 1.5rem;
+/* -------------------------------------
+   CARD ITEMS (Projects, Experience)
+   ------------------------------------- */
+.card-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 1rem;
 }
 
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.25rem;
-}
-
-.item-title {
+.card-title {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.item-title a {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration-color: var(--border-light);
-  text-underline-offset: 4px;
-}
-
-.item-title a:hover {
-  text-decoration-color: var(--text-main);
-}
-
-.item-meta {
-  font-size: 0.85rem;
+.card-meta {
+  font-size: 0.9rem;
   color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 12px;
 }
 
-.item-body p {
+.card-body p {
   font-size: 0.95rem;
   margin-bottom: 0;
+  line-height: 1.5;
 }
 
-.item-body ul {
-  padding-left: 1.2rem;
-  margin-top: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-.item-body li {
-  margin-bottom: 0.35rem;
-}
-
-/* Skills Grid */
-.skills-grid {
+/* -------------------------------------
+   LIST ITEMS (Blogs)
+   ------------------------------------- */
+.list-item {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-light);
 }
 
-.skills-category {
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-content {
+  flex-grow: 1;
+  padding-right: 20px;
+}
+
+.list-title {
   font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.list-desc {
   font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.list-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.list-action {
+  font-size: 0.95rem;
+  color: #a3a3a3;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.list-item:hover .list-action {
   color: var(--text-main);
 }
 
-.skills-list {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+/* -------------------------------------
+   BUTTONS
+   ------------------------------------- */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-top: 1rem;
+}
+
+.btn-outline:hover {
+  background-color: #f3f4f6;
+}
+
+.center-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 /* Floating Dock Navigation (Minimized) */
@@ -196,7 +238,6 @@ p {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-muted);
-  border-bottom: none;
   padding: 4px 8px;
   border-radius: 6px;
 }
@@ -208,66 +249,4 @@ p {
 
 .dock-link:hover {
   color: var(--text-main);
-}
-
-/* Blog Article Specifics */
-.blog-article h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
-}
-
-.blog-article p {
-  color: var(--text-main);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-blockquote {
-  margin: 1.5rem 0;
-  padding: 0 1rem;
-  border-left: 3px solid var(--border-light);
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-pre {
-  background-color: #f8f9fa;
-  border: 1px solid var(--border-light);
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-}
-
-code {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  background-color: #f8f9fa;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-}
-
-pre code {
-  background-color: transparent;
-  padding: 0;
-}
-
-/* Animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 600px) {
-  .floating-dock {
-    width: 90%;
-    justify-content: space-around;
-  }
 }
