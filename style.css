@@ -2,7 +2,7 @@
    YOGYA CHUGH - CLEAN & ORGANIZED (RAMX VIBE)
    ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 
 :root {
   --bg: #fafafa; /* Subtle off-white background */
@@ -31,7 +31,12 @@ body {
 a {
   color: var(--text-main);
   text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
   transition: all 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--text-main);
 }
 
 /* Container */
@@ -43,63 +48,85 @@ a {
 
 /* Typography */
 h1 {
-  font-size: 1.75rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
   letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
 h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   color: var(--text-main);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 p {
   color: var(--text-muted);
 }
 
-/* Header / Masthead */
+/* Header / Masthead (Media Block Layout) */
 .masthead-top {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 2rem;
+}
+
+.header-text {
+  flex-grow: 1;
+}
+
+.monogram-container {
+  flex-shrink: 0;
+  margin-left: 20px;
 }
 
 .monogram-img {
-  width: 64px;
-  height: 64px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
+  border: 1px solid var(--border-light);
 }
 
 .header-role {
   color: var(--text-muted);
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .contact-info {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+
+.contact-info span {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 .contact-info a {
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 6px;
+  border-bottom: none;
 }
 
 .contact-info a:hover {
   color: var(--text-main);
+  border-bottom: none;
 }
 
 /* -------------------------------------
@@ -108,19 +135,76 @@ p {
 .card-item {
   background-color: var(--card-bg);
   border: 1px solid var(--border-light);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 20px 24px;
   margin-bottom: 1rem;
+  display: flex;
+  gap: 20px;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-thumbnail {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .card-item {
+    flex-direction: column;
+  }
+  .card-thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
 }
 
 .card-title {
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--text-main);
-  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.card-links {
+  display: flex;
+  gap: 12px;
+}
+
+.card-links a {
+  color: var(--text-muted);
+  border-bottom: none;
+  font-size: 1.1rem;
+}
+
+.card-links a:hover {
+  color: var(--text-main);
+  border-bottom: none;
+}
+
+.card-title a {
+  border-bottom: none;
+}
+
+.card-title a:hover {
+  border-bottom: none;
+  opacity: 0.7;
 }
 
 .card-meta {
@@ -187,6 +271,94 @@ p {
 
 .list-item:hover .list-action {
   color: var(--text-main);
+}
+
+/* -------------------------------------
+   SKILLS & EXPERIENCE (Reintroduced)
+   ------------------------------------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.skills-category {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.skills-row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.skills-category {
+  width: 180px;
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.skills-list {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .skills-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.item-group {
+  margin-bottom: 2rem;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.item-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.item-body p, .item-body ul {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.item-body ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.item-body li {
+  margin-bottom: 6px;
 }
 
 /* -------------------------------------

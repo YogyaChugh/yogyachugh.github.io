@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -18,18 +18,20 @@
   
   <header class="header fade-in masthead">
     <div class="masthead-top">
-      <img src="/favicon.png" alt="Logo" class="monogram-img" decoding="async">
-      <div class="masthead-details">
+      <div class="header-text">
         <div class="header-role">Engineer &middot; Builder</div>
-        <h1>Yogya Chugh</h1>
-        <div class="contact-info" style="gap: 15px; margin-top: 8px; align-items: center;">
-          <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-location-dot"></i> Delhi, India</span>
-          <a href="mailto:yogya.developer@gmail.com" style="display: flex; align-items: center; gap: 6px; border-bottom: none;"><i class="fa-solid fa-envelope"></i> Email</a>
-          <a href="https://github.com/YogyaChugh" target="_blank" title="GitHub" style="display: flex; align-items: center; gap: 6px; border-bottom: none;"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://linkedin.com/in/yogyachugh" target="_blank" title="LinkedIn" style="display: flex; align-items: center; gap: 6px; border-bottom: none;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="https://instagram.com/opyogyachugh" target="_blank" title="Instagram" style="display: flex; align-items: center; gap: 6px; border-bottom: none;"><i class="fa-brands fa-instagram"></i> Insta</a>
-          <a href="https://docs.google.com/document/d/16spErLM21nJoRArkkF35ZBLJlAdmR4kczkbwGNxnxcc/edit?usp=sharing" target="_blank" title="Resume" style="display: flex; align-items: center; gap: 6px; border-bottom: none;"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+        <h1 class="fade-in">Yogya Chugh</h1>
+        <div class="contact-info fade-in" style="animation-delay: 0.1s;">
+          <span style="display: flex; align-items: center; gap: 6px;"><i class="ri-map-pin-line"></i> Delhi, India</span>
+          <a href="mailto:yogya.developer@gmail.com" target="_blank" title="Email"><i class="ri-mail-line"></i></a>
+          <a href="https://github.com/YogyaChugh" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
+          <a href="https://linkedin.com/in/yogyachugh" target="_blank" title="LinkedIn"><i class="ri-linkedin-line"></i></a>
+          <a href="https://instagram.com/opyogyachugh" target="_blank" title="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="https://docs.google.com/document/d/16spErLM21nJoRArkkF35ZBLJlAdmR4kczkbwGNxnxcc/edit?usp=sharing" target="_blank" title="Resume"><i class="ri-file-paper-2-line"></i></a>
         </div>
+      </div>
+      <div class="monogram-container">
+        <img src="/favicon.png" alt="Yogya Chugh" class="monogram-img">
       </div>
     </div>
     <div class="masthead-bottom">
@@ -39,87 +41,29 @@
 
   <main>
     <section class="fade-in">
-      <h2 >Technical Specifications</h2>
+      <h2>Technical Specifications</h2>
       <div class="skills-grid">
-        <div class="skills-category">Languages</div>
-        <div class="skills-list">C++, Rust, Python, TypeScript, JavaScript, SQL</div>
-        
-        <div class="skills-category">Core CS</div>
-        <div class="skills-list">Data Structures & Algorithms, OOP, DBMS, Computer Networks, Compiler Design</div>
-        
-        <div class="skills-category">Backend & Frameworks</div>
-        <div class="skills-list">Node.js, Hono, FastAPI, Flask, Django, React, React Native, Expo, HTML/CSS</div>
-        
-        <div class="skills-category">Cloud & Databases</div>
-        <div class="skills-list">PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, Docker, Git, Linux</div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2>Featured Work</h2>
-      
-      <div class="card-item">
-        <div class="card-title">AnyStudio</div>
-        <div class="card-meta">Rust &middot; Desktop IDE</div>
-        <div class="card-body">
-          <p>No-code Android app builder in Rust with a drag-and-drop UI canvas. A custom compiler generates Android bytecode from scratch, bypassing the Java toolchain entirely, and automatically manages dependencies and virtual device testing.</p>
+        <div class="skills-row">
+          <div class="skills-category">Languages</div>
+          <div class="skills-list">C++, Rust, Python, TypeScript, JavaScript, SQL</div>
         </div>
-      </div>
-
-      <div class="card-item">
-        <div class="card-title"><a href="https://github.com/YogyaChugh/Webelo" target="_blank" style="text-decoration: underline;">Webelo</a></div>
-        <div class="card-meta">C++ &middot; Browser Engine</div>
-        <div class="card-body">
-          <p>C++ browser rendering engine following the WHATWG spec with preorder depth-first traversal. v2.0 ships an HTML Visualizer with Python bindings and hosted docs.</p>
+        <div class="skills-row">
+          <div class="skills-category">Core CS</div>
+          <div class="skills-list">Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</div>
         </div>
-      </div>
-
-      <div class="card-item">
-        <div class="card-title">SIH Security System</div>
-        <div class="card-meta">Blockchain &middot; SSO</div>
-        <div class="card-body">
-          <p>Decentralized tourist identity app for verifiable digital ID cards backed by a blockchain, scannable via QR. Built on React, ethers.js, and WalletConnect.</p>
+        <div class="skills-row">
+          <div class="skills-category">Backend &amp; Frameworks</div>
+          <div class="skills-list">Node.js, Hono, FastAPI, Flask, Django, React, React Native, Expo, HTML/CSS</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-category">Cloud &amp; Databases</div>
+          <div class="skills-list">PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, Docker, Git, Linux</div>
         </div>
       </div>
     </section>
 
     <section class="fade-in">
-      <h2>Writing</h2>
-      
-      <a href="/blogs/vardhman" class="list-item">
-        <div class="list-content">
-          <div class="list-title">Running a Real Product on $7/Month</div>
-          <div class="list-desc">Vardhman Electricals</div>
-          <div class="list-meta"><i class="fa-regular fa-calendar"></i> June 6, 2026</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
-      </a>
-
-      <a href="/blogs/whatwg_dom" class="list-item">
-        <div class="list-content">
-          <div class="list-title">Implementing the WhatWG DOM in C++</div>
-          <div class="list-desc">Webelo</div>
-          <div class="list-meta"><i class="fa-regular fa-calendar"></i> May 28, 2026</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
-      </a>
-
-      <a href="/blogs/summer_of_making" class="list-item">
-        <div class="list-content">
-          <div class="list-title">450 Hours, 4 Ships, One Laptop</div>
-          <div class="list-desc">Summer 2025</div>
-          <div class="list-meta"><i class="fa-regular fa-calendar"></i> May 28, 2026</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
-      </a>
-      
-      <div class="center-box">
-        <a href="/writing" class="btn-outline">Show all blogs</a>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2 >Professional Experience</h2>
+      <h2>Professional Experience</h2>
       
       <div class="item-group">
         <div class="item-header">
@@ -149,10 +93,99 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Featured Work</h2>
+      
+      <div class="card-item">
+        <div class="card-content">
+          <div class="card-header-flex">
+            <div class="card-title">AnyStudio</div>
+            <div class="card-links">
+              <a href="https://github.com/YogyaChugh/AnyStudio" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
+            </div>
+          </div>
+          <div class="card-meta">Rust &middot; Desktop IDE</div>
+          <div class="card-body">
+            <p>No-code Android app builder in Rust with a drag-and-drop UI canvas. A custom compiler generates Android bytecode from scratch, bypassing the Java toolchain entirely, and automatically manages dependencies and virtual device testing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-content">
+          <div class="card-header-flex">
+            <div class="card-title">Webelo</div>
+            <div class="card-links">
+              <a href="https://github.com/YogyaChugh/Webelo" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
+              <a href="https://yogya.dev/Webelo/" target="_blank" title="Website"><i class="ri-external-link-line"></i></a>
+            </div>
+          </div>
+          <div class="card-meta">C++ &middot; Browser Engine</div>
+          <div class="card-body">
+            <p>C++ browser rendering engine following the WHATWG spec with preorder depth-first traversal. v2.0 ships an HTML Visualizer with Python bindings and hosted docs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-content">
+          <div class="card-header-flex">
+            <div class="card-title">SIH Security System</div>
+            <div class="card-links">
+              <a href="https://github.com/YogyaChughCoder/SIH" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
+            </div>
+          </div>
+          <div class="card-meta">Blockchain &middot; SSO</div>
+          <div class="card-body">
+            <p>Decentralized tourist identity app for verifiable digital ID cards backed by a blockchain, scannable via QR. Built on React, ethers.js, and WalletConnect.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Writing</h2>
+      
+      <a href="/blogs/vardhman" class="list-item">
+        <div class="list-content">
+          <div class="list-title">Running a Real Product on $7/Month</div>
+          <div class="list-desc">Vardhman Electricals</div>
+          <div class="list-meta"><i class="ri-calendar-line"></i> June 6, 2026</div>
+        </div>
+        <div class="list-action">Read more &rarr;</div>
+      </a>
+
+      <a href="/blogs/whatwg_dom" class="list-item">
+        <div class="list-content">
+          <div class="list-title">Implementing the WhatWG DOM in C++</div>
+          <div class="list-desc">Webelo</div>
+          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026</div>
+        </div>
+        <div class="list-action">Read more &rarr;</div>
+      </a>
+
+      <a href="/blogs/summer_of_making" class="list-item">
+        <div class="list-content">
+          <div class="list-title">450 Hours, 4 Ships, One Laptop</div>
+          <div class="list-desc">Summer 2025</div>
+          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026</div>
+        </div>
+        <div class="list-action">Read more &rarr;</div>
+      </a>
+      
+      <div class="center-box">
+        <a href="/writing" class="btn-outline">Show all blogs</a>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Achievements &amp; Open Source</h2>
 
       <div class="item-group">
         <div class="item-header">
-          <div class="item-title">Independent Developer &mdash; Hack Club</div>
+          <div class="item-title">Hack Club &mdash; Summer of Making</div>
           <div class="item-meta">Summer 2025</div>
         </div>
         <div class="item-body">
@@ -164,7 +197,7 @@
 
       <div class="item-group">
         <div class="item-header">
-          <div class="item-title">Open Source Contributor &mdash; Django</div>
+          <div class="item-title">Django &mdash; Open Source Contributor</div>
           <div class="item-meta">August 2024</div>
         </div>
         <div class="item-body">
@@ -173,20 +206,17 @@
           </ul>
         </div>
       </div>
-    </section>
 
-    <section class="fade-in">
-      <h2 >Achievements</h2>
       <div class="item-group">
         <div class="item-header">
-          <div class="item-title">Awards & Honors</div>
+          <div class="item-title">Hackathons &amp; Competitions</div>
         </div>
         <div class="item-body">
           <ul>
             <li>3rd place, Cyber AI Hackathon 2025 (University of Derby, UK)</li>
             <li>3rd place, Agentic AI Hackathon 2025 (Ulster University, UK)</li>
             <li>Selected in SIH internal rounds in both 2024 and 2025</li>
-            <li>Founder & Lead, Technical Club &mdash; organized Frontend Frenzy, website development competition</li>
+            <li>Founder &amp; Lead, Technical Club &mdash; organized Frontend Frenzy, website development competition</li>
             <li>1st place, Pattern Coding Competition 2023 &mdash; Rs. 2,000 cash prize</li>
           </ul>
         </div>
@@ -194,29 +224,7 @@
     </section>
 
     <section class="fade-in">
-      <h2 >Environment & Output</h2>
-      
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title">Hardware & Workspace</div>
-        </div>
-        <div class="item-body">
-          <p>My main driver is an RTX 5070 / Ryzen AI 7 machine. I use heavily configured VS Code, prefer Linux/macOS environments for systems programming, and rely on Git + GitHub for daily workflows.</p>
-        </div>
-      </div>
-
-      <div class="item-group">
-        <div class="item-header">
-          <div class="item-title">Off-Screen</div>
-        </div>
-        <div class="item-body">
-          <p>When not writing C++ or Rust, I build games (Snake Hustle, Timberly). I am deeply invested in AI/ML research, competitive programming, and swimming.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2 >Education</h2>
+      <h2>Education</h2>
       <div class="item-group">
         <div class="item-header">
           <div class="item-title">B.Tech &mdash; Computer Science and Engineering</div>
