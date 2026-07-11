@@ -57,11 +57,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border);
-  margin-top: 4rem;
+  border-bottom: 1px solid var(--border);
+  margin-top: 3rem;
 }
 
 /* Layout */
@@ -95,9 +95,9 @@ h2 {
   display: flex;
   align-items: flex-end;
   gap: 30px;
-  border-bottom: 4px solid var(--border);
+  border-bottom: 2px solid var(--border);
   padding-bottom: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .monogram-img {
@@ -142,16 +142,16 @@ h2 {
 
 /* Grids and Items */
 .item-group {
-  margin-bottom: 2.5rem;
-  padding-left: 20px;
-  border-left: 2px solid var(--border);
+  margin-bottom: 2rem;
+  padding-left: 15px;
+  border-left: 1px solid var(--border);
 }
 
 .item-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .item-title {
@@ -179,42 +179,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Project Cards */
-.project-card {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 3rem;
-  border: 2px solid var(--border);
-  padding: 15px;
-}
-@media (min-width: 650px) {
-  .project-card {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-.project-image-container {
-  flex-shrink: 0;
-  width: 100%;
-  border: 2px solid var(--border);
-}
-@media (min-width: 650px) {
-  .project-image-container {
-    width: 250px;
-  }
-}
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.project-content {
-  flex-grow: 1;
-}
+/* Bulky project cards removed in favor of sleek item-groups */
 
 /* Floating Dock Navigation */
 .floating-dock {
