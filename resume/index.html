@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume - Yogya Chugh</title>
+  <meta name="description" content="Resume of Yogya Chugh">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Paper Resume Styles */
+    body {
+      background-color: var(--bg-main);
+    }
+    
+    .resume-wrapper {
+      padding: 40px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .resume-actions {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .resume-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .resume-paper {
+      width: 100%;
+      max-width: 850px;
+      background: white;
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+      padding: 0.7in 0.7in;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      line-height: 1.3;
+      font-size: 11pt;
+    }
+    
+    .resume-paper a {
+      color: #000080; /* NavyBlue */
+      text-decoration: none;
+    }
+    
+    .resume-paper a:hover {
+      text-decoration: underline;
+    }
+    
+    .r-center {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    
+    .r-name {
+      font-size: 24pt;
+      font-weight: bold;
+      margin: 0 0 4px 0;
+    }
+    
+    .r-contact {
+      font-size: 11pt;
+    }
+    
+    .r-section-title {
+      font-size: 12pt;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: 1pt solid black;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      padding-bottom: 2px;
+    }
+    
+    .r-item {
+      margin-bottom: 8px;
+    }
+    
+    .r-item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+    
+    .r-item-subheader {
+      display: flex;
+      justify-content: space-between;
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+    
+    .r-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    
+    .r-list li {
+      margin-bottom: 3px;
+    }
+    
+    .r-skills {
+      margin-bottom: 4px;
+    }
+
+    /* Small screens */
+    @media (max-width: 600px) {
+      .resume-paper {
+        padding: 20px;
+        font-size: 10pt;
+      }
+      .r-name { font-size: 18pt; }
+      .r-item-header, .r-item-subheader {
+        flex-direction: column;
+      }
+      .r-item-header span:last-child, .r-item-subheader span:last-child {
+        align-self: flex-start;
+        color: #555;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="resume-wrapper fade-in">
+  
+  <div class="resume-actions">
+    <a href="/" class="resume-btn"><i class="ri-arrow-left-line"></i> Back to Site</a>
+    <!-- Google Docs direct PDF export link -->
+    <a href="https://docs.google.com/document/d/16spErLM21nJoRArkkF35ZBLJlAdmR4kczkbwGNxnxcc/export?format=pdf" class="resume-btn"><i class="ri-download-2-line"></i> Download PDF</a>
+    <a href="https://docs.google.com/document/d/16spErLM21nJoRArkkF35ZBLJlAdmR4kczkbwGNxnxcc/edit?usp=sharing" target="_blank" class="resume-btn"><i class="ri-google-fill"></i> View Google Doc</a>
+  </div>
+
+  <div class="resume-paper">
+    <div class="r-center">
+      <h1 class="r-name">Yogya Chugh</h1>
+      <div class="r-contact">
+        Delhi, India &ndash; 110032<br>
+        Email: <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a> &nbsp;|&nbsp; Mobile: +91 9650029959<br>
+        LinkedIn: <a href="https://linkedin.com/in/yogyachugh" target="_blank">linkedin.com/in/yogyachugh</a> &nbsp;|&nbsp; GitHub: <a href="https://github.com/YogyaChugh" target="_blank">github.com/YogyaChugh</a><br>
+        Website: <a href="https://yogya.dev" target="_blank">yogya.dev</a>
+      </div>
+    </div>
+
+    <div class="r-section-title">Technical Skills</div>
+    <div class="r-list r-skills">
+      <li><strong>Languages:</strong> C++, Rust, Python, TypeScript, JavaScript, SQL</li>
+      <li><strong>Core CS:</strong> Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</li>
+      <li><strong>Backend:</strong> Node.js, Hono, FastAPI, Flask, Django, REST API Design, JWT, OAuth 2.0</li>
+      <li><strong>Databases &amp; Cloud:</strong> PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2</li>
+      <li><strong>Frontend:</strong> React, React Native, Expo, HTML/CSS</li>
+      <li><strong>Tools &amp; Platforms:</strong> Docker, Git, Linux</li>
+    </div>
+
+    <div class="r-section-title">Work Experience</div>
+    
+    <div class="r-item">
+      <div class="r-item-header">
+        <span>Vardhman Electricals</span>
+        <span>Delhi, India</span>
+      </div>
+      <div class="r-item-subheader">
+        <span>Software Developer &ndash; Intern (Remote)</span>
+        <span>Nov 2025 &ndash; Jun 2026</span>
+      </div>
+      <ul class="r-list">
+        <li>TypeScript/Hono REST API on Render &ndash; Google OAuth, JWT auth, SSE real-time sync serving 200+ concurrent users across 3+ admin dashboards; live at <a href="https://vardhmansaathi.shop" target="_blank">vardhmansaathi.shop</a></li>
+        <li>Designed and deployed a PostgreSQL schema on Supabase to back authentication, orders, and admin-dashboard data</li>
+        <li>Electron + React admin desktop app and a React Native (Expo) Android app deployed on Google Play Store</li>
+        <li>Cloudflare R2 for image storage; total hosting at $7/month</li>
+      </ul>
+    </div>
+
+    <div class="r-item">
+      <div class="r-item-header">
+        <span>Client Application Project</span>
+        <span>Remote</span>
+      </div>
+      <div class="r-item-subheader">
+        <span>Software Developer &ndash; Freelance</span>
+        <span>Jun 2026 &ndash; Present</span>
+      </div>
+      <ul class="r-list">
+        <li>Cross-platform iOS/Android app (React Native, Expo) to be deployed at Play Store and App Store</li>
+        <li>PostgreSQL database on Supabase with Google/Apple auth, RLS, and row-level access policies</li>
+        <li>Subscription based Payment Handling using Superwall</li>
+      </ul>
+    </div>
+
+    <div class="r-section-title">Projects</div>
+    
+    <div class="r-item">
+      <div class="r-item-header">
+        <span>Webelo &ndash; Browser Rendering Engine</span>
+        <span><a href="https://github.com/YogyaChugh/Webelo" target="_blank">github.com/YogyaChugh/Webelo</a></span>
+      </div>
+      <div class="r-item-subheader">
+        <span>Personal Project</span>
+        <span>C++</span>
+      </div>
+      <ul class="r-list">
+        <li>C++ browser rendering engine; DOM tree follows the WHATWG spec with preorder depth-first traversal</li>
+        <li>v2.0 ships an HTML Visualizer with Python bindings and hosted docs; CSSOM and Render Tree stages are not yet implemented</li>
+      </ul>
+    </div>
+
+    <div class="r-item">
+      <div class="r-item-header">
+        <span>AnyStudio &ndash; No-Code Android App Builder</span>
+        <span>Private Repository</span>
+      </div>
+      <div class="r-item-subheader">
+        <span>Personal Project</span>
+        <span>In Development</span>
+      </div>
+      <ul class="r-list">
+        <li>No-code Android app builder in Rust &ndash; drag-and-drop UI canvas that exports a signed, installable APK</li>
+        <li>Custom compiler generates Android bytecode from scratch, bypassing the Java toolchain entirely</li>
+        <li>Handles backend logic using drag-and-drop blocks, with automatic dependency management (SDKs, apksigner, zipalign) and virtual device testing for the exported APK</li>
+      </ul>
+    </div>
+
+    <div class="r-item">
+      <div class="r-item-header">
+        <span>SIH &ndash; Blockchain Travel Security System (Safario)</span>
+        <span>Team Project</span>
+      </div>
+      <div class="r-item-subheader">
+        <span>Smart India Hackathon</span>
+        <span>2024 &ndash; 2025</span>
+      </div>
+      <ul class="r-list">
+        <li>Decentralized tourist identity app &ndash; verifiable digital ID cards backed by a blockchain, scannable via QR</li>
+        <li>Built on React, ethers.js, and WalletConnect; includes live geolocation and English/Hindi support</li>
+      </ul>
+    </div>
+
+    <div class="r-item">
+      <ul class="r-list" style="margin-top: 6px;">
+        <li><strong>Open Source &ndash; Django:</strong> Fixed a bug where an unresolved relative {% extends %} template path raised an unrelated AttributeError instead of a clear TemplateSyntaxError; merged as <a href="https://github.com/django/django/pull/19295" target="_blank">django/django #19295</a></li>
+      </ul>
+    </div>
+
+    <div class="r-section-title">Education</div>
+    
+    <div class="r-item">
+      <div class="r-item-header">
+        <span>Panipat Institute of Engineering and Technology (KUK)</span>
+        <span>Panipat, India</span>
+      </div>
+      <div class="r-item-subheader">
+        <span>B.Tech &ndash; Computer Science and Engineering</span>
+        <span>2023 &ndash; 2027</span>
+      </div>
+      <ul class="r-list">
+        <li>CGPA: 8.05/10</li>
+      </ul>
+    </div>
+
+    <div class="r-section-title">Achievements</div>
+    <ul class="r-list">
+      <li>Built 4 projects (450+ hrs) for Hack Club Summer of Making, GitHub-sponsored &ndash; awarded a $1,649 Gigabyte Aero laptop (RTX 5070, Ryzen AI 7, 32 GB, 1 TB SSD)</li>
+      <li>3<sup>rd</sup> place, Cyber AI Hackathon 2025 (University of Derby, UK)</li>
+      <li>3<sup>rd</sup> place, Agentic AI Hackathon 2025 (Ulster University, UK)</li>
+      <li>Selected in SIH internal rounds in both 2024 and 2025</li>
+      <li>Founder &amp; Lead, Technical Club &ndash; organized Frontend Frenzy, website development competition</li>
+      <li>1<sup>st</sup> place, Pattern Coding Competition 2023 &ndash; Rs. 2,000 cash prize</li>
+    </ul>
+
+    <div class="r-section-title">Interests</div>
+    <div style="font-size: 11pt;">
+      Competitive Programming &nbsp;|&nbsp; Game Development &nbsp;|&nbsp; Neural Networks
+    </div>
+
+  </div>
+</div>
+
+<nav class="floating-dock">
+  <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
+  <a href="/projects" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
+  <a href="/writing" class="dock-link"><i class="ri-quill-pen-line"></i> Writing</a>
+  <a href="/resume" class="dock-link active"><i class="ri-file-text-line"></i> Resume</a>
+</nav>
+
+<script src="/script.js"></script>
+</body>
+</html>
