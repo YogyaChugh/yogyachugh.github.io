@@ -18,5 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.fade-in');
   elements.forEach(el => observer.observe(el));
 
-// Decrypt logic removed as per user request.
+  // --- Floating Dock Auto-Hide ---
+  let lastScrollY = window.scrollY;
+  const dock = document.querySelector('.floating-dock');
+  
+  if (dock) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down
+        dock.style.transform = 'translateX(-50%) translateY(150px)';
+      } else {
+        // Scrolling up
+        dock.style.transform = 'translateX(-50%) translateY(0)';
+      }
+      lastScrollY = window.scrollY;
+    }, { passive: true });
+  }
+
 });

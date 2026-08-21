@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hangman â€” Play in Browser</title>
+<title>Hangman &mdash; Play in Browser</title>
 <link rel="stylesheet" href="./vendor/xterm.min.css" />
 <style>
   :root { --bg:#0d0d12; --panel:#15151c; --accent:#ff6eb4; --accent2:#c084fc; }
@@ -76,8 +76,8 @@
 </style>
 </head>
 <body>
-  <h1>Hangman â€” live in your browser</h1>
-  <p class="sub">The original C terminal game, compiled to WebAssembly. Click the terminal, then type a single letter and press Enter to guess. First load can take a moment â€” please be patient.</p>
+  <h1>Hangman &mdash; live in your browser</h1>
+  <p class="sub">The original C terminal game, compiled to WebAssembly. Click the terminal, then type a single letter and press Enter to guess. First load can take a moment &mdash; please be patient.</p>
 
   <div id="term-wrap">
     <div id="term-bar">
@@ -99,7 +99,7 @@
     #keyboard button.wide { min-width: 70px; }
   </style>
 
-  <div id="status">Loadingâ€¦</div>
+  <div id="status">Loading&rdquo;¦</div>
   <button id="restart-btn" style="display:none;">Restart Game</button>
 
 <script src="./vendor/xterm.min.js"></script>
@@ -169,7 +169,7 @@
   let started = false;
 
   function boot() {
-    statusEl.textContent = "Booting gameâ€¦";
+    statusEl.textContent = "Booting game&rdquo;¦";
     createHangmanModule({
       print: (text) => term.write(text + "\r\n"),
       printErr: (text) => term.write("\x1b[31m" + text + "\x1b[0m\r\n"),
