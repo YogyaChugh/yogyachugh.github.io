@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resume - Yogya Chugh</title>
   <meta name="description" content="Resume of Yogya Chugh">
+
+  <!-- SEO / Open Graph -->
+  <link rel="canonical" href="https://yogya.dev/resume">
+  <meta property="og:title" content="Resume - Yogya Chugh">
+  <meta property="og:description" content="Resume and professional experience of Yogya Chugh.">
+  <meta property="og:url" content="https://yogya.dev/resume">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://yogya.dev/favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,10 +186,10 @@
     <div class="r-list r-skills">
       <li><strong>Languages:</strong> C++, Rust, Python, TypeScript, JavaScript, SQL</li>
       <li><strong>Core CS:</strong> Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</li>
-      <li><strong>Backend:</strong> Node.js, Hono, FastAPI, Flask, Django, REST API Design, JWT, OAuth 2.0</li>
-      <li><strong>Databases &amp; Cloud:</strong> PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2</li>
+      <li><strong>Backend:</strong> FastAPI, Flask, Django, Node.js, Hono, REST API Design, JWT, OAuth 2.0</li>
+      <li><strong>Databases &amp; Cloud:</strong> PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, D1, Workers, KV</li>
       <li><strong>Frontend:</strong> React, React Native, Expo, HTML/CSS</li>
-      <li><strong>Tools &amp; Platforms:</strong> Docker, Git, Linux</li>
+      <li><strong>Tools &amp; Platforms:</strong> Docker, Git, Linux, CI/CD (GitHub Actions)</li>
     </div>
 
     <div class="r-section-title">Work Experience</div>
@@ -191,13 +201,13 @@
       </div>
       <div class="r-item-subheader">
         <span>Software Developer &ndash; Intern (Remote)</span>
-        <span>Nov 2025 &ndash; Jun 2026</span>
+        <span>Mar 2026 &ndash; Jun 2026</span>
       </div>
       <ul class="r-list">
         <li>TypeScript/Hono REST API on Render &ndash; Google OAuth, JWT auth, SSE real-time sync serving 200+ concurrent users across 3+ admin dashboards; live at <a href="https://vardhmansaathi.shop" target="_blank">vardhmansaathi.shop</a></li>
         <li>Designed and deployed a PostgreSQL schema on Supabase to back authentication, orders, and admin-dashboard data</li>
-        <li>Electron + React admin desktop app and a React Native (Expo) Android app deployed on Google Play Store</li>
-        <li>Cloudflare R2 for image storage; total hosting at $7/month</li>
+        <li>Electron + React admin desktop app and a React Native (Expo) Android app, deployed on Google Play Store at <a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi&pcampaignid=web_share" target="_blank">Vardhman Saathi</a></li>
+        <li>Optimized image storage with Cloudflare R2, keeping total hosting cost at $7/month while supporting live production traffic</li>
       </ul>
     </div>
 
@@ -252,16 +262,15 @@
 
     <div class="r-item">
       <div class="r-item-header">
-        <span>SIH &ndash; Blockchain Travel Security System (Safario)</span>
+        <span>Pippo &ndash; Multilingual Navigation Robot</span>
         <span>Team Project</span>
       </div>
       <div class="r-item-subheader">
-        <span>Smart India Hackathon</span>
+        <span>College Project</span>
         <span>2024 &ndash; 2025</span>
       </div>
       <ul class="r-list">
-        <li>Decentralized tourist identity app &ndash; verifiable digital ID cards backed by a blockchain, scannable via QR</li>
-        <li>Built on React, ethers.js, and WalletConnect; includes live geolocation and English/Hindi support</li>
+        <li>Designed a multilingual navigation robot for tourists/newcomers, using voice interaction via ElevenLabs API, conversational Q&A, and autonomous path navigation; also built the companion mobile app for the robot</li>
       </ul>
     </div>
 
@@ -289,11 +298,10 @@
 
     <div class="r-section-title">Achievements</div>
     <ul class="r-list">
-      <li>Built 4 projects (450+ hrs) for Hack Club Summer of Making, GitHub-sponsored &ndash; awarded a $1,649 Gigabyte Aero laptop (RTX 5070, Ryzen AI 7, 32 GB, 1 TB SSD)</li>
-      <li>3<sup>rd</sup> place, Cyber AI Hackathon 2025 (University of Derby, UK)</li>
-      <li>3<sup>rd</sup> place, Agentic AI Hackathon 2025 (Ulster University, UK)</li>
-      <li>Selected in SIH internal rounds in both 2024 and 2025</li>
+      <li>Completed 4 projects (450+ hrs) for Hack Club Summer of Making, GitHub-sponsored &ndash; won a $1,649 Gigabyte Aero laptop (RTX 5070, Ryzen AI 7, 32 GB, 1 TB SSD)</li>
+      <li>3<sup>rd</sup> place, Cyber AI Hackathon 2025 (University of Derby, UK) and Agentic AI Hackathon 2025 (Ulster University, UK) &ndash; with Pippo</li>
       <li>Founder &amp; Lead, Technical Club &ndash; organized Frontend Frenzy, website development competition</li>
+      <li>Selected in SIH internal rounds (2024, 2025) &ndash; built a blockchain-based tourist ID verification system with my team, using React, ethers.js, and WalletConnect for the Smart Tourism track</li>
       <li>1<sup>st</sup> place, Pattern Coding Competition 2023 &ndash; Rs. 2,000 cash prize</li>
     </ul>
 
@@ -305,11 +313,11 @@
   </div>
 </div>
 
-<nav class="floating-dock">
+<nav class="floating-dock" aria-label="Main Navigation">
   <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
-  <a href="/projects" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
-  <a href="/writing" class="dock-link"><i class="ri-quill-pen-line"></i> Writing</a>
-  <a href="/resume" class="dock-link active"><i class="ri-file-text-line"></i> Resume</a>
+  <a href="/projects.html" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
+  <a href="/writing.html" class="dock-link"><i class="ri-quill-pen-line"></i> Writing</a>
+  <a href="/resume" class="dock-link active" aria-current="page"><i class="ri-file-text-line"></i> Resume</a>
 </nav>
 
 <script src="/script.js"></script>

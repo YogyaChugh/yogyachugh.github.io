@@ -43,7 +43,51 @@ a:hover {
 .container {
   max-width: 700px;
   margin: 0 auto;
-  padding: 80px 20px 100px;
+  padding: 80px 20px 140px;
+}
+
+/* Accessibility & Focus */
+:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Primary CTA Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--text-main);
+  color: var(--card-bg) !important;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid var(--text-main);
+  text-decoration: none;
+  border-bottom: none;
+}
+.btn-primary:hover {
+  background-color: #333;
+  color: var(--card-bg) !important;
+  border-bottom: none;
+}
+
+.secondary-link {
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-link {
+  font-weight: 500;
+  padding: 8px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Typography */

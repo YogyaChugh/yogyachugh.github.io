@@ -5,12 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yogya Chugh</title>
   <meta name="description" content="Yogya Chugh is a Software Engineer and Builder based in Delhi, specializing in C++, Rust, Python, and cross-platform architecture.">
+  
+  <!-- SEO / Open Graph -->
+  <link rel="canonical" href="https://yogya.dev/">
+  <meta property="og:title" content="Yogya Chugh - Software Engineer">
+  <meta property="og:description" content="I build reliable softwareâ€”from systems-level experiments in Rust and C++ to production web and mobile products used by real teams.">
+  <meta property="og:url" content="https://yogya.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://yogya.dev/favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yogya Chugh",
+    "url": "https://yogya.dev/",
+    "sameAs": [
+      "https://github.com/YogyaChugh",
+      "https://linkedin.com/in/yogyachugh"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -19,45 +42,70 @@
   <header class="header fade-in masthead">
     <div class="masthead-top">
       <div class="header-text">
-        <div class="header-role">Engineer &middot; Builder</div>
+        <div class="header-role">Delhi, India &middot; Open to software engineering internships, freelance builds, and ambitious collaborations.</div>
         <h1 class="fade-in">Yogya Chugh</h1>
         <div class="contact-info fade-in" style="animation-delay: 0.1s;">
-          <span style="display: flex; align-items: center; gap: 6px;"><i class="ri-map-pin-line"></i> Delhi, India</span>
-          <a href="mailto:yogya.developer@gmail.com" target="_blank" title="Email"><i class="ri-mail-line"></i></a>
-          <a href="https://github.com/YogyaChugh" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
-          <a href="https://linkedin.com/in/yogyachugh" target="_blank" title="LinkedIn"><i class="ri-linkedin-line"></i></a>
-          <a href="https://instagram.com/opyogyachugh" target="_blank" title="Instagram"><i class="ri-instagram-line"></i></a>
-          <a href="/resume" title="Resume" style="display: flex; align-items: center; gap: 6px;"><i class="ri-file-paper-2-line"></i> Resume</a>
+          <a href="mailto:yogya.developer@gmail.com" class="btn-primary" title="Email me">Let's work together</a>
+          <a href="https://github.com/YogyaChugh" target="_blank" title="GitHub" class="secondary-link"><i class="ri-github-line"></i> GitHub</a>
+          <a href="https://linkedin.com/in/yogyachugh" target="_blank" title="LinkedIn" class="secondary-link"><i class="ri-linkedin-line"></i> LinkedIn</a>
+          <a href="/resume" title="Resume" class="secondary-link"><i class="ri-file-paper-2-line"></i> Resume</a>
         </div>
       </div>
       <div class="monogram-container">
-        <img src="/favicon.png" alt="Yogya Chugh" class="monogram-img">
+        <img src="/favicon.png" alt="Yogya Chugh" class="monogram-img" width="90" height="90">
       </div>
     </div>
     <div class="masthead-bottom">
-      <p class="summary-text">3rd year B.Tech CSE student (2027 batch) with programming experience across C++, Python, Rust, and TypeScript. Placed 3rd at international university hackathons, open-source Django contributor, and freelance developer.</p>
+      <p class="summary-text" style="font-size: 1.1rem; color: var(--text-main); font-weight: 500;">I build reliable softwareâ€”from systems-level experiments in Rust and C++ to production web and mobile products used by real teams.</p>
     </div>
   </header>
 
   <main>
     <section class="fade-in">
-      <h2>Technical Specifications</h2>
-      <div class="skills-grid">
-        <div class="skills-row">
-          <div class="skills-category">Languages</div>
-          <div class="skills-list">C++, Rust, Python, TypeScript, JavaScript, SQL</div>
+      <h2>Featured Work</h2>
+      
+      <div class="card-item">
+        <div class="card-content">
+          <div class="card-header-flex">
+            <a href="https://github.com/YogyaChugh/AnyStudio" target="_blank" class="card-title">AnyStudio <i class="ri-arrow-right-up-line"></i></a>
+            <div class="card-links">
+              <a href="https://github.com/YogyaChugh/AnyStudio" target="_blank" class="text-link">View code</a>
+            </div>
+          </div>
+          <div class="card-meta">Rust &middot; Desktop IDE</div>
+          <div class="card-body">
+            <p>No-code Android app builder in Rust with a drag-and-drop UI canvas. A custom compiler generates Android bytecode from scratch, bypassing the Java toolchain entirely, and automatically manages dependencies and virtual device testing.</p>
+          </div>
         </div>
-        <div class="skills-row">
-          <div class="skills-category">Core CS</div>
-          <div class="skills-list">Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-content">
+          <div class="card-header-flex">
+            <a href="https://yogya.dev/Webelo/" target="_blank" class="card-title">Webelo <i class="ri-arrow-right-up-line"></i></a>
+            <div class="card-links">
+              <a href="https://github.com/YogyaChugh/Webelo" target="_blank" class="text-link">View code</a>
+              <a href="https://yogya.dev/Webelo/" target="_blank" class="text-link">Live demo</a>
+            </div>
+          </div>
+          <div class="card-meta">C++ &middot; Browser Engine</div>
+          <div class="card-body">
+            <p>C++ browser rendering engine following the WHATWG spec with preorder depth-first traversal. v2.0 ships an HTML Visualizer with Python bindings and hosted docs.</p>
+          </div>
         </div>
-        <div class="skills-row">
-          <div class="skills-category">Backend &amp; Frameworks</div>
-          <div class="skills-list">Node.js, Hono, FastAPI, Flask, Django, React, React Native, Expo, HTML/CSS</div>
-        </div>
-        <div class="skills-row">
-          <div class="skills-category">Cloud &amp; Databases</div>
-          <div class="skills-list">PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, Docker, Git, Linux</div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-content">
+          <div class="card-header-flex">
+            <div class="card-title">Pippo</div>
+            <div class="card-links">
+            </div>
+          </div>
+          <div class="card-meta">College Project &middot; 2024-2025</div>
+          <div class="card-body">
+            <p>Multilingual navigation robot for tourists using voice interaction via ElevenLabs API, conversational Q&A, and autonomous path navigation; also built the companion mobile app.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -68,14 +116,14 @@
       <div class="item-group">
         <div class="item-header">
           <div class="item-title">Software Developer &mdash; Vardhman Electricals</div>
-          <div class="item-meta">Nov 2025 &ndash; Jun 2026</div>
+          <div class="item-meta">Mar 2026 &ndash; Jun 2026</div>
         </div>
         <div class="item-body">
           <ul>
             <li>TypeScript/Hono REST API on Render -- Google OAuth, JWT auth, SSE real-time sync serving 200+ concurrent users across 3+ admin dashboards; live at <a href="https://vardhmansaathi.shop" target="_blank">vardhmansaathi.shop</a>.</li>
             <li>Designed and deployed a normalized PostgreSQL schema on Supabase to back authentication, orders, and admin-dashboard data.</li>
-            <li>Electron + React admin desktop app and a React Native (Expo) Android app deployed on Google Play Store.</li>
-            <li>Cloudflare R2 for image storage; total hosting at $7/month.</li>
+            <li>Electron + React admin desktop app and a React Native (Expo) Android app, deployed on Google Play Store at <a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi&pcampaignid=web_share" target="_blank">Vardhman Saathi</a>.</li>
+            <li>Optimized image storage with Cloudflare R2, keeping total hosting cost at $7/month while supporting live production traffic.</li>
           </ul>
         </div>
       </div>
@@ -92,91 +140,6 @@
             <li>Subscription based Payment Handling using Superwall.</li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2>Featured Work</h2>
-      
-      <div class="card-item">
-        <div class="card-content">
-          <div class="card-header-flex">
-            <div class="card-title">AnyStudio</div>
-            <div class="card-links">
-              <a href="https://github.com/YogyaChugh/AnyStudio" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
-            </div>
-          </div>
-          <div class="card-meta">Rust &middot; Desktop IDE</div>
-          <div class="card-body">
-            <p>No-code Android app builder in Rust with a drag-and-drop UI canvas. A custom compiler generates Android bytecode from scratch, bypassing the Java toolchain entirely, and automatically manages dependencies and virtual device testing.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-item">
-        <div class="card-content">
-          <div class="card-header-flex">
-            <div class="card-title">Webelo</div>
-            <div class="card-links">
-              <a href="https://github.com/YogyaChugh/Webelo" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
-              <a href="https://yogya.dev/Webelo/" target="_blank" title="Website"><i class="ri-external-link-line"></i></a>
-            </div>
-          </div>
-          <div class="card-meta">C++ &middot; Browser Engine</div>
-          <div class="card-body">
-            <p>C++ browser rendering engine following the WHATWG spec with preorder depth-first traversal. v2.0 ships an HTML Visualizer with Python bindings and hosted docs.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-item">
-        <div class="card-content">
-          <div class="card-header-flex">
-            <div class="card-title">SIH Security System</div>
-            <div class="card-links">
-              <a href="https://github.com/YogyaChughCoder/SIH" target="_blank" title="GitHub"><i class="ri-github-line"></i></a>
-            </div>
-          </div>
-          <div class="card-meta">Blockchain &middot; SSO</div>
-          <div class="card-body">
-            <p>Decentralized tourist identity app for verifiable digital ID cards backed by a blockchain, scannable via QR. Built on React, ethers.js, and WalletConnect.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2>Writing</h2>
-      
-      <a href="/blogs/vardhman" class="list-item">
-        <div class="list-content">
-          <div class="list-title">Running a Real Product on $7/Month</div>
-          <div class="list-desc">Vardhman Electricals</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> June 6, 2026</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
-      </a>
-
-      <a href="/blogs/whatwg_dom" class="list-item">
-        <div class="list-content">
-          <div class="list-title">Implementing the WhatWG DOM in C++</div>
-          <div class="list-desc">Webelo</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
-      </a>
-
-      <a href="/blogs/summer_of_making" class="list-item">
-        <div class="list-content">
-          <div class="list-title">450 Hours, 4 Ships, One Laptop</div>
-          <div class="list-desc">Summer 2025</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
-      </a>
-      
-      <div class="center-box">
-        <a href="/writing" class="btn-outline">Show all blogs</a>
       </div>
     </section>
 
@@ -213,13 +176,69 @@
         </div>
         <div class="item-body">
           <ul>
-            <li>3rd place, Cyber AI Hackathon 2025 (University of Derby, UK)</li>
-            <li>3rd place, Agentic AI Hackathon 2025 (Ulster University, UK)</li>
-            <li>Selected in SIH internal rounds in both 2024 and 2025</li>
+            <li>3rd place, Cyber AI Hackathon 2025 (University of Derby, UK) and Agentic AI Hackathon 2025 (Ulster University, UK) &mdash; with Pippo</li>
+            <li>Selected in SIH internal rounds (2024, 2025) &mdash; built a blockchain-based tourist ID verification system with my team, using React, ethers.js, and WalletConnect for the Smart Tourism track</li>
             <li>Founder &amp; Lead, Technical Club &mdash; organized Frontend Frenzy, website development competition</li>
             <li>1st place, Pattern Coding Competition 2023 &mdash; Rs. 2,000 cash prize</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Technical Specifications</h2>
+      <div class="skills-grid">
+        <div class="skills-row">
+          <div class="skills-category">Languages</div>
+          <div class="skills-list">C++, Rust, Python, TypeScript, JavaScript, SQL</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-category">Core CS</div>
+          <div class="skills-list">Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-category">Backend &amp; Frameworks</div>
+          <div class="skills-list">FastAPI, Flask, Django, Node.js, Hono, React, React Native, Expo, HTML/CSS</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-category">Cloud &amp; Databases</div>
+          <div class="skills-list">PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, D1, Workers, KV, Docker, Git, Linux, CI/CD (GitHub Actions)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Writing</h2>
+      
+      <a href="/blogs/vardhman" class="list-item">
+        <div class="list-content">
+          <div class="list-title">Running a Real Product on $7/Month</div>
+          <div class="list-desc">Vardhman Electricals</div>
+          <div class="list-meta"><i class="ri-calendar-line"></i> June 6, 2026</div>
+        </div>
+        <div class="list-action">Read more &rarr;</div>
+      </a>
+
+      <a href="/blogs/whatwg_dom" class="list-item">
+        <div class="list-content">
+          <div class="list-title">Implementing the WhatWG DOM in C++</div>
+          <div class="list-desc">Webelo</div>
+          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026</div>
+        </div>
+        <div class="list-action">Read more &rarr;</div>
+      </a>
+
+      <a href="/blogs/summer_of_making" class="list-item">
+        <div class="list-content">
+          <div class="list-title">450 Hours, 4 Ships, One Laptop</div>
+          <div class="list-desc">Summer 2025</div>
+          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026</div>
+        </div>
+        <div class="list-action">Read more &rarr;</div>
+      </a>
+      
+      <div class="center-box">
+        <a href="/writing.html" class="btn-outline">Show all blogs</a>
       </div>
     </section>
 
@@ -242,10 +261,10 @@
 </div>
 
 <!-- Floating Dock -->
-<nav class="floating-dock">
-  <a href="/" class="dock-link active"><i class="ri-home-5-line"></i> Overview</a>
-  <a href="/projects" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
-  <a href="/writing" class="dock-link"><i class="ri-quill-pen-line"></i> Writing</a>
+<nav class="floating-dock" aria-label="Main Navigation">
+  <a href="/" class="dock-link active" aria-current="page"><i class="ri-home-5-line"></i> Overview</a>
+  <a href="/projects.html" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
+  <a href="/writing.html" class="dock-link"><i class="ri-quill-pen-line"></i> Writing</a>
   <a href="/resume" class="dock-link"><i class="ri-file-text-line"></i> Resume</a>
 </nav>
 
