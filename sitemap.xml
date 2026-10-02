@@ -51,9 +51,4 @@
     <lastmod>2026-10-02</lastmod>
     <image:image><image:loc>https://yogya.dev/assets/cards/first_open_source.jpg</image:loc></image:image>
   </url>
-  <url>
-    <loc>https://yogya.dev/hangman</loc>
-    <lastmod>2026-10-02</lastmod>
-    <image:image><image:loc>https://yogya.dev/assets/cards/hangman.jpg</image:loc></image:image>
-  </url>
 </urlset>
