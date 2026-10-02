@@ -9,7 +9,26 @@
   const EMAIL = 'yogya.developer@gmail.com';
   const CALENDLY_URL = 'https://calendly.com/yogya-chugh/30min';
 
+  /* ---------- analytics: GoatCounter, no cookies. Put your code here to switch it on ---------- */
+  const GOATCOUNTER = 'yogya';   // https://yogya.goatcounter.com
+
   const $ = id => document.getElementById(id);
+  if (GOATCOUNTER && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    const gc = document.createElement('script');
+    gc.async = true; gc.src = 'https://gc.zgo.at/count.js';
+    gc.dataset.goatcounter = `https://${GOATCOUNTER}.goatcounter.com/count`;
+    document.head.appendChild(gc);
+  }
+  function track(name) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true });
+  }
+  /* the clicks worth knowing about: email, booking, résumé downloads, profiles */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-track], [data-gmail], [data-calendly], a[href$=".pdf"]');
+    if (!a) return;
+    track(a.dataset.track || (a.matches('[data-gmail]') ? 'email' : a.matches('[data-calendly]') ? 'book-call' : 'download-' + a.getAttribute('href').split('/').pop()));
+  });
+
   const gmail = (subject) => `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${encodeURIComponent(subject)}`;
   document.querySelectorAll('[data-gmail]').forEach(a => { a.href = gmail(a.dataset.gmail || 'Hey Yogya!'); });
 
@@ -266,10 +285,79 @@
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
   document.querySelectorAll('.page').forEach(p => io.observe(p));
 
-  /* the dock steps aside once the contact page is on screen */
-  const dock = $('dock'), connect = $('connect');
-  if (dock && connect) {
-    new IntersectionObserver(([en]) => dock.classList.toggle('away', en.isIntersecting), { threshold: 0.25 }).observe(connect);
+  /* the dock steps aside on the cover (it has its own buttons) and at the contact page */
+  const dock = $('dock');
+  const hideOn = [document.querySelector('.cover'), $('connect')].filter(Boolean);
+  if (dock && hideOn.length) {
+    const showing = new Set();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => en.isIntersecting ? showing.add(en.target) : showing.delete(en.target));
+      dock.classList.toggle('away', showing.size > 0);
+    }, { threshold: 0.25 });
+    hideOn.forEach(el => io.observe(el));
+  }
+
+  /* ---------- who's reading? the cover adapts to the visitor ---------- */
+  const PATHS = {
+    hiring:   { expr: 'smug',  blurb: 'Hiring? 2 paid internships, a fix merged into Django, and apps 200+ people use.' },
+    project:  { expr: 'happy', blurb: 'Got an idea? I build apps end to end, from the database to the app store.' },
+    browsing: { expr: 'wink',  blurb: "Welcome! It's a comic. Start at the top and keep scrolling." }
+  };
+  const whoBtns = document.querySelectorAll('.who-btn');
+  if (whoBtns.length) {
+    const blurb = $('blurb'), coverYo = $('cover-yo');
+    const startBlurb = blurb.textContent, startExpr = coverYo.dataset.expr;
+    const setPath = (path, save) => {
+      const p = PATHS[path];
+      whoBtns.forEach(b => b.setAttribute('aria-pressed', String(!!p && b.dataset.path === path)));
+      document.querySelectorAll('.cover-actions').forEach(g => { g.hidden = g.dataset.for !== (p ? path : 'none'); });
+      blurb.textContent = p ? p.blurb : startBlurb;
+      coverYo.dataset.expr = p ? p.expr : startExpr;
+      mount(coverYo);
+      if (!save) return;
+      try { p ? localStorage.setItem('yo-path', path) : localStorage.removeItem('yo-path'); } catch (e) {}
+      if (p) track('path-' + path);
+    };
+    whoBtns.forEach(b => b.addEventListener('click', () => {
+      setPath(b.getAttribute('aria-pressed') === 'true' ? null : b.dataset.path, true);  // a second tap clears it
+    }));
+    let saved = null;
+    try { saved = localStorage.getItem('yo-path'); } catch (e) {}
+    if (PATHS[saved]) setPath(saved, false);
+  }
+
+  /* ---------- meanwhile, on GitHub: the contribution graph, fetched when the page gets close ---------- */
+  const ghGraph = $('gh-graph');
+  if (ghGraph) {
+    const SRC = 'https://github-contributions-api.jogruber.de/v4/YogyaChugh?y=last';
+    const render = data => {
+      const days = (data && data.contributions) || [];
+      if (!days.length) return;
+      const lead = new Date(days[0].date + 'T00:00:00Z').getUTCDay();   // weeks start on Sunday, like GitHub
+      ghGraph.innerHTML = '<div class="gh-days">' + '<i></i>'.repeat(lead) +
+        days.map(d => `<i class="l${d.level}" title="${d.count} on ${d.date}"></i>`).join('') + '</div>';
+      const total = data.total && (data.total.lastYear ?? Object.values(data.total)[0]);
+      const end = Date.parse(days[days.length - 1].date);
+      const active = days.filter(d => d.count > 0);
+      const last = active.length ? Math.round((end - Date.parse(active[active.length - 1].date)) / 864e5) : null;
+      const lastText = last === null ? 'a while ago' : last === 0 ? 'today' : last === 1 ? 'yesterday' : `${last} days ago`;
+      const month = days.slice(-30).filter(d => d.count > 0).length;
+      $('gh-stats').innerHTML = `<span><b>${total}</b> contributions this year</span>` +
+        `<span>Active <b>${month}</b> of the last 30 days</span><span>Last active <b>${lastText}</b></span>`;
+      $('gh-res').innerHTML = `<span class="res-tag">Result</span><mark>${total} contributions</mark> on GitHub in the past year, last one ${lastText}.`;
+    };
+    const load = () => {
+      try {
+        const hit = JSON.parse(sessionStorage.getItem('yo-gh') || 'null');
+        if (hit && Date.now() - hit.t < 36e5) return render(hit.d);
+      } catch (e) {}
+      fetch(SRC).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => {
+        render(d);
+        try { sessionStorage.setItem('yo-gh', JSON.stringify({ t: Date.now(), d })); } catch (e) {}
+      }).catch(() => { ghGraph.closest('.gh').classList.add('gh-off'); });
+    };
+    const ghIO = new IntersectionObserver(([en]) => { if (en.isIntersecting) { ghIO.disconnect(); load(); } }, { rootMargin: '600px 0px' });
+    ghIO.observe(ghGraph);
   }
 
   /* ---------- Delhi clock ---------- */

@@ -155,6 +155,14 @@
         },
         {
           "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#live",
+          "url": "https://yogya.dev/#live",
+          "cssSelector": "#live",
+          "name": "Meanwhile… on GitHub",
+          "description": "A live view of Yogya Chugh's GitHub contribution graph for the past year, including private work."
+        },
+        {
+          "@type": "WebPageElement",
           "@id": "https://yogya.dev/#connect",
           "url": "https://yogya.dev/#connect",
           "cssSelector": "#connect",
@@ -261,17 +269,39 @@
         </div>
       </div>
       <div class="cover-art">
-        <p class="blurb">I build things to find out how they work.</p>
+        <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
         <span class="hint" id="hint">Hover over me</span>
         <div class="starburst-ink" aria-hidden="true"></div>
         <div class="starburst"><div>Now interning<br><span>@ Meant2Bae</span></div></div>
-        <div class="yo-wrap" data-expr="wink"></div>
+        <div class="yo-wrap" data-expr="wink" id="cover-yo"></div>
+      </div>
+      <div class="who" role="group" aria-labelledby="who-t">
+        <p class="who-q" id="who-t">Who's reading?</p>
+        <div class="who-opts">
+          <button type="button" class="btn white who-btn" data-path="hiring" aria-pressed="false">I'm hiring</button>
+          <button type="button" class="btn white who-btn" data-path="project" aria-pressed="false">I have a project</button>
+          <button type="button" class="btn white who-btn" data-path="browsing" aria-pressed="false">Just looking</button>
+        </div>
       </div>
       <div class="cover-foot">
         <span class="meta" id="clock">Delhi, India</span>
-        <div class="cover-actions">
+        <div class="cover-actions" data-for="none">
           <a class="btn dark" href="#short">Start reading ↓</a>
           <a class="btn white" href="/resume/">Résumé</a>
+        </div>
+        <div class="cover-actions" data-for="hiring" hidden>
+          <a class="btn dark" href="#short">The 30-second version ↓</a>
+          <a class="btn white" href="/resume/">Résumé</a>
+          <a class="btn red" href="#connect" data-calendly>Book a call</a>
+        </div>
+        <div class="cover-actions" data-for="project" hidden>
+          <a class="btn dark" href="#vol1">See my client work ↓</a>
+          <a class="btn red" href="#connect" data-calendly>Book a call</a>
+          <a class="btn white" href="#connect" data-gmail="I have a project for you">Email me</a>
+        </div>
+        <div class="cover-actions" data-for="browsing" hidden>
+          <a class="btn dark" href="#short">Start reading ↓</a>
+          <a class="btn white" href="/writing">Read the blog</a>
         </div>
       </div>
     </div>
@@ -620,6 +650,27 @@ object has no attribute 'lstrip'</span></pre>
     </div>
   </section>
 
+  <!-- ================= MEANWHILE, ON GITHUB ================= -->
+  <section class="page" id="live" style="--pr:.25deg" aria-labelledby="live-t">
+    <header class="page-title"><h3 id="live-t"><span class="ep">Meanwhile…</span>On GitHub</h3><span class="when">Live from GitHub</span></header>
+    <div class="grid" style="grid-template-columns:1fr 2.2fr; grid-template-rows:230px">
+      <div class="pn c-navy speed">
+        <p class="bub" style="left:10px; right:10px; top:10px; --t:56%">Still shipping. Here's the proof.</p>
+        <div class="yo-wrap" data-expr="determined" style="width:min(68%,170px)"></div>
+      </div>
+      <div class="pn c-mint dots gh">
+        <p class="nar">1 square = 1 day. Redder = busier.</p>
+        <div class="gh-graph" id="gh-graph" aria-hidden="true"></div>
+        <div class="gh-stats" id="gh-stats"></div>
+      </div>
+    </div>
+    <div class="result">
+      <p class="res" id="gh-res"><span class="res-tag">Result</span>I'm coding most days, and it shows on GitHub.</p>
+      <p class="det">The graph includes private work, so it counts code I can't show, like client projects and AnyStudio.</p>
+      <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">See my GitHub ↗</a></div>
+    </div>
+  </section>
+
   <!-- ================= LET'S CONNECT ================= -->
   <section class="page" id="connect" style="--pr:.3deg" aria-labelledby="connect-t">
     <header class="page-title"><h2 id="connect-t"><span class="ep">Your turn</span>Let's work together</h2><span class="when">A job, a project, or just to say hi</span></header>
@@ -640,8 +691,8 @@ object has no attribute 'lstrip'</span></pre>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <div class="socials">
-          <a class="btn white" href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a class="btn white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn white" href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin">LinkedIn ↗</a>
+          <a class="btn white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">GitHub ↗</a>
           <a class="btn white" href="/writing">Blog</a>
           <a class="btn white" href="/resume/">Résumé</a>
         </div>
