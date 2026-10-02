@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yogya Chugh · Résumé (plain)</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://yogya.dev/resume">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  /* Source for /Yogya_Chugh_Resume.pdf: print this page to A4 to regenerate it */
+  @page { size: A4; margin: 9mm 11mm; }
+  * { box-sizing: border-box; }
+  html { background: #e9e9e9; }
+  body { margin: 0; color: #000; font-family: 'Source Serif 4', 'Times New Roman', serif; font-size: 9.5pt; line-height: 1.23; }
+  .sheet { width: 210mm; min-height: 297mm; margin: 16px auto; padding: 10mm 12mm; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+  a { color: #1a3a8a; text-decoration: none; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  h1 { margin: 0 0 2pt; font-size: 22pt; font-weight: 700; letter-spacing: .01em; line-height: 1; }
+  .contact { font-size: 9.6pt; line-height: 1.38; }
+  .contact.right { text-align: right; }
+  h2 { margin: 6.5pt 0 3pt; padding-bottom: 1pt; border-bottom: .8pt solid #000; font-size: 11.5pt; font-weight: 600; font-variant: small-caps; letter-spacing: .05em; }
+  .item { margin: 0 0 3.5pt; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+  .row .l { font-weight: 700; }
+  .row.sub { font-style: italic; }
+  .row .r { white-space: nowrap; }
+  ul { margin: 1.5pt 0 0; padding-left: 13pt; }
+  li { margin: .4pt 0; }
+  .skills { margin: 0; padding-left: 13pt; }
+  .skills b, li b { font-weight: 700; }
+  .oneline { margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <div>
+      <h1>Yogya Chugh</h1>
+      <div class="contact">Software Engineer · Delhi, India<br>
+        LinkedIn: <a href="https://linkedin.com/in/yogyachugh">linkedin.com/in/yogyachugh</a><br>
+        Website: <a href="https://yogya.dev">yogya.dev</a></div>
+    </div>
+    <div class="contact right">Email: <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a><br>
+      Mobile: +91 96500 29959<br>
+      GitHub: <a href="https://github.com/YogyaChugh">github.com/YogyaChugh</a></div>
+  </header>
+
+  <h2>Technical Skills</h2>
+  <ul class="skills">
+    <li><b>Languages:</b> C++, Rust, Python, TypeScript, JavaScript, SQL</li>
+    <li><b>Core CS:</b> Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</li>
+    <li><b>Backend:</b> FastAPI, Flask, Django, Node.js, Hono, REST API Design, JWT, OAuth 2.0</li>
+    <li><b>Databases &amp; Cloud:</b> PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, D1, Workers, KV, Pages</li>
+    <li><b>Frontend &amp; Apps:</b> React, React Native, Expo, Electron, HTML/CSS</li>
+    <li><b>Tools &amp; Platforms:</b> Docker, Git, Linux, CI/CD (GitHub Actions)</li>
+  </ul>
+
+  <h2>Work Experience</h2>
+  <div class="item">
+    <div class="row"><span class="l">Meant2Bae</span><span class="r">India</span></div>
+    <div class="row sub"><span>Intern (paid) · curated matchmaking startup for professionals</span><span class="r">Sep 2026 – Present</span></div>
+  </div>
+  <div class="item">
+    <div class="row"><span class="l">Client Application Project</span><span class="r">Remote</span></div>
+    <div class="row sub"><span>Software Developer – Freelance</span><span class="r">Jun 2026 – Present</span></div>
+    <ul>
+      <li>Developing a cross-platform iOS/Android app (React Native, Expo), targeting the App Store and Google Play.</li>
+      <li>PostgreSQL on Supabase with Google/Apple authentication and row-level security (RLS) policies.</li>
+      <li>Subscription-based payments with Superwall.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><span class="l">Vardhman Electricals</span><span class="r">Delhi, India</span></div>
+    <div class="row sub"><span>Software Developer – Intern (paid, remote)</span><span class="r">Mar 2026 – Jun 2026</span></div>
+    <ul>
+      <li>Built a loyalty and invoice platform end to end: a React Native (Expo) Android app on Google Play (<a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi">Vardhman Saathi</a>), an Electron + React admin desktop app, and the backend; live at <a href="https://vardhmansaathi.shop">vardhmansaathi.shop</a>.</li>
+      <li>Real-time sync across 3+ admin dashboards for 200+ concurrent users; Google OAuth and JWT authentication.</li>
+      <li>Designed the PostgreSQL schema on Supabase for authentication, orders and admin-dashboard data.</li>
+      <li>Moved the backend from a $7/month server to Supabase Edge Functions and Cloudflare (Workers, R2, Pages) with GitHub Actions CI/CD, bringing hosting to $0/month.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="item">
+    <div class="row"><span class="l">AnyStudio – Native App Builder</span><span class="r">Private Repository</span></div>
+    <div class="row sub"><span>Personal Project</span><span class="r">In Development</span></div>
+    <ul>
+      <li>Turns a plain-English description or a drag-and-drop design into real native Android and iPhone apps (not web wrappers), with an AI assistant whose changes the user reviews before they apply.</li>
+      <li>Live phone preview; built-in sign-in, databases and payments; publishing under the user's own store accounts; full source export with no lock-in. Written in Rust.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><span class="l">Webelo – C++ DOM Library</span><span class="r"><a href="https://github.com/YogyaChugh/Webelo">github.com/YogyaChugh/Webelo</a></span></div>
+    <div class="row sub"><span>Personal Project</span><span class="r">Jul – Sep 2025</span></div>
+    <ul>
+      <li>Implemented the WHATWG DOM Living Standard in C++: node tree, preorder DFS traversal and event dispatch.</li>
+      <li>Shipped v2.0 with an HTML visualizer, Python bindings and hosted documentation.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><span class="l">Pippo – Multilingual Navigation Robot</span><span class="r">Team Project</span></div>
+    <div class="row sub"><span>College Project</span><span class="r">2024 – 2025</span></div>
+    <ul>
+      <li>Robot guide for tourists and newcomers: voice interaction via the ElevenLabs API, conversational Q&amp;A and autonomous path navigation. Built its companion mobile app.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <ul style="padding-left:13pt; margin:0"><li><b>Open Source – Django:</b> Fixed a bug where an unresolved relative {% extends %} template path raised an unrelated AttributeError instead of a clear TemplateSyntaxError; merged as <a href="https://github.com/django/django/pull/19295">django/django #19295</a> (Mar 2025).</li></ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="row"><span class="l">Panipat Institute of Engineering and Technology (Kurukshetra University)</span><span class="r">Panipat, India</span></div>
+    <div class="row sub"><span>B.Tech – Computer Science and Engineering · CGPA 8.05/10</span><span class="r">2023 – 2027</span></div>
+  </div>
+
+  <h2>Achievements</h2>
+  <ul class="skills">
+    <li>Hack Club Summer of Making 2025 (GitHub-funded): 4 projects, 450+ hours; won a Gigabyte Aero X16 laptop.</li>
+    <li>3rd place, Cyber AI Hackathon (Univ. of Derby, UK) and Agentic AI Hackathon (Ulster Univ., UK), 2025, with Pippo.</li>
+    <li>Founder &amp; Lead, college Technical Club; organised Frontend Frenzy, a website development competition.</li>
+    <li>Selected in SIH internal rounds (2024, 2025): blockchain tourist ID verification (React, ethers.js, WalletConnect).</li>
+    <li>1st place, Pattern Coding Competition 2023 (Rs. 2,000 cash prize).</li>
+  </ul>
+
+  <h2>Interests</h2>
+  <p class="oneline">Competitive Programming · Game Development · Neural Networks</p>
+</main>
+</body>
+</html>

@@ -94,8 +94,9 @@
       <g${flip ? ' transform="translate(300 0) scale(-1 1)"' : ''}>
         <path d="${HOOD_BACK}" fill="${HOOD}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
         <path d="M104 40 Q120 16 150 10" fill="none" stroke="${HOOD_HI}" stroke-width="4" stroke-linecap="round"/>
-        <path d="${BODY}" fill="${HOOD}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+        <path d="${BODY}" fill="${HOOD}"/>
         <path d="M6 330 C14 252 62 226 110 226 L96 330 Z" fill="${HOOD_D}" opacity=".6"/>
+        <path d="${BODY}" fill="none" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
         <path d="${RIM}" fill="${HOOD_IN}"/>
         <path d="M122 190 L122 254 L178 254 L178 190 Z" fill="${SKIN}" stroke="${INK}" stroke-width="5"/>
         <path d="M122 198 Q150 228 178 198 L178 218 Q150 240 122 218 Z" fill="${SKIN_D}"/>
