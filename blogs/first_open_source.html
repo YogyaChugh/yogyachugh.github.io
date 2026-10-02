@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My First Open Source Contribution - Yogya Chugh</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<div class="container">
-  <header class="header fade-in">
-    <a href="/writing.html">&larr; Back to Writing</a>
-  </header>
-  <main>
-    <div class="blog-header fade-in">
-      <h1>My First Open Source Contribution</h1>
-      <div class="blog-meta">
-        <span><i class="ri-calendar-line"></i> August 2024</span>
-        <span><i class="ri-time-line"></i> 3 min read</span>
-        <span><i class="ri-folder-open-line"></i> Open Source</span>
+<title>My first open-source contribution · Yogya Chugh</title>
+<meta name="description" content="How a confusing error in Django's template engine became Yogya Chugh's first merged pull request, django/django #19295.">
+<link rel="canonical" href="https://yogya.dev/blogs/first_open_source">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yogya.dev/blogs/first_open_source">
+<meta property="og:title" content="My first open-source contribution">
+<meta property="og:description" content="How a confusing error in Django turned into my first merged pull request."><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8DA5D8">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/comic.css">
+<script src="/comic.js" defer></script></head>
+<body><div class="dock" id="dock">
+  <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
+  <a class="btn white" href="/">Home</a>
+  <a class="btn white" href="/resume/">Résumé</a>
+  <a class="btn red" href="/#connect">Let's talk ✉</a>
+</div><main>
+  <section class="page" style="--pr:.2deg" aria-labelledby="post-t">
+    <div class="pn head-panel c-mint dots">
+      <div class="head-text">
+        <div class="kicker"><a class="vol-tag" href="/writing.html" style="text-decoration:none">← Blog</a><span>March 2025 · 3 min read</span></div>
+        <h1 id="post-t">My first open-source contribution</h1>
+        <p class="lede">How a confusing error in Django turned into my first merged pull request.</p>
+      </div>
+      <div class="head-art">
+        <p class="bub" style="--t:52%">Fine. I'll fix it myself!</p>
+        <div class="yo-wrap" data-expr="determined"></div>
       </div>
     </div>
-    
-    <article class="blog-article fade-in">
-      <p><span class="drop-cap">C</span>ontributing to a massive open-source project like Django can feel intimidating. The codebase is enormous, the maintainers are brilliant, and you&rsquo;re just hoping your pull request doesn&rsquo;t break something critical. But the open-source community is built on collaboration, and my first major contribution taught me exactly that.</p>
+  </section>
 
-      <h2>Discovering Ticket 36271</h2>
-      <p>I was browsing the Django issue tracker when I came across <strong>Ticket 36271</strong>. It detailed a specific bug related to form rendering and widgets. Since I had some experience working with Django&rsquo;s forms in my own projects, I felt this was the perfect opportunity to dive in.</p>
-      
-      <p>Setting up the local environment was the first hurdle. Django has a comprehensive test suite, and getting everything running smoothly required carefully reading through the contributing documentation. Once the tests were passing locally, I started tracing the execution path of the bug.</p>
+  <article class="page" style="--pr:-.15deg">
+    <div class="prose">
+      <p class="lead">Contributing to a project as big as Django can feel intimidating. The codebase is huge, the maintainers know it inside out, and you're hoping your pull request doesn't break anything important. But open source runs on collaboration, and my first real contribution taught me exactly that.</p>
 
-      <h2>Writing the Fix &amp; Tests</h2>
-      <p>Locating the exact module causing the issue took some deep diving into the framework&rsquo;s internals. When I finally pinpointed the problem, the actual fix only required modifying a few lines of code. However, in open source, writing the code is only half the battle.</p>
-      
-      <blockquote>"The hardest part wasn't writing the code; it was ensuring the fix was robust enough for thousands of developers."</blockquote>
-      
-      <p>I had to write comprehensive test cases to prove the bug was fixed and ensure it wouldn&rsquo;t regress in the future. Django&rsquo;s existing tests were a great reference point, allowing me to model my assertions correctly.</p>
+      <h2>The bug: ticket #36271</h2>
+      <p>While going through Django's issue tracker, I found <a href="https://code.djangoproject.com/ticket/36271" target="_blank" rel="noopener">ticket #36271</a>. If you created a template directly in code and it used a relative path, Django crashed with an error that had nothing to do with the real problem:</p>
+      <pre><code>Template("{% extends './base.html' %}")
 
-      <h2>The Review Process</h2>
-      <p>Submitting the pull request was exhilarating. Within a few days, <strong>Sarah Boyce</strong>, a Django core developer and maintainer, reviewed my code. Working with a seasoned maintainer was incredibly insightful. She provided excellent feedback, requesting a minor adjustment to how the test case was structured.</p>
-      
-      <p>After pushing the requested changes, the checks passed, and the magical word appeared: <strong>"Merged."</strong> Seeing my code become part of a framework used by millions of developers worldwide was an unforgettable milestone.</p>
+AttributeError: 'NoneType' object has no attribute 'lstrip'</code></pre>
+      <p>A template made like this has no file location (Django calls it an unknown origin), so there's nothing to resolve <code>./base.html</code> against. The error should have said that. Instead, it pointed somewhere else entirely.</p>
 
-      <hr>
-      <p><em>You can read the full original technical deep-dive on my <a href="https://medium.com/@yogya.developer/my-first-open-source-contribution-67c08b88e674" target="_blank" rel="noopener">Medium blog</a>.</em></p>
-    </article>
-  </main>
-</div>
+      <h2>Writing the fix and the tests</h2>
+      <p>Setting up Django locally was the first hurdle. Its test suite is large, and getting it running meant reading the contributing guide carefully. Once the tests passed on my machine, I traced the error back to <code>django/template/loader_tags.py</code>.</p>
+      <p>The fix itself was only a few lines: check for the missing template name and raise a clear <code>TemplateSyntaxError</code> instead. But writing the fix was only half the job. I also had to write tests that prove the bug is gone and stop it from coming back.</p>
+      <blockquote>The hardest part wasn't writing the code. It was making sure the fix held up for thousands of developers.</blockquote>
 
-<!-- Floating Dock -->
-<nav class="floating-dock" aria-label="Main Navigation">
-  <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
-  <a href="/projects.html" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
-  <a href="/writing.html" class="dock-link active" aria-current="page"><i class="ri-quill-pen-line"></i> Writing</a>
-  <a href="/resume" class="dock-link"><i class="ri-file-text-line"></i> Resume</a>
-</nav>
+      <h2>The review</h2>
+      <p>Within a few days, Sarah Boyce, a Django Fellow, reviewed my pull request. She asked for one change to how the test was structured. I pushed the update, the checks went green, and on 24 March 2025 it was merged as <a href="https://github.com/django/django/pull/19295" target="_blank" rel="noopener">pull request #19295</a>.</p>
+      <p>Seeing my code become part of a framework that so many developers use is something I won't forget. I also wrote a more technical version of this story <a href="https://medium.com/@yogya.developer/my-first-open-source-contribution-67c08b88e674" target="_blank" rel="noopener">on Medium</a>.</p>
+    </div>
+  </article>
 
-<script src="/script.js"></script>
+  <nav class="post-foot" aria-label="Keep reading">
+    <a class="ep-link" href="/#ep6"><span><span class="t">This story is Episode 6 of the comic</span><span class="s">Fixing Django · open source</span></span><span class="arrow" aria-hidden="true">→</span></a>
+    <div class="post-nav">
+      <a class="prev" href="/blogs/summer_of_making.html"><span class="dir">← Newer post</span><span class="t">450 hours, 4 ships, one laptop</span></a>
+    </div>
+  </nav>
+</main>
 </body>
-
-
 </html>

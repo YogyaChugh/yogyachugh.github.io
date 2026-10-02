@@ -1,68 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Running a Real Product on $7/Month - Yogya Chugh</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<div class="container">
-  <header class="header fade-in">
-    <a href="/writing.html">&larr; Back to Writing</a>
-  </header>
-  <main>
-    <div class="blog-header fade-in">
-      <h1>Running a Real Product on $7/Month</h1>
-      <div class="blog-meta">
-        <span><i class="ri-calendar-line"></i> June 6, 2026</span>
-        <span><i class="ri-time-line"></i> 5 min read</span>
-        <span><i class="ri-folder-open-line"></i> Vardhman Electricals</span>
+<title>Running a real product for $0 a month · Yogya Chugh</title>
+<meta name="description" content="How Vardhman Saathi's Android app, admin app and backend run entirely on free tiers while serving 200+ people at once.">
+<link rel="canonical" href="https://yogya.dev/blogs/vardhman">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yogya.dev/blogs/vardhman">
+<meta property="og:title" content="Running a real product for $0 a month">
+<meta property="og:description" content="A phone app, a desktop app and a backend for 200+ people, with no monthly bill."><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8DA5D8">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/comic.css">
+<script src="/comic.js" defer></script></head>
+<body><div class="dock" id="dock">
+  <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
+  <a class="btn white" href="/">Home</a>
+  <a class="btn white" href="/resume/">Résumé</a>
+  <a class="btn red" href="/#connect">Let's talk ✉</a>
+</div><main>
+  <section class="page" style="--pr:-.2deg" aria-labelledby="post-t">
+    <div class="pn head-panel c-peach dots">
+      <div class="head-text">
+        <div class="kicker"><a class="vol-tag" href="/writing.html" style="text-decoration:none">← Blog</a><span>June 6, 2026 · updated October 2026 · 3 min read</span></div>
+        <h1 id="post-t">Running a real product for $0 a month</h1>
+        <p class="lede">Vardhman Saathi has a phone app, a desktop app and a backend, and it serves 200+ people at once. Here's how it runs without a monthly bill.</p>
+      </div>
+      <div class="head-art">
+        <p class="bub" style="--t:52%">Small business, small bill. Zero, actually.</p>
+        <div class="yo-wrap" data-expr="smug"></div>
       </div>
     </div>
-    
-    <article class="blog-article fade-in">
-      <p><span class="drop-cap">T</span>he challenge was straightforward but restrictive: build a comprehensive cross-platform business management suite and salesperson credit system for a real client without racking up massive monthly infrastructure costs. When building Vardhman Saathi, I needed an architecture that scaled down to zero cost when idle but could handle daily operations reliably.</p>
-      
-      <p>I opted for a highly decoupled, heavily optimized tech stack designed specifically to live within generous free tiers.</p>
+  </section>
 
-      <blockquote>"You don't need a data center. You need the right architecture."</blockquote>
+  <article class="page" style="--pr:.15deg">
+    <div class="prose">
+      <p class="lead">Vardhman Electricals wanted an app for their dealers: upload a purchase bill, earn reward coins called V-Coins, and spend them on gifts and products. Their staff needed a desktop app to check those bills, manage users and keep track of stock. And all of it had to run without a big cloud bill every month.</p>
 
-      <p>For the database and authentication, I used <strong>Supabase</strong>. By leveraging PostgreSQL Row Level Security (RLS) policies directly within Supabase, I eliminated the need for a massive middleware layer just to handle authorization. The database handled access control natively, keeping the backend lean.</p>
+      <h2>What I built</h2>
+      <p>Everything lives in one repository, in four parts:</p>
+      <ul>
+        <li><strong>The Android app</strong> (React Native with Expo). Dealers scan their invoices, check their V-Coin balance and order rewards. It's live on <a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play</a>.</li>
+        <li><strong>The admin desktop app</strong> (Electron and React). Staff use it to verify bills, manage users and handle inventory.</li>
+        <li><strong>The website</strong> (React and Vite), with the public pages, privacy policy and terms.</li>
+        <li><strong>The backend:</strong> a PostgreSQL database and server functions on Supabase, plus a few small Cloudflare Workers.</li>
+      </ul>
 
-      <p>The backend itself was written in TypeScript using <strong>Hono</strong>, deployed as a REST API on <strong>Render</strong>. It handles core business logic, Google OAuth integration, and Server-Sent Events (SSE) for real-time notifications to the desktop client. To ensure the mobile application (built in React Native) stayed perfectly synchronized, I integrated the Firebase Admin SDK to push real-time updates directly to the Android app.</p>
+      <h2>Why the bill is $0</h2>
+      <p class="updated">Update, October 2026: when I first wrote this, the backend was a TypeScript API (built with Hono) on Render, and it cost $7 a month. I've since moved it to Supabase Edge Functions, so the whole product now runs on free tiers.</p>
+      <p>Here's where each piece lives:</p>
+      <ul>
+        <li><strong>Supabase</strong> holds the PostgreSQL database and runs the server code as Edge Functions. Row Level Security lets the database itself decide who can read what, so there's less permission code for me to maintain.</li>
+        <li><strong>Cloudflare R2</strong> stores the photos and the desktop installer. R2 doesn't charge for downloads, which is usually where storage costs get out of hand.</li>
+        <li><strong>Cloudflare Workers</strong> optimise photos and protect the installer download.</li>
+        <li><strong>Cloudflare Pages</strong> hosts the website.</li>
+      </ul>
+      <blockquote>You don't need a data center. You need the right architecture.</blockquote>
 
-      <p>Image storage is traditionally where costs spiral. Instead of AWS S3, I utilized <strong>Cloudflare R2</strong>, which offers 10 GB/month of free storage with zero egress fees. This single decision effectively nullified the client's asset hosting costs.</p>
+      <h2>Shipping without touching a server</h2>
+      <p>Every push to the main branch deploys itself through GitHub Actions. Database changes and functions go to Supabase, the workers go to Cloudflare, and a Windows runner builds a fresh installer for the desktop app and uploads it to R2. Cloudflare Pages picks up the website on its own.</p>
+      <p>The only thing I still build by hand is the Android app, through Expo EAS, so I can test each version before it reaches the Play Store.</p>
 
-      <pre><code>// Example Hono route for secure asset retrieval
-app.get('/api/assets/:id', async (c) => {
-  const assetId = c.req.param('id');
-  const asset = await r2.get(assetId);
-  return c.body(asset.body);
-});</code></pre>
+      <h2>Did it hold up?</h2>
+      <p>It serves 200+ people at the same time across the phone app and three admin dashboards, with changes syncing in real time. You can see it at <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener">vardhmansaathi.shop</a>.</p>
+    </div>
+  </article>
 
-      <p>By heavily researching cloud providers and writing efficient, decoupled code (Electron desktop, React Native mobile, Hono backend), I successfully brought the total monthly operating bill to just $7/month, completely eliminating database and storage costs.</p>
-
-      <p>You can see the final product architecture live at <a href="https://vardhmansaathi.shop" target="_blank" rel="noopener">vardhmansaathi.shop</a>.</p>
-    </article>
-  </main>
-</div>
-
-<!-- Floating Dock -->
-<nav class="floating-dock" aria-label="Main Navigation">
-  <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
-  <a href="/projects.html" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
-  <a href="/writing.html" class="dock-link active" aria-current="page"><i class="ri-quill-pen-line"></i> Writing</a>
-  <a href="/resume" class="dock-link"><i class="ri-file-text-line"></i> Resume</a>
-</nav>
-
-<script src="/script.js"></script>
+  <nav class="post-foot" aria-label="Keep reading">
+    <a class="ep-link" href="/#ep1"><span><span class="t">This story is Episode 1 of the comic</span><span class="s">First internship · Vardhman Electricals</span></span><span class="arrow" aria-hidden="true">→</span></a>
+    <div class="post-nav">
+      <a class="next" href="/blogs/whatwg_dom.html"><span class="dir">Older post →</span><span class="t">Implementing the WHATWG DOM in C++</span></a>
+    </div>
+  </nav>
+</main>
 </body>
-
-
 </html>

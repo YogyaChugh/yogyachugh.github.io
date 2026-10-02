@@ -1,92 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Writing - Yogya Chugh</title>
-  <meta name="description" content="Writing and Blogs by Yogya Chugh">
-
-  <!-- SEO / Open Graph -->
-  <link rel="canonical" href="https://yogya.dev/writing">
-  <meta property="og:title" content="Writing - Yogya Chugh">
-  <meta property="og:description" content="Articles and writing by Yogya Chugh.">
-  <meta property="og:url" content="https://yogya.dev/writing">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://yogya.dev/favicon.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-
-<div class="container">
-  
-  <header class="header fade-in masthead">
-    <div class="masthead-top">
-      <div class="header-text">
-        <div class="header-role">Engineer &middot; Builder</div>
-        <h1 class="fade-in">Authored Works</h1>
+<title>Blog · Yogya Chugh</title>
+<meta name="description" content="The longer stories behind Yogya Chugh's comic résumé: a $0 production app, a C++ DOM library, a summer of coding and a Django fix.">
+<link rel="canonical" href="https://yogya.dev/writing">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yogya.dev/writing">
+<meta property="og:title" content="Blog · Yogya Chugh">
+<meta property="og:description" content="The longer stories behind the comic."><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8DA5D8">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://yogya.dev/assets/og-cover.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/comic.css">
+<script src="/comic.js" defer></script></head>
+<body><div class="dock" id="dock">
+  <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
+  <a class="btn white" href="/">Home</a>
+  <a class="btn white" href="/resume/">Résumé</a>
+  <a class="btn red" href="/#connect">Let's talk ✉</a>
+</div><main>
+  <section class="page" style="--pr:-.25deg" aria-labelledby="blog-t">
+    <div class="pn head-panel c-yellow burst" style="--bx:80%; --by:90%">
+      <div class="head-text">
+        <div class="kicker"><span class="vol-tag">The blog</span></div>
+        <h1 id="blog-t">The full stories</h1>
+        <p class="lede">The comic gives you the short version. These posts go through what I built, how, and what went wrong along the way.</p>
       </div>
-      <div class="monogram-container">
-        <img src="/favicon.png" alt="Yogya Chugh" class="monogram-img">
+      <div class="head-art">
+        <p class="bub" style="--t:52%">Grab a chai. These take about 3 minutes each.</p>
+        <div class="yo-wrap" data-expr="happy"></div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="fade-in" style="margin-top: 3rem;">
-      <a href="/blogs/vardhman" class="list-item">
-        <div class="list-content">
-          <div class="list-title">Running a Real Product on $7/Month</div>
-          <div class="list-desc">The story of building Vardhman Saathi &mdash; a comprehensive business suite and salesperson credit system using TypeScript, Electron, and Hono &mdash; and running the entire product on $7/month infrastructure.</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> June 6, 2026 &middot; Vardhman Electricals</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
+  <section class="page" style="--pr:.2deg" aria-label="All posts">
+    <div class="posts">
+      <a class="post-card" href="/blogs/vardhman.html">
+        <span class="art c-peach" style="--c:var(--peach)"><span class="yo-wrap" data-expr="smug"></span></span>
+        <span class="body">
+          <span class="meta-line">June 6, 2026 · 3 min read</span>
+          <span class="title">Running a real product for $0 a month</span>
+          <span class="sum">How Vardhman Saathi's phone app, admin app and backend run on free tiers while serving 200+ people at once.</span>
+          <span class="go">From <b>Episode 1 · First internship</b> →</span>
+        </span>
       </a>
-
-      <a href="/blogs/whatwg_dom" class="list-item">
-        <div class="list-content">
-          <div class="list-title">Implementing the WhatWG DOM in C++</div>
-          <div class="list-desc">A deep dive into building Webelo&rsquo;s DOM engine &mdash; implementing the WhatWG DOM Living Standard in C++, including event dispatch, preorder DFS traversal, and the mutation observer algorithm.</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026 &middot; Webelo</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
+      <a class="post-card" href="/blogs/whatwg_dom.html">
+        <span class="art" style="--c:var(--sky)"><span class="yo-wrap" data-expr="curious"></span></span>
+        <span class="body">
+          <span class="meta-line">May 28, 2026 · 3 min read</span>
+          <span class="title">Implementing the WHATWG DOM in C++</span>
+          <span class="sum">What it takes to build a browser's page tree straight from the official spec: nodes, traversal and events.</span>
+          <span class="go">From <b>Episode 8 · Inside the browser</b> →</span>
+        </span>
       </a>
-
-      <a href="/blogs/summer_of_making" class="list-item">
-        <div class="list-content">
-          <div class="list-title">450 Hours, 4 Ships, One Laptop</div>
-          <div class="list-desc">Logged 450+ tracked coding hours across 4+ shipped open-source projects in 3 months, rapidly learning and applying new technologies across each project for the Hack Club Summer of Making.</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> May 28, 2026 &middot; Summer 2025</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
+      <a class="post-card" href="/blogs/summer_of_making.html">
+        <span class="art" style="--c:var(--yellow)"><span class="yo-wrap" data-expr="happy"></span></span>
+        <span class="body">
+          <span class="meta-line">May 28, 2026 · 4 min read</span>
+          <span class="title">450 hours, 4 ships, one laptop</span>
+          <span class="sum">A rejection from Google Summer of Code, a random email from GitHub, and the summer that followed.</span>
+          <span class="go">From <b>Episode 7 · The summer I didn't quit</b> →</span>
+        </span>
       </a>
-
-      <a href="/blogs/first_open_source" class="list-item">
-        <div class="list-content">
-          <div class="list-title">My First Open Source Contribution</div>
-          <div class="list-desc">Merged pull requests in Django and Django third-party libraries on GitHub.</div>
-          <div class="list-meta"><i class="ri-calendar-line"></i> August 2024 &middot; Open Source</div>
-        </div>
-        <div class="list-action">Read more &rarr;</div>
+      <a class="post-card" href="/blogs/first_open_source.html">
+        <span class="art" style="--c:var(--mint)"><span class="yo-wrap" data-expr="determined"></span></span>
+        <span class="body">
+          <span class="meta-line">March 2025 · 3 min read</span>
+          <span class="title">My first open-source contribution</span>
+          <span class="sum">How a confusing error in Django turned into my first merged pull request.</span>
+          <span class="go">From <b>Episode 6 · Fixing Django</b> →</span>
+        </span>
       </a>
-    </section>
-  </main>
-</div>
+    </div>
+  </section>
 
-<!-- Floating Dock -->
-<nav class="floating-dock" aria-label="Main Navigation">
-  <a href="/" class="dock-link"><i class="ri-home-5-line"></i> Overview</a>
-  <a href="/projects.html" class="dock-link"><i class="ri-folder-open-line"></i> Archive</a>
-  <a href="/writing.html" class="dock-link active" aria-current="page"><i class="ri-quill-pen-line"></i> Writing</a>
-  <a href="/resume" class="dock-link"><i class="ri-file-text-line"></i> Resume</a>
-</nav>
-
-<script src="/script.js"></script>
+  <footer class="page" style="--pr:-.2deg">
+    <div class="the-end">
+      <h2>Short on time?</h2>
+      <p class="sub">The comic tells all of this in pictures.</p>
+      <div class="socials" style="justify-content:center; margin-top:14px">
+        <a class="btn dark" href="/">Read the comic</a>
+        <a class="btn white" href="/resume/">Résumé</a>
+      </div>
+    </div>
+  </footer>
+</main>
 </body>
 </html>
