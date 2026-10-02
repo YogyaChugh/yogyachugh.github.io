@@ -80,7 +80,8 @@
     display: inline-block; margin-right: 10px; padding: 3px 8px 1px; transform: rotate(-3deg);
     background: var(--ink); color: var(--yellow); font-size: .6em; vertical-align: middle;
   }
-  .page-title .when { font-size: .85rem; opacity: .72; }
+  .page-title .when { font-size: .85rem; color: rgba(17, 19, 24, .72); }
+  .co-logo { display: inline-block; width: 1.25em; height: 1.25em; margin-right: .4em; vertical-align: -.28em; border-radius: 22%; }
   .grid { display: grid; gap: clamp(6px, 1vw, 10px); }
 
   /* ---------- volume splash: a chapter break that is still a comic panel ---------- */
@@ -145,7 +146,7 @@
 
   /* motion comic: backgrounds, people and props drift at different depths; lettering stays put */
   .pn .yo-wrap { translate: 0 calc((var(--py, 0) + 1) * 5px); }
-  .pn :is(.prop, .polaroid, .receipt, .phone, .screen, .badge) { translate: 0 calc(var(--py, 0) * -7px); }
+  .pn :is(.prop, .polaroid, .receipt, .phone, .screen, .badge, .shots) { translate: 0 calc(var(--py, 0) * -7px); }
 
   /* ---------- lettering ---------- */
   .bub, .tht, .nar {
@@ -161,6 +162,7 @@
   .bub.tl::after { left: -10px; top: calc(var(--t, 50%) + 4px); bottom: auto; width: 14px; height: 10px; clip-path: polygon(100% 0, 100% 100%, 0 70%); }
   .nar { top: 0; left: 0; text-align: left; background: var(--yellow); border: 3px solid var(--ink); border-top: 0; border-left: 0; padding: 6px 10px 5px; max-width: 86%; }
   .nar.br { top: auto; left: auto; bottom: 0; right: 0; border: 3px solid var(--ink); border-bottom: 0; border-right: 0; }
+  .nar.bl { top: auto; bottom: 0; border: 3px solid var(--ink); border-bottom: 0; border-left: 0; }
   .nar.white { background: #fff; }
   .sfx {
     position: absolute; z-index: 3; margin: 0; white-space: nowrap;
@@ -197,6 +199,16 @@
   .polaroid::before { content: ''; position: absolute; top: -11px; left: 50%; width: 70px; height: 22px; background: rgba(255, 236, 150, .8); transform: translateX(-50%) rotate(-5deg); }
   .screen { position: absolute; z-index: 2; inset: 44px 14px 14px; border: 4px solid var(--ink); background: #000; overflow: hidden; box-shadow: 4px 4px 0 var(--ink); }
   .screen img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 0; display: block; }
+  /* a row of real app screenshots, numbered like a how-to strip */
+  .shots { position: absolute; z-index: 2; inset: 50px 0 0; display: flex; justify-content: space-evenly; gap: 14px; padding: 4px 18px 0; }
+  .shot { margin: 0; flex: 0 1 148px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 9px; rotate: var(--r, 0deg); }
+  .shot figcaption { font: 700 .9rem/1.1 var(--letter); background: #fff; border: 3px solid var(--ink); padding: 4px 9px 3px; white-space: nowrap; }
+  .shot figcaption b { font: 400 1.05rem/1 var(--sfx); color: var(--red); margin-right: 5px; }
+  .shot .ph { width: 100%; aspect-ratio: 400 / 853; border: 4px solid var(--ink); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 4px 4px 0 var(--ink); }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+  .shots-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 22px 0 10px; }
+  .shots-row .shot { flex: none; }
+  .btn .co-logo { margin: 0; }
   .code {
     position: absolute; z-index: 1; inset: 44px 12px auto 12px; margin: 0;
     font: 600 clamp(.66rem, 1.1vw, .84rem)/1.5 var(--mono); color: #E6EDF7; white-space: pre-wrap;
@@ -374,7 +386,7 @@
   .js .page.in { animation: page-in .7s var(--ease-out) backwards; }
   .js .page:not(.in) :is(.pn, .win, .way, .result) { opacity: 0; }
   .js .page.in .pn { animation: pn-in .6s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 120ms + 150ms); }
-  .js .page.in .pn :is(.bub, .tht, .nar, .polaroid, .receipt, .badge, .stamp) { animation: letter-in .5s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 120ms + 380ms); }
+  .js .page.in .pn :is(.bub, .tht, .nar, .polaroid, .receipt, .badge, .stamp, .shot) { animation: letter-in .5s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 120ms + 380ms); }
   .js .page.in .pn .sfx { animation: sfx-in .6s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 120ms + 460ms); }
   .js .page.in :is(.win, .way) { animation: pop-in .55s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 80ms + 150ms); }
   .js .page.in .result { animation: slam .5s var(--ease-out) backwards; animation-delay: 620ms; }
@@ -383,6 +395,11 @@
   @media (max-width: 720px) {
     .grid, .connect { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: none !important; }
     .grid > .pn { height: 230px; }
+    .grid > .pn.strip { height: 330px; }
+    .strip .nar { max-width: 100%; }
+    .strip .shots { inset: 50px 0 0; justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 6px 18px 0; }
+    .strip .shot { flex: 0 0 128px; scroll-snap-align: center; }
+    .shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cover-art { min-height: 370px; }
     .cover-art .yo-wrap { width: min(62%, 280px); right: 0; }
     .blurb { top: 18px; transform: rotate(-2deg); max-width: 70%; font-size: 1.08rem; }
@@ -407,7 +424,7 @@
       animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important;
       transition-duration: .01ms !important; scroll-behavior: auto !important;
     }
-    .pn::before, .pn .yo-wrap, .pn :is(.prop, .polaroid, .receipt, .phone, .screen, .badge) { translate: none; transform: none; }
+    .pn::before, .pn .yo-wrap, .pn :is(.prop, .polaroid, .receipt, .phone, .screen, .badge, .shots) { translate: none; transform: none; }
   }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
