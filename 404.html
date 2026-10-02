@@ -19,6 +19,51 @@
 <script src="/comic.js" defer></script>
 </head>
 <body>
+<script>
+  /* Addresses from earlier versions of the site go to where that content lives now.
+     Runs before anything else, so visitors are moved on before the page draws. */
+  (function () {
+    var HANGMAN = 'https://github.com/YogyaChugh/Hangman-Game', TIMBERLY = 'https://yogya-chugh.itch.io/timberly';
+    var MOVED = {
+      '/blog': '/writing', '/blog.html': '/writing', '/blogs': '/writing',
+      '/blogs/classes_dex': '/writing', '/blogs/classes_dex.html': '/writing',
+      '/contact': '/#connect', '/contact.html': '/#connect',
+      '/work': '/#vol1', '/work.html': '/#vol1',
+      '/projects': '/#vol2', '/projects.html': '/#vol2',
+      '/play': '/#ep4', '/play.html': '/#ep4',
+      '/hangman': HANGMAN, '/hangman.html': HANGMAN,
+      '/timberly': TIMBERLY, '/timberly/timberly': TIMBERLY, '/timberly/timberly.html': TIMBERLY,
+      '/timberly/timberly.apk': 'https://github.com/YogyaChugh/Timberly/releases',
+      '/old_index': '/', '/old_index.html': '/',
+      '/resume.html': '/resume/', '/resume.docx': '/resume/', '/resume.pdf': '/Yogya_Chugh_Resume.pdf', '/cv': '/resume/'
+    };
+    var path = location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
+    if (MOVED[path]) {
+      window.goatcounter = { no_onload: true };
+      location.replace(MOVED[path]);
+      return;
+    }
+    window.goatcounter = { path: function (p) { return '404: ' + p; } };   /* broken links stand out in the stats */
+    var GUESS = [
+      [/blog|post|writ|article/, '/writing', 'the blog'],
+      [/resume|r%c3%a9sum|cv/, '/resume/', 'the résumé'],
+      [/contact|hire|mail|call|talk/, '/#connect', 'the contact page'],
+      [/game|timberly|snake|play/, '/#ep4', 'the games episode'],
+      [/project|work|intern|anystudio|webelo|pippo|django|vardhman|meant2bae/, '/#vol1', 'the episodes']
+    ];
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('lost-path').textContent = decodeURIComponent(location.pathname);
+      for (var i = 0; i < GUESS.length; i++) {
+        if (GUESS[i][0].test(path)) {
+          var a = document.getElementById('lost-guess-a');
+          a.href = GUESS[i][1]; a.textContent = GUESS[i][2];
+          document.getElementById('lost-guess').hidden = false;
+          break;
+        }
+      }
+    });
+  })();
+</script>
 <div class="dock" id="dock">
   <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="confused" data-crop="close"></span></span>
   <a class="btn white" href="/resume/">Résumé</a>
@@ -31,7 +76,8 @@
       <div class="head-text">
         <div class="kicker"><span class="vol-tag">Error 404</span></div>
         <h1 id="lost-t">This page isn't in the comic</h1>
-        <p class="lede">The link may be from before the site was redrawn, so the page moved or is gone. Everything is still here, just in comic form.</p>
+        <p class="lede">There's nothing at <code class="lost-path" id="lost-path">this address</code>. The link may be from before the site was redrawn as a comic.</p>
+        <p class="lost-guess" id="lost-guess" hidden>Looking for <a id="lost-guess-a" href="/">the comic</a>?</p>
         <p class="lost-links">
           <a class="btn" href="/">← Read the comic</a>
           <a class="btn white" href="/resume/">Résumé</a>
@@ -46,7 +92,7 @@
   </section>
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Site"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a></nav>
+  <nav class="foot-links" aria-label="Site"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
