@@ -1,31 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Blog · Yogya Chugh</title>
-<meta name="description" content="The longer stories behind Yogya Chugh's comic résumé: a $0 production app, a C++ DOM library, a summer of coding and a Django fix.">
-<link rel="canonical" href="https://yogya.dev/writing">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yogya.dev/writing">
-<meta property="og:title" content="Blog · Yogya Chugh">
-<meta property="og:description" content="The longer stories behind the comic."><meta charset="utf-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog · Yogya Chugh, Software Engineer</title>
+<meta name="description" content="The longer stories behind Yogya Chugh&#x27;s comic résumé: a $0 production app, a C++ DOM library, a summer of coding and a Django fix.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://yogya.dev/writing">
+<meta name="author" content="Yogya Chugh">
 <meta name="theme-color" content="#8DA5D8">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://yogya.dev/assets/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Comic cover: Yogya Chugh, Software Engineer, drawn in a red hoodie and sunglasses">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="me" href="https://github.com/YogyaChugh">
+<link rel="me" href="https://www.linkedin.com/in/yogyachugh">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Yogya Chugh">
 <meta property="og:locale" content="en_IN">
-<meta name="twitter:image" content="https://yogya.dev/assets/og-card.png">
-<meta name="author" content="Yogya Chugh">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:url" content="https://yogya.dev/writing">
+<meta property="og:title" content="The blog · Yogya Chugh">
+<meta property="og:description" content="The full stories behind the comic résumé.">
+<meta property="og:image" content="https://yogya.dev/assets/cards/writing.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Comic card: The full stories, the blog of Yogya Chugh">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The blog · Yogya Chugh">
+<meta name="twitter:description" content="The full stories behind the comic résumé.">
+<meta name="twitter:image" content="https://yogya.dev/assets/cards/writing.jpg">
+<meta name="twitter:image:alt" content="Comic card: The full stories, the blog of Yogya Chugh">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://yogya.dev/writing#webpage",
+      "url": "https://yogya.dev/writing",
+      "name": "Blog · Yogya Chugh, Software Engineer",
+      "isPartOf": {
+        "@id": "https://yogya.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://yogya.dev/writing#blog"
+      },
+      "inLanguage": "en",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yogya.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://yogya.dev/writing"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://yogya.dev/writing#blog",
+      "name": "Yogya Chugh's blog",
+      "url": "https://yogya.dev/writing",
+      "description": "The full stories behind the comic résumé.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://yogya.dev/#person",
+        "name": "Yogya Chugh",
+        "url": "https://yogya.dev/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://yogya.dev/#person",
+        "name": "Yogya Chugh",
+        "url": "https://yogya.dev/"
+      },
+      "inLanguage": "en",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://yogya.dev/blogs/vardhman#article",
+          "headline": "Running a real product for $0 a month",
+          "url": "https://yogya.dev/blogs/vardhman",
+          "datePublished": "2026-06-06",
+          "image": "https://yogya.dev/assets/cards/vardhman.jpg",
+          "author": {
+            "@type": "Person",
+            "@id": "https://yogya.dev/#person",
+            "name": "Yogya Chugh",
+            "url": "https://yogya.dev/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://yogya.dev/blogs/whatwg_dom#article",
+          "headline": "Implementing the WHATWG DOM in C++",
+          "url": "https://yogya.dev/blogs/whatwg_dom",
+          "datePublished": "2026-05-28",
+          "image": "https://yogya.dev/assets/cards/whatwg_dom.jpg",
+          "author": {
+            "@type": "Person",
+            "@id": "https://yogya.dev/#person",
+            "name": "Yogya Chugh",
+            "url": "https://yogya.dev/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://yogya.dev/blogs/summer_of_making#article",
+          "headline": "450 hours, 4 ships, one laptop",
+          "url": "https://yogya.dev/blogs/summer_of_making",
+          "datePublished": "2026-05-28",
+          "image": "https://yogya.dev/assets/cards/summer_of_making.jpg",
+          "author": {
+            "@type": "Person",
+            "@id": "https://yogya.dev/#person",
+            "name": "Yogya Chugh",
+            "url": "https://yogya.dev/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://yogya.dev/blogs/first_open_source#article",
+          "headline": "My first open-source contribution",
+          "url": "https://yogya.dev/blogs/first_open_source",
+          "datePublished": "2025-03",
+          "image": "https://yogya.dev/assets/cards/first_open_source.jpg",
+          "author": {
+            "@type": "Person",
+            "@id": "https://yogya.dev/#person",
+            "name": "Yogya Chugh",
+            "url": "https://yogya.dev/"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/comic.css">
-<script src="/comic.js" defer></script></head>
+<script src="/comic.js" defer></script>
+</head>
 <body><div class="dock" id="dock">
   <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
   <a class="btn white" href="/">Home</a>
@@ -48,7 +174,7 @@
 
   <section class="page" style="--pr:.2deg" aria-label="All posts">
     <div class="posts">
-      <a class="post-card" href="/blogs/vardhman.html">
+      <a class="post-card" href="/blogs/vardhman">
         <span class="art c-peach" style="--c:var(--peach)"><span class="yo-wrap" data-expr="smug"></span></span>
         <span class="body">
           <span class="meta-line">June 6, 2026 · 3 min read</span>
@@ -57,7 +183,7 @@
           <span class="go">From <b>Episode 1 · First internship</b> →</span>
         </span>
       </a>
-      <a class="post-card" href="/blogs/whatwg_dom.html">
+      <a class="post-card" href="/blogs/whatwg_dom">
         <span class="art" style="--c:var(--sky)"><span class="yo-wrap" data-expr="curious"></span></span>
         <span class="body">
           <span class="meta-line">May 28, 2026 · 3 min read</span>
@@ -66,7 +192,7 @@
           <span class="go">From <b>Episode 8 · Inside the browser</b> →</span>
         </span>
       </a>
-      <a class="post-card" href="/blogs/summer_of_making.html">
+      <a class="post-card" href="/blogs/summer_of_making">
         <span class="art" style="--c:var(--yellow)"><span class="yo-wrap" data-expr="happy"></span></span>
         <span class="body">
           <span class="meta-line">May 28, 2026 · 4 min read</span>
@@ -75,7 +201,7 @@
           <span class="go">From <b>Episode 7 · The summer I didn't quit</b> →</span>
         </span>
       </a>
-      <a class="post-card" href="/blogs/first_open_source.html">
+      <a class="post-card" href="/blogs/first_open_source">
         <span class="art" style="--c:var(--mint)"><span class="yo-wrap" data-expr="determined"></span></span>
         <span class="body">
           <span class="meta-line">March 2025 · 3 min read</span>

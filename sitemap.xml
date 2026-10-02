@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://yogya.dev/</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <image:image><image:loc>https://yogya.dev/assets/og-card.png</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-bill.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-store.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-checkout.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/meant2bae.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/timberly.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/django-oss.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/laptop.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/webelo.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/anystudio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/yogya-avatar.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://yogya.dev/resume</loc>
+    <loc>https://yogya.dev/resume/</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image><image:loc>https://yogya.dev/assets/cards/resume.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://yogya.dev/writing</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <image:image><image:loc>https://yogya.dev/assets/cards/writing.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://yogya.dev/blogs/vardhman</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image><image:loc>https://yogya.dev/assets/cards/vardhman.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-bill.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-home.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-store.jpg</image:loc></image:image>
+    <image:image><image:loc>https://yogya.dev/assets/projects/vardhman-app-checkout.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://yogya.dev/blogs/whatwg_dom</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image><image:loc>https://yogya.dev/assets/cards/whatwg_dom.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://yogya.dev/blogs/summer_of_making</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image><image:loc>https://yogya.dev/assets/cards/summer_of_making.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://yogya.dev/blogs/first_open_source</loc>
     <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image><image:loc>https://yogya.dev/assets/cards/first_open_source.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://yogya.dev/hangman</loc>
+    <lastmod>2026-10-02</lastmod>
+    <image:image><image:loc>https://yogya.dev/assets/cards/hangman.jpg</image:loc></image:image>
   </url>
 </urlset>

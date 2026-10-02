@@ -1,10 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hangman &mdash; Play in Browser</title>
-<link rel="stylesheet" href="./vendor/xterm.min.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play Hangman in your browser · Yogya Chugh</title>
+<meta name="description" content="A terminal Hangman game Yogya Chugh wrote in C, compiled to WebAssembly so it runs in your browser. Guess the word one letter at a time.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://yogya.dev/hangman">
+<meta name="author" content="Yogya Chugh">
+<meta name="theme-color" content="#0d0d12">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="me" href="https://github.com/YogyaChugh">
+<link rel="me" href="https://www.linkedin.com/in/yogyachugh">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yogya Chugh">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://yogya.dev/hangman">
+<meta property="og:title" content="Play Hangman · Yogya Chugh">
+<meta property="og:description" content="The C terminal game, compiled to WebAssembly. It runs right in your browser.">
+<meta property="og:image" content="https://yogya.dev/assets/cards/hangman.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Comic card: Play Hangman">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Play Hangman · Yogya Chugh">
+<meta name="twitter:description" content="The C terminal game, compiled to WebAssembly. It runs right in your browser.">
+<meta name="twitter:image" content="https://yogya.dev/assets/cards/hangman.jpg">
+<meta name="twitter:image:alt" content="Comic card: Play Hangman">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://yogya.dev/hangman#webpage",
+      "url": "https://yogya.dev/hangman",
+      "name": "Play Hangman in your browser · Yogya Chugh",
+      "isPartOf": {
+        "@id": "https://yogya.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://yogya.dev/hangman#game"
+      },
+      "inLanguage": "en",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yogya.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hangman",
+            "item": "https://yogya.dev/hangman"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Game",
+      "@id": "https://yogya.dev/hangman#game",
+      "name": "Hangman",
+      "url": "https://yogya.dev/hangman",
+      "description": "The classic word game as a terminal program written in C, compiled to WebAssembly.",
+      "image": "https://yogya.dev/assets/cards/hangman.jpg",
+      "author": {
+        "@type": "Person",
+        "@id": "https://yogya.dev/#person",
+        "name": "Yogya Chugh",
+        "url": "https://yogya.dev/"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/vendor/xterm.min.css" />
 <style>
   :root { --bg:#0d0d12; --panel:#15151c; --accent:#ff6eb4; --accent2:#c084fc; }
   * { box-sizing: border-box; }
@@ -73,9 +151,12 @@
     transition: background 0.15s ease, color 0.15s ease;
   }
   #restart-btn:hover { background: var(--accent); color: #1a0a14; }
+  .back { align-self: flex-start; margin: 0 0 18px; color: #bbb; font-size: 0.8rem; text-decoration: none; border-bottom: 1px solid #444; }
+  .back:hover { color: #fff; border-color: var(--accent); }
 </style>
 </head>
 <body>
+  <a class="back" href="/#ep4">&larr; Back to Yogya Chugh's comic résumé</a>
   <h1>Hangman &mdash; live in your browser</h1>
   <p class="sub">The original C terminal game, compiled to WebAssembly. Click the terminal, then type a single letter and press Enter to guess. First load can take a moment &mdash; please be patient.</p>
 
@@ -99,12 +180,12 @@
     #keyboard button.wide { min-width: 70px; }
   </style>
 
-  <div id="status">Loading&rdquo;¦</div>
+  <div id="status">Loading…</div>
   <button id="restart-btn" style="display:none;">Restart Game</button>
 
-<script src="./vendor/xterm.min.js"></script>
-<script src="./vendor/xterm-addon-fit.min.js"></script>
-<script src="./hangman.js"></script>
+<script src="/vendor/xterm.min.js"></script>
+<script src="/vendor/xterm-addon-fit.min.js"></script>
+<script src="/hangman.js"></script>
 <script>
   const statusEl = document.getElementById("status");
   const restartBtn = document.getElementById("restart-btn");

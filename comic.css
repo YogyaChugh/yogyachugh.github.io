@@ -551,6 +551,7 @@
   .rs ul.plain { margin: 0; padding-left: 18px; }
   .rs ul.plain li { margin: 3px 0; }
   .rs-line { margin: 0; }
+  .lost-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
 
   @media (max-width: 720px) {
     .head-panel { grid-template-columns: minmax(0, 1fr); }
