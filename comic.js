@@ -102,7 +102,6 @@
         <path d="${FACE}" fill="${SKIN}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
         <path d="M96 118 L96 146 Q97 180 120 198 Q131 206 142 210 Q118 194 110 168 Q104 146 106 118 Z" fill="${SKIN_D}" opacity=".5"/>
         <path d="M96 150 Q97 182 120 200 Q136 212 150 212 Q164 212 180 200 Q203 182 204 150 Q200 176 182 186 Q166 195 150 195 Q134 195 118 186 Q100 176 96 150 Z" fill="${BEARD}"/>
-        <path d="M133 173 Q151 165 169 173 Q160 177 151 174 Q142 177 133 173 Z" fill="rgba(52,32,26,.6)"/>
         <path d="${CROWN}" fill="${HAIR}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
         ${LOCKS.map((d, i) => `<path d="${d}" fill="${i % 2 ? HAIR_L : HAIR}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`).join('')}
         ${SHINE.map(d => line(d, 3, SHINE_C)).join('')}
