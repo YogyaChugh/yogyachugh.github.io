@@ -13,6 +13,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="Yogya Chugh · Blog" href="https://yogya.dev/feed.xml">
 <link rel="me" href="https://github.com/YogyaChugh">
 <link rel="me" href="https://www.linkedin.com/in/yogyachugh">
 <meta property="og:type" content="website">
@@ -163,11 +164,19 @@
         },
         {
           "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#blog",
+          "url": "https://yogya.dev/#blog",
+          "cssSelector": "#blog",
+          "name": "Bonus issue: the full stories",
+          "description": "The four blog posts behind the comic: a $0 production app, a C++ DOM library, a summer of coding and a Django fix."
+        },
+        {
+          "@type": "WebPageElement",
           "@id": "https://yogya.dev/#connect",
           "url": "https://yogya.dev/#connect",
           "cssSelector": "#connect",
           "name": "Let's work together",
-          "description": "Email Yogya Chugh or book a 30-minute call."
+          "description": "Email Yogya Chugh, book a 30-minute call, or find Yogya on GitHub, LinkedIn, Slack and Discord."
         },
         {
           "@type": "WebPageElement",
@@ -232,7 +241,8 @@
       ],
       "sameAs": [
         "https://github.com/YogyaChugh",
-        "https://www.linkedin.com/in/yogyachugh"
+        "https://www.linkedin.com/in/yogyachugh",
+        "https://yogya-chugh.itch.io"
       ]
     }
   ]
@@ -267,6 +277,11 @@
           <h1>Yogya Chugh</h1>
           <div class="role-line"><span class="role">Software Engineer</span><span class="where">Delhi, India</span></div>
         </div>
+        <nav class="mast-nav" aria-label="Site">
+          <a href="/writing">Blog</a>
+          <a href="/resume/">Résumé</a>
+          <a href="#connect">Contact</a>
+        </nav>
       </div>
       <div class="cover-art">
         <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
@@ -288,6 +303,7 @@
         <div class="cover-actions" data-for="none">
           <a class="btn dark" href="#short">Start reading ↓</a>
           <a class="btn white" href="/resume/">Résumé</a>
+          <a class="btn white" href="/writing">Blog</a>
         </div>
         <div class="cover-actions" data-for="hiring" hidden>
           <a class="btn dark" href="#short">The 30-second version ↓</a>
@@ -658,16 +674,51 @@ object has no attribute 'lstrip'</span></pre>
         <p class="bub" style="left:10px; right:10px; top:10px; --t:56%">Still shipping. Here's the proof.</p>
         <div class="yo-wrap" data-expr="determined" style="width:min(68%,170px)"></div>
       </div>
-      <div class="pn c-mint dots gh">
-        <p class="nar">1 square = 1 day. Redder = busier.</p>
-        <div class="gh-graph" id="gh-graph" aria-hidden="true"></div>
-        <div class="gh-stats" id="gh-stats"></div>
+      <div class="pn c-yellow burst gh" style="--bx:8%; --by:110%">
+        <p class="nar">Contributions per month, past year</p>
+        <div class="gh-big">
+          <span class="gh-num" id="gh-num">694</span>
+          <span class="gh-lbl">contributions</span>
+          <span class="gh-last" id="gh-last">Last one: 2 Oct 2026</span>
+        </div>
+        <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" data-m="N" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" data-m="D" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" data-m="J" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" data-m="F" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" data-m="M" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" data-m="A" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" data-m="M" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" data-m="J" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" data-m="J" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" data-m="A" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" data-m="S" title="September 2026: 163"><i></i></span><span class="" style="--h:0.037" data-m="O" title="October 2026: 8"><i></i></span></div>
       </div>
     </div>
     <div class="result">
-      <p class="res" id="gh-res"><span class="res-tag">Result</span>I'm coding most days, and it shows on GitHub.</p>
+      <p class="res" id="gh-res"><span class="res-tag">Result</span><mark>694 contributions</mark> on GitHub in the past year.</p>
       <p class="det">The graph includes private work, so it counts code I can't show, like client projects and AnyStudio.</p>
       <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">See my GitHub ↗</a></div>
+    </div>
+  </section>
+
+  <!-- ================= THE BLOG ================= -->
+  <section class="page" id="blog" style="--pr:-.25deg" aria-labelledby="blog-t">
+    <header class="page-title"><h2 id="blog-t"><span class="ep">Bonus issue</span>The full stories</h2><a class="when more" href="/writing">All posts on the blog →</a></header>
+    <div class="teasers">
+      <a class="teaser" href="/blogs/vardhman">
+        <span class="t-top c-peach"><span class="t-ep">Episode 1</span><span class="yo-wrap" data-expr="smug" data-crop="close"></span></span>
+        <span class="t-title">Running a real product for $0 a month</span>
+        <span class="t-sum">How Vardhman Saathi's phone app, admin app and backend run on free tiers for 200+ people at once.</span>
+        <span class="t-go">Read the story →</span>
+      </a>
+      <a class="teaser" href="/blogs/whatwg_dom">
+        <span class="t-top c-sky"><span class="t-ep">Episode 8</span><span class="yo-wrap" data-expr="curious" data-crop="close"></span></span>
+        <span class="t-title">Implementing the WHATWG DOM in C++</span>
+        <span class="t-sum">Building a browser's page tree straight from the official spec: nodes, traversal and events.</span>
+        <span class="t-go">Read the story →</span>
+      </a>
+      <a class="teaser" href="/blogs/summer_of_making">
+        <span class="t-top c-yellow"><span class="t-ep">Episode 7</span><span class="yo-wrap" data-expr="happy" data-crop="close"></span></span>
+        <span class="t-title">450 hours, 4 ships, one laptop</span>
+        <span class="t-sum">A rejection from Google Summer of Code, an email from GitHub, and the summer that followed.</span>
+        <span class="t-go">Read the story →</span>
+      </a>
+      <a class="teaser" href="/blogs/first_open_source">
+        <span class="t-top c-mint"><span class="t-ep">Episode 6</span><span class="yo-wrap" data-expr="determined" data-crop="close"></span></span>
+        <span class="t-title">My first open-source contribution</span>
+        <span class="t-sum">How a confusing error in Django turned into my first merged pull request.</span>
+        <span class="t-go">Read the story →</span>
+      </a>
     </div>
   </section>
 
@@ -690,12 +741,13 @@ object has no attribute 'lstrip'</span></pre>
           <span><span class="t">Book a 30-minute call</span><span class="s">Pick a time that suits you</span></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
-        <div class="socials">
-          <a class="btn white" href="https://linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin">LinkedIn ↗</a>
-          <a class="btn white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">GitHub ↗</a>
-          <a class="btn white" href="/writing">Blog</a>
-          <a class="btn white" href="/resume/">Résumé</a>
-        </div>
+        <ul class="socials-ic big" aria-label="Find me online">
+          <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
+          <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
+          <li><a class="ic-btn" href="https://hackclub.slack.com/team/U09218J0E94" target="_blank" rel="noopener" data-track="slack" style="--brand:#4A154B" aria-label="Yogya Chugh on Slack"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-slack"/></svg><span>Slack</span></a></li>
+          <li><a class="ic-btn" href="https://discord.com/users/1114938970883772427" target="_blank" rel="noopener" data-track="discord" style="--brand:#5865F2" aria-label="Yogya Chugh on Discord"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-discord"/></svg><span>Discord</span></a></li>
+          <li><a class="ic-btn" href="mailto:yogya.developer@gmail.com" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
+        </ul>
         <p class="connect-note">Based in Delhi, India (IST, UTC+5:30).</p>
       </div>
     </div>
@@ -732,6 +784,19 @@ object has no attribute 'lstrip'</span></pre>
       <p class="credit">Written, drawn and coded by Yogya Chugh in Delhi.</p>
     </div>
   </footer>
+<!-- site-foot -->
+<footer class="site-foot">
+  <nav class="foot-links" aria-label="Site"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a></nav>
+  <ul class="socials-ic" aria-label="Find me online">
+    <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
+    <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
+    <li><a class="ic-btn" href="https://hackclub.slack.com/team/U09218J0E94" target="_blank" rel="noopener" data-track="slack" style="--brand:#4A154B" aria-label="Yogya Chugh on Slack"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-slack"/></svg><span>Slack</span></a></li>
+    <li><a class="ic-btn" href="https://discord.com/users/1114938970883772427" target="_blank" rel="noopener" data-track="discord" style="--brand:#5865F2" aria-label="Yogya Chugh on Discord"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-discord"/></svg><span>Discord</span></a></li>
+    <li><a class="ic-btn" href="mailto:yogya.developer@gmail.com" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
+  </ul>
+  <p class="foot-note">© 2026 Yogya Chugh · Software engineer in Delhi, India</p>
+</footer>
+<!-- /site-foot -->
 </main>
 
 <script src="/comic.js" defer></script>

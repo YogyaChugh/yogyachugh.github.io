@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yogya Chugh · Blog</title>
+  <subtitle>The full stories behind the comic résumé.</subtitle>
+  <link href="https://yogya.dev/feed.xml" rel="self"/>
+  <link href="https://yogya.dev/writing"/>
+  <id>https://yogya.dev/writing</id>
+  <updated>2026-10-02T00:00:00+05:30</updated>
+  <author><name>Yogya Chugh</name><uri>https://yogya.dev/</uri></author>
+  <icon>https://yogya.dev/favicon.png</icon>
+  <entry>
+    <title>Running a real product for $0 a month</title>
+    <link href="https://yogya.dev/blogs/vardhman"/>
+    <id>https://yogya.dev/blogs/vardhman</id>
+    <published>2026-06-06T00:00:00+05:30</published>
+    <updated>2026-10-02T00:00:00+05:30</updated>
+    <summary>How Vardhman Saathi&#x27;s Android app, admin app and backend run entirely on free tiers while serving 200+ people at once.</summary>
+  </entry>
+  <entry>
+    <title>Implementing the WHATWG DOM in C++</title>
+    <link href="https://yogya.dev/blogs/whatwg_dom"/>
+    <id>https://yogya.dev/blogs/whatwg_dom</id>
+    <published>2026-05-28T00:00:00+05:30</published>
+    <updated>2026-10-02T00:00:00+05:30</updated>
+    <summary>Building Webelo, a C++ DOM library that follows the WHATWG DOM Living Standard: the node tree, preorder traversal and event dispatch.</summary>
+  </entry>
+  <entry>
+    <title>450 hours, 4 ships, one laptop</title>
+    <link href="https://yogya.dev/blogs/summer_of_making"/>
+    <id>https://yogya.dev/blogs/summer_of_making</id>
+    <published>2026-05-28T00:00:00+05:30</published>
+    <updated>2026-10-02T00:00:00+05:30</updated>
+    <summary>How a rejection from Google Summer of Code turned into Hack Club&#x27;s Summer of Making: 450+ hours of coding, 6,612 shells and a new laptop.</summary>
+  </entry>
+  <entry>
+    <title>My first open-source contribution</title>
+    <link href="https://yogya.dev/blogs/first_open_source"/>
+    <id>https://yogya.dev/blogs/first_open_source</id>
+    <updated>2026-10-02T00:00:00+05:30</updated>
+    <summary>How a confusing error in Django&#x27;s template engine became Yogya Chugh&#x27;s first merged pull request, django/django #19295.</summary>
+  </entry>
+</feed>

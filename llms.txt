@@ -1,0 +1,44 @@
+# Yogya Chugh
+
+> Software engineer in Delhi, India. Software Engineering Intern at Meant2Bae (paid, on-site, since 21 September 2026). Previously a paid, remote Software Developer intern at Vardhman Electricals, where Yogya built the Vardhman Saathi rewards platform end to end. Has a fix merged into Django and won a laptop in Hack Club's Summer of Making 2025. The site at yogya.dev tells all of this as a comic.
+
+Key facts:
+
+- Role: Software Engineer; Software Engineering Intern at Meant2Bae (a curated dating service for professionals in India), September 2026 to present.
+- Freelance: building a cross-platform iOS and Android app for a client since June 2026 (details are confidential).
+- Vardhman Electricals (March to June 2026): built the Vardhman Saathi Android app (React Native, Expo), an Electron admin desktop app and the backend on Supabase and Cloudflare. 200+ people use it at once and hosting costs $0 a month.
+- Open source: django/django pull request #19295, merged in March 2025, fixing a confusing error for unresolved relative {% extends %} template paths.
+- Hack Club Summer of Making 2025: 450+ hours across 4 projects, 6,612 shells, a Gigabyte Aero X16 laptop and $25 of Steam games.
+- Projects: AnyStudio (native app builder written in Rust, in development), Webelo (C++ library implementing the WHATWG DOM standard), Pippo (multilingual navigation robot, 3rd place at two UK university hackathons in 2025), Timberly (Pygame game with an online leaderboard), Hangman in C, Snake Hustle.
+- Education: B.Tech in Computer Science and Engineering, Panipat Institute of Engineering and Technology (Kurukshetra University), 2023 to 2027, CGPA 8.05/10.
+- Skills: C++, Rust, Python, TypeScript, JavaScript, SQL; React, React Native, Expo, Electron; FastAPI, Flask, Django, Node.js, Hono; PostgreSQL, Supabase, Firebase, Cloudflare Workers, R2, D1, KV, Pages; Docker, Git, Linux, GitHub Actions.
+- Location: Delhi, India (IST, UTC+5:30). Open to freelance projects and collaborations.
+
+## Pages
+
+- [The comic résumé (home)](https://yogya.dev/): every internship and project as a comic episode, with results and links.
+- [Résumé](https://yogya.dev/resume/): the same résumé as a one-page document.
+- [Résumé PDF (comic)](https://yogya.dev/Yogya_Chugh_Resume_Comic.pdf): printable comic version.
+- [Résumé PDF (plain)](https://yogya.dev/Yogya_Chugh_Resume.pdf): plain, ATS-friendly version.
+- [Blog](https://yogya.dev/writing): the longer stories behind the comic.
+
+## Blog posts
+
+- [Running a real product for $0 a month](https://yogya.dev/blogs/vardhman): How Vardhman Saathi's Android app, admin app and backend run entirely on free tiers while serving 200+ people at once.
+- [Implementing the WHATWG DOM in C++](https://yogya.dev/blogs/whatwg_dom): Building Webelo, a C++ DOM library that follows the WHATWG DOM Living Standard: the node tree, preorder traversal and event dispatch.
+- [450 hours, 4 ships, one laptop](https://yogya.dev/blogs/summer_of_making): How a rejection from Google Summer of Code turned into Hack Club's Summer of Making: 450+ hours of coding, 6,612 shells and a new laptop.
+- [My first open-source contribution](https://yogya.dev/blogs/first_open_source): How a confusing error in Django's template engine became Yogya Chugh's first merged pull request, django/django #19295.
+
+## Contact
+
+- Email: yogya.developer@gmail.com
+- Book a 30-minute call: https://calendly.com/yogya-chugh/30min
+- GitHub: https://github.com/YogyaChugh
+- LinkedIn: https://www.linkedin.com/in/yogyachugh
+- Discord: https://discord.com/users/1114938970883772427
+- Slack (Hack Club): https://hackclub.slack.com/team/U09218J0E94
+
+## Optional
+
+- [Blog feed (Atom)](https://yogya.dev/feed.xml)
+- [Sitemap](https://yogya.dev/sitemap.xml)

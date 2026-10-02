@@ -282,7 +282,7 @@
       en.target.classList.add('in');
       io.unobserve(en.target);
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+  }, { rootMargin: '0px 0px 6% 0px', threshold: 0 });
   document.querySelectorAll('.page').forEach(p => io.observe(p));
 
   /* the dock steps aside on the cover (it has its own buttons) and at the contact page */
@@ -326,24 +326,29 @@
     if (PATHS[saved]) setPath(saved, false);
   }
 
-  /* ---------- meanwhile, on GitHub: the contribution graph, fetched when the page gets close ---------- */
-  const ghGraph = $('gh-graph');
-  if (ghGraph) {
+  /* ---------- meanwhile, on GitHub: refresh the baked numbers when the reader gets close ---------- */
+  const ghBars = $('gh-bars');
+  if (ghBars) {
     const SRC = 'https://github-contributions-api.jogruber.de/v4/YogyaChugh?y=last';
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const render = data => {
       const days = (data && data.contributions) || [];
       if (!days.length) return;
-      const lead = new Date(days[0].date + 'T00:00:00Z').getUTCDay();   // weeks start on Sunday, like GitHub
-      ghGraph.innerHTML = '<div class="gh-days">' + '<i></i>'.repeat(lead) +
-        days.map(d => `<i class="l${d.level}" title="${d.count} on ${d.date}"></i>`).join('') + '</div>';
+      const sums = new Map();
+      days.forEach(d => { const k = d.date.slice(0, 7); sums.set(k, (sums.get(k) || 0) + d.count); });
+      const keys = [...sums.keys()].sort().slice(-12);
+      const max = Math.max(1, ...keys.map(k => sums.get(k)));
+      ghBars.innerHTML = keys.map(k => {
+        const v = sums.get(k), h = v / max, m = MONTHS[+k.slice(5) - 1];
+        return `<span class="${v === max ? 'top' : h >= .4 ? 'hot' : ''}" style="--h:${h.toFixed(3)}" data-m="${m[0]}" title="${m} ${k.slice(0, 4)}: ${v}"><i></i></span>`;
+      }).join('');
       const total = data.total && (data.total.lastYear ?? Object.values(data.total)[0]);
       const end = Date.parse(days[days.length - 1].date);
       const active = days.filter(d => d.count > 0);
       const last = active.length ? Math.round((end - Date.parse(active[active.length - 1].date)) / 864e5) : null;
       const lastText = last === null ? 'a while ago' : last === 0 ? 'today' : last === 1 ? 'yesterday' : `${last} days ago`;
-      const month = days.slice(-30).filter(d => d.count > 0).length;
-      $('gh-stats').innerHTML = `<span><b>${total}</b> contributions this year</span>` +
-        `<span>Active <b>${month}</b> of the last 30 days</span><span>Last active <b>${lastText}</b></span>`;
+      $('gh-num').textContent = total;
+      $('gh-last').textContent = `Last one: ${lastText}`;
       $('gh-res').innerHTML = `<span class="res-tag">Result</span><mark>${total} contributions</mark> on GitHub in the past year, last one ${lastText}.`;
     };
     const load = () => {
@@ -354,10 +359,10 @@
       fetch(SRC).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => {
         render(d);
         try { sessionStorage.setItem('yo-gh', JSON.stringify({ t: Date.now(), d })); } catch (e) {}
-      }).catch(() => { ghGraph.closest('.gh').classList.add('gh-off'); });
+      }).catch(() => {});   // keep the numbers baked into the page
     };
     const ghIO = new IntersectionObserver(([en]) => { if (en.isIntersecting) { ghIO.disconnect(); load(); } }, { rootMargin: '600px 0px' });
-    ghIO.observe(ghGraph);
+    ghIO.observe(ghBars);
   }
 
   /* ---------- Delhi clock ---------- */

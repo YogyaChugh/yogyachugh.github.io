@@ -1,0 +1,38 @@
+name: Refresh GitHub numbers
+
+on:
+  schedule:
+    - cron: '30 0 * * *'   # every day, 06:00 in Delhi
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update the numbers baked into the homepage
+        run: python .github/scripts/update_contributions.py
+      - name: Commit if anything changed
+        id: commit
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Refresh GitHub contribution numbers"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Ask GitHub Pages to redeploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages will pick up the push on its own."
