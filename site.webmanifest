@@ -1,7 +1,7 @@
 {
   "name": "Yogya Chugh · Software Engineer",
   "short_name": "Yogya Chugh",
-  "description": "Yogya Chugh's résumé and portfolio, told as a comic.",
+  "description": "Yogya Chugh's résumé and portfolio, told as a comic. Works offline for the pages you've read.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -11,12 +11,74 @@
     {
       "src": "/assets/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/favicon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/",
+  "orientation": "any",
+  "lang": "en",
+  "shortcuts": [
+    {
+      "name": "Résumé",
+      "short_name": "Résumé",
+      "url": "/resume/",
+      "icons": [
+        {
+          "src": "/assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "url": "/writing",
+      "icons": [
+        {
+          "src": "/assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Let's talk",
+      "short_name": "Contact",
+      "url": "/#connect",
+      "icons": [
+        {
+          "src": "/assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "The cover of the comic résumé"
+    },
+    {
+      "src": "/assets/screenshot-narrow.jpg",
+      "sizes": "780x1688",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "The comic résumé on a phone"
     }
   ]
 }

@@ -365,6 +365,17 @@
     ghIO.observe(ghBars);
   }
 
+  /* ---------- offline: pages you've read keep working, and a comic page covers the rest ---------- */
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname))) {
+    addEventListener('load', () => {
+      const firstVisit = !navigator.serviceWorker.controller;
+      navigator.serviceWorker.register('/sw.js').then(() => {
+        // the worker starts after this page loaded, so save this page by hand the first time
+        if (firstVisit && 'caches' in window) caches.open('pages').then(c => c.add(location.pathname)).catch(() => {});
+      }).catch(() => {});
+    });
+  }
+
   /* ---------- Delhi clock ---------- */
   const clock = $('clock');
   if (clock) {

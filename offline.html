@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're offline · Yogya Chugh</title>
+<meta name="description" content="Shown when there is no internet connection.">
+<meta name="robots" content="noindex">
+<meta name="author" content="Yogya Chugh">
+<meta name="theme-color" content="#8DA5D8">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Yogya Chugh">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/comic.css">
+<script src="/comic.js" defer></script>
+</head>
+<body>
+<main>
+  <section class="page" style="--pr:-.25deg" aria-labelledby="off-t">
+    <div class="pn head-panel c-grey dots">
+      <div class="head-text">
+        <div class="kicker"><span class="vol-tag">No signal</span></div>
+        <h1 id="off-t">You're offline</h1>
+        <p class="lede">The internet took a break. This page will reload by itself as soon as you're back online.</p>
+        <p class="lost-links">
+          <button type="button" class="btn" id="retry">Try again ↻</button>
+        </p>
+      </div>
+      <div class="head-art">
+        <p class="bub" style="--t:52%">No signal? Happens to me on the metro too.</p>
+        <div class="yo-wrap" data-expr="tired"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" style="--pr:.2deg" aria-labelledby="saved-t" id="saved" hidden>
+    <header class="page-title"><h2 id="saved-t"><span class="ep">Still here</span>Pages you can read offline</h2><span class="when">You've opened these before</span></header>
+    <ul class="saved-list" id="saved-list"></ul>
+  </section>
+</main>
+<script>
+  /* bring the reader back the moment the connection returns */
+  document.getElementById('retry').addEventListener('click', function () { location.reload(); });
+  addEventListener('online', function () { location.reload(); });
+
+  /* list the pages this browser already saved, with their real names */
+  var NAMES = {
+    '/': 'The comic', '/resume/': 'Résumé', '/writing': 'Blog', '/privacy': 'Privacy',
+    '/blogs/vardhman': 'Running a real product for $0 a month',
+    '/blogs/whatwg_dom': 'Implementing the WHATWG DOM in C++',
+    '/blogs/summer_of_making': '450 hours, 4 ships, one laptop',
+    '/blogs/first_open_source': 'My first open-source contribution'
+  };
+  if ('caches' in window) {
+    caches.open('pages').then(function (c) { return c.keys(); }).then(function (reqs) {
+      var seen = {}, items = [];
+      reqs.forEach(function (r) {
+        var path = new URL(r.url).pathname.replace(/\.html$/, '').replace(/^\/index$/, '/');
+        if (path === '/resume') path = '/resume/';
+        if (NAMES[path] && !seen[path]) { seen[path] = 1; items.push('<li><a class="btn white" href="' + path + '">' + NAMES[path] + '</a></li>'); }
+      });
+      if (items.length) {
+        document.getElementById('saved-list').innerHTML = items.join('');
+        document.getElementById('saved').hidden = false;
+      }
+    }).catch(function () {});
+  }
+</script>
+</body>
+</html>

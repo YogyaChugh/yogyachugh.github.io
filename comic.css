@@ -628,6 +628,7 @@
   .lost-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
   .lost-path { font-size: .9em; background: #fff; border: 2px solid var(--ink); padding: 0 6px; overflow-wrap: anywhere; }
   .lost-guess { margin: 10px 0 0; font-size: 1.1rem; }
+  .saved-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
   .lost-guess a { color: var(--ink); text-decoration-color: var(--red); text-decoration-thickness: 3px; }
 
   @media (max-width: 720px) {
