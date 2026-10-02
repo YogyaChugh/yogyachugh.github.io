@@ -550,6 +550,7 @@
   .skills dd { margin: 0; }
   .rs ul.plain { margin: 0; padding-left: 18px; }
   .rs ul.plain li { margin: 3px 0; }
+  .rs-line { margin: 0; }
 
   @media (max-width: 720px) {
     .head-panel { grid-template-columns: minmax(0, 1fr); }
@@ -573,7 +574,23 @@
     main { max-width: none; padding: 0; }
     .page, .sheet { box-shadow: none !important; transform: none !important; opacity: 1 !important; animation: none !important; }
     .sheet { border: 0; max-width: none; min-height: 297mm; }
-    .sheet-body { font-size: 10pt; line-height: 1.4; padding: 8mm 11mm 6mm; }
-    .rs { margin-top: 10px; }
-    .rs-item { break-inside: avoid; margin-bottom: 8px; }
+    /* tight enough that the whole résumé fits one A4 page */
+    .sheet-head .corner-box { width: 27mm; border-right-width: 4px; }
+    .sheet-head .mast-title { padding: 3mm 8mm 3.5mm 6mm; }
+    .sheet-head h1 { font-size: 32pt; }
+    .sheet-head .role-line { margin-top: 1.5mm; }
+    .sheet-head .contact { margin-top: 2mm; font-size: 8.4pt; gap: 1px 10px; }
+    .sheet-head { border-bottom-width: 4px; }
+    .sheet-body { font-size: 8.7pt; line-height: 1.32; padding: 4.5mm 10mm 3mm; }
+    .rs { margin-top: 2.6mm; }
+    .rs-h { font-size: 10pt; margin-bottom: 1.6mm; padding: 2px 7px 1px; border-width: 2px; }
+    .rs-item { break-inside: avoid; margin-bottom: 1.8mm; padding-left: 7px; border-left-width: 3px; }
+    .rs-title { font-size: 9.3pt; }
+    .rs-date { font-size: 8.2pt; }
+    .rs-sub { font-size: 8.3pt; }
+    .rs-item ul, .rs ul.plain { margin-top: .5mm; padding-left: 13px; }
+    .rs-item li, .rs ul.plain li { margin: 0; }
+    .skills { grid-template-columns: 31mm minmax(0, 1fr); gap: 0 8px; }
+    .now { font-size: 6.8pt; padding: 1px 4px 0; border-width: 1.5px; }
+    .co-logo { width: 1.15em; height: 1.15em; }
   }

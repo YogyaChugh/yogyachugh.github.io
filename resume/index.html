@@ -64,30 +64,42 @@
     </header>
 
     <div class="sheet-body">
+      <section class="rs" aria-labelledby="rs-skills">
+        <h2 class="rs-h" id="rs-skills">Technical skills</h2>
+        <dl class="skills">
+          <dt>Languages</dt><dd>C++, Rust, Python, TypeScript, JavaScript, SQL</dd>
+          <dt>Core CS</dt><dd>Data Structures &amp; Algorithms, OOP, DBMS, Computer Networks, Compiler Design</dd>
+          <dt>Backend</dt><dd>FastAPI, Flask, Django, Node.js, Hono, REST API Design, JWT, OAuth 2.0</dd>
+          <dt>Databases &amp; Cloud</dt><dd>PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, D1, Workers, KV, Pages</dd>
+          <dt>Frontend &amp; Apps</dt><dd>React, React Native, Expo, Electron, HTML/CSS</dd>
+          <dt>Tools &amp; Platforms</dt><dd>Docker, Git, Linux, CI/CD (GitHub Actions)</dd>
+        </dl>
+      </section>
+
       <section class="rs" aria-labelledby="rs-exp">
-        <h2 class="rs-h" id="rs-exp">Experience</h2>
+        <h2 class="rs-h" id="rs-exp">Work experience</h2>
 
         <div class="rs-item">
           <div class="rs-top"><span class="rs-title"><img class="co-logo" src="/assets/logos/meant2bae.png" alt="" width="18" height="18">Meant2Bae · Software Engineering Intern<span class="now">Now</span></span><span class="rs-date">Sep 2026 – Present</span></div>
-          <div class="rs-sub">Paid internship · on-site · curated dating service for professionals in India</div>
+          <div class="rs-sub">Paid, on-site · curated dating service for professionals · India</div>
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Client app project · Software Developer (Freelance)<span class="now">Now</span></span><span class="rs-date">Jun 2026 – Present</span></div>
+          <div class="rs-top"><span class="rs-title">Client Application Project · Software Developer (Freelance)<span class="now">Now</span></span><span class="rs-date">Jun 2026 – Present</span></div>
           <div class="rs-sub">Remote</div>
           <ul>
-            <li>Building a cross-platform iOS and Android app in React Native (Expo), headed for the App Store and Google Play.</li>
-            <li>PostgreSQL on Supabase with Google and Apple sign-in and row-level security policies.</li>
-            <li>Subscription payments through Superwall.</li>
+            <li>Developing a cross-platform iOS/Android app (React Native, Expo), targeting the App Store and Google Play.</li>
+            <li>PostgreSQL on Supabase with Google/Apple authentication and row-level security (RLS) policies.</li>
+            <li>Subscription-based payments with Superwall.</li>
           </ul>
         </div>
 
         <div class="rs-item">
           <div class="rs-top"><span class="rs-title"><img class="co-logo" src="/assets/logos/vardhman.png" alt="" width="18" height="18">Vardhman Electricals · Software Developer Intern</span><span class="rs-date">Mar 2026 – Jun 2026</span></div>
-          <div class="rs-sub">Paid internship · remote · Delhi, India</div>
+          <div class="rs-sub">Paid, remote · Delhi, India</div>
           <ul>
-            <li>Built a loyalty and invoice platform end to end: a React Native (Expo) Android app on <a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi">Google Play</a>, an Electron + React admin desktop app, and the backend. Live at <a href="https://vardhmansaathi.shop">vardhmansaathi.shop</a>.</li>
-            <li>Real-time sync across 3+ admin dashboards serving 200+ concurrent users, with Google OAuth and JWT authentication.</li>
+            <li>Built a loyalty and invoice platform end to end: a React Native (Expo) Android app on Google Play (<a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi">Vardhman Saathi</a>), an Electron + React admin desktop app, and the backend; live at <a href="https://vardhmansaathi.shop">vardhmansaathi.shop</a>.</li>
+            <li>Real-time sync across 3+ admin dashboards for 200+ concurrent users; Google OAuth and JWT authentication.</li>
             <li>Designed the PostgreSQL schema on Supabase for authentication, orders and admin-dashboard data.</li>
             <li>Moved the backend from a $7/month server to Supabase Edge Functions and Cloudflare (Workers, R2, Pages) with GitHub Actions CI/CD, bringing hosting to $0/month.</li>
           </ul>
@@ -98,78 +110,61 @@
         <h2 class="rs-h" id="rs-proj">Projects</h2>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">AnyStudio · native app builder</span><span class="rs-date">In development</span></div>
+          <div class="rs-top"><span class="rs-title">AnyStudio · Native App Builder</span><span class="rs-date">In Development</span></div>
+          <div class="rs-sub">Personal project · private repository</div>
           <ul>
-            <li>Turns a plain-English description or a drag-and-drop design into real native Android and iPhone apps, not a website wrapped in an app.</li>
-            <li>An AI assistant builds screens, logins or checkouts with you, and you review every change before it applies; live preview on your own phone.</li>
-            <li>Built-in sign-in, databases and payments; publish to Google Play and the App Store under your own accounts; export the full source code with no lock-in. Written in Rust.</li>
+            <li>Turns a plain-English description or a drag-and-drop design into real native Android and iPhone apps (not web wrappers), with an AI assistant whose changes the user reviews before they apply.</li>
+            <li>Live phone preview; built-in sign-in, databases and payments; publishing under the user's own store accounts; full source export with no lock-in. Written in Rust.</li>
           </ul>
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Webelo · C++ DOM library</span><span class="rs-date">Jul – Sep 2025</span></div>
+          <div class="rs-top"><span class="rs-title">Webelo · C++ DOM Library</span><span class="rs-date">Jul – Sep 2025</span></div>
+          <div class="rs-sub">Personal project · <a href="https://github.com/YogyaChugh/Webelo">github.com/YogyaChugh/Webelo</a></div>
           <ul>
-            <li>Implements the WHATWG DOM Living Standard in C++: the node tree, preorder depth-first traversal and event dispatch.</li>
-            <li>Shipped v2.0 with an HTML visualizer, Python bindings and hosted docs. <a href="https://github.com/YogyaChugh/Webelo">github.com/YogyaChugh/Webelo</a></li>
+            <li>Implemented the WHATWG DOM Living Standard in C++: node tree, preorder DFS traversal and event dispatch.</li>
+            <li>Shipped v2.0 with an HTML visualizer, Python bindings and hosted documentation.</li>
           </ul>
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Pippo · multilingual navigation robot</span><span class="rs-date">2024 – 2025</span></div>
+          <div class="rs-top"><span class="rs-title">Pippo · Multilingual Navigation Robot</span><span class="rs-date">2024 – 2025</span></div>
           <div class="rs-sub">College team project</div>
           <ul>
-            <li>A robot guide for tourists and newcomers: voice Q&amp;A through the ElevenLabs API, several languages and autonomous path navigation.</li>
-            <li>Built its companion mobile app in Python (Flet). 3rd place at two UK university hackathons.</li>
+            <li>Robot guide for tourists and newcomers: voice interaction via the ElevenLabs API, conversational Q&amp;A and autonomous path navigation. Built its companion mobile app.</li>
           </ul>
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Games · Timberly, Hangman, Snake Hustle</span></div>
+          <div class="rs-top"><span class="rs-title">Open Source · Django</span><span class="rs-date">Merged Mar 2025</span></div>
           <ul>
-            <li>Timberly: a Pygame game with a Flask leaderboard and encrypted scores, released for web, Windows, macOS and Linux. Hangman in C; Snake Hustle in Flet.</li>
+            <li>Fixed a bug where an unresolved relative <code>{% extends %}</code> template path raised an unrelated AttributeError instead of a clear TemplateSyntaxError; merged as <a href="https://github.com/django/django/pull/19295">django/django #19295</a>.</li>
           </ul>
         </div>
-      </section>
-
-      <section class="rs" aria-labelledby="rs-oss">
-        <h2 class="rs-h" id="rs-oss">Open source</h2>
-        <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Django · <a href="https://github.com/django/django/pull/19295">pull request #19295</a></span><span class="rs-date">Merged Mar 2025</span></div>
-          <ul>
-            <li>Fixed a bug where an unresolved relative <code>{% extends %}</code> path raised an unrelated AttributeError instead of a clear TemplateSyntaxError. Reviewed and merged by Django Fellow Sarah Boyce.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="rs" aria-labelledby="rs-skills">
-        <h2 class="rs-h" id="rs-skills">Skills</h2>
-        <dl class="skills">
-          <dt>Languages</dt><dd>C++, Rust, Python, TypeScript, JavaScript, SQL</dd>
-          <dt>Backend</dt><dd>FastAPI, Flask, Django, Node.js, Hono, REST API design, JWT, OAuth 2.0</dd>
-          <dt>Databases &amp; cloud</dt><dd>PostgreSQL, Supabase, Firebase/GCP, Cloudflare R2, D1, Workers, KV</dd>
-          <dt>Apps &amp; frontend</dt><dd>React, React Native, Expo, Electron, HTML/CSS</dd>
-          <dt>Tools</dt><dd>Docker, Git, Linux, CI/CD with GitHub Actions</dd>
-          <dt>Core CS</dt><dd>Data structures &amp; algorithms, OOP, DBMS, computer networks, compiler design</dd>
-        </dl>
       </section>
 
       <section class="rs" aria-labelledby="rs-edu">
         <h2 class="rs-h" id="rs-edu">Education</h2>
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">B.Tech, Computer Science and Engineering</span><span class="rs-date">2023 – 2027</span></div>
-          <div class="rs-sub">Panipat Institute of Engineering and Technology (Kurukshetra University) · CGPA 8.05/10</div>
+          <div class="rs-top"><span class="rs-title">Panipat Institute of Engineering and Technology (Kurukshetra University)</span><span class="rs-date">2023 – 2027</span></div>
+          <div class="rs-sub">B.Tech, Computer Science and Engineering · CGPA 8.05/10 · Panipat, India</div>
         </div>
       </section>
 
       <section class="rs" aria-labelledby="rs-ach">
         <h2 class="rs-h" id="rs-ach">Achievements</h2>
         <ul class="plain">
-          <li>Hack Club Summer of Making 2025 (funded by GitHub): 4 projects and 450+ hours; won a Gigabyte Aero X16 laptop (RTX 5070, Ryzen AI 7, 32 GB).</li>
-          <li>3rd place, Cyber AI Hackathon 2025 (University of Derby) and Agentic AI Hackathon 2025 (Ulster University), with Pippo.</li>
-          <li>Founder and lead of my college's technical club; organised Frontend Frenzy, a website-building contest.</li>
-          <li>Selected in the Smart India Hackathon internal rounds (2024, 2025): a blockchain-based tourist ID system with React, ethers.js and WalletConnect.</li>
-          <li>1st place, Pattern Coding Competition 2023 (₹2,000 prize).</li>
+          <li>Hack Club Summer of Making 2025 (GitHub-funded): 4 projects, 450+ hours; won a Gigabyte Aero X16 laptop.</li>
+          <li>3rd place, Cyber AI Hackathon (Univ. of Derby, UK) and Agentic AI Hackathon (Ulster Univ., UK), 2025, with Pippo.</li>
+          <li>Founder &amp; Lead, college Technical Club; organised Frontend Frenzy, a website development competition.</li>
+          <li>Selected in SIH internal rounds (2024, 2025): blockchain tourist ID verification (React, ethers.js, WalletConnect).</li>
+          <li>1st place, Pattern Coding Competition 2023 (Rs. 2,000 cash prize).</li>
         </ul>
+      </section>
+
+      <section class="rs" aria-labelledby="rs-int">
+        <h2 class="rs-h" id="rs-int">Interests</h2>
+        <p class="rs-line">Competitive Programming · Game Development · Neural Networks</p>
       </section>
     </div>
   </article>

@@ -85,10 +85,12 @@
   const FACE = 'M94 104 Q94 62 150 60 Q206 62 206 104 L206 146 Q205 182 180 200 Q164 212 150 212 Q136 212 120 200 Q95 182 94 146 Z';
   const BODY = 'M6 330 C14 252 62 226 150 224 C238 226 286 252 294 330 Z';
 
+  let yoCount = 0;
   function yo(expr, flip, crop) {
+    const lens = `yo-lens-${++yoCount}`;
     const e = EXPR[expr] || EXPR.smile;
     return `<svg class="yo" viewBox="${CROPS[crop] || CROPS.bust}" aria-hidden="true" focusable="false">
-      <defs><linearGradient id="yo-lens" x1="0" y1="0" x2="0" y2="1">
+      <defs><linearGradient id="${lens}" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="#3D414C"/><stop offset=".55" stop-color="#15171C"/><stop offset="1" stop-color="#07080A"/>
       </linearGradient></defs>
       <g${flip ? ' transform="translate(300 0) scale(-1 1)"' : ''}>
@@ -112,8 +114,8 @@
         ${line('M152 140 Q146 156 151 162 Q156 164 160 160', 4)}
         <g class="yo-shades" transform="translate(0 ${e.peek || 0})">
           <g stroke="${INK}" stroke-width="5" stroke-linejoin="round">
-            <rect x="100" y="114" width="45" height="34" rx="8" fill="url(#yo-lens)"/>
-            <rect x="155" y="114" width="45" height="34" rx="8" fill="url(#yo-lens)"/>
+            <rect x="100" y="114" width="45" height="34" rx="8" fill="url(#${lens})"/>
+            <rect x="155" y="114" width="45" height="34" rx="8" fill="url(#${lens})"/>
           </g>
           ${line('M145 124 Q150 119 155 124', 5)}
           <g class="yo-glint" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8">
