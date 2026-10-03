@@ -165,7 +165,7 @@
   /* a row of real app screenshots, numbered like a how-to strip */
   .shots { position: absolute; z-index: 2; inset: 50px 0 0; display: flex; justify-content: space-evenly; gap: 14px; padding: 4px 18px 0; }
   .shot { margin: 0; flex: 0 1 148px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 9px; rotate: var(--r, 0deg); }
-  .shot figcaption { font: 700 .9rem/1.1 var(--letter); background: #fff; border: 3px solid var(--ink); padding: 4px 9px 3px; white-space: nowrap; }
+  .shot figcaption { max-width: 100%; font: 700 .86rem/1.15 var(--letter); text-align: center; background: #fff; border: 3px solid var(--ink); padding: 4px 8px 3px; }
   .shot figcaption b { font: 400 1.05rem/1 var(--sfx); color: var(--red); margin-right: 5px; }
   .shot .ph { width: 100%; aspect-ratio: 400 / 853; border: 4px solid var(--ink); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 4px 4px 0 var(--ink); }
   .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
@@ -257,21 +257,7 @@
   .mast-nav a:first-child { background: var(--yellow); transform: rotate(-2deg); }
   @media (hover: hover) { .mast-nav a:hover { transform: translate(-1px, -1px) rotate(-3deg); box-shadow: 5px 5px 0 var(--ink); } }
 
-  /* ---------- a volume: a header band, then its stories, each told once ---------- */
-  .vol-head { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; min-height: 150px; padding: 16px 30% 16px clamp(16px, 3vw, 26px); }
-  .vol-head :is(.vol-tag, h2, p) { position: relative; z-index: 3; margin: 0; }
-  .vol-tag {
-    display: inline-block; padding: 4px 9px 2px; transform: rotate(-3deg);
-    font: 400 1rem/1 var(--sfx); letter-spacing: .08em; background: var(--yellow); color: var(--ink); border: 3px solid var(--ink);
-  }
-  .vol-head.c-yellow .vol-tag { background: #fff; }
-  .vol-head h2 {
-    font-family: var(--sfx); font-weight: 400; font-size: clamp(2.3rem, 5.4vw, 3.5rem); line-height: .92; letter-spacing: .03em;
-    color: var(--yellow); -webkit-text-stroke: .05em var(--ink); paint-order: stroke fill; text-shadow: .06em .06em 0 var(--ink);
-  }
-  .vol-head.c-yellow h2 { color: #fff; }
-  .vol-head p { font-size: 1.05rem; }
-  .vol-head .yo-wrap { left: auto; right: 5%; transform: none; width: min(24%, 150px); }
+  /* ---------- a volume: a title bar, then its stories, one line each ---------- */
   .eps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
   .eps.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ep { display: flex; flex-direction: column; min-width: 0; background: #fff; border: 4px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); scroll-margin-top: 16px; }
@@ -286,22 +272,17 @@
   .ep.wide > .pn { flex: 1.25; height: auto; min-height: 320px; border-width: 0 4px 0 0; }
   .ep.wide .ep-body { flex: 1; justify-content: center; gap: 8px; padding: 18px 20px; }
   .ep.wide .ep-line { font-size: 1.08rem; }
+  .ep .shots { inset: 18px 0 0; }
   .ep .code { inset: 14px 20% auto 12px; font-size: .68rem; white-space: pre; }
   .built { margin: 0; font-size: .8rem; opacity: .75; }
-  .also { margin: 12px 0 0; padding: 10px 14px; border: 3px dashed rgba(17, 19, 24, .4); font-weight: 400; font-size: .95rem; line-height: 1.6; }
-  .also b { font: 400 1.05rem/1 var(--sfx); letter-spacing: .06em; background: var(--ink); color: var(--yellow); padding: 3px 7px 1px; margin-right: 6px; }
 
-  /* meanwhile, on GitHub: one strip; the numbers refresh themselves */
-  .gh-strip { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: end; gap: 10px 26px; margin-top: 12px; padding: 16px 20px 30px; }
-  .gh-strip > * { position: relative; z-index: 1; }
-  .gh-h { margin: 0 0 6px; font: 400 1.05rem/1 var(--sfx); letter-spacing: .08em; background: var(--ink); color: var(--yellow); padding: 4px 8px 2px; transform: rotate(-2deg); }
-  .gh-strip .gh-bars { height: 128px; }
-  .gh-side { display: grid; justify-items: start; gap: 8px; max-width: 170px; }
-  .gh-side p { margin: 0; font-weight: 400; font-size: .85rem; line-height: 1.35; }
-  .gh-big { display: grid; justify-items: start; gap: 4px; }
+  /* still shipping: the GitHub card; the numbers refresh themselves */
+  .gh-art { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 18px; padding: 14px 16px 28px; }
+  .gh-art > * { position: relative; z-index: 1; }
+  .gh-art .gh-bars { height: 120px; }
+  .gh-big { display: grid; justify-items: start; gap: 6px; }
   .gh-num { font: 400 clamp(3rem, 6vw, 4.2rem)/.85 var(--sfx); letter-spacing: .02em; color: var(--red); -webkit-text-stroke: .045em var(--ink); paint-order: stroke fill; text-shadow: .05em .06em 0 var(--ink); transform: rotate(-4deg); }
   .gh-lbl { font: 400 1.2rem/1 var(--sfx); letter-spacing: .06em; }
-  .gh-last { margin-top: 4px; background: var(--ink); color: #fff; font-size: .8rem; padding: 3px 8px 2px; transform: rotate(-2deg); }
   .gh-bars { height: 100%; display: flex; align-items: flex-end; gap: 6px; }
   .gh-bars span { position: relative; flex: 1; height: 100%; display: flex; align-items: flex-end; }
   .gh-bars i { width: 100%; height: max(5px, calc(var(--h) * 100%)); background: #fff; border: 3px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); }
@@ -402,24 +383,24 @@
   .js .page.in .pn .sfx { animation: sfx-in .5s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 260ms); }
   .js .page.in :is(.way, .ep) { animation: pop-in .45s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 60ms); }
 
+  @media (max-width: 1000px) {
+    .ep.wide { flex-direction: column; }
+    .ep.wide > .pn { flex: none; min-height: 330px; border-width: 0 0 4px; }
+    .ep.wide .ep-body { padding: 14px 16px 16px; }
+  }
+
   /* ---------- small screens: a vertical comic ---------- */
   @media (max-width: 720px) {
     .connect { grid-template-columns: minmax(0, 1fr); }
     .eps, .eps.two { grid-template-columns: minmax(0, 1fr); }
-    .ep.wide { flex-direction: column; }
-    .ep.wide > .pn { flex: none; min-height: 330px; border-width: 0 0 4px; }
-    .ep.wide .ep-body { padding: 12px 14px 14px; }
-    .strip .nar { max-width: 100%; }
-    .strip .shots { inset: 50px 0 0; justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 6px 18px 0; }
-    .strip .shot { flex: 0 0 128px; scroll-snap-align: center; }
+    .ep.wide > .pn { min-height: 290px; }
+    .strip .shots { justify-content: space-evenly; gap: 10px; padding: 0 10px; }
+    .strip .shot { flex: 1 1 0; }
+    .shot figcaption { font-size: .74rem; padding: 3px 5px 2px; }
     .shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .intro-below { grid-template-columns: minmax(0, 1fr); }
-    .vol-head { min-height: 130px; padding-right: 34%; }
-    .vol-head .yo-wrap { width: min(30%, 120px); right: 3%; }
-    .gh-strip { grid-template-columns: minmax(0, 1fr); row-gap: 28px; padding: 14px 14px 18px; }
-    .gh-strip .gh-bars { height: 100px; gap: 3px; }
+    .gh-art .gh-bars { gap: 4px; }
     .gh-bars span::after { font-size: .66rem; }
-    .gh-side { max-width: none; }
     .cover .mast { flex-wrap: wrap; }
     .cover .mast-title { padding-right: 12px; }
     .mast-nav { position: static; flex: 1 0 100%; flex-direction: row; justify-content: flex-start; gap: 8px; padding: 9px 12px 11px; border-top: 4px solid var(--ink); }
