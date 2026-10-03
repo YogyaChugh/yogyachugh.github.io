@@ -8,10 +8,11 @@ Key facts:
 - Freelance: since June 2026, building ScreenDemons (https://screendemons.app), an iOS and Android app that cuts screen time through challenges with friends.
 - Vardhman Electricals (March to June 2026): built the Vardhman Saathi Android app (React Native, Expo), an Electron admin desktop app and the backend on Supabase and Cloudflare. 200+ people use it at once and hosting costs $0 a month.
 - Open source: django/django pull request #19295, merged in March 2025, fixing a confusing error for unresolved relative {% extends %} template paths.
-- Hack Club Summer of Making 2025: 450+ hours across 4 projects, 6,612 shells, a Gigabyte Aero X16 laptop and $25 of Steam games.
-- Projects: AnyStudio (native app builder written in Rust, in development), Webelo (C++ library implementing the WHATWG DOM standard), Pippo (multilingual navigation robot, 3rd place at two UK university hackathons in 2025), Timberly (Pygame game with an online leaderboard), Hangman in C, Snake Hustle.
+- Hack Club Summer of Making 2025: 450+ hours across 4 projects, 6,612 shells; won a Gigabyte Aero X16 laptop and $25 of Steam credit, plus Red Dead Redemption 2 and Far Cry 4.
+- Projects: AnyStudio (native app builder written in Rust, in development), Webelo (C++ library implementing the WHATWG DOM standard), Pippo (multilingual robot guide, 3rd place and $50 at each of two international hackathons in 2025: University of Derby and Ulster University, UK), Timberly (Pygame game with an online leaderboard), Hangman in C, Snake Hustle.
 - Education: B.Tech in Computer Science and Engineering, Panipat Institute of Engineering and Technology (Kurukshetra University), 2023 to 2027, CGPA 8.05/10.
 - Skills: C++, Rust, Python, TypeScript, JavaScript, SQL; React, React Native, Expo, Electron; FastAPI, Flask, Django, Node.js, Hono; PostgreSQL, Supabase, Firebase, Cloudflare Workers, R2, D1, KV, Pages; Docker, Git, Linux, GitHub Actions.
+- Leadership: founder and lead of PIET Comp Techies, the college technical club; organised Frontend Frenzy, a website-building contest (October 2024).
 - Location: Delhi, India (IST, UTC+5:30). Open to freelance projects and collaborations.
 
 ## Pages

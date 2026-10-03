@@ -72,7 +72,7 @@
         "width": 1200,
         "height": 630
       },
-      "dateModified": "2026-10-03T00:00:00+05:30",
+      "dateModified": "2026-10-04T00:00:00+05:30",
       "inLanguage": "en",
       "hasPart": [
         {
@@ -169,7 +169,7 @@
           "url": "https://yogya.dev/#wins",
           "cssSelector": "#wins",
           "name": "Volume 4 · Wins",
-          "description": "Hack Club's Summer of Making and two hackathon podiums."
+          "description": "Hack Club's Summer of Making, two international hackathon podiums, and the tech club Yogya founded."
         },
         {
           "@type": "WebPageElement",
@@ -177,7 +177,7 @@
           "url": "https://yogya.dev/#summer",
           "cssSelector": "#summer",
           "name": "The summer I didn't quit · Hack Club Summer of Making",
-          "description": "After a Google Summer of Code rejection: 450+ hours across 4 open-source projects in Hack Club's Summer of Making 2025, which won a ₹1.2 lakh laptop and $25 of Steam games."
+          "description": "After a Google Summer of Code rejection: 450+ hours across 4 open-source projects in Hack Club's Summer of Making 2025, which won a ₹1.2 lakh Gigabyte Aero X16 laptop and $25 of Steam credit, plus Red Dead Redemption 2 and Far Cry 4."
         },
         {
           "@type": "WebPageElement",
@@ -185,7 +185,15 @@
           "url": "https://yogya.dev/#pippo",
           "cssSelector": "#pippo",
           "name": "Pippo, the robot guide",
-          "description": "A college team's robot guide that talks and translates: 3rd place at the Cyber AI Hackathon (University of Derby) and the Agentic AI Hackathon (Ulster University) in 2025. Built its companion app."
+          "description": "A college team's robot guide that talks and translates: 3rd place and a $50 prize at each of two international hackathons in 2025, the Cyber AI Hackathon (University of Derby) and the Agentic AI Hackathon (Ulster University). Built its companion app."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#club",
+          "url": "https://yogya.dev/#club",
+          "cssSelector": "#club",
+          "name": "Started a tech club: PIET Comp Techies",
+          "description": "Founded and led the college technical club PIET Comp Techies, and organised Frontend Frenzy, a website-building contest, in October 2024."
         },
         {
           "@type": "WebPageElement",
@@ -243,9 +251,9 @@
         "WebAssembly"
       ],
       "award": [
-        "Gigabyte Aero X16 laptop, Hack Club Summer of Making 2025",
-        "3rd place, Cyber AI Hackathon 2025, University of Derby",
-        "3rd place, Agentic AI Hackathon 2025, Ulster University",
+        "Gigabyte Aero X16 laptop, $25 Steam credit, Red Dead Redemption 2 and Far Cry 4, Hack Club Summer of Making 2025",
+        "3rd place and $50, Cyber AI Hackathon 2025 (international), University of Derby",
+        "3rd place and $50, Agentic AI Hackathon 2025 (international), Ulster University",
         "1st place, Pattern Coding Competition 2023"
       ],
       "sameAs": [
@@ -260,7 +268,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=5">
+<link rel="stylesheet" href="/comic.css?v=6">
 </head>
 <body>
 
@@ -277,10 +285,6 @@
   <section class="page cover" aria-label="Cover" style="--pr:.3deg">
     <div class="cover-in">
       <div class="mast">
-        <div class="corner-box" aria-hidden="true">
-          <div class="no">No. 1</div>
-          <div class="yo-wrap" data-expr="smug" data-crop="close"></div>
-        </div>
         <div class="mast-title">
           <p class="series">A comic résumé · Issue #1</p>
           <h1>Yogya Chugh</h1>
@@ -293,8 +297,26 @@
         </nav>
       </div>
       <div class="cover-art">
-        <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
-        <span class="hint" id="hint">Hover over me</span>
+        <div class="cover-copy">
+          <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
+          <div class="cover-actions" data-for="none">
+            <a class="btn dark" href="#work">Start reading ↓</a>
+            <a class="btn white" href="/intro" data-video>▶ 20-second intro</a>
+          </div>
+          <div class="cover-actions" data-for="hiring" hidden>
+            <a class="btn dark" href="/resume/">Résumé</a>
+            <a class="btn white" href="/intro" data-video>▶ 20-second intro</a>
+            <a class="btn red" href="#connect" data-calendly>Book a call</a>
+          </div>
+          <div class="cover-actions" data-for="project" hidden>
+            <a class="btn dark" href="#work">See my client work ↓</a>
+            <a class="btn red" href="#connect" data-calendly>Book a call</a>
+          </div>
+          <div class="cover-actions" data-for="browsing" hidden>
+            <a class="btn dark" href="#work">Start reading ↓</a>
+            <a class="btn white" href="/intro" data-video>▶ 20-second intro</a>
+          </div>
+        </div>
         <div class="starburst-ink" aria-hidden="true"></div>
         <div class="starburst"><div>Now interning<br><span>@ Meant2Bae</span></div></div>
         <div class="yo-wrap" data-expr="wink" id="cover-yo"></div>
@@ -305,27 +327,6 @@
           <button type="button" class="btn white who-btn" data-path="hiring" aria-pressed="false">I'm hiring</button>
           <button type="button" class="btn white who-btn" data-path="project" aria-pressed="false">I have a project</button>
           <button type="button" class="btn white who-btn" data-path="browsing" aria-pressed="false">Just looking</button>
-        </div>
-      </div>
-      <div class="cover-foot">
-        <span class="meta" id="clock">Delhi, India</span>
-        <div class="cover-actions" data-for="none">
-          <a class="btn dark" href="#work">Start reading ↓</a>
-          <a class="btn white" href="/intro" data-video>▶ Watch the 20-second intro</a>
-        </div>
-        <div class="cover-actions" data-for="hiring" hidden>
-          <a class="btn dark" href="/intro" data-video>▶ Watch the 20-second intro</a>
-          <a class="btn white" href="/resume/">Résumé</a>
-          <a class="btn red" href="#connect" data-calendly>Book a call</a>
-        </div>
-        <div class="cover-actions" data-for="project" hidden>
-          <a class="btn dark" href="#work">See my client work ↓</a>
-          <a class="btn red" href="#connect" data-calendly>Book a call</a>
-          <a class="btn white" href="#connect" data-gmail="I have a project for you">Email me</a>
-        </div>
-        <div class="cover-actions" data-for="browsing" hidden>
-          <a class="btn dark" href="#work">Start reading ↓</a>
-          <a class="btn white" href="/intro" data-video>▶ Watch the 20-second intro</a>
         </div>
       </div>
     </div>
@@ -472,16 +473,16 @@ no attribute 'lstrip'</span></pre>
 
   <!-- ================= VOLUME 4 · WINS ================= -->
   <section class="page" id="wins" style="--pr:-.2deg" aria-labelledby="wins-t">
-    <header class="page-title"><h2 id="wins-t"><span class="ep">Vol. 4</span>Wins</h2><span class="when">When someone else kept score</span></header>
-    <div class="eps two">
+    <header class="page-title"><h2 id="wins-t"><span class="ep">Vol. 4</span>Wins</h2><span class="when">Prizes, podiums and a club of my own</span></header>
+    <div class="eps">
       <article class="ep" id="summer" aria-labelledby="summer-t">
         <div class="pn">
-          <img class="fill" src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop I won, still in its box" loading="lazy" decoding="async" width="760" height="350" style="object-position:50% 62%">
+          <img class="fill" src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop I won, still in its box" loading="lazy" decoding="async" width="760" height="350" style="object-position:12% 62%">
         </div>
         <div class="ep-body">
           <p class="ep-when">Hack Club Summer of Making · 2025</p>
           <h3 id="summer-t">The summer I didn't quit</h3>
-          <p class="ep-line">Google Summer of Code said no. So I coded 450+ hours on 4 open-source projects and <mark>won a ₹1.2 lakh laptop</mark>.</p>
+          <p class="ep-line">Google Summer of Code said no, so I coded 450+ hours instead. I won <mark>a ₹1.2 lakh laptop</mark> and $25 of Steam credit, plus Red Dead Redemption 2 and Far Cry 4.</p>
           <div class="links"><a class="btn sm white" href="/blogs/summer_of_making">The story →</a></div>
         </div>
       </article>
@@ -492,8 +493,18 @@ no attribute 'lstrip'</span></pre>
         <div class="ep-body">
           <p class="ep-when">College team · 2025</p>
           <h3 id="pippo-t">Pippo, the robot guide</h3>
-          <p class="ep-line">A robot that talks and translates. It placed <mark>3rd at two UK hackathons</mark>, and I built its app.</p>
+          <p class="ep-line">A robot guide that talks and translates. <mark>3rd at two international hackathons</mark>, $50 each. I built its app.</p>
           <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh/RoboApp" target="_blank" rel="noopener">App code ↗</a></div>
+        </div>
+      </article>
+      <article class="ep" id="club" aria-labelledby="club-t">
+        <div class="pn">
+          <img class="fill" src="/assets/projects/frontend-frenzy.jpg" alt="Poster: PIET Comp Techies presents Frontend Frenzy" loading="lazy" decoding="async" width="900" height="541" style="object-position:50% 12%">
+        </div>
+        <div class="ep-body">
+          <p class="ep-when">PIET Comp Techies · Founder and lead</p>
+          <h3 id="club-t">Started a tech club</h3>
+          <p class="ep-line">Founded and led my college's tech club, and ran <mark>Frontend Frenzy</mark>, a website-building contest, in October 2024.</p>
         </div>
       </article>
     </div>
@@ -566,6 +577,6 @@ no attribute 'lstrip'</span></pre>
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=5" defer></script>
+<script src="/comic.js?v=6" defer></script>
 </body>
 </html>

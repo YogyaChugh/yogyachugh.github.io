@@ -53,7 +53,6 @@
     $('cal-close').addEventListener('click', () => cal.close());
     cal.addEventListener('click', e => { if (e.target === cal) cal.close(); });
   }
-  if ($('hint')) $('hint').textContent = canHover ? 'Hover over me' : 'Tap me';
 
   /* =========================================================
      THE CHARACTER: pure vector shapes, no photo data.
@@ -299,7 +298,7 @@
 
   /* ---------- who's reading? the cover adapts to the visitor ---------- */
   const PATHS = {
-    hiring:   { expr: 'smug',  blurb: 'Hiring? Watch the 20-second intro, or skim the comic below.' },
+    hiring:   { expr: 'smug',  blurb: 'Hiring? Here are the résumé and a 20-second intro.' },
     project:  { expr: 'happy', blurb: 'Got an idea? I build apps end to end, from the database to the app store.' },
     browsing: { expr: 'wink',  blurb: "Welcome! It's a short comic. Scroll on." }
   };
@@ -423,12 +422,4 @@
   };
   follow();
   addEventListener('hashchange', follow);
-
-  /* ---------- Delhi clock ---------- */
-  const clock = $('clock');
-  if (clock) {
-    const fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit' });
-    const tick = () => { clock.textContent = `${fmt.format(new Date())} in Delhi right now`; };
-    tick(); setInterval(tick, 30000);
-  }
 })();
