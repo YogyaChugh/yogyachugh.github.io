@@ -365,6 +365,28 @@
     ghIO.observe(ghBars);
   }
 
+  /* ---------- the intro video: count plays, chapters seek (also /intro?t=12) ---------- */
+  document.querySelectorAll('video[data-track]').forEach(v => v.addEventListener('play', () => track(v.dataset.track), { once: true }));
+  // the homepage poster waits until the reader gets close, so it never slows the first screen
+  const lazyPosters = document.querySelectorAll('video[data-poster]');
+  if (lazyPosters.length) {
+    const pio = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.poster = en.target.dataset.poster; pio.unobserve(en.target); }
+    }), { rootMargin: '600px 0px' });
+    lazyPosters.forEach(v => pio.observe(v));
+  }
+  const introVideo = $('intro-video');
+  if (introVideo) {
+    const seek = (t, play) => { introVideo.currentTime = t; if (play) introVideo.play().catch(() => {}); };
+    const t = Number(new URLSearchParams(location.search).get('t'));
+    if (t > 0) introVideo.addEventListener('loadedmetadata', () => seek(t, false), { once: true });
+    document.querySelectorAll('[data-seek]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      seek(Number(a.dataset.seek), true);
+      introVideo.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'center' });
+    }));
+  }
+
   /* ---------- offline: pages you've read keep working, and a comic page covers the rest ---------- */
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname))) {
     addEventListener('load', () => {

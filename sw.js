@@ -2,7 +2,7 @@
    Online: pages and files always come fresh from the network.
    Offline: pages you've already read still open, and anything else gets /offline.html.
    To retire it one day, replace this file with one that calls self.registration.unregister(). */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CORE = `core-${VERSION}`;
 const PRECACHE = ['/offline.html', '/comic.css', '/comic.js', '/favicon.png', '/favicon.ico', '/assets/icons.svg', '/assets/icon-192.png'];
 
@@ -34,6 +34,8 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
+  // video streams in pieces (range requests); leave those to the browser
+  if (request.headers.has('range') || /\.(mp4|webm|vtt)$/.test(url.pathname)) return;
 
   // pages: network first, so nobody ever sees an old version
   if (request.mode === 'navigate') {

@@ -9,3 +9,6 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Remotion promo video project (local only)
+promo-video/

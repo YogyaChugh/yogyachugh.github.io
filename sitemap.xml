@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://yogya.dev/</loc>
     <lastmod>2026-10-03</lastmod>
@@ -16,6 +16,19 @@
     <image:image><image:loc>https://yogya.dev/assets/projects/webelo.jpg</image:loc></image:image>
     <image:image><image:loc>https://yogya.dev/assets/projects/anystudio.jpg</image:loc></image:image>
     <image:image><image:loc>https://yogya.dev/assets/yogya-avatar.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://yogya.dev/intro</loc>
+    <lastmod>2026-10-03</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://yogya.dev/assets/cards/intro.jpg</video:thumbnail_loc>
+      <video:title>Meet Yogya Chugh in 25 seconds</video:title>
+      <video:description>A 25-second video intro to Yogya Chugh, software engineer in Delhi: a rewards platform for 200+ users at $0 a month, a Django fix, and AnyStudio.</video:description>
+      <video:content_loc>https://yogya.dev/assets/video/yogya-intro.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+      <video:publication_date>2026-10-03T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://yogya.dev/resume/</loc>

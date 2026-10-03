@@ -77,6 +77,14 @@
       "hasPart": [
         {
           "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#intro",
+          "url": "https://yogya.dev/#intro",
+          "cssSelector": "#intro",
+          "name": "Meet me in 25 seconds (video)",
+          "description": "A 25-second video intro: the rewards platform, the Django fix, AnyStudio, and how to get in touch."
+        },
+        {
+          "@type": "WebPageElement",
           "@id": "https://yogya.dev/#short",
           "url": "https://yogya.dev/#short",
           "cssSelector": "#short",
@@ -307,7 +315,7 @@
           <a class="btn white" href="/writing">Blog</a>
         </div>
         <div class="cover-actions" data-for="hiring" hidden>
-          <a class="btn dark" href="#short">The 30-second version ↓</a>
+          <a class="btn dark" href="#intro">▶ The 25-second intro</a>
           <a class="btn white" href="/resume/">Résumé</a>
           <a class="btn red" href="#connect" data-calendly>Book a call</a>
         </div>
@@ -321,6 +329,18 @@
           <a class="btn white" href="/writing">Read the blog</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= THE 25-SECOND INTRO ================= -->
+  <section class="page" id="intro" style="--pr:.2deg" aria-labelledby="intro-t">
+    <header class="page-title"><h2 id="intro-t"><span class="ep">Short on time?</span>Meet me in 25 seconds</h2><a class="when more" href="/intro">Chapters and transcript →</a></header>
+    <div class="video-frame">
+      <video controls playsinline preload="none" data-poster="/assets/video/yogya-intro-poster.webp" width="1920" height="1080" data-track="intro-video-play">
+        <source src="/assets/video/yogya-intro.mp4" type="video/mp4">
+        <track kind="captions" src="/assets/video/yogya-intro.en.vtt" srclang="en" label="English">
+        <a href="/intro">Watch the 25-second intro</a>
+      </video>
     </div>
   </section>
 
