@@ -113,16 +113,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script>try{if(localStorage.getItem('yo-read'))document.documentElement.classList.add('read')}catch(e){}</script>
-<link rel="stylesheet" href="/comic.css?v=11">
-<script src="/comic.js?v=11" defer></script>
+<link rel="stylesheet" href="/comic.css?v=13">
+<script src="/comic.js?v=13" defer></script>
 </head>
-<body><div class="dock" id="dock">
+<body><nav class="dock" id="dock" aria-label="Quick links">
   <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
   <a class="btn white" href="/">Home</a>
   <a class="btn white" href="/resume/">Résumé</a>
   <a class="btn red" href="/#connect">Let's talk ✉</a>
-</div><main>
+</nav><main>
   <section class="page" style="--pr:.2deg" aria-labelledby="post-t">
     <div class="pn head-panel c-sky dots">
       <div class="head-text">
@@ -168,21 +167,21 @@ void traverseDOM(Node* root) {
   </article>
 
   <nav class="post-foot" aria-label="Keep reading">
-    <a class="ep-link" href="/#webelo"><span><span class="t">This story is in the comic</span><span class="s">Volume 3 · Things I build · Webelo</span></span><span class="arrow" aria-hidden="true">→</span></a>
+    <a class="ep-link" href="/#webelo"><span><span class="t">This story is in the comic</span> <span class="s">Volume 3 · Things I build · Webelo</span></span> <span class="arrow" aria-hidden="true">→</span></a>
     <div class="post-nav">
-      <a class="prev" href="/blogs/vardhman"><span class="dir">← Newer post</span><span class="t">Running a real product for $0 a month</span></a>
-      <a class="next" href="/blogs/summer_of_making"><span class="dir">Older post →</span><span class="t">450 hours, 4 ships, one laptop</span></a>
+      <a class="prev" href="/blogs/vardhman"><span class="dir">← Newer post</span> <span class="t">Running a real product for $0 a month</span></a>
+      <a class="next" href="/blogs/summer_of_making"><span class="dir">Older post →</span> <span class="t">450 hours, 4 ships, one laptop</span></a>
     </div>
   </nav>
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Site"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
+  <nav class="foot-links" aria-label="Footer"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
     <li><a class="ic-btn" href="https://hackclub.slack.com/team/U09218J0E94" target="_blank" rel="noopener" data-track="slack" style="--brand:#4A154B" aria-label="Yogya Chugh on Slack"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-slack"/></svg><span>Slack</span></a></li>
     <li><a class="ic-btn" href="https://discord.com/users/1114938970883772427" target="_blank" rel="noopener" data-track="discord" style="--brand:#5865F2" aria-label="Yogya Chugh on Discord"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-discord"/></svg><span>Discord</span></a></li>
-    <li><a class="ic-btn" href="mailto:yogya.developer@gmail.com" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
+    <li><a class="ic-btn" href="mailto:build@yogya.dev" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
   </ul>
   <p class="foot-note">© 2026 Yogya Chugh · Software engineer in Delhi, India</p>
 </footer>

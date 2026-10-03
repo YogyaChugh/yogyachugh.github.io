@@ -6,7 +6,7 @@
   const canHover = matchMedia('(hover: hover)').matches;
 
   /* ---------- contact: edit these two lines ---------- */
-  const EMAIL = 'yogya.developer@gmail.com';
+  const EMAIL = 'build@yogya.dev';
   const CALENDLY_URL = 'https://calendly.com/yogya-chugh/30min';
 
   /* ---------- analytics: GoatCounter, no cookies. Put your code here to switch it on ---------- */
@@ -304,7 +304,7 @@
 
   /* ---------- who's reading? the cover adapts to the visitor ---------- */
   const PATHS = {
-    hiring:   { expr: 'smug',  blurb: 'Hiring? Here are the résumé and a 20-second intro.' },
+    hiring:   { expr: 'smug',  blurb: 'Hiring? Here are the résumé and a 22-second intro.' },
     project:  { expr: 'happy', blurb: 'Got an idea? I build apps end to end, from the database to the app store.' },
     browsing: { expr: 'wink',  blurb: "Welcome! It's a short comic. Scroll on." }
   };
@@ -404,26 +404,6 @@
     }));
   }
 
-  /* ---------- read mode: plain, calm, big text, remembered between visits ---------- */
-  const footLinks = document.querySelector('.site-foot .foot-links');
-  if (footLinks && !footLinks.querySelector('.read-toggle')) {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'read-toggle'; b.setAttribute('aria-pressed', 'false'); b.textContent = 'Read mode';
-    footLinks.appendChild(b);
-  }
-  const readBtns = document.querySelectorAll('.read-toggle');
-  const setRead = on => {
-    root.classList.toggle('read', on);
-    readBtns.forEach(b => { b.setAttribute('aria-pressed', String(on)); b.textContent = on ? 'Comic mode' : 'Read mode'; });
-  };
-  setRead(root.classList.contains('read'));
-  readBtns.forEach(b => b.addEventListener('click', () => {
-    const on = !root.classList.contains('read');
-    setRead(on);
-    try { on ? localStorage.setItem('yo-read', '1') : localStorage.removeItem('yo-read'); } catch (e) {}
-    track(on ? 'read-mode-on' : 'read-mode-off');
-  }));
-
   /* ---------- screen readers: a skip link, new-tab warnings, no arrows read aloud ---------- */
   const mainEl = document.querySelector('main');
   if (mainEl) {
@@ -451,6 +431,8 @@
     });
   });
   document.querySelectorAll('.sfx, .poke, .loot-sfx').forEach(el => el.setAttribute('aria-hidden', 'true'));
+  // code that scrolls sideways can be reached and scrolled with the keyboard
+  document.querySelectorAll('.prose pre').forEach(pre => { pre.tabIndex = 0; pre.setAttribute('aria-label', 'Code sample'); });
 
   /* ---------- install as an app: the button appears only when the browser offers it ---------- */
   let installEvent = null;

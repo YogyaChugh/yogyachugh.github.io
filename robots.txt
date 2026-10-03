@@ -21,3 +21,10 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://yogya.dev/sitemap.xml
+Sitemap: https://webelo.yogya.dev/sitemap.xml
+Sitemap: https://webber.yogya.dev/sitemap.xml
+Sitemap: https://safario.yogya.dev/sitemap.xml
+Sitemap: https://votes.yogya.dev/sitemap.xml
+Sitemap: https://timberly.yogya.dev/sitemap.xml
+Sitemap: https://island.yogya.dev/sitemap.xml
+Sitemap: https://snake.yogya.dev/sitemap.xml

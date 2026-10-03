@@ -220,7 +220,7 @@
       },
       "description": "Software engineer in Delhi, India. Software Engineering Intern at Meant2Bae; previously built Vardhman Electricals' rewards platform; contributor to Django.",
       "jobTitle": "Software Engineer",
-      "email": "mailto:yogya.developer@gmail.com",
+      "email": "mailto:build@yogya.dev",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Delhi",
@@ -261,6 +261,55 @@
         "https://www.linkedin.com/in/yogyachugh",
         "https://yogya-chugh.itch.io"
       ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://yogya.dev/#projects",
+      "name": "Projects by Yogya Chugh",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Webelo",
+          "url": "https://webelo.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Timberly",
+          "url": "https://timberly.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Webber",
+          "url": "https://webber.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Safario",
+          "url": "https://safario.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Vote Leaderboard",
+          "url": "https://votes.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Western Upside-Down Island",
+          "url": "https://island.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Snake Hustle",
+          "url": "https://snake.yogya.dev/"
+        }
+      ]
     }
   ]
 }
@@ -268,17 +317,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<script>try{if(localStorage.getItem('yo-read'))document.documentElement.classList.add('read')}catch(e){}</script>
-<link rel="stylesheet" href="/comic.css?v=11">
+<link rel="stylesheet" href="/comic.css?v=13">
 </head>
 <body>
 
-<div class="dock" id="dock">
+<nav class="dock" id="dock" aria-label="Quick links">
   <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
   <a class="btn white" href="/resume/">Résumé</a>
   <a class="btn white" href="/writing">Blog</a>
   <a class="btn red" href="#connect">Let's talk ✉</a>
-</div>
+</nav>
 
 <main id="top">
 
@@ -289,14 +337,13 @@
         <div class="mast-title">
           <p class="series">A comic résumé · Issue #1</p>
           <h1>Yogya Chugh</h1>
-          <div class="role-line"><span class="role">Software Engineer</span><span class="where">Delhi, India</span></div>
+          <div class="role-line"><span class="role">Software Engineer</span> <span class="where">Delhi, India</span></div>
         </div>
         <nav class="mast-nav" aria-label="Site">
           <a href="/writing">Blog</a>
           <a href="/resume/">Résumé</a>
           <a href="#connect">Contact</a>
           <button type="button" class="install" hidden>Install</button>
-          <button type="button" class="read-toggle" aria-pressed="false">Read mode</button>
         </nav>
       </div>
       <div class="cover-art">
@@ -304,11 +351,11 @@
           <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
           <div class="cover-actions" data-for="none">
             <a class="btn dark" href="#work">Start reading ↓</a>
-            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>20-second intro</a>
+            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
           </div>
           <div class="cover-actions" data-for="hiring" hidden>
             <a class="btn dark" href="/resume/">Résumé</a>
-            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>20-second intro</a>
+            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
             <a class="btn white" href="#connect" data-calendly>Book a call</a>
           </div>
           <div class="cover-actions" data-for="project" hidden>
@@ -317,11 +364,11 @@
           </div>
           <div class="cover-actions" data-for="browsing" hidden>
             <a class="btn dark" href="#work">Start reading ↓</a>
-            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>20-second intro</a>
+            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
           </div>
         </div>
         <div class="starburst-ink" aria-hidden="true"></div>
-        <div class="starburst"><div>Now interning<br><span>@ Meant2Bae</span></div></div>
+        <div class="starburst"><div>Now interning <br><span>@ Meant2Bae</span></div></div>
         <div class="yo-wrap" data-expr="wink" id="cover-yo"></div>
       </div>
       <div class="who" role="group" aria-labelledby="who-t">
@@ -337,7 +384,7 @@
 
   <!-- ================= VOLUME 1 · ON THE JOB ================= -->
   <section class="page" id="work" style="--pr:.2deg" aria-labelledby="work-t">
-    <header class="page-title"><h2 id="work-t"><span class="ep">Vol. 1</span>On the job</h2><span class="when">Two paid internships and a freelance client</span></header>
+    <header class="page-title"><h2 id="work-t"><span class="ep">Vol. 1</span> On the job</h2><span class="when">Two paid internships and a freelance client</span></header>
     <div class="eps two">
       <article class="ep wide" id="vardhman" aria-labelledby="vardhman-t">
         <div class="pn c-sky dots fan">
@@ -347,7 +394,7 @@
           <p class="nar bl fan-brand"><img src="/assets/logos/vardhman.png" alt="" width="22" height="22">Vardhman Saathi</p>
         </div>
         <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" src="/assets/logos/vardhman.png" alt="" width="20" height="20">Vardhman Electricals · Mar – Jun 2026</p>
+          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/vardhman.png" alt="" width="20" height="20">Vardhman Electricals · Mar – Jun 2026</p>
           <h3 id="vardhman-t">Software Developer Intern</h3>
           <p class="ep-line">Built Vardhman Saathi, a rewards app for their dealers, end to end: the Android app, the admin app and the backend.</p>
           <div class="stats">
@@ -367,7 +414,7 @@
           <img src="/assets/projects/screendemons-demon.webp" alt="The ScreenDemons mascot, a fuzzy teal monster with little horns, peeking over the edge" loading="lazy" decoding="async" width="560" height="330">
         </div>
         <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" src="/assets/logos/screendemons.png" alt="" width="20" height="20">Client project · June 2026 – now</p>
+          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/screendemons.png" alt="" width="20" height="20">Client project · June 2026 – now</p>
           <h3 id="freelance-t">Freelance App Developer</h3>
           <p class="ep-line">Building <mark>ScreenDemons</mark>, an iPhone and Android app that cuts screen time through challenges with friends.</p>
           <div class="links"><a class="btn sm white" href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a></div>
@@ -379,7 +426,7 @@
           <p class="nar br" aria-hidden="true">To be continued…</p>
         </div>
         <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" src="/assets/logos/meant2bae.png" alt="" width="20" height="20">Meant2Bae · September 2026 – now</p>
+          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/meant2bae.png" alt="" width="20" height="20">Meant2Bae · September 2026 – now</p>
           <h3 id="meant2bae-t">Software Engineering Intern</h3>
           <p class="ep-line">Paid and <mark>on-site</mark>, at a curated dating service for professionals in India.</p>
           <div class="links"><a class="btn sm white" href="https://meant2bae.com" target="_blank" rel="noopener">meant2bae.com ↗</a></div>
@@ -390,7 +437,7 @@
 
   <!-- ================= VOLUME 2 · OPEN SOURCE ================= -->
   <section class="page" id="open-source" style="--pr:-.25deg" aria-labelledby="open-source-t">
-    <header class="page-title"><h2 id="open-source-t"><span class="ep">Vol. 2</span>Open source</h2><span class="when">Out in the open, on GitHub</span></header>
+    <header class="page-title"><h2 id="open-source-t"><span class="ep">Vol. 2</span> Open source</h2><span class="when">Out in the open, on GitHub</span></header>
     <div class="eps two">
       <article class="ep" id="django" aria-labelledby="django-t">
         <div class="pn c-navy">
@@ -404,7 +451,7 @@ no attribute 'lstrip'</span></pre>
           <div class="yo-wrap" data-expr="confused" data-flip="1" style="left:auto; right:3%; transform:none; width:min(24%,96px)"></div>
         </div>
         <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" src="/assets/logos/django.svg" alt="" width="20" height="20">django/django #19295 · March 2025</p>
+          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/django.svg" alt="" width="20" height="20">django/django #19295 · March 2025</p>
           <h3 id="django-t">Merged into Django</h3>
           <p class="ep-line">Hit a confusing template error, then <mark>reported it and fixed it</mark>. Reviewed by Django Fellow Sarah Boyce.</p>
           <div class="links">
@@ -415,7 +462,7 @@ no attribute 'lstrip'</span></pre>
       </article>
       <article class="ep" id="github" aria-labelledby="github-t">
         <div class="pn c-yellow burst gh-art" style="--bx:6%; --by:120%">
-          <div class="gh-big"><span class="gh-num" id="gh-num">700</span><span class="gh-lbl">contributions</span></div>
+          <div class="gh-big"><span class="gh-num" id="gh-num">700</span> <span class="gh-lbl">contributions</span></div>
           <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" title="September 2026: 163"><i></i></span><span class="" style="--h:0.064" title="October 2026: 14"><i></i></span></div>
         </div>
         <div class="ep-body">
@@ -430,7 +477,7 @@ no attribute 'lstrip'</span></pre>
 
   <!-- ================= VOLUME 3 · THINGS I BUILD ================= -->
   <section class="page" id="built" style="--pr:.25deg" aria-labelledby="built-t">
-    <header class="page-title"><h2 id="built-t"><span class="ep">Vol. 3</span>Things I build</h2><span class="when">To find out how things work</span></header>
+    <header class="page-title"><h2 id="built-t"><span class="ep">Vol. 3</span> Things I build</h2><span class="when">To find out how things work</span></header>
     <div class="eps">
       <article class="ep" id="anystudio" aria-labelledby="anystudio-t">
         <div class="pn">
@@ -478,17 +525,17 @@ no attribute 'lstrip'</span></pre>
       <a class="more-all" href="https://github.com/YogyaChugh?tab=repositories" target="_blank" rel="noopener" data-track="github">All repositories ↗</a>
     </div>
     <ul class="micro">
-      <li><a class="mc" href="https://webber.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Webber</span><span class="mc-d">Saves whole websites so you can read them offline.</span><span class="mc-l"><i style="--lc:#3572A5"></i>Python</span></a></li>
-      <li><a class="mc" href="https://safario.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Safario</span><span class="mc-d">Blockchain IDs for tourists, built for Smart India Hackathon.</span><span class="mc-l"><i style="--lc:#3178C6"></i>TypeScript · React</span></a></li>
-      <li><a class="mc" href="https://github.com/YogyaChugh/Ticket-Chatbot" target="_blank" rel="noopener"><span class="mc-t">Ticket Chatbot</span><span class="mc-d">A Rasa chatbot for booking tickets, for Smart India Hackathon.</span><span class="mc-l"><i style="--lc:#3572A5"></i>Python · Rasa</span></a></li>
-      <li><a class="mc" href="https://votes.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Vote Leaderboard</span><span class="mc-d">Live voter rankings for Hack Club's Summer of Making.</span><span class="mc-l"><i style="--lc:#3572A5"></i>Python</span></a></li>
-      <li><a class="mc" href="https://github.com/YogyaChugh/Hangman-Game" target="_blank" rel="noopener"><span class="mc-t">Hangman</span><span class="mc-d">Classic Hangman in the terminal, drawn in ASCII.</span><span class="mc-l"><i style="--lc:#555555"></i>C</span></a></li>
+      <li><a class="mc" href="https://webber.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Webber</span> <span class="mc-d">Saves whole websites so you can read them offline.</span> <span class="mc-l"><i style="--lc:#3572A5"></i>Python</span></a></li>
+      <li><a class="mc" href="https://safario.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Safario</span> <span class="mc-d">Blockchain IDs for tourists, built for Smart India Hackathon.</span> <span class="mc-l"><i style="--lc:#3178C6"></i>TypeScript · React</span></a></li>
+      <li><a class="mc" href="https://github.com/YogyaChugh/Ticket-Chatbot" target="_blank" rel="noopener"><span class="mc-t">Ticket Chatbot</span> <span class="mc-d">A Rasa chatbot for booking tickets, for Smart India Hackathon.</span> <span class="mc-l"><i style="--lc:#3572A5"></i>Python · Rasa</span></a></li>
+      <li><a class="mc" href="https://votes.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Vote Leaderboard</span> <span class="mc-d">Live voter rankings for Hack Club's Summer of Making.</span> <span class="mc-l"><i style="--lc:#3572A5"></i>Python</span></a></li>
+      <li><a class="mc" href="https://github.com/YogyaChugh/Hangman-Game" target="_blank" rel="noopener"><span class="mc-t">Hangman</span> <span class="mc-d">Classic Hangman in the terminal, drawn in ASCII.</span> <span class="mc-l"><i style="--lc:#555555"></i>C</span></a></li>
     </ul>
   </section>
 
   <!-- ================= VOLUME 4 · WINS ================= -->
   <section class="page" id="wins" style="--pr:-.2deg" aria-labelledby="wins-t">
-    <header class="page-title"><h2 id="wins-t"><span class="ep">Vol. 4</span>Wins</h2><span class="when">Prizes, podiums and a club of my own</span></header>
+    <header class="page-title"><h2 id="wins-t"><span class="ep">Vol. 4</span> Wins</h2><span class="when">Prizes, podiums and a club of my own</span></header>
     <div class="eps">
       <article class="ep" id="summer" aria-labelledby="summer-t">
         <div class="pn">
@@ -535,21 +582,21 @@ no attribute 'lstrip'</span></pre>
 
   <!-- ================= LET'S CONNECT ================= -->
   <section class="page" id="connect" style="--pr:.2deg" aria-labelledby="connect-t">
-    <header class="page-title"><h2 id="connect-t"><span class="ep">Your turn</span>Let's work together</h2></header>
+    <header class="page-title"><h2 id="connect-t"><span class="ep">Your turn</span> Let's work together</h2></header>
     <div class="connect">
       <div class="pn c-yellow burst" style="--by:92%">
         <p class="bub" style="left:12px; right:12px; top:12px; --t:54%">That's the story so far. Want to be in the next issue?</p>
         <div class="yo-wrap" data-expr="happy" style="width:min(70%,210px)"></div>
       </div>
       <div class="ways">
-        <a class="way main" id="gmail-link" href="mailto:yogya.developer@gmail.com" data-gmail="Hey Yogya!" target="_blank" rel="noopener">
+        <a class="way main" id="gmail-link" href="mailto:build@yogya.dev" data-gmail="Hey Yogya!" target="_blank" rel="noopener">
           <span class="ic" aria-hidden="true"><svg viewBox="0 0 28 28"><rect x="3" y="6" width="22" height="16" rx="2" fill="#fff" stroke="#111318" stroke-width="2.5"/><path d="M4 8 L14 16 L24 8" fill="none" stroke="#E8473F" stroke-width="2.5" stroke-linejoin="round"/></svg></span>
-          <span><span class="t">Email me</span><span class="s">yogya.developer@gmail.com · opens in Gmail</span></span>
+          <span><span class="t">Email me</span> <span class="s">build@yogya.dev · opens in Gmail</span></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="way" id="call-link" href="https://calendly.com/yogya-chugh/30min" data-calendly target="_blank" rel="noopener">
           <span class="ic" aria-hidden="true"><svg viewBox="0 0 28 28"><rect x="4" y="6" width="20" height="18" rx="2" fill="#fff" stroke="#111318" stroke-width="2.5"/><path d="M4 11 H24 M9 3 V8 M19 3 V8" stroke="#111318" stroke-width="2.5" stroke-linecap="round"/><rect x="9" y="14" width="5" height="5" fill="#E8473F"/></svg></span>
-          <span><span class="t">Book a 30-minute call</span><span class="s">Pick a time that suits you</span></span>
+          <span><span class="t">Book a 30-minute call</span> <span class="s">Pick a time that suits you</span></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <dl class="facts">
@@ -579,8 +626,8 @@ no attribute 'lstrip'</span></pre>
   <dialog class="cal vid" id="vid" aria-labelledby="vid-t">
     <div class="cal-head">
       <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="wink" data-crop="close"></span></span>
-      <p class="cal-bub">The short version, in 20 seconds!</p>
-      <h2 class="sr-only" id="vid-t">Meet Yogya Chugh in 20 seconds</h2>
+      <p class="cal-bub">The short version, in 22 seconds!</p>
+      <h2 class="sr-only" id="vid-t">Meet Yogya Chugh in 22 seconds</h2>
       <a class="btn white sm" href="/intro">Transcript</a>
       <button class="btn white sm" id="vid-close" type="button">Close ✕</button>
     </div>
@@ -592,19 +639,19 @@ no attribute 'lstrip'</span></pre>
 
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Site"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
+  <nav class="foot-links" aria-label="Footer"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
     <li><a class="ic-btn" href="https://hackclub.slack.com/team/U09218J0E94" target="_blank" rel="noopener" data-track="slack" style="--brand:#4A154B" aria-label="Yogya Chugh on Slack"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-slack"/></svg><span>Slack</span></a></li>
     <li><a class="ic-btn" href="https://discord.com/users/1114938970883772427" target="_blank" rel="noopener" data-track="discord" style="--brand:#5865F2" aria-label="Yogya Chugh on Discord"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-discord"/></svg><span>Discord</span></a></li>
-    <li><a class="ic-btn" href="mailto:yogya.developer@gmail.com" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
+    <li><a class="ic-btn" href="mailto:build@yogya.dev" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
   </ul>
   <p class="foot-note">© 2026 Yogya Chugh · Software engineer in Delhi, India</p>
 </footer>
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=11" defer></script>
+<script src="/comic.js?v=13" defer></script>
 </body>
 </html>

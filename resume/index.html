@@ -113,18 +113,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script>try{if(localStorage.getItem('yo-read'))document.documentElement.classList.add('read')}catch(e){}</script>
-<link rel="stylesheet" href="/comic.css?v=11">
-<script src="/comic.js?v=11" defer></script>
+<link rel="stylesheet" href="/comic.css?v=13">
+<script src="/comic.js?v=13" defer></script>
 </head>
 <body>
 
-<div class="dock" id="dock">
+<nav class="dock" id="dock" aria-label="Quick links">
   <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
   <a class="btn white" href="/">Home</a>
   <a class="btn white" href="/writing">Blog</a>
   <a class="btn red" href="/#connect">Let's talk ✉</a>
-</div>
+</nav>
 
 <main>
   <div class="resume-tools">
@@ -141,9 +140,9 @@
       </div>
       <div class="mast-title">
         <h1>Yogya Chugh</h1>
-        <div class="role-line"><span class="role">Software Engineer</span><span class="where">Delhi, India</span></div>
+        <div class="role-line"><span class="role">Software Engineer</span> <span class="where">Delhi, India</span></div>
         <p class="contact">
-          <a href="mailto:yogya.developer@gmail.com">yogya.developer@gmail.com</a>
+          <a href="mailto:build@yogya.dev">build@yogya.dev</a>
           <span>+91 96500 29959</span>
           <a href="https://yogya.dev">yogya.dev</a>
           <a href="https://github.com/YogyaChugh">github.com/YogyaChugh</a>
@@ -169,12 +168,12 @@
         <h2 class="rs-h" id="rs-exp">Work experience</h2>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title"><img class="co-logo" src="/assets/logos/meant2bae.png" alt="" width="18" height="18">Meant2Bae · Software Engineering Intern<span class="now">Now</span></span><span class="rs-date">Sep 2026 – Present</span></div>
+          <div class="rs-top"><span class="rs-title"><img class="co-logo" aria-hidden="true" src="/assets/logos/meant2bae.png" alt="" width="18" height="18">Meant2Bae · Software Engineering Intern<span class="now">Now</span></span> <span class="rs-date">Sep 2026 – Present</span></div>
           <div class="rs-sub">Paid, on-site · curated dating service for professionals · India</div>
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">ScreenDemons · Freelance App Developer<span class="now">Now</span></span><span class="rs-date">Jun 2026 – Present</span></div>
+          <div class="rs-top"><span class="rs-title"><img class="co-logo" aria-hidden="true" src="/assets/logos/screendemons.png" alt="" width="18" height="18">ScreenDemons · Freelance App Developer<span class="now">Now</span></span> <span class="rs-date">Jun 2026 – Present</span></div>
           <div class="rs-sub">Remote · <a href="https://screendemons.app">screendemons.app</a></div>
           <ul>
             <li>Building ScreenDemons end to end: an iOS and Android app that cuts screen time through challenges with friends.</li>
@@ -182,7 +181,7 @@
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title"><img class="co-logo" src="/assets/logos/vardhman.png" alt="" width="18" height="18">Vardhman Electricals · Software Developer Intern</span><span class="rs-date">Mar 2026 – Jun 2026</span></div>
+          <div class="rs-top"><span class="rs-title"><img class="co-logo" aria-hidden="true" src="/assets/logos/vardhman.png" alt="" width="18" height="18">Vardhman Electricals · Software Developer Intern</span> <span class="rs-date">Mar 2026 – Jun 2026</span></div>
           <div class="rs-sub">Paid, remote · Delhi, India</div>
           <ul>
             <li>Built a loyalty and invoice platform end to end: a React Native (Expo) Android app on Google Play (<a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi">Vardhman Saathi</a>), an Electron + React admin desktop app, and the backend; live at <a href="https://vardhmansaathi.shop">vardhmansaathi.shop</a>.</li>
@@ -197,7 +196,7 @@
         <h2 class="rs-h" id="rs-proj">Projects</h2>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">AnyStudio · Native App Builder</span><span class="rs-date">In Development</span></div>
+          <div class="rs-top"><span class="rs-title">AnyStudio · Native App Builder</span> <span class="rs-date">In Development</span></div>
           <div class="rs-sub">Personal project · private repository</div>
           <ul>
             <li>Turns a plain-English description or a drag-and-drop design into real native Android and iPhone apps (not web wrappers), with an AI assistant whose changes the user reviews before they apply.</li>
@@ -206,7 +205,7 @@
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Webelo · C++ DOM Library</span><span class="rs-date">Jul – Sep 2025</span></div>
+          <div class="rs-top"><span class="rs-title">Webelo · C++ DOM Library</span> <span class="rs-date">Jul – Sep 2025</span></div>
           <div class="rs-sub">Personal project · <a href="https://github.com/YogyaChugh/Webelo">github.com/YogyaChugh/Webelo</a></div>
           <ul>
             <li>Implemented the WHATWG DOM Living Standard in C++: node tree, preorder DFS traversal and event dispatch.</li>
@@ -215,7 +214,7 @@
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Pippo · Multilingual Navigation Robot</span><span class="rs-date">2024 – 2025</span></div>
+          <div class="rs-top"><span class="rs-title">Pippo · Multilingual Navigation Robot</span> <span class="rs-date">2024 – 2025</span></div>
           <div class="rs-sub">College team project</div>
           <ul>
             <li>Robot guide for tourists and newcomers: voice interaction via the ElevenLabs API, conversational Q&amp;A and autonomous path navigation. Built its companion mobile app.</li>
@@ -223,7 +222,7 @@
         </div>
 
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Open Source · Django</span><span class="rs-date">Merged Mar 2025</span></div>
+          <div class="rs-top"><span class="rs-title">Open Source · Django</span> <span class="rs-date">Merged Mar 2025</span></div>
           <div class="rs-sub">Contributor · <a href="https://github.com/django/django/pull/19295">django/django #19295</a></div>
           <ul>
             <li>Fixed a bug where an unresolved relative <code>{% extends %}</code> template path raised an unrelated AttributeError instead of a clear TemplateSyntaxError.</li>
@@ -234,7 +233,7 @@
       <section class="rs" aria-labelledby="rs-edu">
         <h2 class="rs-h" id="rs-edu">Education</h2>
         <div class="rs-item">
-          <div class="rs-top"><span class="rs-title">Panipat Institute of Engineering and Technology (Kurukshetra University)</span><span class="rs-date">2023 – 2027</span></div>
+          <div class="rs-top"><span class="rs-title">Panipat Institute of Engineering and Technology (Kurukshetra University)</span> <span class="rs-date">2023 – 2027</span></div>
           <div class="rs-sub">B.Tech, Computer Science and Engineering · CGPA 8.05/10 · Panipat, India</div>
         </div>
       </section>
@@ -258,13 +257,13 @@
   </article>
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Site"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
+  <nav class="foot-links" aria-label="Footer"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
     <li><a class="ic-btn" href="https://hackclub.slack.com/team/U09218J0E94" target="_blank" rel="noopener" data-track="slack" style="--brand:#4A154B" aria-label="Yogya Chugh on Slack"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-slack"/></svg><span>Slack</span></a></li>
     <li><a class="ic-btn" href="https://discord.com/users/1114938970883772427" target="_blank" rel="noopener" data-track="discord" style="--brand:#5865F2" aria-label="Yogya Chugh on Discord"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-discord"/></svg><span>Discord</span></a></li>
-    <li><a class="ic-btn" href="mailto:yogya.developer@gmail.com" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
+    <li><a class="ic-btn" href="mailto:build@yogya.dev" target="_blank" rel="noopener" data-gmail="Hey Yogya!" style="--brand:#EA4335" aria-label="Email Yogya (opens Gmail)"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-gmail"/></svg><span>Email</span></a></li>
   </ul>
   <p class="foot-note">© 2026 Yogya Chugh · Software engineer in Delhi, India</p>
 </footer>

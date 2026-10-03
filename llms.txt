@@ -20,7 +20,7 @@ Key facts:
 ## Pages
 
 - [The comic résumé (home)](https://yogya.dev/): every internship and project as a comic episode, with results and links.
-- [20-second video intro](https://yogya.dev/intro): the short version, with chapters and a transcript.
+- [22-second video intro](https://yogya.dev/intro): the short version, with chapters and a transcript.
 - [Résumé](https://yogya.dev/resume/): the same résumé as a one-page document.
 - [Résumé PDF (comic)](https://yogya.dev/Yogya_Chugh_Resume_Comic.pdf): printable comic version.
 - [Résumé PDF (plain)](https://yogya.dev/Yogya_Chugh_Resume.pdf): plain, ATS-friendly version.
@@ -35,7 +35,7 @@ Key facts:
 
 ## Contact
 
-- Email: yogya.developer@gmail.com
+- Email: build@yogya.dev
 - Book a 30-minute call: https://calendly.com/yogya-chugh/30min
 - GitHub: https://github.com/YogyaChugh
 - LinkedIn: https://www.linkedin.com/in/yogyachugh
