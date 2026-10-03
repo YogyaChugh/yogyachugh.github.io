@@ -109,7 +109,7 @@
 
   /* motion comic: backgrounds, people and props drift at different depths; lettering stays put */
   .pn .yo-wrap { translate: 0 calc((var(--py, 0) + 1) * 5px); }
-  .pn :is(.prop, .polaroid, .phone, .screen, .badge, .shots) { translate: 0 calc(var(--py, 0) * -7px); }
+  .pn :is(.screen, .badge) { translate: 0 calc(var(--py, 0) * -7px); }
 
   /* ---------- lettering ---------- */
   .bub, .tht, .nar {
@@ -150,20 +150,8 @@
   }
 
   /* ---------- props ---------- */
-  .prop { position: absolute; z-index: 1; overflow: visible; }
-  .polaroid {
-    position: absolute; z-index: 2; left: 50%; top: 50%; width: min(70%, 190px);
-    transform: translate(-50%, -50%) rotate(4deg);
-    background: #fff; padding: 7px 7px 6px; box-shadow: 0 8px 18px rgba(17, 19, 24, .3);
-  }
-  .polaroid .ph { overflow: hidden; background: #222; }
-  .polaroid img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .polaroid p { margin: 6px 0 0; font-size: .82rem; text-align: center; line-height: 1.1; }
-  .polaroid::before { content: ''; position: absolute; top: -11px; left: 50%; width: 70px; height: 22px; background: rgba(255, 236, 150, .8); transform: translateX(-50%) rotate(-5deg); }
   .screen { position: absolute; z-index: 2; inset: 44px 14px 14px; border: 4px solid var(--ink); background: #000; overflow: hidden; box-shadow: 4px 4px 0 var(--ink); }
   .screen img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 0; display: block; }
-  /* a row of real app screenshots, numbered like a how-to strip */
-  .shots { position: absolute; z-index: 2; inset: 50px 0 0; display: flex; justify-content: space-evenly; gap: 14px; padding: 4px 18px 0; }
   .shot { margin: 0; flex: 0 1 148px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 9px; rotate: var(--r, 0deg); }
   .shot figcaption { max-width: 100%; font: 700 .86rem/1.15 var(--letter); text-align: center; background: #fff; border: 3px solid var(--ink); padding: 4px 8px 3px; }
   .shot figcaption b { font: 400 1.05rem/1 var(--sfx); color: var(--red); margin-right: 5px; }
@@ -177,18 +165,6 @@
     font: 600 clamp(.66rem, 1.1vw, .84rem)/1.5 var(--mono); color: #E6EDF7; white-space: pre-wrap;
   }
   .code .s { color: #FFD84A; } .code .err { color: #FF8A84; }
-  .stamp {
-    position: absolute; z-index: 3; right: 7%; bottom: 9%;
-    font-family: var(--sfx); font-size: clamp(1.3rem, 2.4vw, 1.8rem); letter-spacing: .06em; line-height: 1; color: var(--red);
-    border: 4px solid var(--red); padding: 4px 10px 0; transform: rotate(-14deg); background: rgba(255, 255, 255, .9);
-  }
-  .stamp.green { color: #1E9A5A; border-color: #1E9A5A; }
-  .phone {
-    position: absolute; z-index: 1; bottom: 18%; width: 14%; max-width: 58px; aspect-ratio: 9 / 18;
-    border: 4px solid var(--ink); border-radius: 12px; background: linear-gradient(160deg, #fff 0 60%, var(--sky) 60%);
-  }
-  .phone::before { content: ''; position: absolute; top: 5px; left: 50%; width: 30%; height: 4px; border-radius: 4px; background: var(--ink); transform: translateX(-50%); }
-  .phone b { position: absolute; left: 50%; bottom: -26px; transform: translateX(-50%); font: 400 .85rem/1 var(--sfx); letter-spacing: .06em; white-space: nowrap; background: #fff; border: 2px solid var(--ink); padding: 3px 5px 1px; color: var(--ink); }
   .badge {
     position: absolute; z-index: 3; width: 86px; aspect-ratio: 1; border-radius: 50%;
     display: grid; place-items: center; text-align: center;
@@ -272,14 +248,31 @@
   .ep.wide > .pn { flex: 1.25; height: auto; min-height: 320px; border-width: 0 4px 0 0; }
   .ep.wide .ep-body { flex: 1; justify-content: center; gap: 8px; padding: 18px 20px; }
   .ep.wide .ep-line { font-size: 1.08rem; }
-  .ep .shots { inset: 18px 0 0; }
+  /* the first story: three real screens, fanned like a product shot, and two numbers */
+  .fan-ph {
+    position: absolute; z-index: 1; left: 50%; top: 34px; width: min(27%, 150px); aspect-ratio: 400 / 853;
+    translate: calc(-50% + var(--dx, 0%)) calc(var(--py, 0) * -6px); rotate: var(--r, 0deg); transform-origin: 50% 100%;
+    border: 4px solid var(--ink); border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 5px 5px 0 var(--ink);
+  }
+  .fan-ph.front { z-index: 2; top: 18px; width: min(31%, 172px); }
+  .fan-ph img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+  .stats { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 4px 0 2px; }
+  .stats p { margin: 0; display: grid; gap: 4px; font-size: .85rem; line-height: 1.2; }
+  .stats b { font: 400 clamp(2.3rem, 4vw, 2.9rem)/.85 var(--sfx); letter-spacing: .02em; color: var(--red); -webkit-text-stroke: .04em var(--ink); paint-order: stroke fill; text-shadow: .05em .06em 0 var(--ink); }
+  /* ScreenDemons, in its own colours */
+  .sd-art { --c: #000; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+  .sd-word {
+    position: relative; z-index: 1; margin: 18px 0 0; font: 800 clamp(1.5rem, 3vw, 2rem)/1 Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: -.03em;
+    background: linear-gradient(90deg, #fff, #a1a1aa); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sd-art img { position: relative; z-index: 1; display: block; width: min(56%, 210px); height: auto; }
   .ep .code { inset: 14px 20% auto 12px; font-size: .68rem; white-space: pre; }
   .built { margin: 0; font-size: .8rem; opacity: .75; }
 
   /* still shipping: the GitHub card; the numbers refresh themselves */
-  .gh-art { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 18px; padding: 14px 16px 28px; }
+  .gh-art { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 20px; padding: 16px 18px 18px; }
   .gh-art > * { position: relative; z-index: 1; }
-  .gh-art .gh-bars { height: 120px; }
+  .gh-art .gh-bars { height: 132px; }
   .gh-big { display: grid; justify-items: start; gap: 6px; }
   .gh-num { font: 400 clamp(3rem, 6vw, 4.2rem)/.85 var(--sfx); letter-spacing: .02em; color: var(--red); -webkit-text-stroke: .045em var(--ink); paint-order: stroke fill; text-shadow: .05em .06em 0 var(--ink); transform: rotate(-4deg); }
   .gh-lbl { font: 400 1.2rem/1 var(--sfx); letter-spacing: .06em; }
@@ -288,7 +281,6 @@
   .gh-bars i { width: 100%; height: max(5px, calc(var(--h) * 100%)); background: #fff; border: 3px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); }
   .gh-bars .hot i { background: #FF8A3D; }
   .gh-bars .top i { background: var(--red); }
-  .gh-bars span::after { content: attr(data-m); position: absolute; top: calc(100% + 5px); left: 0; right: 0; text-align: center; font: 400 .8rem/1 var(--sfx); }
 
   .page-title .more { color: var(--ink); font-weight: 700; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 
@@ -379,7 +371,7 @@
   .js .page.in { animation: page-in .5s var(--ease-out) backwards; }
   .js .page:not(.in) :is(.pn, .way, .ep) { opacity: 0; }
   .js .page.in .pn:not(.ep > .pn) { animation: pn-in .45s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 60ms); }
-  .js .page.in .pn :is(.bub, .tht, .nar, .polaroid, .badge, .stamp, .shot) { animation: letter-in .4s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 200ms); }
+  .js .page.in .pn :is(.bub, .tht, .nar, .badge) { animation: letter-in .4s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 200ms); }
   .js .page.in .pn .sfx { animation: sfx-in .5s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 260ms); }
   .js .page.in :is(.way, .ep) { animation: pop-in .45s var(--spring) backwards; animation-delay: calc(var(--i, 0) * 70ms + 60ms); }
 
@@ -394,14 +386,10 @@
     .connect { grid-template-columns: minmax(0, 1fr); }
     .eps, .eps.two { grid-template-columns: minmax(0, 1fr); }
     .ep.wide > .pn { min-height: 290px; }
-    .strip .shots { justify-content: space-evenly; gap: 10px; padding: 0 10px; }
-    .strip .shot { flex: 1 1 0; }
-    .shot figcaption { font-size: .74rem; padding: 3px 5px 2px; }
     .shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .intro-below { grid-template-columns: minmax(0, 1fr); }
     .gh-art .gh-bars { gap: 4px; }
-    .gh-bars span::after { font-size: .66rem; }
-    .cover .mast { flex-wrap: wrap; }
+      .cover .mast { flex-wrap: wrap; }
     .cover .mast-title { padding-right: 12px; }
     .mast-nav { position: static; flex: 1 0 100%; flex-direction: row; justify-content: flex-start; gap: 8px; padding: 9px 12px 11px; border-top: 4px solid var(--ink); }
     .mast-nav a { font-size: .95rem; }
@@ -426,7 +414,7 @@
       animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important;
       transition-duration: .01ms !important; scroll-behavior: auto !important;
     }
-    .pn::before, .pn .yo-wrap, .pn :is(.prop, .polaroid, .phone, .screen, .badge, .shots) { translate: none; transform: none; }
+    .pn::before, .pn .yo-wrap, .pn :is(.screen, .badge) { translate: none; transform: none; }
   }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 

@@ -24,9 +24,9 @@ def main():
     keys = sorted(sums)[-12:]
     top = max(1, max(sums[k] for k in keys))
     bars = ''.join(
-        '<span class="%s" style="--h:%.3f" data-m="%s" title="%s %s: %d"><i></i></span>' % (
+        '<span class="%s" style="--h:%.3f" title="%s %s: %d"><i></i></span>' % (
             'top' if sums[k] == top else ('hot' if sums[k] / top >= .4 else ''),
-            sums[k] / top, MONTHS[int(k[5:]) - 1][0], MONTHS[int(k[5:]) - 1], k[:4], sums[k])
+            sums[k] / top, MONTHS[int(k[5:]) - 1], k[:4], sums[k])
         for k in keys)
     total = data['total']['lastYear']
     active = [d for d in days if d['count'] > 0]

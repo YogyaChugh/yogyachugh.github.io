@@ -5,7 +5,7 @@
 Key facts:
 
 - Role: Software Engineer; Software Engineering Intern at Meant2Bae (a curated dating service for professionals in India), September 2026 to present.
-- Freelance: building a cross-platform iOS and Android app for a client since June 2026 (details are confidential).
+- Freelance: since June 2026, building ScreenDemons (https://screendemons.app), an iOS and Android app that cuts screen time through challenges with friends.
 - Vardhman Electricals (March to June 2026): built the Vardhman Saathi Android app (React Native, Expo), an Electron admin desktop app and the backend on Supabase and Cloudflare. 200+ people use it at once and hosting costs $0 a month.
 - Open source: django/django pull request #19295, merged in March 2025, fixing a confusing error for unresolved relative {% extends %} template paths.
 - Hack Club Summer of Making 2025: 450+ hours across 4 projects, 6,612 shells, a Gigabyte Aero X16 laptop and $25 of Steam games.

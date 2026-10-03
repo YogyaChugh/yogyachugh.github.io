@@ -340,7 +340,7 @@
       const max = Math.max(1, ...keys.map(k => sums.get(k)));
       ghBars.innerHTML = keys.map(k => {
         const v = sums.get(k), h = v / max, m = MONTHS[+k.slice(5) - 1];
-        return `<span class="${v === max ? 'top' : h >= .4 ? 'hot' : ''}" style="--h:${h.toFixed(3)}" data-m="${m[0]}" title="${m} ${k.slice(0, 4)}: ${v}"><i></i></span>`;
+        return `<span class="${v === max ? 'top' : h >= .4 ? 'hot' : ''}" style="--h:${h.toFixed(3)}" title="${m} ${k.slice(0, 4)}: ${v}"><i></i></span>`;
       }).join('');
       const total = data.total && (data.total.lastYear ?? Object.values(data.total)[0]);
       const end = Date.parse(days[days.length - 1].date);

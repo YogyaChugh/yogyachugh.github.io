@@ -96,8 +96,8 @@
           "@id": "https://yogya.dev/#freelance",
           "url": "https://yogya.dev/#freelance",
           "cssSelector": "#freelance",
-          "name": "Freelance App Developer",
-          "description": "Since June 2026: one app for iPhone and Android, built for a paying client and headed for both app stores."
+          "name": "Freelance App Developer · ScreenDemons",
+          "description": "Since June 2026: building ScreenDemons (screendemons.app), an iPhone and Android app that cuts screen time through challenges with friends."
         },
         {
           "@type": "WebPageElement",
@@ -129,7 +129,7 @@
           "url": "https://yogya.dev/#github",
           "cssSelector": "#github",
           "name": "Still shipping: GitHub contributions",
-          "description": "Yogya Chugh's GitHub contributions per month over the past year, refreshed daily and including private work."
+          "description": "Yogya Chugh's GitHub contributions per month over the past year, including private client work."
         },
         {
           "@type": "WebPageElement",
@@ -260,7 +260,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=4">
+<link rel="stylesheet" href="/comic.css?v=5">
 </head>
 <body>
 
@@ -336,17 +336,19 @@
     <header class="page-title"><h2 id="work-t"><span class="ep">Vol. 1</span>On the job</h2><span class="when">Two paid internships and a freelance client</span></header>
     <div class="eps two">
       <article class="ep wide" id="vardhman" aria-labelledby="vardhman-t">
-        <div class="pn c-sky dots strip">
-          <div class="shots">
-            <figure class="shot" style="--r:-3deg"><figcaption><b>1</b>Upload a bill</figcaption><div class="ph"><img src="/assets/projects/vardhman-app-bill.jpg" alt="The Submit Bill screen, with an invoice number field and a photo upload" loading="lazy" decoding="async"></div></figure>
-            <figure class="shot" style="--r:2deg"><figcaption><b>2</b>Earn coins</figcaption><div class="ph"><img src="/assets/projects/vardhman-app-home.jpg" alt="The home screen, showing a V-Coins balance and featured brands" loading="lazy" decoding="async"></div></figure>
-            <figure class="shot" style="--r:-2deg"><figcaption><b>3</b>Get rewards</figcaption><div class="ph"><img src="/assets/projects/vardhman-app-store.jpg" alt="The Superstore, with aisles and bestsellers priced in V-Coins" loading="lazy" decoding="async"></div></figure>
-          </div>
+        <div class="pn c-sky dots fan">
+          <div class="fan-ph" style="--dx:-86%; --r:-8deg"><img src="/assets/projects/vardhman-app-bill.jpg" alt="Vardhman Saathi's Submit Bill screen, with an invoice number field and a photo upload" loading="lazy" decoding="async"></div>
+          <div class="fan-ph" style="--dx:86%; --r:8deg"><img src="/assets/projects/vardhman-app-store.jpg" alt="Vardhman Saathi's Superstore, with rewards priced in V-Coins" loading="lazy" decoding="async"></div>
+          <div class="fan-ph front"><img src="/assets/projects/vardhman-app-home.jpg" alt="Vardhman Saathi's home screen, showing a V-Coins balance and featured brands" loading="lazy" decoding="async"></div>
         </div>
         <div class="ep-body">
           <p class="ep-when"><img class="co-logo" src="/assets/logos/vardhman.png" alt="" width="20" height="20">Vardhman Electricals · Mar – Jun 2026</p>
           <h3 id="vardhman-t">Software Developer Intern</h3>
-          <p class="ep-line">Built Vardhman Saathi, their rewards app, end to end: Android app, admin app and backend. <mark>200+ people use it at once, for $0 a month.</mark></p>
+          <p class="ep-line">Built Vardhman Saathi, a rewards app for their dealers, end to end: the Android app, the admin app and the backend.</p>
+          <div class="stats">
+            <p><b>200+</b>people at once</p>
+            <p><b>$0</b>a month to run</p>
+          </div>
           <p class="built">React Native · Electron · Supabase · Cloudflare</p>
           <div class="links">
             <a class="btn sm" href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play ↗</a>
@@ -355,15 +357,15 @@
         </div>
       </article>
       <article class="ep" id="freelance" aria-labelledby="freelance-t">
-        <div class="pn dots">
-          <div class="phone" style="left:24%; transform:rotate(-12deg)"><b>Android</b></div>
-          <div class="phone" style="right:24%; transform:rotate(12deg); background:linear-gradient(160deg,#fff 0 60%,#D8CCFA 60%)"><b>iPhone</b></div>
-          <div class="stamp" style="left:50%; right:auto; top:26%; bottom:auto; translate:-50% 0">Classified</div>
+        <div class="pn sd-art">
+          <p class="sd-word" aria-hidden="true">ScreenDemons</p>
+          <img src="/assets/projects/screendemons.jpg" alt="The ScreenDemons mascot, a fuzzy green monster with little horns, peeking over the edge" loading="lazy" decoding="async" width="620" height="365">
         </div>
         <div class="ep-body">
           <p class="ep-when">Client project · June 2026 – now</p>
           <h3 id="freelance-t">Freelance App Developer</h3>
-          <p class="ep-line">One app for <mark>iPhone and Android</mark>, headed for both app stores. Under wraps until launch.</p>
+          <p class="ep-line">Building <mark>ScreenDemons</mark>, an iPhone and Android app that cuts screen time through challenges with friends.</p>
+          <div class="links"><a class="btn sm white" href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a></div>
         </div>
       </article>
       <article class="ep" id="meant2bae" aria-labelledby="meant2bae-t">
@@ -409,12 +411,12 @@ no attribute 'lstrip'</span></pre>
       <article class="ep" id="github" aria-labelledby="github-t">
         <div class="pn c-yellow burst gh-art" style="--bx:6%; --by:120%">
           <div class="gh-big"><span class="gh-num" id="gh-num">700</span><span class="gh-lbl">contributions</span></div>
-          <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" data-m="N" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" data-m="D" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" data-m="J" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" data-m="F" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" data-m="M" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" data-m="A" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" data-m="M" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" data-m="J" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" data-m="J" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" data-m="A" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" data-m="S" title="September 2026: 163"><i></i></span><span class="" style="--h:0.064" data-m="O" title="October 2026: 14"><i></i></span></div>
+          <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" title="September 2026: 163"><i></i></span><span class="" style="--h:0.064" title="October 2026: 14"><i></i></span></div>
         </div>
         <div class="ep-body">
           <p class="ep-when">GitHub · <span class="gh-last" id="gh-last">Last one: 2 Oct 2026</span></p>
           <h3 id="github-t">Still shipping</h3>
-          <p class="ep-line">My contributions over the past year, <mark>private client work included</mark>. Refreshed every day.</p>
+          <p class="ep-line">Each bar is a month of the past year, <mark>private client work included</mark>.</p>
           <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">My GitHub ↗</a></div>
         </div>
       </article>
@@ -473,11 +475,8 @@ no attribute 'lstrip'</span></pre>
     <header class="page-title"><h2 id="wins-t"><span class="ep">Vol. 4</span>Wins</h2><span class="when">When someone else kept score</span></header>
     <div class="eps two">
       <article class="ep" id="summer" aria-labelledby="summer-t">
-        <div class="pn c-yellow burst" style="--bx:50%; --by:100%">
-          <div class="polaroid" style="width:min(56%,170px); transform:translate(-50%,-50%) rotate(-4deg)">
-            <div class="ph" style="aspect-ratio:4/3"><img src="/assets/laptop.jpg" alt="A Gigabyte Aero X16 laptop, still in its box" loading="lazy" decoding="async"></div>
-            <p>Unboxing day!</p>
-          </div>
+        <div class="pn">
+          <img class="fill" src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop I won, still in its box" loading="lazy" decoding="async" width="760" height="350" style="object-position:50% 62%">
         </div>
         <div class="ep-body">
           <p class="ep-when">Hack Club Summer of Making · 2025</p>
@@ -489,7 +488,6 @@ no attribute 'lstrip'</span></pre>
       <article class="ep" id="pippo" aria-labelledby="pippo-t">
         <div class="pn" style="--c:#3E3E41">
           <img class="fill" src="/assets/projects/pippo.jpg" alt="Pippo, the robot: a four-wheeled base with a screen for a face and a bundle of wires" loading="lazy" decoding="async" width="720" height="626" style="object-fit:contain">
-          <p class="nar br">The real Pippo</p>
         </div>
         <div class="ep-body">
           <p class="ep-when">College team · 2025</p>
@@ -568,6 +566,6 @@ no attribute 'lstrip'</span></pre>
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=4" defer></script>
+<script src="/comic.js?v=5" defer></script>
 </body>
 </html>
