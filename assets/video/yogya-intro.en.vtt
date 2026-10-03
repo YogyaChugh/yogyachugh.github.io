@@ -1,25 +1,21 @@
 WEBVTT
 
 1
-00:00.800 --> 00:03.700
-Hi! I'm Yogya Chugh, a software engineer from Delhi.
+00:00.800 --> 00:02.700
+Hi! Nice to meet you.
 
 2
-00:03.933 --> 00:08.533
-I built a rewards platform end to end: Android app, desktop admin, real-time backend.
+00:02.933 --> 00:07.300
+At my first internship, I built a whole product.
 
 3
-00:08.767 --> 00:12.400
-200+ people use it at once, and it runs for $0 a month.
+00:07.533 --> 00:11.067
+I also fixed a bug in the framework Instagram runs on.
 
 4
-00:12.633 --> 00:15.200
-My fix to Django's template engine got merged.
+00:11.300 --> 00:14.800
+And now? I'm building my own app builder.
 
 5
-00:15.433 --> 00:19.000
-Now I'm building AnyStudio in Rust: designs in, native apps out.
-
-6
-00:19.233 --> 00:22.000
-Let's build something together! Find me at yogya.dev.
+00:15.033 --> 00:17.033
+So… what should we build next?

@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css">
-<script src="/comic.js" defer></script>
+<link rel="stylesheet" href="/comic.css?v=3">
+<script src="/comic.js?v=3" defer></script>
 </head>
 <body>
 <script>
@@ -29,9 +29,9 @@
       '/blog': '/writing', '/blog.html': '/writing', '/blogs': '/writing',
       '/blogs/classes_dex': '/writing', '/blogs/classes_dex.html': '/writing',
       '/contact': '/#connect', '/contact.html': '/#connect',
-      '/work': '/#vol1', '/work.html': '/#vol1',
-      '/projects': '/#vol2', '/projects.html': '/#vol2',
-      '/play': '/#ep4', '/play.html': '/#ep4',
+      '/work': '/#work', '/work.html': '/#work',
+      '/projects': '/#built', '/projects.html': '/#built',
+      '/play': '/#timberly', '/play.html': '/#timberly',
       '/hangman': HANGMAN, '/hangman.html': HANGMAN,
       '/timberly': TIMBERLY, '/timberly/timberly': TIMBERLY, '/timberly/timberly.html': TIMBERLY,
       '/timberly/timberly.apk': 'https://github.com/YogyaChugh/Timberly/releases',
@@ -49,8 +49,10 @@
       [/blog|post|writ|article/, '/writing', 'the blog'],
       [/resume|r%c3%a9sum|cv/, '/resume/', 'the résumé'],
       [/contact|hire|mail|call|talk/, '/#connect', 'the contact page'],
-      [/game|timberly|snake|play/, '/#ep4', 'the games episode'],
-      [/project|work|intern|anystudio|webelo|pippo|django|vardhman|meant2bae/, '/#vol1', 'the episodes']
+      [/game|timberly|snake|play/, '/#timberly', 'Timberly, my game'],
+      [/anystudio|webelo|project/, '/#built', 'the things I build'],
+      [/django|pippo|summer|hackathon|award/, '/#wins', 'the wins'],
+      [/work|intern|vardhman|meant2bae|freelance/, '/#work', 'my work']
     ];
     document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('lost-path').textContent = decodeURIComponent(location.pathname);

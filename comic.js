@@ -271,7 +271,7 @@
 
   /* ---------- each page lands, then its panels in reading order ---------- */
   document.querySelectorAll('.page').forEach(page => {
-    page.querySelectorAll('.pn, .win, .way').forEach((el, i) => {
+    [...page.querySelectorAll('.pn, .way, .ep')].filter(el => !el.parentElement.classList.contains('ep')).forEach((el, i) => {
       el.style.setProperty('--i', i);
       el.style.setProperty('--rin', `${(i % 2 ? 2 : -2)}deg`);
     });
@@ -299,9 +299,9 @@
 
   /* ---------- who's reading? the cover adapts to the visitor ---------- */
   const PATHS = {
-    hiring:   { expr: 'smug',  blurb: 'Hiring? 2 paid internships, a fix merged into Django, and apps 200+ people use.' },
+    hiring:   { expr: 'smug',  blurb: 'Hiring? Watch the 20-second intro, or skim three short volumes.' },
     project:  { expr: 'happy', blurb: 'Got an idea? I build apps end to end, from the database to the app store.' },
-    browsing: { expr: 'wink',  blurb: "Welcome! It's a comic. Start at the top and keep scrolling." }
+    browsing: { expr: 'wink',  blurb: "Welcome! It's a comic in three short volumes. Scroll on." }
   };
   const whoBtns = document.querySelectorAll('.who-btn');
   if (whoBtns.length) {
@@ -349,7 +349,6 @@
       const lastText = last === null ? 'a while ago' : last === 0 ? 'today' : last === 1 ? 'yesterday' : `${last} days ago`;
       $('gh-num').textContent = total;
       $('gh-last').textContent = `Last one: ${lastText}`;
-      $('gh-res').innerHTML = `<span class="res-tag">Result</span><mark>${total} contributions</mark> on GitHub in the past year, last one ${lastText}.`;
     };
     const load = () => {
       try {
@@ -375,6 +374,19 @@
     }), { rootMargin: '600px 0px' });
     lazyPosters.forEach(v => pio.observe(v));
   }
+  const vid = $('vid');
+  if (vid && vid.showModal) {
+    const v = vid.querySelector('video');
+    document.querySelectorAll('[data-video]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      if (!v.poster && v.dataset.poster) v.poster = v.dataset.poster;
+      vid.showModal();
+      v.play().catch(() => {});
+    }));
+    $('vid-close').addEventListener('click', () => vid.close());
+    vid.addEventListener('click', e => { if (e.target === vid) vid.close(); });
+    vid.addEventListener('close', () => v.pause());
+  }
   const introVideo = $('intro-video');
   if (introVideo) {
     const seek = (t, play) => { introVideo.currentTime = t; if (play) introVideo.play().catch(() => {}); };
@@ -397,6 +409,20 @@
       }).catch(() => {});
     });
   }
+
+  /* ---------- old links (/#ep6 and friends) still land on the right story ---------- */
+  const MOVED = { intro: 'top', short: 'work', vol1: 'work', ep1: 'vardhman', ep2: 'freelance', ep3: 'meant2bae', vol2: 'built',
+                  ep4: 'timberly', ep5: 'pippo', ep6: 'django', ep7: 'summer', ep8: 'webelo', ep9: 'anystudio', live: 'github', faq: 'connect' };
+  const follow = () => {
+    const id = location.hash.slice(1);
+    if (id === 'blog' && $('work')) return location.replace('/writing');
+    const to = MOVED[id] && $(MOVED[id]);
+    if (!to) return;
+    history.replaceState(null, '', '#' + MOVED[id]);
+    to.scrollIntoView();
+  };
+  follow();
+  addEventListener('hashchange', follow);
 
   /* ---------- Delhi clock ---------- */
   const clock = $('clock');
