@@ -12,6 +12,8 @@ Key facts:
 - Projects: AnyStudio (native app builder written in Rust, in development), Webelo (C++ library implementing the WHATWG DOM standard), Pippo (multilingual robot guide, 3rd place and $50 at each of two international hackathons in 2025: University of Derby and Ulster University, UK), Timberly (Pygame game with an online leaderboard), Hangman in C, Snake Hustle.
 - Education: B.Tech in Computer Science and Engineering, Panipat Institute of Engineering and Technology (Kurukshetra University), 2023 to 2027, CGPA 8.05/10.
 - Skills: C++, Rust, Python, TypeScript, JavaScript, SQL; React, React Native, Expo, Electron; FastAPI, Flask, Django, Node.js, Hono; PostgreSQL, Supabase, Firebase, Cloudflare Workers, R2, D1, KV, Pages; Docker, Git, Linux, GitHub Actions.
+- Project sites: https://webelo.yogya.dev (Webelo), https://webber.yogya.dev (Webber), https://safario.yogya.dev (Safario), https://votes.yogya.dev (Vote Leaderboard), https://timberly.yogya.dev (Timberly), https://island.yogya.dev (Western Upside-Down Island), https://snake.yogya.dev (Snake Hustle).
+- More projects (github.com/YogyaChugh): Webber (saves websites for offline reading, Python), Safario (blockchain tourist IDs for Smart India Hackathon, React and TypeScript), Ticket Chatbot (Rasa, Smart India Hackathon), Vote Leaderboard (Summer of Making voter rankings), Hangman (C).
 - Leadership: founder and lead of PIET Comp Techies, the college technical club; organised Frontend Frenzy, a website-building contest (October 2024).
 - Location: Delhi, India (IST, UTC+5:30). Open to freelance projects and collaborations.
 

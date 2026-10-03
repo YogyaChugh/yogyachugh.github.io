@@ -2,9 +2,9 @@
    Online: pages and files always come fresh from the network.
    Offline: pages you've already read still open, and anything else gets /offline.html.
    To retire it one day, replace this file with one that calls self.registration.unregister(). */
-const VERSION = 'v6';
+const VERSION = 'v7';
 const CORE = `core-${VERSION}`;
-const PRECACHE = ['/offline.html', '/comic.css?v=6', '/comic.js?v=6', '/favicon.png', '/favicon.ico', '/assets/icons.svg', '/assets/icon-192.png'];
+const PRECACHE = ['/offline.html', '/comic.css?v=7', '/comic.js?v=7', '/favicon.png', '/favicon.ico', '/assets/icons.svg', '/assets/icon-192.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(Promise.all([

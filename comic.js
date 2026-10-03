@@ -49,6 +49,12 @@
       cal.showModal();
     });
   });
+  /* the spinner stays until Calendly says its calendar is drawn (or a few seconds after the frame loads) */
+  if (calFrame) {
+    const ready = () => cal.classList.add('ready');
+    addEventListener('message', e => { if (e.origin === 'https://calendly.com' && /^calendly\./.test(e.data && e.data.event)) ready(); });
+    calFrame.addEventListener('load', () => { if (calFrame.src) setTimeout(ready, 4000); });
+  }
   if (cal) {
     $('cal-close').addEventListener('click', () => cal.close());
     cal.addEventListener('click', e => { if (e.target === cal) cal.close(); });
