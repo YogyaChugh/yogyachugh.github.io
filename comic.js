@@ -404,6 +404,54 @@
     }));
   }
 
+  /* ---------- read mode: plain, calm, big text, remembered between visits ---------- */
+  const footLinks = document.querySelector('.site-foot .foot-links');
+  if (footLinks && !footLinks.querySelector('.read-toggle')) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'read-toggle'; b.setAttribute('aria-pressed', 'false'); b.textContent = 'Read mode';
+    footLinks.appendChild(b);
+  }
+  const readBtns = document.querySelectorAll('.read-toggle');
+  const setRead = on => {
+    root.classList.toggle('read', on);
+    readBtns.forEach(b => { b.setAttribute('aria-pressed', String(on)); b.textContent = on ? 'Comic mode' : 'Read mode'; });
+  };
+  setRead(root.classList.contains('read'));
+  readBtns.forEach(b => b.addEventListener('click', () => {
+    const on = !root.classList.contains('read');
+    setRead(on);
+    try { on ? localStorage.setItem('yo-read', '1') : localStorage.removeItem('yo-read'); } catch (e) {}
+    track(on ? 'read-mode-on' : 'read-mode-off');
+  }));
+
+  /* ---------- screen readers: a skip link, new-tab warnings, no arrows read aloud ---------- */
+  const mainEl = document.querySelector('main');
+  if (mainEl) {
+    if (!mainEl.id) mainEl.id = 'main';
+    mainEl.setAttribute('tabindex', '-1');
+    const skip = document.createElement('a');
+    skip.className = 'skip'; skip.href = '#' + mainEl.id; skip.textContent = 'Skip to the content';
+    document.body.prepend(skip);
+  }
+  document.querySelectorAll('a[target="_blank"]').forEach(a => {
+    if (a.querySelector('.sr-only')) return;
+    const s = document.createElement('span'); s.className = 'sr-only'; s.textContent = ' (opens in a new tab)';
+    a.appendChild(s);
+  });
+  document.querySelectorAll('.btn, .way .arrow, .more-all, .t-go, .go').forEach(el => {
+    el.childNodes.forEach(n => {
+      if (n.nodeType !== 3 || !/[↗→↓←]/.test(n.nodeValue)) return;
+      const frag = document.createDocumentFragment();
+      n.nodeValue.split(/([↗→↓←])/).forEach(part => {
+        if (!part) return;
+        if (/[↗→↓←]/.test(part)) { const s = document.createElement('span'); s.setAttribute('aria-hidden', 'true'); s.textContent = part; frag.appendChild(s); }
+        else frag.appendChild(document.createTextNode(part));
+      });
+      n.replaceWith(frag);
+    });
+  });
+  document.querySelectorAll('.sfx, .poke, .loot-sfx').forEach(el => el.setAttribute('aria-hidden', 'true'));
+
   /* ---------- install as an app: the button appears only when the browser offers it ---------- */
   let installEvent = null;
   const installBtns = document.querySelectorAll('.install');

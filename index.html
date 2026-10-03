@@ -268,7 +268,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=10">
+<script>try{if(localStorage.getItem('yo-read'))document.documentElement.classList.add('read')}catch(e){}</script>
+<link rel="stylesheet" href="/comic.css?v=11">
 </head>
 <body>
 
@@ -295,6 +296,7 @@
           <a href="/resume/">Résumé</a>
           <a href="#connect">Contact</a>
           <button type="button" class="install" hidden>Install</button>
+          <button type="button" class="read-toggle" aria-pressed="false">Read mode</button>
         </nav>
       </div>
       <div class="cover-art">
@@ -374,7 +376,7 @@
       <article class="ep" id="meant2bae" aria-labelledby="meant2bae-t">
         <div class="pn">
           <img class="fill" src="/assets/projects/meant2bae.jpg" alt="Meant2Bae: Love, handpicked for you" loading="lazy" decoding="async" style="object-position:0 0">
-          <p class="nar br">To be continued…</p>
+          <p class="nar br" aria-hidden="true">To be continued…</p>
         </div>
         <div class="ep-body">
           <p class="ep-when"><img class="co-logo" src="/assets/logos/meant2bae.png" alt="" width="20" height="20">Meant2Bae · September 2026 – now</p>
@@ -458,7 +460,7 @@ no attribute 'lstrip'</span></pre>
       <article class="ep" id="timberly" aria-labelledby="timberly-t">
         <div class="pn">
           <img class="fill" src="/assets/projects/timberly.jpg" alt="Timberly's main menu: a lumberjack next to Play, Leaderboard and Credits buttons" loading="lazy" decoding="async" style="object-position:50% 42%">
-          <p class="sfx" style="right:6%; top:10%; font-size:clamp(1.4rem,2.6vw,2rem); --r:8deg">Chop! Chop!</p>
+          <p class="sfx" aria-hidden="true" style="right:6%; top:10%; font-size:clamp(1.4rem,2.6vw,2rem); --r:8deg">Chop! Chop!</p>
         </div>
         <div class="ep-body">
           <p class="ep-when">Python · Pygame</p>
@@ -603,6 +605,6 @@ no attribute 'lstrip'</span></pre>
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=10" defer></script>
+<script src="/comic.js?v=11" defer></script>
 </body>
 </html>
