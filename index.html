@@ -121,7 +121,7 @@
           "url": "https://yogya.dev/#django",
           "cssSelector": "#django",
           "name": "Merged into Django",
-          "description": "March 2025: a fix for a confusing template error, merged into Django as pull request #19295 after review by Django Fellow Sarah Boyce."
+          "description": "March 2025: hit a confusing template error while working on another ticket, reported it as ticket #36271 and fixed it; merged as pull request #19295 after review by Django Fellow Sarah Boyce."
         },
         {
           "@type": "WebPageElement",
@@ -176,7 +176,7 @@
           "@id": "https://yogya.dev/#summer",
           "url": "https://yogya.dev/#summer",
           "cssSelector": "#summer",
-          "name": "The summer I didn't quit · Hack Club Summer of Making",
+          "name": "The summer that blew me off! · Hack Club Summer of Making",
           "description": "After a Google Summer of Code rejection: 450+ hours across 4 open-source projects in Hack Club's Summer of Making 2025, which won a ₹1.2 lakh Gigabyte Aero X16 laptop and $25 of Steam credit, plus Red Dead Redemption 2 and Far Cry 4."
         },
         {
@@ -268,7 +268,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=7">
+<link rel="stylesheet" href="/comic.css?v=10">
 </head>
 <body>
 
@@ -294,6 +294,7 @@
           <a href="/writing">Blog</a>
           <a href="/resume/">Résumé</a>
           <a href="#connect">Contact</a>
+          <button type="button" class="install" hidden>Install</button>
         </nav>
       </div>
       <div class="cover-art">
@@ -301,12 +302,12 @@
           <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
           <div class="cover-actions" data-for="none">
             <a class="btn dark" href="#work">Start reading ↓</a>
-            <a class="btn white" href="/intro" data-video>▶ 20-second intro</a>
+            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>20-second intro</a>
           </div>
           <div class="cover-actions" data-for="hiring" hidden>
             <a class="btn dark" href="/resume/">Résumé</a>
-            <a class="btn white" href="/intro" data-video>▶ 20-second intro</a>
-            <a class="btn red" href="#connect" data-calendly>Book a call</a>
+            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>20-second intro</a>
+            <a class="btn white" href="#connect" data-calendly>Book a call</a>
           </div>
           <div class="cover-actions" data-for="project" hidden>
             <a class="btn dark" href="#work">See my client work ↓</a>
@@ -314,7 +315,7 @@
           </div>
           <div class="cover-actions" data-for="browsing" hidden>
             <a class="btn dark" href="#work">Start reading ↓</a>
-            <a class="btn white" href="/intro" data-video>▶ 20-second intro</a>
+            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>20-second intro</a>
           </div>
         </div>
         <div class="starburst-ink" aria-hidden="true"></div>
@@ -344,7 +345,7 @@
           <p class="nar bl fan-brand"><img src="/assets/logos/vardhman.png" alt="" width="22" height="22">Vardhman Saathi</p>
         </div>
         <div class="ep-body">
-          <p class="ep-when">Vardhman Electricals · Mar – Jun 2026</p>
+          <p class="ep-when"><img class="co-logo" src="/assets/logos/vardhman.png" alt="" width="20" height="20">Vardhman Electricals · Mar – Jun 2026</p>
           <h3 id="vardhman-t">Software Developer Intern</h3>
           <p class="ep-line">Built Vardhman Saathi, a rewards app for their dealers, end to end: the Android app, the admin app and the backend.</p>
           <div class="stats">
@@ -364,7 +365,7 @@
           <img src="/assets/projects/screendemons-demon.webp" alt="The ScreenDemons mascot, a fuzzy teal monster with little horns, peeking over the edge" loading="lazy" decoding="async" width="560" height="330">
         </div>
         <div class="ep-body">
-          <p class="ep-when">Client project · June 2026 – now</p>
+          <p class="ep-when"><img class="co-logo" src="/assets/logos/screendemons.png" alt="" width="20" height="20">Client project · June 2026 – now</p>
           <h3 id="freelance-t">Freelance App Developer</h3>
           <p class="ep-line">Building <mark>ScreenDemons</mark>, an iPhone and Android app that cuts screen time through challenges with friends.</p>
           <div class="links"><a class="btn sm white" href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a></div>
@@ -401,9 +402,9 @@ no attribute 'lstrip'</span></pre>
           <div class="yo-wrap" data-expr="confused" data-flip="1" style="left:auto; right:3%; transform:none; width:min(24%,96px)"></div>
         </div>
         <div class="ep-body">
-          <p class="ep-when">django/django #19295 · March 2025</p>
+          <p class="ep-when"><img class="co-logo" src="/assets/logos/django.svg" alt="" width="20" height="20">django/django #19295 · March 2025</p>
           <h3 id="django-t">Merged into Django</h3>
-          <p class="ep-line">Fixed a confusing template error in <mark>the framework Instagram runs on</mark>, reviewed by Django Fellow Sarah Boyce.</p>
+          <p class="ep-line">Hit a confusing template error, then <mark>reported it and fixed it</mark>. Reviewed by Django Fellow Sarah Boyce.</p>
           <div class="links">
             <a class="btn sm" href="https://github.com/django/django/pull/19295" target="_blank" rel="noopener">Pull request ↗</a>
             <a class="btn sm white" href="/blogs/first_open_source">The story →</a>
@@ -416,7 +417,7 @@ no attribute 'lstrip'</span></pre>
           <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" title="September 2026: 163"><i></i></span><span class="" style="--h:0.064" title="October 2026: 14"><i></i></span></div>
         </div>
         <div class="ep-body">
-          <p class="ep-when">GitHub · <span class="gh-last" id="gh-last">Last one: 2 Oct 2026</span></p>
+          <p class="ep-when"><svg class="co-logo" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg>GitHub · <span class="gh-last" id="gh-last">Last one: 2 Oct 2026</span></p>
           <h3 id="github-t">Still shipping</h3>
           <p class="ep-line">Each bar is a month of the past year, <mark>private client work included</mark>.</p>
           <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">My GitHub ↗</a></div>
@@ -493,7 +494,7 @@ no attribute 'lstrip'</span></pre>
         </div>
         <div class="ep-body">
           <p class="ep-when">Hack Club Summer of Making · 2025</p>
-          <h3 id="summer-t">The summer I didn't quit</h3>
+          <h3 id="summer-t">The summer that blew me off!</h3>
           <p class="ep-line">Google Summer of Code said no, so I coded 450+ hours instead. I won <mark>a ₹1.2 lakh laptop</mark> and $25 of Steam credit.</p>
           <div class="links"><a class="btn sm white" href="/blogs/summer_of_making">The story →</a></div>
         </div>
@@ -521,9 +522,12 @@ no attribute 'lstrip'</span></pre>
       </article>
     </div>
     <div class="loot">
-      <img src="/assets/projects/game-rdr2.jpg" alt="Red Dead Redemption 2" title="Red Dead Redemption 2" width="276" height="129" loading="lazy" decoding="async">
-      <img src="/assets/projects/game-far-cry-4.jpg" alt="Far Cry 4" title="Far Cry 4" width="276" height="129" loading="lazy" decoding="async">
+      <div class="loot-covers">
+        <img src="/assets/projects/game-rdr2.jpg" alt="Red Dead Redemption 2" title="Red Dead Redemption 2" width="276" height="129" loading="lazy" decoding="async">
+        <img src="/assets/projects/game-far-cry-4.jpg" alt="Far Cry 4" title="Far Cry 4" width="276" height="129" loading="lazy" decoding="async">
+      </div>
       <p><b>Plus two games</b>Red Dead Redemption 2 and Far Cry 4, also from Summer of Making.</p>
+      <span class="loot-sfx" aria-hidden="true">GG!</span>
     </div>
   </section>
 
@@ -599,6 +603,6 @@ no attribute 'lstrip'</span></pre>
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=7" defer></script>
+<script src="/comic.js?v=10" defer></script>
 </body>
 </html>

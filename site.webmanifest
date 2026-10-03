@@ -1,12 +1,12 @@
 {
-  "name": "Yogya Chugh · Software Engineer",
-  "short_name": "Yogya Chugh",
-  "description": "Yogya Chugh's résumé and portfolio, told as a comic. Works offline for the pages you've read.",
+  "name": "Yogya Chugh · Comic Résumé",
+  "short_name": "Yogya",
+  "description": "Yogya Chugh's résumé and portfolio, told as a comic. Installs like an app and works offline.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#8DA5D8",
-  "theme_color": "#8DA5D8",
+  "background_color": "#FFD84A",
+  "theme_color": "#E8473F",
   "icons": [
     {
       "src": "/assets/icon-192.png",
@@ -31,6 +31,17 @@
   "orientation": "any",
   "lang": "en",
   "shortcuts": [
+    {
+      "name": "Watch the 20-second intro",
+      "short_name": "Intro",
+      "url": "/intro",
+      "icons": [
+        {
+          "src": "/assets/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
     {
       "name": "Résumé",
       "short_name": "Résumé",
@@ -80,5 +91,17 @@
       "form_factor": "narrow",
       "label": "The comic résumé on a phone"
     }
-  ]
+  ],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "categories": [
+    "education",
+    "productivity",
+    "personalization"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

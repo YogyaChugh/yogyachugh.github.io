@@ -107,8 +107,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=7">
-<script src="/comic.js?v=7" defer></script>
+<link rel="stylesheet" href="/comic.css?v=10">
+<script src="/comic.js?v=10" defer></script>
 </head>
 <body><div class="dock" id="dock">
   <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
@@ -134,12 +134,12 @@
     <div class="prose">
       <p class="lead">Contributing to a project as big as Django can feel intimidating. The codebase is huge, the maintainers know it inside out, and you're hoping your pull request doesn't break anything important. But open source runs on collaboration, and my first real contribution taught me exactly that.</p>
 
-      <h2>The bug: ticket #36271</h2>
-      <p>While going through Django's issue tracker, I found <a href="https://code.djangoproject.com/ticket/36271" target="_blank" rel="noopener">ticket #36271</a>. If you created a template directly in code and it used a relative path, Django crashed with an error that had nothing to do with the real problem:</p>
+      <h2>The bug I stumbled on</h2>
+      <p>I was working on a different Django ticket when I noticed something strange. If you created a template directly in code and it used a relative path, Django crashed with an error that had nothing to do with the real problem:</p>
       <pre><code>Template("{% extends './base.html' %}")
 
 AttributeError: 'NoneType' object has no attribute 'lstrip'</code></pre>
-      <p>A template made like this has no file location (Django calls it an unknown origin), so there's nothing to resolve <code>./base.html</code> against. The error should have said that. Instead, it pointed somewhere else entirely.</p>
+      <p>A template made like this has no file location (Django calls it an unknown origin), so there's nothing to resolve <code>./base.html</code> against. The error should have said that. Instead, it pointed somewhere else entirely. Nobody had reported it yet, so I traced the cause, reported it myself as <a href="https://code.djangoproject.com/ticket/36271" target="_blank" rel="noopener">ticket #36271</a>, and took it on.</p>
 
       <h2>Writing the fix and the tests</h2>
       <p>Setting up Django locally was the first hurdle. Its test suite is large, and getting it running meant reading the contributing guide carefully. Once the tests passed on my machine, I traced the error back to <code>django/template/loader_tags.py</code>.</p>

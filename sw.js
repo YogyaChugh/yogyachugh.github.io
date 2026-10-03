@@ -2,14 +2,17 @@
    Online: pages and files always come fresh from the network.
    Offline: pages you've already read still open, and anything else gets /offline.html.
    To retire it one day, replace this file with one that calls self.registration.unregister(). */
-const VERSION = 'v7';
+const VERSION = 'v10';
 const CORE = `core-${VERSION}`;
-const PRECACHE = ['/offline.html', '/comic.css?v=7', '/comic.js?v=7', '/favicon.png', '/favicon.ico', '/assets/icons.svg', '/assets/icon-192.png'];
+const PRECACHE = ['/offline.html', '/comic.css?v=10', '/comic.js?v=10', '/favicon.png', '/favicon.ico', '/assets/icons.svg', '/assets/icon-192.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(Promise.all([
     caches.open(CORE).then(cache => cache.addAll(PRECACHE)),
-    caches.open('pages').then(cache => cache.add('/')).catch(() => {})   // the comic itself is always readable offline
+    // every page of the comic, so the installed app works with no connection
+    caches.open('pages').then(cache => Promise.all(['/', '/intro', '/resume/', '/writing', '/privacy',
+      '/blogs/vardhman', '/blogs/whatwg_dom', '/blogs/summer_of_making', '/blogs/first_open_source']
+      .map(u => cache.add(u).catch(() => {})))).catch(() => {})
   ]).then(() => self.skipWaiting()));
 });
 

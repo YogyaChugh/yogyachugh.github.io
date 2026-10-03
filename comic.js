@@ -292,7 +292,7 @@
 
   /* the dock steps aside on the cover (it has its own buttons) and at the contact page */
   const dock = $('dock');
-  const hideOn = [document.querySelector('.cover'), $('connect')].filter(Boolean);
+  const hideOn = [document.querySelector('.cover'), $('connect'), document.querySelector('.site-foot')].filter(Boolean);
   if (dock && hideOn.length) {
     const showing = new Set();
     const io = new IntersectionObserver(entries => {
@@ -404,6 +404,22 @@
     }));
   }
 
+  /* ---------- install as an app: the button appears only when the browser offers it ---------- */
+  let installEvent = null;
+  const installBtns = document.querySelectorAll('.install');
+  addEventListener('beforeinstallprompt', e => {
+    e.preventDefault(); installEvent = e;
+    installBtns.forEach(b => { b.hidden = false; });
+  });
+  installBtns.forEach(b => b.addEventListener('click', async () => {
+    if (!installEvent) return;
+    installEvent.prompt();
+    const choice = await installEvent.userChoice;
+    track('install-' + choice.outcome);
+    installEvent = null; installBtns.forEach(x => { x.hidden = true; });
+  }));
+  addEventListener('appinstalled', () => { installBtns.forEach(x => { x.hidden = true; }); track('installed'); });
+
   /* ---------- offline: pages you've read keep working, and a comic page covers the rest ---------- */
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname))) {
     addEventListener('load', () => {
@@ -415,6 +431,23 @@
     });
   }
 
+  /* ---------- phones: stories open in place; the first one starts open ---------- */
+  document.querySelectorAll('article.ep').forEach(ep => {
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'ep-more';
+    const title = ep.querySelector('h3') ? ep.querySelector('h3').textContent : 'this story';
+    const set = open => {
+      ep.classList.toggle('open', open);
+      btn.textContent = open ? '−' : '+';
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', (open ? 'Close ' : 'Open ') + title);
+    };
+    set(ep.id === 'vardhman' || location.hash === '#' + ep.id);
+    btn.addEventListener('click', e => { e.stopPropagation(); set(!ep.classList.contains('open')); });
+    ep.addEventListener('click', e => { if (!ep.classList.contains('open') && !e.target.closest('a, button')) set(true); });
+    ep.querySelector('.ep-body').appendChild(btn);
+  });
+
   /* ---------- old links (/#ep6 and friends) still land on the right story ---------- */
   const MOVED = { intro: 'top', short: 'work', vol1: 'work', ep1: 'vardhman', ep2: 'freelance', ep3: 'meant2bae', vol2: 'built',
                   ep4: 'timberly', ep5: 'pippo', ep6: 'django', ep7: 'summer', ep8: 'webelo', ep9: 'anystudio', live: 'github', faq: 'connect', oss: 'open-source' };
@@ -424,6 +457,7 @@
     const to = MOVED[id] && $(MOVED[id]);
     if (!to) return;
     history.replaceState(null, '', '#' + MOVED[id]);
+    to.classList.add('open');
     to.scrollIntoView();
   };
   follow();
