@@ -489,7 +489,7 @@
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', (open ? 'Close ' : 'Open ') + title);
     };
-    set(ep.id === 'vardhman' || location.hash === '#' + ep.id);
+    set(ep.id === 'vardhman' || ep.id === 'summer' || ep.id === 'pippo' || location.hash === '#' + ep.id);
     btn.addEventListener('click', e => { e.stopPropagation(); set(!ep.classList.contains('open')); });
     ep.addEventListener('click', e => { if (!ep.classList.contains('open') && !e.target.closest('a, button')) set(true); });
     ep.querySelector('.ep-body').appendChild(btn);
