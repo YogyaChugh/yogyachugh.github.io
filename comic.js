@@ -289,6 +289,17 @@
     });
   }, { rootMargin: '0px 0px 6% 0px', threshold: 0 });
   document.querySelectorAll('.page').forEach(p => io.observe(p));
+  // cards pop in one at a time, once they're properly on screen (not while still below it)
+  const cardIO = new IntersectionObserver(entries => {
+    let n = 0;
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.style.setProperty('--k', n++);
+      en.target.classList.add('seen');
+      cardIO.unobserve(en.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
+  document.querySelectorAll('.ep, .way, .loot, .mc').forEach(el => cardIO.observe(el));
 
   /* the dock steps aside on the cover (it has its own buttons) and at the contact page */
   const dock = $('dock');
@@ -436,6 +447,12 @@
 
   /* ---------- install as an app: the button appears only when the browser offers it ---------- */
   let installEvent = null;
+  const footNav = document.querySelector('.site-foot .foot-links');
+  if (footNav && !footNav.querySelector('.install')) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'install'; b.hidden = true; b.textContent = 'Install the app';
+    footNav.appendChild(b);
+  }
   const installBtns = document.querySelectorAll('.install');
   addEventListener('beforeinstallprompt', e => {
     e.preventDefault(); installEvent = e;
