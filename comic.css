@@ -226,8 +226,8 @@
   @keyframes play-ping { 0% { opacity: .9; transform: scale(.96); } 70%, 100% { opacity: 0; transform: scale(1.12); } }
 
   /* cover: quick links in the masthead */
-  .cover .mast-title { padding-right: 130px; }   /* room for the quick links */
-  .mast-nav { position: absolute; top: 12px; right: 14px; z-index: 3; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .cover .mast-title { padding-right: 300px; }   /* room for the quick links */
+  .mast-nav { position: absolute; top: 12px; right: 14px; z-index: 3; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: flex-start; gap: 8px; max-width: 290px; }
   .mast-nav a { font: 400 1.05rem/1 var(--sfx); letter-spacing: .06em; text-decoration: none; color: var(--ink); background: #fff; border: 3px solid var(--ink); padding: 5px 10px 3px; box-shadow: 3px 3px 0 var(--ink); transform: rotate(2deg); transition: transform .12s var(--ease-out), box-shadow .12s var(--ease-out); }
   .mast-nav .install { font: 400 1.05rem/1 var(--sfx); letter-spacing: .06em; color: #fff; background: var(--ink); border: 3px solid var(--ink); padding: 5px 10px 3px; box-shadow: 3px 3px 0 #fff; transform: rotate(-2deg); cursor: pointer; }
   .mast-nav .install[hidden] { display: none; }
@@ -243,7 +243,9 @@
   .ep > .pn { flex: none; height: 180px; border-width: 0 0 4px; }
   .ep-body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px 14px 14px; }
   .ep-when { margin: 0; font-size: .8rem; color: rgba(17, 19, 24, .72); }
-  .ep h3 { margin: 0; font: 400 clamp(1.45rem, 2.4vw, 1.8rem)/1 var(--sfx); letter-spacing: .03em; }
+  .ep h3, .ep .ep-h { margin: 0; font: 400 clamp(1.45rem, 2.4vw, 1.8rem)/1 var(--sfx); letter-spacing: .03em; }
+  .prose .about-facts { margin: 0 0 1.4em; font-family: var(--read); font-size: 1rem; }
+  .prose .about-facts div { grid-template-columns: 100px minmax(0, 1fr); padding: 6px 0; border-bottom: 1px solid rgba(17, 19, 24, .1); }
   .ep-line { margin: 0; font-weight: 400; font-size: 1rem; line-height: 1.45; }
   .ep-line a { text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 2px; }
   .ep .links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
@@ -462,7 +464,7 @@
     .loot-sfx { display: none; }
       .cover .mast { flex-wrap: wrap; }
     .cover .mast-title { padding-right: 12px; }
-    .mast-nav { position: static; flex: 1 0 100%; flex-direction: row; justify-content: flex-start; gap: 8px; padding: 9px 12px 11px; border-top: 4px solid var(--ink); }
+    .mast-nav { position: static; flex: 1 0 100%; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 8px; max-width: none; padding: 9px 12px 11px; border-top: 4px solid var(--ink); }
     .mast-nav a, .mast-nav .install { font-size: .95rem; }
     .site-foot { padding-bottom: 6px; }
     .who { padding: 8px 12px; gap: 6px 10px; }
