@@ -69,6 +69,7 @@
         BEARD = 'rgba(52,32,26,.42)', MOUTH = '#7A2733';
   const CROPS = { bust: '0 0 300 300', close: '48 0 204 204' };
   const PEEK = 22; // how far the shades slide down when you hover
+  const GAZE_PEEK = 34; // shades right down the nose, so his eyes (and where they look) are plain to see
   const line = (d, w = 5, c = INK) => `<path d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
   const eye = (cx) => `<ellipse class="yo-eye" cx="${cx}" cy="132" rx="5.2" ry="6.6" fill="${INK}"/><circle cx="${cx + 1.8}" cy="129.6" r="1.6" fill="#fff"/>`;
   const openEyes = `<g class="yo-eyes">${eye(123)}${eye(177)}</g>`;
@@ -170,12 +171,17 @@
     const expr = wrap.dataset.expr, flip = wrap.dataset.flip === '1';
     wrap.innerHTML = yo(expr, flip, wrap.dataset.crop);
     const svg = wrap.firstElementChild;
-    const base = (EXPR[expr] && EXPR[expr].peek) || 0;
+    // data-gaze="x,y" (and data-gaze-m for phones): he lowers his shades and looks at something on the page,
+    // so the visitor's eyes follow his (gaze cueing). Without it, his eyes follow the cursor.
+    const narrow = matchMedia('(max-width: 720px)').matches;
+    const gazeAttr = (narrow && wrap.dataset.gazeM) || wrap.dataset.gaze;
+    const gaze = gazeAttr ? gazeAttr.split(',').map(Number) : null;
+    const base = gaze ? GAZE_PEEK : ((EXPR[expr] && EXPR[expr].peek) || 0);
     const state = {
       flip, vb: svg.viewBox.baseVal, wrap,
       eyes: svg.querySelector('.yo-eyes'), glint: svg.querySelector('.yo-glint'), shades: svg.querySelector('.yo-shades'),
       eyeEls: [...svg.querySelectorAll('.yo-eye')],
-      look: (EXPR[expr] && EXPR[expr].look) || [0, 0], lx: 0, ly: 0,
+      look: gaze || (EXPR[expr] && EXPR[expr].look) || [0, 0], gaze: !!gaze, lx: 0, ly: 0,
       base, drop: base, hover: false, peekUntil: 0, lastT: '', lastS: '',
       blinkAt: performance.now() + 800 + Math.random() * 4000
     };
@@ -214,7 +220,7 @@
       const c = chars.get(svg);
       if (!c) continue;
       let tx = c.look[0], ty = c.look[1];
-      if (hasPointer) {
+      if (hasPointer && !c.gaze) {
         const r = svg.getBoundingClientRect();
         let dx = mx - (r.left + (150 - c.vb.x) / c.vb.width * r.width);
         let dy = my - (r.top + (132 - c.vb.y) / c.vb.height * r.height);
@@ -230,7 +236,7 @@
         if (c.glint) c.glint.setAttribute('transform', `translate(${(c.lx * .6).toFixed(2)} ${(c.ly * .6).toFixed(2)})`);
         c.lastT = t;
       }
-      const target = (c.hover || now < c.peekUntil) ? PEEK : c.base;
+      const target = (c.hover || now < c.peekUntil) ? Math.max(PEEK, c.base) : c.base;
       c.drop = reduce.matches ? target : c.drop + (target - c.drop) * 0.2;
       const s = `translate(0 ${c.drop.toFixed(2)})`;
       if (s !== c.lastS && c.shades) { c.shades.setAttribute('transform', s); c.lastS = s; }
