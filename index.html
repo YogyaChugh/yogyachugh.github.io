@@ -318,37 +318,71 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/comic.css?v=17">
-<link rel="stylesheet" href="/home.css?v=4">
+<link rel="stylesheet" href="/home.css?v=15">
 </head>
 <body class="v3">
-<header class="topbar" id="topbar">
-  <a class="brand" href="#top" aria-label="Yogya Chugh, back to top">YC<span>.</span></a>
+<header class="topbar sky-bar" id="topbar">
+  <a class="brand" href="#top" aria-label="Yogya Chugh, back to top"><span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>Yogya Chugh</a>
   <nav aria-label="Site">
-    <a href="#work">Work</a>
-    <a href="/projects">Projects</a>
-    <a href="/writing">Blog</a>
-    <a href="/resume/">Résumé</a>
+    <a href="#work">work</a>
+    <a href="/projects">projects</a>
+    <a href="/writing">writing</a>
+    <a href="/resume/">résumé</a>
   </nav>
-  <a class="btn dark sm" href="#connect">Let's talk</a>
+  <button type="button" class="sky-toggle" aria-label="Switch between day and night"><span class="sun-i" aria-hidden="true"></span><span class="moon-i" aria-hidden="true"></span></button>
 </header>
 
 <main id="top">
-  <section class="hero" aria-labelledby="hero-t">
-    <div class="hero-panel">
-      <div class="yo-wrap" data-expr="curious" data-gaze="6,-1" data-gaze-m="0,5" id="cover-yo"></div>
-      <svg class="point" viewBox="0 0 132 64" aria-hidden="true" focusable="false"><g stroke="#111318" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-        <rect x="2" y="12" width="22" height="42" rx="4" fill="#E0413A"/>
-        <path d="M22 18 Q22 12 30 12 L58 12 Q66 12 66 20 L66 50 Q66 56 58 56 L32 56 Q22 56 22 46 Z" fill="#D99D7B"/>
-        <path d="M58 13 L120 13 Q128 13 128 21 Q128 29 120 29 L60 29" fill="#D99D7B"/>
-        <path d="M36 29 Q46 33 58 30 M36 41 Q46 45 58 42" fill="none"/>
-        <path d="M30 56 Q24 66 38 62" fill="none"/></g></svg>
-    </div>
-    <div class="hero-copy">
-      <p class="caption">Yogya Chugh · Software Engineer</p>
-      <h1 id="hero-t">I build whole products, from the database to the app store.</h1>
-      <div class="hero-btns">
-        <a class="btn dark" href="#work">Read the story ↓</a>
-        <a class="btn line" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
+  <section class="sky" aria-labelledby="hero-t">
+    <svg class="sky-scene" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1"><stop class="sky-top" offset="0"/><stop class="sky-bottom" offset="1"/></linearGradient>
+          <radialGradient id="bulb-glow"><stop offset="0" stop-color="#FFD27A" stop-opacity=".9"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>
+          <radialGradient id="screen-glow"><stop offset="0" stop-color="#9FD6FF" stop-opacity=".45"/><stop offset="1" stop-color="#9FD6FF" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect class="skyfill" width="1440" height="900" fill="url(#sky-grad)"/>
+        <g class="stars"><circle cx="683" cy="97" r="1.6"/><circle cx="1353" cy="44" r="1.2"/><circle cx="1117" cy="68" r="1.6"/><circle cx="1213" cy="49" r="2.1"/><circle cx="459" cy="39" r="1.2"/><circle cx="908" cy="234" r="1.2"/><circle cx="512" cy="66" r="2.1"/><circle cx="889" cy="50" r="2.1"/><circle cx="273" cy="134" r="2.1"/><circle cx="1304" cy="318" r="1.2"/><circle cx="1201" cy="319" r="1.6"/><circle cx="121" cy="133" r="1.2"/><circle cx="1160" cy="459" r="1.2"/><circle cx="613" cy="234" r="1.2"/><circle cx="1127" cy="80" r="2.1"/><circle cx="651" cy="306" r="2.1"/><circle cx="390" cy="72" r="2.1"/><circle cx="1189" cy="347" r="1.2"/><circle cx="782" cy="69" r="2.1"/><circle cx="148" cy="308" r="1.2"/><circle cx="1287" cy="125" r="1.6"/><circle cx="1413" cy="292" r="1.6"/><circle cx="663" cy="258" r="2.1"/><circle cx="948" cy="205" r="1.6"/><circle cx="528" cy="426" r="1.2"/><circle cx="519" cy="61" r="2.1"/><circle cx="634" cy="288" r="1.6"/><circle cx="723" cy="393" r="1.6"/><circle cx="609" cy="331" r="1.2"/><circle cx="261" cy="282" r="1.6"/><circle cx="357" cy="407" r="1.6"/><circle cx="331" cy="270" r="1.6"/><circle cx="100" cy="362" r="1.2"/><circle cx="1162" cy="313" r="1.6"/><circle cx="716" cy="375" r="1.6"/><circle cx="1237" cy="274" r="2.1"/><circle cx="954" cy="55" r="1.2"/><circle cx="572" cy="262" r="2.1"/><circle cx="1380" cy="53" r="1.2"/><circle cx="654" cy="351" r="2.1"/><circle cx="1415" cy="440" r="1.6"/><circle cx="602" cy="386" r="1.6"/><circle cx="1389" cy="197" r="1.2"/><circle cx="965" cy="201" r="1.2"/><circle cx="1271" cy="79" r="1.6"/><circle cx="140" cy="131" r="1.6"/></g>
+        <g class="sun"><circle cx="1110" cy="250" r="78" class="halo"/><circle cx="1110" cy="250" r="42"/></g>
+        <g class="moon"><circle cx="1110" cy="250" r="38"/><circle cx="1127" cy="238" r="34" class="bite"/></g>
+        <g class="kites">
+          <g class="kite k1" transform="translate(770 190)"><path d="M0 -38 L30 0 L0 44 L-30 0 Z" class="kite-a"/><path d="M0 -38 L0 44 M-30 0 L30 0" class="kite-line"/><path d="M0 44 Q-8 58 4 68 Q12 78 2 88" class="kite-tail"/></g>
+          <g class="kite k2" transform="translate(560 200) scale(.62)"><path d="M0 -38 L30 0 L0 44 L-30 0 Z" class="kite-b"/><path d="M0 -38 L0 44 M-30 0 L30 0" class="kite-line"/><path d="M0 44 Q-8 58 4 68 Q12 78 2 88" class="kite-tail"/></g>
+          <g class="kite k3" transform="translate(1010 330) scale(.42)"><path d="M0 -38 L30 0 L0 44 L-30 0 Z" class="kite-a"/><path d="M0 44 Q-8 58 4 68" class="kite-tail"/></g>
+          <path class="kite-string" d="M770 234 Q 900 420 1150 600"/>
+        </g>
+        <g class="far">
+          <rect x="0" y="700" width="70" height="200"/><rect x="66" y="676" width="54" height="224"/><rect x="116" y="712" width="90" height="188"/><rect x="200" y="690" width="60" height="210"/><rect x="430" y="694" width="80" height="206"/><rect x="506" y="668" width="56" height="232"/><rect x="560" y="706" width="70" height="194"/><rect x="950" y="650" width="60" height="250"/><rect x="1006" y="676" width="90" height="224"/><rect x="1092" y="640" width="70" height="260"/><rect x="1160" y="690" width="110" height="210"/><rect x="1266" y="660" width="60" height="240"/><rect x="1322" y="700" width="118" height="200"/>
+          <g class="qutub"><path d="M666 900 L672 470 L692 470 L698 900 Z"/><rect x="664" y="560" width="36" height="6"/><rect x="666" y="640" width="32" height="6"/><rect x="668" y="520" width="28" height="5"/><path d="M674 470 L682 446 L690 470 Z"/></g>
+          <g class="india-gate"><path fill-rule="evenodd" d="M770 900 V 590 H 900 V 900 Z M808 900 V 690 Q 835 650 862 690 V 900 Z"/><rect x="760" y="572" width="150" height="20"/><rect x="790" y="556" width="90" height="18"/><path d="M820 556 Q835 540 850 556 Z"/></g>
+          <g class="lotus"><path d="M280 760 Q300 704 330 690 Q360 704 380 760 Z"/><path d="M300 760 Q318 714 330 690 Q342 714 360 760 Z" class="petal-in"/><path d="M250 760 Q272 728 298 722 Q300 744 296 760 Z M410 760 Q388 728 362 722 Q360 744 364 760 Z"/></g>
+        </g>
+        <g class="mid">
+          <rect x="0" y="770" width="240" height="130"/><rect x="230" y="748" width="160" height="152"/><rect x="380" y="782" width="210" height="118"/><rect x="580" y="756" width="150" height="144"/><rect x="720" y="790" width="260" height="110"/>
+          <g class="tank"><rect x="270" y="716" width="40" height="34" rx="6"/><rect x="276" y="708" width="28" height="10" rx="4"/></g>
+          <g class="tank"><rect x="620" y="724" width="36" height="34" rx="6"/></g>
+          <path class="dish" d="M120 770 V744 M108 744 Q120 724 140 736 Z"/>
+          <rect class="win" x="252" y="776" width="12" height="16"/><rect class="win" x="292" y="806" width="12" height="16"/><rect class="win" x="420" y="806" width="12" height="16"/><rect class="win" x="612" y="784" width="12" height="16"/><rect class="win" x="760" y="814" width="12" height="16"/><rect class="win" x="52" y="800" width="12" height="16"/>
+        </g>
+
+        <g class="lights">
+          <rect class="pole" x="924" y="408" width="8" height="372"/>
+          <path class="lights-wire" d="M930 414 Q1180 488 1440 392"/>
+          <g class="bulbs"><g transform="translate(990 431)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1050 444)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1110 452)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1170 453)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1230 448)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1290 436)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1350 418)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g><g transform="translate(1410 400)"><circle r="16" class="bglow"/><circle r="5.5" class="bulb"/></g></g>
+        </g>
+        <foreignObject x="1000" y="455" width="320" height="320"><div xmlns="http://www.w3.org/1999/xhtml" class="sky-yo"><div class="yo-wrap" data-expr="smile" id="cover-yo"></div></div></foreignObject>
+        <g class="roof">
+          <rect class="parapet" x="930" y="760" width="510" height="140"/>
+          <rect class="ledge" x="920" y="750" width="520" height="16" rx="3"/>
+          <g class="laptop" transform="translate(1290 682)"><ellipse cx="60" cy="40" rx="90" ry="60" class="glow"/><path d="M8 0 H112 L104 66 H16 Z" class="lid"/><path d="M16 6 H104 L98 58 H22 Z" class="lcd"/><rect x="-6" y="64" width="132" height="8" rx="3" class="base"/></g>
+        </g>
+      </svg>
+    <div class="sky-copy">
+      <p class="sky-time"><span class="sky-icon" aria-hidden="true"></span><span id="delhi-time">It's evening in Delhi</span></p>
+      <h1 id="hero-t">I build <span class="squiggle">whole products</span>, from the database to the app store.</h1>
+      <p class="sky-sub">I'm Yogya, a software engineer in Delhi. Right now at Meant2Bae.</p>
+      <div class="sky-links">
+        <a class="sky-cta" href="#work">see the work <span aria-hidden="true">↓</span></a>
+        <a class="sky-link" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
       </div>
     </div>
   </section>
@@ -357,6 +391,7 @@
     <li><a href="#django"><span class="n" aria-hidden="true">2</span><span class="k">Fixed a bug inside Django</span><span class="v">Found it, reported it, merged</span><span class="s">django/django #19295, March 2025</span></a></li>
     <li><a href="#meant2bae"><span class="n" aria-hidden="true">3</span><span class="k">Software Engineering Intern</span><span class="v">Meant2Bae, now</span><span class="s">Plus freelance: building ScreenDemons</span></a></li>
   </ol>
+
 
   <section class="chapter" id="work" aria-labelledby="work-t">
     <header class="ch-head">
@@ -588,5 +623,6 @@
 </main>
 
 <script src="/comic.js?v=17" defer></script>
+<script src="/sky.js?v=1" defer></script>
 </body>
 </html>
