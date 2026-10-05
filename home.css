@@ -1,0 +1,164 @@
+/* yogya.dev homepage, v2: one focal point per screen.
+   The comic is the voice (the character, the lettering on a few numbers), not the volume.
+   Calm paper canvas, near-black text, one accent; colour comes from the work itself. */
+.v2 {
+  --bg: #FAF7F0;
+  --card: #FFFFFF;
+  --text: #15171C;
+  --soft: #3D414B;
+  --mute: #7A7F8B;
+  --line: #E7E2D7;
+  --accent: #D93B33;
+  --sans: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg); background-image: none; color: var(--text);
+  font: 400 17px/1.55 var(--sans);
+}
+.v2 main { max-width: 1100px; padding: 0 clamp(18px, 4vw, 40px) 24px; }
+.v2 ::selection { background: #FFE58A; }
+
+/* ---------- top bar: always there, never loud ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 22px;
+  max-width: 1100px; margin: 0 auto; padding: 14px clamp(18px, 4vw, 40px);
+  background: rgba(250, 247, 240, .86); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+}
+.topbar .brand { font: 400 1.6rem/1 var(--sfx); letter-spacing: .04em; color: var(--text); text-decoration: none; margin-right: auto; }
+.topbar .brand span { color: var(--accent); }
+.topbar nav { display: flex; gap: 22px; }
+.topbar nav a { font-weight: 700; font-size: .92rem; color: var(--soft); text-decoration: none; }
+.topbar nav a:hover { color: var(--text); }
+
+/* ---------- buttons: one dark (the next step), one outline ---------- */
+.v2 .btn {
+  font: 800 .95rem/1 var(--sans); letter-spacing: 0; text-transform: none;
+  border: 1.5px solid var(--text); border-radius: 10px; padding: 12px 18px; box-shadow: none; transform: none; gap: 9px;
+  background: transparent; color: var(--text);
+}
+.v2 .btn.dark { background: var(--text); color: #fff; }
+.v2 .btn.sm { padding: 9px 14px; font-size: .88rem; }
+@media (hover: hover) { .v2 .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px -8px rgba(21, 23, 28, .5); } }
+.v2 .btn:active { transform: translateY(1px); box-shadow: none; }
+.v2 .play-dot { width: 20px; height: 20px; border: 0; background: var(--accent); }
+.v2 .play-dot::after { left: 7px; top: 5px; border-width: 5px 0 5px 8px; border-color: transparent transparent transparent #fff; }
+
+/* ---------- 1. the first screen says one thing ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); align-items: center; gap: 24px;
+  min-height: min(calc(100svh - 70px), 720px); padding: clamp(20px, 5vw, 60px) 0 clamp(40px, 6vw, 70px); }
+.status { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 22px; font-weight: 700; font-size: .85rem; color: var(--soft);
+  background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: 6px 14px 6px 10px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #2DB36B; box-shadow: 0 0 0 4px rgba(45, 179, 107, .18); }
+.hero h1 { margin: 0; font: 900 clamp(2.3rem, 5.6vw, 4.3rem)/1.04 var(--sans); letter-spacing: -.03em; max-width: 16ch; }
+.hero h1 .hi { display: block; }
+.hero h1, .chapter h2 { text-wrap: balance; }
+.mute { color: #A9ADB6; }
+.hero-sub { margin: 22px 0 0; max-width: 46ch; font-size: clamp(1.02rem, 1.6vw, 1.15rem); color: var(--soft); }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+/* the one splash of comic colour above the fold: a yellow panel that frames the character */
+.hero-art { position: relative; align-self: center; height: clamp(320px, 36vw, 440px); border-radius: 28px; overflow: hidden;
+  background: #FFD84A repeating-conic-gradient(from 0deg at 50% 100%, rgba(255, 255, 255, .45) 0 6deg, transparent 6deg 16deg); }
+.hero-art .yo-wrap { width: min(86%, 330px); left: 50%; }
+.hero-bub { left: 50%; top: 20px; translate: -50% 0; width: max-content; max-width: 86%; font-size: .9rem; border-width: 2px; padding: 8px 14px; }
+
+/* ---------- 2. numbered chapters: you always know where you are ---------- */
+.chapter { padding: clamp(56px, 8vw, 104px) 0 0; scroll-margin-top: 70px; }
+.ch-head { max-width: 760px; margin-bottom: clamp(24px, 3.5vw, 40px); }
+.ch-num { margin: 0 0 14px; font: 400 1.15rem/1 var(--sfx); letter-spacing: .08em; color: var(--accent); }
+.ch-num span { font: 700 .8rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.chapter h2 { margin: 0; font: 900 clamp(2rem, 4.6vw, 3.3rem)/1.06 var(--sans); letter-spacing: -.03em; }
+.ch-sub { margin: 14px 0 0; font-size: 1.05rem; color: var(--soft); }
+
+/* ---------- 3. quiet, uniform cards; the screenshot is the colour ---------- */
+.v2 .eps { gap: 18px; margin-top: 0; }
+.v2 .eps.two { margin-top: 18px; }
+.v2 .ep { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: none; overflow: hidden;
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out); }
+@media (hover: hover) { .v2 .ep:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px rgba(21, 23, 28, .45); } }
+.v2 .ep > .pn { height: 196px; border: 0; border-bottom: 1px solid var(--line); background-color: var(--c, #EFEBE2); }
+.v2 .ep > .pn::before { display: none; }
+.v2 .ep > .pn img.fill[style*="contain"] { padding: 18px; }
+.v2 .ep-body { padding: 18px 20px 20px; gap: 7px; }
+.v2 .ep-when { font-size: .8rem; color: var(--mute); }
+.v2 .ep h3 { font: 800 1.2rem/1.25 var(--sans); letter-spacing: -.01em; }
+.v2 .ep-line { font-size: .97rem; line-height: 1.55; color: var(--soft); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; }
+.tags li { font-size: .74rem; font-weight: 700; color: var(--soft); border: 1px solid var(--line); border-radius: 99px; padding: 3px 9px; }
+.v2 .ep .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: auto 0 0; padding-top: 10px; }
+.v2 .ep .links a, .more a { font-weight: 800; font-size: .9rem; color: var(--text); text-decoration: none; border-bottom: 1.5px solid var(--line); padding-bottom: 1px; }
+.v2 .ep .links a:hover, .more a:hover { border-color: var(--text); }
+.v2 .co-logo { width: 18px; height: 18px; margin-right: 7px; vertical-align: -4px; border-radius: 5px; }
+.more { margin: 22px 0 0; }
+
+/* the one big story gets the one big card */
+.v2 .ep.feature { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.v2 .ep.feature > .pn { height: auto; min-height: 380px; border: 0; border-right: 1px solid var(--line); background: #E9F1FA; }
+.v2 .ep.feature .ep-body { justify-content: center; padding: 30px 32px; gap: 10px; }
+.v2 .ep.feature h3 { font: 900 clamp(1.5rem, 2.6vw, 2rem)/1.15 var(--sans); letter-spacing: -.02em; }
+.v2 .ep.feature .ep-line { font-size: 1.02rem; }
+.v2 .stats { display: flex; gap: 30px; margin: 10px 0 4px; }
+.v2 .stats p { margin: 0; display: grid; gap: 5px; font-size: .85rem; font-weight: 700; color: var(--soft); }
+.v2 .stats b { font: 400 3rem/.85 var(--sfx); letter-spacing: .01em; color: var(--accent); -webkit-text-stroke: 0; text-shadow: none; }
+.v2 .fan-ph { border-width: 3px; border-radius: 22px; box-shadow: 0 18px 30px -16px rgba(21, 23, 28, .45); }
+
+/* github: quiet bars, one accent for the busiest month */
+.v2 .gh-art { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 18px; padding: 18px 20px 16px; background: #F3EFE6; }
+.v2 .gh-num { font: 900 2.6rem/1 var(--sans); letter-spacing: -.03em; color: var(--text); -webkit-text-stroke: 0; text-shadow: none; transform: none; }
+.v2 .gh-lbl { font: 700 .8rem/1 var(--sans); color: var(--mute); letter-spacing: 0; }
+.v2 .gh-bars { height: 120px; gap: 5px; }
+.v2 .gh-bars i { background: #CFC8B8; border: 0; box-shadow: none; border-radius: 4px 4px 0 0; }
+.v2 .gh-bars .hot i { background: #A79F8E; }
+.v2 .gh-bars .top i { background: var(--accent); }
+
+/* ---------- 4. one personality moment at the end ---------- */
+.talk { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 30px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 26px 30px; overflow: hidden; }
+.talk-art { position: relative; height: 240px; }
+.talk-art .yo-wrap { width: min(80%, 210px); left: 50%; }
+.talk-art .bub { left: 50%; right: auto; top: 0; translate: -50% 0; width: max-content; max-width: 100%; font-size: .95rem; border-width: 2px; padding: 9px 14px; z-index: 3; }
+.talk-mail { display: inline-block; font: 900 clamp(1.6rem, 4vw, 2.6rem)/1.1 var(--sans); letter-spacing: -.02em; color: var(--text); text-decoration: none;
+  border-bottom: 3px solid var(--accent); padding-bottom: 2px; }
+.talk-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.talk-note { margin: 18px 0 0; font-size: .9rem; color: var(--mute); }
+
+/* ---------- footer, calmer ---------- */
+.v2 .site-foot { margin-top: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
+.v2 .foot-links a { font: 700 .92rem/1 var(--sans); letter-spacing: 0; border: 0; color: var(--soft); }
+.v2 .foot-links a:hover { color: var(--text); }
+.v2 .ic-btn { font: 700 .72rem/1 var(--sans); letter-spacing: 0; color: var(--mute); }
+.v2 .ic-btn svg { box-shadow: none; border: 1px solid var(--line); border-radius: 12px; }
+@media (hover: hover) { .v2 .ic-btn:hover svg { box-shadow: none; transform: translateY(-2px); } }
+.v2 .foot-note { color: var(--mute); }
+.v2 .foot-links .install { font: 700 .85rem/1 var(--sans); letter-spacing: 0; color: var(--text); background: none; border: 1px solid var(--line); border-radius: 99px; padding: 5px 11px; box-shadow: none; transform: none; }
+
+/* ---------- motion: one gentle rise per card, nothing else ---------- */
+.v2 .js :is(.ep):not(.seen), .js .v2 .ep:not(.seen) { opacity: 0; }
+.js .v2 .ep.seen { animation: rise .6s var(--ease-out) backwards; animation-delay: calc(var(--k, 0) * 80ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* ---------- phones ---------- */
+@media (max-width: 720px) {
+  .topbar { gap: 14px; padding: 12px 18px; }
+  .topbar nav { gap: 14px; }
+  .topbar nav a { font-size: .86rem; }
+  .topbar > .btn { display: none; }
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: 0; padding: 18px 0 10px; }
+  .hero-art { order: -1; height: 190px; margin-bottom: 22px; border-radius: 22px; }
+  .hero-art .yo-wrap { width: 170px; }
+  .hero-bub { top: 14px; }
+  .hero h1 { font-size: clamp(2.1rem, 9.5vw, 2.7rem); }
+  .chapter { padding-top: 60px; }
+  /* cards become rows: a thumbnail and the words, so the page stays short */
+  .v2 .ep:not(.feature) { display: grid; grid-template-columns: 104px minmax(0, 1fr); }
+  .v2 .ep:not(.feature) > .pn { height: auto; min-height: 118px; align-self: stretch; border: 0; border-right: 1px solid var(--line); }
+  .v2 .ep:not(.feature) > .pn img.fill[style*="contain"] { padding: 8px; }
+  .v2 .ep:not(.feature) .ep-body { padding: 14px 14px 14px; }
+  .v2 .ep:not(.feature) h3 { font-size: 1.05rem; }
+  .v2 .ep:not(.feature) .ep-line { font-size: .9rem; }
+  .v2 .ep:not(.feature) .tags { display: none; }
+  .v2 .ep#github { grid-template-columns: minmax(0, 1fr); }
+  .v2 .ep#github > .pn { border-right: 0; border-bottom: 1px solid var(--line); }
+  .v2 .ep.feature { grid-template-columns: minmax(0, 1fr); }
+  .v2 .ep.feature > .pn { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .v2 .ep.feature .ep-body { padding: 20px; }
+  .talk { grid-template-columns: minmax(0, 1fr); padding: 20px; gap: 6px; }
+  .talk-art { height: 180px; }
+}
