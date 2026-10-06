@@ -484,23 +484,6 @@
     });
   }
 
-  /* ---------- phones: stories open in place; the first one starts open ---------- */
-  document.querySelectorAll('article.ep').forEach(ep => {
-    const btn = document.createElement('button');
-    btn.type = 'button'; btn.className = 'ep-more';
-    const title = ep.querySelector('h3') ? ep.querySelector('h3').textContent : 'this story';
-    const set = open => {
-      ep.classList.toggle('open', open);
-      btn.textContent = open ? '−' : '+';
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', (open ? 'Close ' : 'Open ') + title);
-    };
-    set(ep.id === 'vardhman' || ep.id === 'summer' || ep.id === 'pippo' || location.hash === '#' + ep.id);
-    btn.addEventListener('click', e => { e.stopPropagation(); set(!ep.classList.contains('open')); });
-    ep.addEventListener('click', e => { if (!ep.classList.contains('open') && !e.target.closest('a, button')) set(true); });
-    ep.querySelector('.ep-body').appendChild(btn);
-  });
-
   /* ---------- old links (/#ep6 and friends) still land on the right story ---------- */
   const MOVED = { intro: 'top', short: 'work', vol1: 'work', ep1: 'vardhman', ep2: 'freelance', ep3: 'meant2bae', vol2: 'built',
                   ep4: 'timberly', ep5: 'pippo', ep6: 'django', ep7: 'summer', ep8: 'webelo', ep9: 'anystudio', live: 'github', faq: 'connect', oss: 'open-source' };
@@ -510,7 +493,6 @@
     const to = MOVED[id] && $(MOVED[id]);
     if (!to) return;
     history.replaceState(null, '', '#' + MOVED[id]);
-    to.classList.add('open');
     to.scrollIntoView();
   };
   follow();
