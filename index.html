@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://yogya.dev/">
 <meta name="author" content="Yogya Chugh">
-<meta name="theme-color" content="#8DA5D8">
+<meta name="theme-color" content="#0E0F13">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -317,229 +317,154 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=17">
-<link rel="stylesheet" href="/home.css?v=4">
+<script>try{if(localStorage.getItem('yo-room')==='lit')document.documentElement.dataset.room='lit'}catch(e){}</script>
+<link rel="stylesheet" href="/comic.css?v=18">
+<link rel="stylesheet" href="/lamp.css?v=18">
 </head>
-<body class="v3">
-<header class="topbar" id="topbar">
-  <a class="brand" href="#top" aria-label="Yogya Chugh, back to top">YC<span>.</span></a>
-  <nav aria-label="Site">
-    <a href="#work">Work</a>
-    <a href="/projects">Projects</a>
-    <a href="/writing">Blog</a>
-    <a href="/resume/">Résumé</a>
-  </nav>
-  <a class="btn dark sm" href="#connect">Let's talk</a>
+<body class="lamp home">
+<header class="lampbar">
+  <a class="brand" href="/" aria-label="Yogya Chugh, home"><span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span><span>Yogya Chugh</span></a>
+  <nav aria-label="Site"><a class="hide-sm" href="/#work">work</a><a href="/projects">projects</a><a href="/writing">writing</a><a href="/resume/">résumé</a></nav>
+  <button type="button" class="room-toggle" aria-pressed="false" aria-label="Turn the room lights on"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><g class="ray" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 0v1M3.5 3.5l.8.8M20.5 3.5l-.8.8M0 11h1M23 11h1"/></g></svg></button>
 </header>
 
 <main id="top">
-  <section class="hero" aria-labelledby="hero-t">
-    <div class="hero-panel">
-      <div class="yo-wrap" data-expr="curious" data-gaze="6,-1" data-gaze-m="0,5" id="cover-yo"></div>
-      <svg class="point" viewBox="0 0 132 64" aria-hidden="true" focusable="false"><g stroke="#111318" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-        <rect x="2" y="12" width="22" height="42" rx="4" fill="#E0413A"/>
-        <path d="M22 18 Q22 12 30 12 L58 12 Q66 12 66 20 L66 50 Q66 56 58 56 L32 56 Q22 56 22 46 Z" fill="#D99D7B"/>
-        <path d="M58 13 L120 13 Q128 13 128 21 Q128 29 120 29 L60 29" fill="#D99D7B"/>
-        <path d="M36 29 Q46 33 58 30 M36 41 Q46 45 58 42" fill="none"/>
-        <path d="M30 56 Q24 66 38 62" fill="none"/></g></svg>
+  <section class="hero-lamp" aria-labelledby="hero-t">
+    <div class="lamp-art">
+      <svg class="lamp-svg" viewBox="0 0 160 200" aria-hidden="true" focusable="false">
+        <path class="cord" d="M80 0 V112"/>
+        <path class="shade" d="M36 168 Q40 120 80 112 Q120 120 124 168 Z"/>
+        <rect class="rim" x="30" y="163" width="100" height="10" rx="5"/>
+        <circle class="bulb" cx="80" cy="180" r="11"/>
+      </svg>
+      <button type="button" class="pull" aria-pressed="false" aria-label="Turn the room lights on"><span class="pull-cord"></span><span class="pull-bead"></span></button>
+      <div class="cone" aria-hidden="true"></div>
+      <div class="lamp-yo"><div class="yo-wrap" data-expr="smile" id="cover-yo"></div></div>
     </div>
     <div class="hero-copy">
-      <p class="caption">Yogya Chugh · Software Engineer</p>
-      <h1 id="hero-t">I build whole products, from the database to the app store.</h1>
-      <div class="hero-btns">
-        <a class="btn dark" href="#work">Read the story ↓</a>
-        <a class="btn line" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
+      <p class="hello">Yogya Chugh · Software Engineer · Delhi</p>
+      <h1 id="hero-t">I build <em>whole products</em>,<br> from the database to the app store.</h1>
+      <p class="hero-sub">Right now I'm a Software Engineering Intern at Meant2Bae.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#work">See the work</a>
+        <a class="btn white" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
       </div>
     </div>
   </section>
-  <ol class="strip" aria-label="Three things to know about me">
-    <li><a href="#vardhman"><span class="n" aria-hidden="true">1</span><span class="k">Shipped a whole product</span><span class="v"><b class="spot">200+ users</b>, $0 a month to run</span><span class="s">Vardhman Saathi: Android app, admin app, backend</span></a></li>
-    <li><a href="#django"><span class="n" aria-hidden="true">2</span><span class="k">Fixed a bug inside Django</span><span class="v">Found it, reported it, merged</span><span class="s">django/django #19295, March 2025</span></a></li>
-    <li><a href="#meant2bae"><span class="n" aria-hidden="true">3</span><span class="k">Software Engineering Intern</span><span class="v">Meant2Bae, now</span><span class="s">Plus freelance: building ScreenDemons</span></a></li>
-  </ol>
 
-  <section class="chapter" id="work" aria-labelledby="work-t">
-    <header class="ch-head">
-      <p class="caption">Chapter 1 · Work</p>
-      <h2 id="work-t">Where I learnt by shipping</h2>
-      <p class="ch-sub">Two paid internships and a freelance client.</p>
+  <section class="sect" id="work" aria-labelledby="work-t">
+    <header class="sect-head" data-spot>
+      <p class="sect-num">01 <span>work</span></p>
+      <h2 id="work-t">Where I learnt by shipping.</h2>
     </header>
-    <article class="ep peak" id="vardhman" aria-labelledby="vardhman-t">
-      <div class="pn fan">
+    <article class="feature" id="vardhman" data-spot aria-labelledby="vardhman-t">
+      <div class="feature-art fan">
         <div class="fan-ph" style="--dx:-86%; --r:-8deg"><img src="/assets/projects/vardhman-app-bill.jpg" alt="Vardhman Saathi's Submit Bill screen" loading="lazy" decoding="async"></div>
         <div class="fan-ph" style="--dx:86%; --r:8deg"><img src="/assets/projects/vardhman-app-store.jpg" alt="Vardhman Saathi's rewards store" loading="lazy" decoding="async"></div>
         <div class="fan-ph front"><img src="/assets/projects/vardhman-app-home.jpg" alt="Vardhman Saathi's home screen with a V-Coins balance" loading="lazy" decoding="async"></div>
       </div>
-      <div class="ep-body">
-        <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/vardhman.png" alt="" width="18" height="18">Vardhman Electricals · Software Developer Intern · Mar – Jun 2026</p>
+      <div class="feature-text">
+        <p class="row-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/vardhman.png" alt="" width="18" height="18">Vardhman Electricals · Software Developer Intern · Mar – Jun 2026</p>
         <h3 id="vardhman-t">They needed a whole product. I built all of it.</h3>
-        <p class="ep-line">Vardhman Saathi, a rewards app for their dealers: the Android app on Google Play, the desktop app their staff use, and the backend behind both.</p>
-        <div class="stats">
-          <p><b>200+</b> people use it at once</p>
-          <p><b>$0</b> a month to run</p>
-        </div>
-        <ul class="tags"><li>React Native</li><li>Electron</li><li>Supabase</li><li>Cloudflare</li></ul>
-        <p class="links"><a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play ↗</a> <a href="/blogs/vardhman">How I built it →</a></p>
+        <p>Vardhman Saathi, a rewards app for their dealers: the Android app on Google Play, the desktop app their staff use, and the backend behind both.</p>
+        <div class="stats"><p><b>200+</b> people use it at once</p><p><b>$0</b> a month to run</p></div>
+        <p class="feature-links"><a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play ↗</a><a href="/blogs/vardhman">How I built it →</a></p>
       </div>
     </article>
-    <div class="eps two">
-      <article class="ep" id="meant2bae" aria-labelledby="meant2bae-t">
-        <div class="pn" style=""><img class="fill" src="/assets/projects/meant2bae.jpg" alt="Meant2Bae: Love, handpicked for you" loading="lazy" decoding="async" style="object-fit:cover; object-position:0 0"></div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/meant2bae.png" alt="" width="18" height="18">Meant2Bae · Sep 2026 – now</p>
-          <h3 id="meant2bae-t">Software Engineering Intern</h3>
-          <p class="ep-line">Paid and on-site, at a curated dating service for professionals in India.</p>
-          
-          <p class="links"><a href="https://meant2bae.com" target="_blank" rel="noopener">meant2bae.com ↗</a></p>
-        </div>
+    <div class="rows">
+      <article class="row" id="meant2bae" data-spot aria-labelledby="meant2bae-t">
+        <p class="row-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/meant2bae.png" alt="" width="18" height="18">Sep 2026 – now</p>
+        <div class="row-main"><h3 id="meant2bae-t">Software Engineering Intern at Meant2Bae</h3><p>Paid and on-site, at a curated dating service for professionals in India.</p></div>
+        <a class="row-go" href="https://meant2bae.com" target="_blank" rel="noopener">meant2bae.com ↗</a>
       </article>
-      <article class="ep" id="freelance" aria-labelledby="freelance-t">
-        <div class="pn" style="--c:#E2F0EF"><img class="fill" src="/assets/projects/screendemons-demon.webp" alt="The ScreenDemons mascot, a fuzzy teal monster" loading="lazy" decoding="async" style="object-fit:contain"></div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/screendemons.png" alt="" width="18" height="18">Freelance · Jun 2026 – now</p>
-          <h3 id="freelance-t">Building ScreenDemons</h3>
-          <p class="ep-line">An iPhone and Android app that cuts screen time through challenges with friends.</p>
-          
-          <p class="links"><a href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a></p>
-        </div>
+      <article class="row" id="freelance" data-spot aria-labelledby="freelance-t">
+        <p class="row-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/screendemons.png" alt="" width="18" height="18">Jun 2026 – now</p>
+        <div class="row-main"><h3 id="freelance-t">Building ScreenDemons, freelance</h3><p>An iPhone and Android app that cuts screen time through challenges with friends.</p></div>
+        <a class="row-go" href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a>
       </article>
     </div>
-    <a class="next" href="#open-source">Next <span aria-hidden="true">·</span> <b>the bug nobody had reported</b> <span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="chapter" id="open-source" aria-labelledby="open-source-t">
-    <header class="ch-head">
-      <p class="caption">Chapter 2 · Open source</p>
-      <h2 id="open-source-t">Code other people run</h2>
-      <p class="ch-sub">A fix inside Django, and everything since.</p>
+  <section class="sect" id="open-source" aria-labelledby="open-source-t">
+    <header class="sect-head" data-spot>
+      <p class="sect-num">02 <span>open source</span></p>
+      <h2 id="open-source-t">Code other people run.</h2>
     </header>
-    <div class="eps two">
-      <article class="ep" id="django" aria-labelledby="django-t">
-        <div class="pn" style="--c:#0C4B33"><img class="fill" src="/assets/projects/django-oss.jpg" alt="The Django logo" loading="lazy" decoding="async" style="object-fit:contain"></div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/django.svg" alt="" width="18" height="18">django/django #19295 · March 2025</p>
-          <h3 id="django-t">The bug nobody had reported</h3>
-          <p class="ep-line">A confusing error for a common template mistake. I found it, reported it, fixed it, and Django Fellow Sarah Boyce merged the fix.</p>
-          
-          <p class="links"><a href="https://github.com/django/django/pull/19295" target="_blank" rel="noopener">Pull request ↗</a> <a href="/blogs/first_open_source">The story →</a></p>
-        </div>
+    <div class="rows">
+      <article class="row" id="django" data-spot aria-labelledby="django-t">
+        <p class="row-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/django.svg" alt="" width="18" height="18">March 2025</p>
+        <div class="row-main"><h3 id="django-t">Found a bug in Django, reported it, fixed it</h3><p>A confusing error for a common template mistake. Django Fellow Sarah Boyce merged my fix as #19295.</p></div>
+        <a class="row-go" href="/blogs/first_open_source">The story →</a>
       </article>
-      <article class="ep" id="github" aria-labelledby="github-t">
-        <div class="pn gh-art">
-          <div class="gh-big"><span class="gh-num" id="gh-num">717</span> <span class="gh-lbl">contributions this year</span></div>
+      <article class="row gh-row" id="github" data-spot aria-labelledby="github-t">
+        <p class="row-when">GitHub · <span class="gh-last" id="gh-last">Last one: 6 Oct 2026</span></p>
+        <div class="row-main"><h3 id="github-t"><span class="gh-num" id="gh-num">717</span> contributions this year</h3>
           <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" title="September 2026: 163"><i></i></span><span class="" style="--h:0.261" title="October 2026: 57"><i></i></span></div>
         </div>
-        <div class="ep-body">
-          <p class="ep-when">GitHub · <span class="gh-last" id="gh-last">Last one: 6 Oct 2026</span></p>
-          <h3 id="github-t">Still shipping</h3>
-          <p class="ep-line">A bar for every month of the past year, private client work included.</p>
-          <p class="links"><a href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">My GitHub ↗</a></p>
-        </div>
+        <a class="row-go" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">GitHub ↗</a>
       </article>
     </div>
-    <a class="next" href="#built">Next <span aria-hidden="true">·</span> <b>what I build when nobody’s paying</b> <span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="chapter" id="built" aria-labelledby="built-t">
-    <header class="ch-head">
-      <p class="caption">Chapter 3 · Things I build</p>
-      <h2 id="built-t">Built to find out how things work</h2>
-      <p class="ch-sub">A native app builder, a browser engine and a game.</p>
+  <section class="sect" id="built" aria-labelledby="built-t">
+    <header class="sect-head" data-spot>
+      <p class="sect-num">03 <span>things I build</span></p>
+      <h2 id="built-t">Built to find out how things work.</h2>
     </header>
-    <div class="eps">
-      <article class="ep" id="anystudio" aria-labelledby="anystudio-t">
-        <div class="pn" style=""><img class="fill" src="/assets/projects/anystudio.jpg" alt="AnyStudio's editor" loading="lazy" decoding="async" style="object-fit:cover; object-position:50% 30%"></div>
-        <div class="ep-body">
-          <p class="ep-when">Rust · in development</p>
-          <h3 id="anystudio-t">AnyStudio</h3>
-          <p class="ep-line">Describe an app or drag it together, and get a real native Android and iPhone app.</p>
-          
-          
-        </div>
+    <div class="rows">
+      <article class="row" id="anystudio" data-spot aria-labelledby="anystudio-t">
+        <p class="row-when">Rust · building now</p>
+        <div class="row-main"><h3 id="anystudio-t">AnyStudio</h3><p>Describe an app or drag it together, and get a real native Android and iPhone app.</p></div>
+        
       </article>
-      <article class="ep" id="webelo" aria-labelledby="webelo-t">
-        <div class="pn" style=""><img class="fill" src="/assets/projects/webelo.jpg" alt="Webelo drawing a web page as a tree" loading="lazy" decoding="async" style="object-fit:cover"></div>
-        <div class="ep-body">
-          <p class="ep-when">C++ · 2025</p>
-          <h3 id="webelo-t">Webelo</h3>
-          <p class="ep-line">The heart of a web browser, the DOM, rebuilt in C++ from the official spec.</p>
-          
-          <p class="links"><a href="https://webelo.yogya.dev/" target="_blank" rel="noopener">Website ↗</a> <a href="/blogs/whatwg_dom">The story →</a></p>
-        </div>
+      <article class="row" id="webelo" data-spot aria-labelledby="webelo-t">
+        <p class="row-when">C++ · 2025</p>
+        <div class="row-main"><h3 id="webelo-t">Webelo</h3><p>The heart of a web browser, the DOM, rebuilt from the official spec.</p></div>
+        <a class="row-go" href="https://webelo.yogya.dev/" target="_blank" rel="noopener">webelo.yogya.dev ↗</a>
       </article>
-      <article class="ep" id="timberly" aria-labelledby="timberly-t">
-        <div class="pn" style=""><img class="fill" src="/assets/projects/timberly.jpg" alt="Timberly's main menu" loading="lazy" decoding="async" style="object-fit:cover; object-position:50% 42%"></div>
-        <div class="ep-body">
-          <p class="ep-when">Python · game</p>
-          <h3 id="timberly-t">Timberly</h3>
-          <p class="ep-line">A lumberjack game with an online leaderboard, on web, Windows, macOS and Linux.</p>
-          
-          <p class="links"><a href="https://timberly.yogya.dev/" target="_blank" rel="noopener">Website ↗</a></p>
-        </div>
+      <article class="row" id="timberly" data-spot aria-labelledby="timberly-t">
+        <p class="row-when">Python · game</p>
+        <div class="row-main"><h3 id="timberly-t">Timberly</h3><p>A lumberjack game with an online leaderboard, on the web and every desktop.</p></div>
+        <a class="row-go" href="https://timberly.yogya.dev/" target="_blank" rel="noopener">Play ↗</a>
       </article>
     </div>
-    <p class="more"><a href="/projects">All 11 projects →</a></p>
-    <a class="next" href="#wins">Next <span aria-hidden="true">·</span> <b>when someone else kept score</b> <span aria-hidden="true">→</span></a>
+    <p class="more-link"><a href="/projects">All 11 projects →</a></p>
   </section>
 
-  <section class="chapter" id="wins" aria-labelledby="wins-t">
-    <header class="ch-head">
-      <p class="caption">Chapter 4 · Wins</p>
-      <h2 id="wins-t">When someone else kept score</h2>
-      <p class="ch-sub">Prizes, podiums and a club of my own.</p>
+  <section class="sect" id="wins" aria-labelledby="wins-t">
+    <header class="sect-head" data-spot>
+      <p class="sect-num">04 <span>wins</span></p>
+      <h2 id="wins-t">When someone else kept score.</h2>
     </header>
-    <div class="eps">
-      <article class="ep" id="summer" aria-labelledby="summer-t">
-        <div class="pn" style=""><img class="fill" src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop I won" loading="lazy" decoding="async" style="object-fit:cover; object-position:12% 62%"></div>
-        <div class="ep-body">
-          <p class="ep-when">Hack Club Summer of Making · 2025</p>
-          <h3 id="summer-t">The summer that blew me off!</h3>
-          <p class="ep-line">Google Summer of Code said no, so I coded 450+ hours instead and won a ₹1.2 lakh laptop, Steam credit and two games.</p>
-          
-          <p class="links"><a href="/blogs/summer_of_making">The story →</a></p>
-        </div>
+    <div class="rows">
+      <article class="row" id="summer" data-spot aria-labelledby="summer-t">
+        <p class="row-when">Hack Club · 2025</p>
+        <div class="row-main"><h3 id="summer-t">Summer of Making: 450+ hours, one laptop</h3><p>Google Summer of Code said no, so I shipped 4 open-source projects instead and won a ₹1.2 lakh laptop.</p></div>
+        <a class="row-go" href="/blogs/summer_of_making">The story →</a>
       </article>
-      <article class="ep" id="pippo" aria-labelledby="pippo-t">
-        <div class="pn" style="--c:#3E3E41"><img class="fill" src="/assets/projects/pippo.jpg" alt="Pippo, the robot" loading="lazy" decoding="async" style="object-fit:contain"></div>
-        <div class="ep-body">
-          <p class="ep-when">College team · 2025</p>
-          <h3 id="pippo-t">Pippo, the robot guide</h3>
-          <p class="ep-line">3rd place and $50 at two international hackathons. I built its app.</p>
-          
-          <p class="links"><a href="https://github.com/YogyaChugh/RoboApp" target="_blank" rel="noopener">App code ↗</a></p>
-        </div>
+      <article class="row" id="pippo" data-spot aria-labelledby="pippo-t">
+        <p class="row-when">College team · 2025</p>
+        <div class="row-main"><h3 id="pippo-t">3rd place at two international hackathons</h3><p>With Pippo, a robot guide that talks and translates. I built its app.</p></div>
+        <a class="row-go" href="https://github.com/YogyaChugh/RoboApp" target="_blank" rel="noopener">Code ↗</a>
       </article>
-      <article class="ep" id="club" aria-labelledby="club-t">
-        <div class="pn" style=""><img class="fill" src="/assets/projects/frontend-frenzy.jpg" alt="Poster: PIET Comp Techies presents Frontend Frenzy" loading="lazy" decoding="async" style="object-fit:cover; object-position:50% 12%"></div>
-        <div class="ep-body">
-          <p class="ep-when">PIET Comp Techies · founder</p>
-          <h3 id="club-t">Started a tech club</h3>
-          <p class="ep-line">Founded my college's tech club and ran Frontend Frenzy, a website-building contest.</p>
-          
-          
-        </div>
+      <article class="row" id="club" data-spot aria-labelledby="club-t">
+        <p class="row-when">PIET · 2024</p>
+        <div class="row-main"><h3 id="club-t">Started a tech club</h3><p>Founded my college's tech club and ran Frontend Frenzy, a website-building contest.</p></div>
+        
       </article>
     </div>
-    <a class="next" href="#connect">Next <span aria-hidden="true">·</span> <b>your turn</b> <span aria-hidden="true">→</span></a>
   </section>
 
-  <section class="chapter" id="connect" aria-labelledby="connect-t">
-    <header class="ch-head">
-      <p class="caption">Chapter 5 · The end, for now</p>
-      <h2 id="connect-t">That's the story so far</h2>
-      <p class="ch-sub">Want to be in the next chapter?</p>
+  <section class="sect" id="connect" aria-labelledby="connect-t">
+    <header class="sect-head" data-spot>
+      <p class="sect-num">05 <span>say hi</span></p>
+      <h2 id="connect-t">That's the story so far.</h2>
     </header>
-    <div class="finale">
-      <div class="finale-art"><p class="bub">Your turn.</p><div class="yo-wrap" data-expr="happy"></div></div>
-      <div class="finale-body">
-        <p class="finale-q">Got something to build?</p>
-        <a class="finale-mail" href="mailto:build@yogya.dev" data-gmail="Hey Yogya!">build@yogya.dev</a>
-        <div class="finale-btns">
-          <a class="btn dark" href="https://calendly.com/yogya-chugh/30min" data-calendly>Book a 30-minute call</a>
-          <a class="btn line" href="/resume/">Résumé</a>
-        </div>
-        <p class="finale-note">Delhi, India (IST) · B.Tech CSE at PIET, 2023–2027 · Open to freelance work</p>
-      </div>
+    <div class="finale" data-spot>
+      <p class="finale-q">Got something to build?</p>
+      <a class="finale-mail" href="mailto:build@yogya.dev" data-gmail="Hey Yogya!">build@yogya.dev</a>
+      <div class="hero-cta"><a class="btn" href="https://calendly.com/yogya-chugh/30min" data-calendly>Book a 30-minute call</a><a class="btn white" href="/resume/">Résumé</a></div>
+      <p class="finale-note">Delhi, India (IST) · open to freelance work</p>
     </div>
   </section>
 
@@ -574,7 +499,7 @@
 
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Footer"><a href="/">The comic</a><a href="/projects">Projects</a><a href="/about">About</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
+  <nav class="foot-links" aria-label="Footer"><a href="/">Home</a><a href="/projects">Projects</a><a href="/about">About</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
@@ -587,6 +512,7 @@
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=17" defer></script>
+<script src="/comic.js?v=18" defer></script>
+<script src="/lamp.js?v=18" defer></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://yogya.dev/about">
 <meta name="author" content="Yogya Chugh">
-<meta name="theme-color" content="#8DA5D8">
+<meta name="theme-color" content="#0E0F13">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -136,17 +136,19 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=17">
-<script src="/comic.js?v=17" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script>try{if(localStorage.getItem('yo-room')==='lit')document.documentElement.dataset.room='lit'}catch(e){}</script>
+<link rel="stylesheet" href="/comic.css?v=18">
+<link rel="stylesheet" href="/lamp.css?v=18">
+<script src="/comic.js?v=18" defer></script>
+<script src="/lamp.js?v=18" defer></script>
 </head>
-<body>
-<nav class="dock" id="dock" aria-label="Quick links">
-  <span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span>
-  <a class="btn white" href="/">Home</a>
-  <a class="btn white" href="/projects">Projects</a>
-  <a class="btn red" href="/#connect">Let's talk ✉</a>
-</nav>
+<body class="lamp">
+<header class="lampbar">
+  <a class="brand" href="/" aria-label="Yogya Chugh, home"><span class="face" aria-hidden="true"><span class="yo-wrap" data-expr="smile" data-crop="close"></span></span><span>Yogya Chugh</span></a>
+  <nav aria-label="Site"><a class="hide-sm" href="/#work">work</a><a href="/projects">projects</a><a href="/writing">writing</a><a href="/resume/">résumé</a></nav>
+  <button type="button" class="room-toggle" aria-pressed="false" aria-label="Turn the room lights on"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><g class="ray" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 0v1M3.5 3.5l.8.8M20.5 3.5l-.8.8M0 11h1M23 11h1"/></g></svg></button>
+</header>
 <main>
   <section class="page" style="--pr:-.2deg" aria-labelledby="about-t">
     <div class="pn head-panel c-yellow burst">
@@ -156,7 +158,7 @@
         <p class="lede">Software engineer in Delhi, India. I build things to find out how they work.</p>
       </div>
       <div class="head-art">
-        <p class="bub" style="--t:52%">The plain version, no comic panels.</p>
+        <p class="bub" style="--t:52%">The plain version.</p>
         <div class="yo-wrap" data-expr="smile"></div>
       </div>
     </div>
@@ -198,7 +200,7 @@
   </article>
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Footer"><a href="/">The comic</a><a href="/projects">Projects</a><a href="/about">About</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
+  <nav class="foot-links" aria-label="Footer"><a href="/">Home</a><a href="/projects">Projects</a><a href="/about">About</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
