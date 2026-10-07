@@ -220,7 +220,16 @@
       const c = chars.get(svg);
       if (!c) continue;
       let tx = c.look[0], ty = c.look[1];
-      if (hasPointer && !c.gaze) {
+      // data-look-at="#selector": he looks at that thing on the page (lamp.js moves it around)
+      const la = c.wrap.dataset.lookAt || '';
+      if (la !== c.laSel) { c.laSel = la; c.laEl = la ? document.querySelector(la) : null; }
+      if (c.laEl) {
+        const r = svg.getBoundingClientRect(), t = c.laEl.getBoundingClientRect();
+        let dx = (t.left + t.width / 2) - (r.left + (150 - c.vb.x) / c.vb.width * r.width);
+        let dy = (t.top + t.height / 2) - (r.top + (132 - c.vb.y) / c.vb.height * r.height);
+        const d = Math.hypot(dx, dy) || 1;
+        tx = dx / d * 4 * (c.flip ? -1 : 1); ty = dy / d * 3;
+      } else if (hasPointer && !c.gaze) {
         const r = svg.getBoundingClientRect();
         let dx = mx - (r.left + (150 - c.vb.x) / c.vb.width * r.width);
         let dy = my - (r.top + (132 - c.vb.y) / c.vb.height * r.height);
@@ -236,7 +245,8 @@
         if (c.glint) c.glint.setAttribute('transform', `translate(${(c.lx * .6).toFixed(2)} ${(c.ly * .6).toFixed(2)})`);
         c.lastT = t;
       }
-      const target = (c.hover || now < c.peekUntil) ? Math.max(PEEK, c.base) : c.base;
+      const base = c.laEl ? GAZE_PEEK : c.base;
+      const target = (c.hover || now < c.peekUntil) ? Math.max(PEEK, base) : base;
       c.drop = reduce.matches ? target : c.drop + (target - c.drop) * 0.2;
       const s = `translate(0 ${c.drop.toFixed(2)})`;
       if (s !== c.lastS && c.shades) { c.shades.setAttribute('transform', s); c.lastS = s; }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yogya Chugh · A letter</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+:root { --paper: #FAF8F4; --ink: #1E1D1B; --soft: #77726A; --faint: rgba(30, 29, 27, .1); --hl: #FFE58A; --hl2: #FFD2C2; --red: #D2452F; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+.top { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px max(22px, calc(50vw - 520px)); background: linear-gradient(var(--paper) 60%, rgba(250, 248, 244, 0)); font: 500 .85rem/1 Inter; color: var(--soft); }
+.top b { color: var(--ink); font-weight: 600; }
+.top nav { display: flex; gap: 20px; }
+.top nav a { text-decoration: none; } .top nav a:hover { color: var(--ink); }
+.progress { position: fixed; left: 0; top: 0; z-index: 30; height: 2px; width: 100%; background: var(--red); transform-origin: left; transform: scaleX(var(--p, 0)); }
+
+/* the letter: one column, big type, nothing else */
+.letter { max-width: 720px; margin: 0 auto; padding: 150px 24px 90px; }
+.from { display: flex; align-items: center; gap: 14px; margin: 0 0 54px; font: 500 .9rem/1.4 Inter; color: var(--soft); opacity: 0; animation: in 1s ease .1s forwards; }
+.from img { width: 46px; height: 46px; border-radius: 50%; }
+.from b { color: var(--ink); font-weight: 600; }
+.skim { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--faint); border-radius: 99px; background: #fff; color: var(--ink); font: 600 .82rem/1 Inter; cursor: pointer; transition: background .2s, border-color .2s; }
+.skim:hover { border-color: var(--ink); }
+.skim[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.skim i { width: 8px; height: 8px; border-radius: 50%; background: #F2B705; }
+
+.letter p.t { margin: 0 0 1.05em; font: 400 clamp(1.45rem, 2.6vw, 2rem)/1.5 Newsreader, Georgia, serif; letter-spacing: -.01em; font-variation-settings: 'opsz' 48; transition: opacity .5s ease, color .5s; }
+.letter p.t.hi { font-size: clamp(2.4rem, 5.6vw, 4rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: .55em; }
+.letter p.t.hi em { font-style: italic; }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .8, .2, 1); }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes in { to { opacity: 1; } }
+
+/* the keywords: a highlighter sweeps across them as each line arrives */
+.k { position: relative; color: inherit; text-decoration: none; cursor: pointer; white-space: nowrap; font-weight: 500;
+  background-image: linear-gradient(transparent 58%, var(--c, var(--hl)) 58%, var(--c, var(--hl)) 92%, transparent 92%); background-repeat: no-repeat; background-size: 0% 100%;
+  transition: background-size .9s cubic-bezier(.6, 0, .25, 1); transition-delay: var(--d, 0s); }
+.in .k { background-size: 100% 100%; }
+.k.peach { --c: var(--hl2); }
+.k::after { content: '↗'; position: absolute; right: -.62em; top: -.15em; font-size: .5em; color: var(--soft); opacity: 0; transition: opacity .2s; }
+.k:hover::after, .k:focus-visible::after { opacity: 1; }
+.k:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 3px; }
+
+/* skim mode: only the keywords stay */
+body.skimming .letter p.t { color: rgba(30, 29, 27, .14); }
+body.skimming .k { color: var(--ink); }
+body.skimming .sign, body.skimming .ps { opacity: .25; }
+
+/* the preview card that follows a keyword */
+.card { position: fixed; z-index: 40; width: 300px; padding: 10px; border-radius: 16px; background: #fff; pointer-events: none; opacity: 0; transform: translateY(8px) scale(.97); transform-origin: top left;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 24px 60px -18px rgba(30, 20, 10, .35), 0 0 0 1px rgba(0, 0, 0, .05); transition: opacity .2s ease, transform .25s cubic-bezier(.2, .8, .2, 1); }
+.card.on { opacity: 1; transform: none; }
+.card .img { height: 160px; border-radius: 10px; background: #F1EEE8 center / cover no-repeat; }
+.card .img.tall { background-size: contain; background-color: #F3EDE2; }
+.card .b { padding: 12px 6px 4px; }
+.card .n { font: 600 1.9rem/1 Newsreader, serif; letter-spacing: -.02em; }
+.card .l { margin-top: 6px; font: 400 .9rem/1.4 Inter; color: var(--soft); }
+.card .u { margin-top: 10px; font: 600 .78rem/1 Inter; color: var(--red); }
+
+.sign { margin: 60px 0 0; }
+.sign .bye { font: 400 clamp(1.45rem, 2.6vw, 2rem)/1.5 Newsreader, serif; }
+.sign .name { display: block; margin-top: 4px; font: 400 clamp(4rem, 9vw, 6.2rem)/1 'Mrs Saint Delafield', cursive; color: #22335E; clip-path: inset(0 100% 0 0); transition: clip-path 2.2s cubic-bezier(.5, 0, .2, 1) .2s; }
+.sign.in .name { clip-path: inset(0 -5% 0 0); }
+.sign .role { display: block; margin-top: 8px; font: 500 .9rem/1.4 Inter; color: var(--soft); }
+.ps { margin: 56px 0 0; padding-top: 28px; border-top: 1px solid var(--faint); transition: opacity .5s; }
+.ps p { margin: 0; font: italic 400 clamp(1.25rem, 2.2vw, 1.6rem)/1.5 Newsreader, serif; }
+.ps .mail { font-style: normal; font-weight: 500; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px; border-radius: 99px; background: var(--ink); color: #fff; text-decoration: none; font: 600 .95rem/1 Inter; }
+.btn.o { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.read { margin: 0 0 0; font: 500 .8rem/1 Inter; color: var(--soft); letter-spacing: .02em; }
+.tag { position: fixed; left: 14px; bottom: 14px; z-index: 60; padding: 7px 12px; border-radius: 99px; background: rgba(30, 29, 27, .86); color: #fff; font: 600 .75rem/1 Inter; }
+
+/* phones: the preview becomes a sheet from the bottom */
+@media (max-width: 720px) {
+  .top nav { display: none; }
+  .letter { padding-top: 104px; }
+  .from { flex-wrap: wrap; margin-bottom: 38px; }
+  .skim { margin-left: 0; }
+  .k { white-space: normal; }
+  .card { left: 12px !important; right: 12px; top: auto !important; bottom: 12px; width: auto; pointer-events: auto; transform: translateY(30px); }
+  .card .img { height: 140px; }
+}
+@media (prefers-reduced-motion: reduce) { .reveal, .from { opacity: 1; transform: none; animation: none; transition: none; } .k { background-size: 100% 100%; transition: none; } .sign .name { clip-path: none; transition: none; } }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="top"><span><b>Yogya Chugh</b> · <span id="date">Delhi</span></span><nav><a href="/projects">Projects</a><a href="/writing">Writing</a><a href="/resume/">Résumé</a></nav></header>
+
+<main class="letter">
+  <p class="from"><img src="/assets/yogya-avatar.png" alt="" width="46" height="46"><span>From <b>Yogya Chugh</b><br>Software engineer, Delhi</span>
+    <button type="button" class="skim" aria-pressed="false"><i></i>In a hurry? Skim it</button></p>
+
+  <p class="t hi reveal">Hi, I'm Yogya. I build <a class="k" data-card="whole" href="#">whole products</a>, from the database to the app store.</p>
+
+  <p class="t reveal">This year I built <a class="k" data-card="vardhman" href="/blogs/vardhman">Vardhman Saathi</a> for an electricals company: an Android app, a desktop app and the backend behind both. Today <a class="k peach" style="--d:.25s" data-card="users" href="/blogs/vardhman">200+ people</a> use it at once, and it costs <a class="k" style="--d:.5s" data-card="zero" href="/blogs/vardhman">$0 a month</a> to run.</p>
+
+  <p class="t reveal">Right now I'm a Software Engineering Intern at <a class="k" data-card="m2b" href="https://meant2bae.com">Meant2Bae</a>. On the side, I'm building <a class="k peach" style="--d:.3s" data-card="sd" href="https://screendemons.app">ScreenDemons</a>, an app that helps you beat screen time with friends.</p>
+
+  <p class="t reveal">I once found a bug in Django by accident, and they <a class="k" data-card="django" href="/blogs/first_open_source">merged my fix</a>. One summer I wrote code for <a class="k peach" style="--d:.3s" data-card="som" href="/blogs/summer_of_making">450 hours</a> and earned a laptop. My team's robot, Pippo, came <a class="k" style="--d:.55s" data-card="pippo" href="https://github.com/YogyaChugh/RoboApp">3rd at two international hackathons</a>.</p>
+
+  <p class="t reveal">Mostly, I build things to find out how they work. Like <a class="k" data-card="webelo" href="https://webelo.yogya.dev/">a web browser's DOM, in C++</a>, or a tool that turns a description into <a class="k peach" style="--d:.3s" data-card="any" href="/projects">a real native app</a>.</p>
+
+  <p class="t reveal">If you've got something to build, I'd love to hear about it.</p>
+
+  <div class="sign reveal">
+    <span class="bye">Talk soon,</span>
+    <span class="name" aria-label="Yogya">Yogya</span>
+    <span class="role">Software engineer · Delhi, India</span>
+  </div>
+
+  <div class="ps reveal">
+    <p>P.S. The fastest way to reach me is <a class="k mail" data-card="mail" href="mailto:build@yogya.dev">build@yogya.dev</a>.</p>
+    <div class="actions"><a class="btn" href="mailto:build@yogya.dev">Write to me</a><a class="btn o" href="https://calendly.com/yogya-chugh/30min">Book a 30-minute call</a><a class="btn o" href="/resume/">Résumé</a></div>
+  </div>
+</main>
+<div class="card" role="tooltip" aria-hidden="true"><div class="img"></div><div class="b"><div class="n"></div><div class="l"></div><div class="u"></div></div></div>
+<span class="tag">Preview 2 · Letter</span>
+
+<script>
+(() => {
+  const CARDS = {
+    whole:    ['/assets/projects/vardhman.jpg', 'App → backend → store', 'I design it, build the app, write the server, and ship it to the store.', 'See the work'],
+    vardhman: ['/assets/projects/vardhman.jpg', 'Vardhman Saathi', 'A rewards app for an electricals company\'s dealers. Mar – Jun 2026.', 'How I built it →'],
+    users:    ['/assets/projects/vardhman-app-home.jpg', '200+', 'people using the app at the same time, across phones and three admin dashboards.', 'How I built it →', 1],
+    zero:     ['/assets/projects/vardhman-app-store.jpg', '$7 → $0', 'It started on a $7 server. I moved it to free tiers without losing anything.', 'How I built it →', 1],
+    m2b:      ['/assets/projects/meant2bae.jpg', 'Meant2Bae', 'Software Engineering Intern, paid and on-site. Since Sep 2026.', 'meant2bae.com ↗'],
+    sd:       ['/assets/projects/screendemons-demon.webp', 'ScreenDemons', 'Freelance. An iPhone and Android app, since Jun 2026.', 'screendemons.app ↗', 1],
+    django:   ['/assets/projects/django-oss.jpg', '#19295', 'A clearer error for a common template mistake, merged by Django Fellow Sarah Boyce.', 'Read the story →'],
+    som:      ['/assets/projects/laptop-won.jpg', '450+ hours', 'Hack Club\'s Summer of Making, 2025. Google Summer of Code had said no.', 'Read the story →'],
+    pippo:    ['/assets/projects/pippo.jpg', '3rd × 2', 'Pippo, a robot guide that talks and translates. I built its app. $50 at each.', 'See the code ↗'],
+    webelo:   ['/assets/projects/webelo.jpg', 'Webelo', 'The DOM, rebuilt in C++ from the WHATWG spec, with a viewer that draws any page as a tree.', 'webelo.yogya.dev ↗'],
+    any:      ['/assets/projects/anystudio.jpg', 'AnyStudio', 'In Rust. Describe an app or drag it together, and get a real native Android and iPhone app.', 'All 11 projects →'],
+    mail:     ['/assets/yogya-avatar.png', 'build@yogya.dev', 'Delhi, India (IST). Open to freelance work.', 'Write to me →', 1],
+  };
+  const card = document.querySelector('.card'), img = card.querySelector('.img'), n = card.querySelector('.n'), l = card.querySelector('.l'), u = card.querySelector('.u');
+  const phone = matchMedia('(max-width: 720px)');
+  let hideT;
+  const show = (k, ev) => {
+    const c = CARDS[k.dataset.card]; if (!c) return;
+    clearTimeout(hideT);
+    img.style.backgroundImage = `url(${c[0]})`; img.classList.toggle('tall', !!c[4]);
+    n.textContent = c[1]; l.textContent = c[2]; u.textContent = c[3];
+    if (!phone.matches) {
+      const r = k.getBoundingClientRect();
+      let x = Math.min(innerWidth - 320, Math.max(16, r.left)), y = r.bottom + 12;
+      if (y + 300 > innerHeight) y = r.top - 300;
+      card.style.left = x + 'px'; card.style.top = y + 'px';
+    }
+    card.classList.add('on');
+  };
+  const hide = () => { hideT = setTimeout(() => card.classList.remove('on'), 120); };
+  document.querySelectorAll('.k[data-card]').forEach(k => {
+    k.addEventListener('mouseenter', () => show(k)); k.addEventListener('mouseleave', hide);
+    k.addEventListener('focus', () => show(k)); k.addEventListener('blur', hide);
+    if (k.getAttribute('href') === '#') k.addEventListener('click', e => e.preventDefault());
+  });
+  // on phones: first tap shows the preview, second tap follows the link
+  document.addEventListener('click', e => {
+    if (!phone.matches) return;
+    const k = e.target.closest('.k[data-card]');
+    if (k && !k.classList.contains('armed')) { e.preventDefault(); document.querySelectorAll('.k.armed').forEach(a => a.classList.remove('armed')); k.classList.add('armed'); show(k); return; }
+    if (!e.target.closest('.card')) { card.classList.remove('on'); document.querySelectorAll('.k.armed').forEach(a => a.classList.remove('armed')); }
+  });
+  addEventListener('scroll', () => { if (!phone.matches) card.classList.remove('on'); }, { passive: true });
+
+  // each line arrives, and the highlighter follows
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -18% 0px' });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  // skim: only the highlighted words stay
+  const skim = document.querySelector('.skim');
+  skim.addEventListener('click', () => {
+    const on = !document.body.classList.contains('skimming');
+    document.body.classList.toggle('skimming', on); skim.setAttribute('aria-pressed', String(on));
+    skim.lastChild.textContent = on ? 'Read it all' : 'In a hurry? Skim it';
+    if (on) document.querySelectorAll('.reveal').forEach(r => r.classList.add('in'));
+  });
+
+  // today's date, in Delhi
+  document.getElementById('date').textContent = 'Delhi, ' + new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
+  const bar = document.querySelector('.progress');
+  addEventListener('scroll', () => { const m = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty('--p', m > 0 ? (scrollY / m).toFixed(4) : 0); }, { passive: true });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yogya Chugh · A letter</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+:root { --paper: #FAF8F4; --ink: #1E1D1B; --text: #3B3933; --soft: #8A847A; --faint: rgba(30, 29, 27, .09); --hl: #FFE27A; --red: #CC4630; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+.top { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 14px max(20px, calc(50vw - 470px)); background: linear-gradient(var(--paper) 55%, rgba(250, 248, 244, 0)); font: 500 .8rem/1 Inter; color: var(--soft); }
+.top b { color: var(--ink); font-weight: 600; }
+.top nav { display: flex; gap: 18px; } .top nav a { text-decoration: none; } .top nav a:hover { color: var(--ink); }
+.progress { position: fixed; left: 0; top: 0; z-index: 30; height: 2px; width: 100%; background: var(--red); transform-origin: left; transform: scaleX(var(--p, 0)); }
+
+/* a margin of numbers on the left, the letter on the right: the eye can run down the numbers alone */
+.letter { display: grid; grid-template-columns: 130px minmax(0, 560px); column-gap: 44px; justify-content: center; padding: 120px 24px 80px; }
+.letter > * { grid-column: 2; }
+.from { display: flex; align-items: center; gap: 12px; margin: 0 0 34px; font: 500 .85rem/1.35 Inter; color: var(--soft); }
+.from img { width: 40px; height: 40px; border-radius: 50%; }
+.from b { color: var(--ink); font-weight: 600; }
+.from .read { margin-left: auto; font-size: .78rem; }
+h1 { margin: 0 0 22px; font: 500 2.1rem/1.15 Newsreader, Georgia, serif; letter-spacing: -.02em; }
+.p { display: contents; }
+.p .m { grid-column: 1; align-self: start; padding-top: 3px; text-align: right; opacity: 0; transform: translateX(8px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.p .m b { display: block; font: 600 1.7rem/1 Newsreader, serif; letter-spacing: -.02em; color: var(--ink); }
+.p .m span { display: block; margin-top: 5px; font: 500 .72rem/1.3 Inter; letter-spacing: .02em; color: var(--soft); }
+.p .t { grid-column: 2; margin: 0 0 22px; font: 400 1.25rem/1.62 Newsreader, Georgia, serif; color: var(--text); opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.p .t strong { font-weight: 600; color: var(--ink); }
+.p.in .m, .p.in .t { opacity: 1; transform: none; }
+.p.in .t { transition-delay: .08s; }
+
+/* only three things in the whole letter are highlighted, so they can't be missed */
+.hl { font-weight: 600; color: var(--ink); background: linear-gradient(transparent 60%, var(--hl) 60%, var(--hl) 90%, transparent 90%) no-repeat; background-size: 0% 100%; transition: background-size .9s cubic-bezier(.6, 0, .25, 1) .5s; }
+.in .hl, h1 .hl.go { background-size: 100% 100%; }
+/* everything else you can point at is a quiet link with a preview */
+.lk { text-decoration: underline; text-decoration-color: rgba(30, 29, 27, .28); text-decoration-thickness: 1px; text-underline-offset: 4px; cursor: pointer; transition: text-decoration-color .2s; }
+.lk:hover, .lk:focus-visible { text-decoration-color: var(--red); outline: none; }
+
+.sign { margin: 18px 0 0; font: 400 1.25rem/1.6 Newsreader, serif; color: var(--text); }
+.sign .name { display: block; margin-top: 2px; font: 400 3.4rem/1 'Mrs Saint Delafield', cursive; color: #23345F; clip-path: inset(0 100% 0 0); transition: clip-path 1.8s cubic-bezier(.5, 0, .2, 1) .2s; }
+.sign.in .name { clip-path: inset(0 -5% 0 0); }
+.rv { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.rv.in { opacity: 1; transform: none; }
+.ps .actions { display: flex; }
+.ps { margin: 34px 0 0; padding: 18px 20px; border-radius: 14px; background: #fff; box-shadow: 0 0 0 1px var(--faint); font: italic 400 1.15rem/1.55 Newsreader, serif; color: var(--text); }
+.ps a.hl { font-style: normal; text-decoration: none; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.btn { display: inline-flex; align-items: center; padding: 11px 18px; border-radius: 99px; background: var(--ink); color: #fff; text-decoration: none; font: 600 .88rem/1 Inter; font-style: normal; }
+.btn.o { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px rgba(30, 29, 27, .25); }
+
+.card { position: fixed; z-index: 40; width: 280px; padding: 9px; border-radius: 14px; background: #fff; pointer-events: none; opacity: 0; transform: translateY(6px); transition: opacity .18s, transform .22s cubic-bezier(.2, .8, .2, 1);
+  box-shadow: 0 22px 50px -18px rgba(30, 20, 10, .35), 0 0 0 1px rgba(0, 0, 0, .05); }
+.card.on { opacity: 1; transform: none; }
+.card .img { height: 140px; border-radius: 9px; background: #F1EEE8 center / cover no-repeat; }
+.card .img.tall { background-size: contain; background-color: #F3EDE2; }
+.card .b { padding: 10px 5px 3px; }
+.card .n { font: 600 1.25rem/1.15 Newsreader, serif; }
+.card .l { margin-top: 4px; font: 400 .84rem/1.4 Inter; color: var(--soft); }
+.tag { position: fixed; left: 14px; bottom: 14px; z-index: 60; padding: 7px 12px; border-radius: 99px; background: rgba(30, 29, 27, .86); color: #fff; font: 600 .75rem/1 Inter; }
+
+@media (max-width: 760px) {
+  .top nav { display: none; }
+  .letter { grid-template-columns: minmax(0, 1fr); padding: 92px 20px 70px; }
+  .letter > *, .p .m, .p .t { grid-column: 1; }
+  h1 { font-size: 1.75rem; }
+  .p .m { display: flex; align-items: baseline; gap: 8px; text-align: left; padding: 0; margin: 0 0 4px; }
+  .p .m b { display: inline; font-size: 1.25rem; }
+  .p .m span { display: inline; margin: 0; }
+  .p .t { font-size: 1.1rem; margin-bottom: 20px; }
+  .sign, .ps { font-size: 1.05rem; }
+  .card { left: 12px !important; right: 12px; top: auto !important; bottom: 12px; width: auto; pointer-events: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .p .m, .p .t { opacity: 1; transform: none; transition: none; } .hl { background-size: 100% 100%; transition: none; } .sign .name { clip-path: none; transition: none; } }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="top"><span><b>Yogya Chugh</b> · <span id="date">Delhi</span></span><nav><a href="/projects">Projects</a><a href="/writing">Writing</a><a href="/resume/">Résumé</a></nav></header>
+
+<main class="letter">
+  <p class="from"><img src="/assets/yogya-avatar.png" alt="" width="40" height="40"><span>From <b>Yogya Chugh</b><br>Software engineer, Delhi</span><span class="read">30-second read</span></p>
+
+  <h1>Hi, I'm Yogya. I build <span class="hl" id="lead">whole products</span>.</h1>
+
+  <div class="p"><p class="m"><b>200+</b><span>people at once</span></p>
+    <p class="t"><strong>Vardhman Saathi</strong> is my latest: an Android app, a desktop app and the backend, all built by me. <span class="hl">200+ people</span> use it at once, and it costs <a class="lk" data-card="zero" href="/blogs/vardhman">$0 a month</a> to run.</p></div>
+
+  <div class="p"><p class="m"><b>Now</b><span>Meant2Bae</span></p>
+    <p class="t"><strong>Right now</strong> I'm a Software Engineering Intern at <a class="lk" data-card="m2b" href="https://meant2bae.com">Meant2Bae</a>, and building <a class="lk" data-card="sd" href="https://screendemons.app">ScreenDemons</a> on the side.</p></div>
+
+  <div class="p"><p class="m"><b>#19295</b><span>merged into Django</span></p>
+    <p class="t"><strong>I found a bug in Django</strong> by accident. They <a class="lk" data-card="django" href="/blogs/first_open_source">merged my fix</a>.</p></div>
+
+  <div class="p"><p class="m"><b>450h</b><span>one summer</span></p>
+    <p class="t"><strong>One summer</strong> I coded for 450 hours and <a class="lk" data-card="som" href="/blogs/summer_of_making">earned a laptop</a>. My team's robot came <a class="lk" data-card="pippo" href="https://github.com/YogyaChugh/RoboApp">3rd at two international hackathons</a>.</p></div>
+
+  <div class="p"><p class="m"><b>C++</b><span>and Rust, for fun</span></p>
+    <p class="t"><strong>For fun</strong>, I rebuilt <a class="lk" data-card="webelo" href="https://webelo.yogya.dev/">a web browser's DOM</a> from the spec, and I'm making <a class="lk" data-card="any" href="/projects">a tool that turns a description into a native app</a>.</p></div>
+
+  <div class="sign rv">If you've got something to build, I'd love to hear about it.<span class="name" aria-label="Yogya">Yogya</span></div>
+
+  <div class="ps rv">P.S. The quickest way to reach me: <a class="hl" href="mailto:build@yogya.dev">build@yogya.dev</a>
+    <span class="actions"><a class="btn" href="mailto:build@yogya.dev">Write to me</a><a class="btn o" href="https://calendly.com/yogya-chugh/30min">Book a call</a><a class="btn o" href="/resume/">Résumé</a></span></div>
+</main>
+<div class="card" role="tooltip" aria-hidden="true"><div class="img"></div><div class="b"><div class="n"></div><div class="l"></div></div></div>
+<span class="tag">Preview 2 · Letter, v2</span>
+
+<script>
+(() => {
+  const CARDS = {
+    zero:   ['/assets/projects/vardhman-app-store.jpg', '$7 → $0 a month', 'It started on a $7 server. I moved it to free tiers without losing anything.', 1],
+    m2b:    ['/assets/projects/meant2bae.jpg', 'Meant2Bae', 'Software Engineering Intern, paid and on-site, since Sep 2026.'],
+    sd:     ['/assets/projects/screendemons-demon.webp', 'ScreenDemons', 'An iPhone and Android app that beats screen time with friends.', 1],
+    django: ['/assets/projects/django-oss.jpg', 'Django #19295', 'A clearer error for a common template mistake, merged by a Django Fellow.'],
+    som:    ['/assets/projects/laptop-won.jpg', 'Summer of Making', '450+ hours in 2025. Google Summer of Code had said no.'],
+    pippo:  ['/assets/projects/pippo.jpg', 'Pippo', 'A robot guide that talks and translates. I built its app. $50 at each.'],
+    webelo: ['/assets/projects/webelo.jpg', 'Webelo', 'The DOM in C++, straight from the WHATWG spec.'],
+    any:    ['/assets/projects/anystudio.jpg', 'AnyStudio', 'In Rust. Describe an app, get a real native one.'],
+  };
+  const card = document.querySelector('.card'), img = card.querySelector('.img'), n = card.querySelector('.n'), l = card.querySelector('.l');
+  const phone = matchMedia('(max-width: 760px)');
+  let t;
+  const show = k => {
+    const c = CARDS[k.dataset.card]; if (!c) return; clearTimeout(t);
+    img.style.backgroundImage = `url(${c[0]})`; img.classList.toggle('tall', !!c[3]); n.textContent = c[1]; l.textContent = c[2];
+    if (!phone.matches) { const r = k.getBoundingClientRect(); let y = r.bottom + 10; if (y + 260 > innerHeight) y = r.top - 262; card.style.left = Math.min(innerWidth - 296, Math.max(16, r.left)) + 'px'; card.style.top = y + 'px'; }
+    card.classList.add('on');
+  };
+  const hide = () => { t = setTimeout(() => card.classList.remove('on'), 100); };
+  document.querySelectorAll('.lk').forEach(k => { k.addEventListener('mouseenter', () => show(k)); k.addEventListener('mouseleave', hide); k.addEventListener('focus', () => show(k)); k.addEventListener('blur', hide); });
+  document.addEventListener('click', e => {
+    if (!phone.matches) return;
+    const k = e.target.closest('.lk');
+    if (k && !k.classList.contains('armed')) { e.preventDefault(); document.querySelectorAll('.lk.armed').forEach(a => a.classList.remove('armed')); k.classList.add('armed'); show(k); return; }
+    if (!e.target.closest('.card')) { card.classList.remove('on'); document.querySelectorAll('.lk.armed').forEach(a => a.classList.remove('armed')); }
+  });
+  addEventListener('scroll', () => { if (!phone.matches) card.classList.remove('on'); }, { passive: true });
+  setTimeout(() => document.getElementById('lead').classList.add('go'), 400);
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.rv').forEach(r => io.observe(r));
+  // .p is display:contents, so watch its paragraph and light up the whole pair
+  document.querySelectorAll('.p').forEach(p => { const tt = p.querySelector('.t'); new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { p.classList.add('in'); o.disconnect(); } }), { rootMargin: '0px 0px -10% 0px' }).observe(tt); });
+  document.getElementById('date').textContent = 'Delhi, ' + new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
+  const bar = document.querySelector('.progress');
+  addEventListener('scroll', () => { const m = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty('--p', m > 0 ? (scrollY / m).toFixed(4) : 0); }, { passive: true });
+})();
+</script>
+</body>
+</html>

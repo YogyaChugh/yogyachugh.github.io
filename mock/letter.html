@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yogya Chugh · Software engineer in Delhi</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Design system (ui-ux-pro-max: Portfolio/Personal + Minimalism & Swiss Style)
+   Monochrome + one blue accent · Space Grotesk headings · Archivo body
+   Motion (design-motion-principles, Jakub primary · Jhey secondary):
+   enter = opacity + 8px + 4px blur, custom ease-out, staggered 50ms; nothing loops.
+   ========================================================= */
+:root {
+  --bg: #FAFAFA; --fg: #09090B; --card: #FFFFFF;
+  --primary: #18181B; --on-primary: #FFFFFF; --secondary: #3F3F46;
+  --muted: #F4F4F5; --muted-fg: #52525B; --subtle: #71717A; --border: #E4E4E7;
+  --accent: #2563EB; --accent-hover: #1D4ED8; --ring: #18181B; --ok: #16A34A;
+  --font-head: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --shadow-sm: 0 0 0 1px rgba(9, 9, 11, .06), 0 1px 2px -1px rgba(9, 9, 11, .06), 0 2px 4px 0 rgba(9, 9, 11, .04);
+  --shadow-md: 0 0 0 1px rgba(9, 9, 11, .07), 0 4px 8px -2px rgba(9, 9, 11, .06), 0 16px 40px -12px rgba(9, 9, 11, .14);
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --t-enter: 450ms; --t-hover: 200ms;
+  --r-sm: 6px; --r: 12px; --r-lg: 18px;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #09090B; --fg: #FAFAFA; --card: #131316; --primary: #FAFAFA; --on-primary: #09090B; --secondary: #D4D4D8;
+    --muted: #1E1E22; --muted-fg: #A1A1AA; --subtle: #8E8E96; --border: #26262B; --accent: #6EA8FF; --accent-hover: #9CC3FF; --ring: #FAFAFA;
+    --shadow-sm: 0 0 0 1px rgba(255, 255, 255, .07); --shadow-md: 0 0 0 1px rgba(255, 255, 255, .1), 0 16px 40px -12px rgba(0, 0, 0, .7); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--font-body); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- header ---------- */
+.site-head { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 84%, transparent); backdrop-filter: saturate(1.6) blur(14px); -webkit-backdrop-filter: saturate(1.6) blur(14px);
+  border-bottom: 1px solid transparent; transition: border-color var(--t-hover) var(--ease-out); }
+.site-head.scrolled { border-bottom-color: var(--border); }
+.site-head .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; font: 600 15px/1 var(--font-head); letter-spacing: -.01em; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+.nav { display: flex; gap: 24px; }
+.nav a { padding: 10px 0; text-decoration: none; font: 500 14px/1 var(--font-body); color: var(--muted-fg); transition: color var(--t-hover) var(--ease-out); }
+.nav a:hover { color: var(--fg); }
+
+/* ---------- buttons and links ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 18px; border: 0; border-radius: 10px; cursor: pointer;
+  background: var(--card); color: var(--fg); box-shadow: var(--shadow-sm); text-decoration: none; font: 600 15px/1 var(--font-body);
+  transition: box-shadow var(--t-hover) var(--ease-out), background-color var(--t-hover) var(--ease-out), transform 120ms var(--ease-out); }
+.btn:hover { box-shadow: var(--shadow-md); }
+.btn:active { transform: scale(.97); }
+.btn.primary { background: var(--primary); color: var(--on-primary); box-shadow: 0 1px 2px rgba(9, 9, 11, .24); }
+.btn.primary:hover { background: color-mix(in srgb, var(--primary) 86%, var(--bg)); }
+.btn.sm { height: 36px; padding: 0 14px; font-size: 14px; border-radius: 9px; }
+.tlink { display: inline-flex; align-items: center; gap: 6px; padding: 10px 4px; color: var(--accent); text-decoration: none; font: 500 15px/1 var(--font-body); }
+.tlink:hover { color: var(--accent-hover); }
+.arr { display: inline-block; transition: transform var(--t-hover) var(--ease-out); }
+a:hover > .arr { transform: translateX(3px); }
+a:hover > .arr.ne { transform: translate(2px, -2px); }
+
+/* ---------- hero ---------- */
+.hero { padding: 80px 0 88px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center; }
+.status { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 28px; padding: 7px 12px 7px 10px; border-radius: 99px; background: var(--card); box-shadow: var(--shadow-sm); font: 500 13px/1 var(--font-body); color: var(--secondary); }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 20%, transparent); }
+h1 { margin: 0; font: 600 clamp(44px, 6.2vw, 76px)/1 var(--font-head); letter-spacing: -.045em; }
+.lede { margin: 24px 0 0; max-width: 33em; font-size: 20px; line-height: 1.55; color: var(--muted-fg); text-wrap: pretty; }
+.lede b { color: var(--fg); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 36px; }
+.play { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #fff; font-size: 8px; padding-left: 2px; }
+
+/* the at-a-glance card, with his face on a stamp */
+.glance { background: var(--card); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: 22px 24px 8px; }
+.glance-top { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.stamp { flex: none; width: 62px; height: 74px; padding: 5px; rotate: -4deg; background: radial-gradient(circle at 4px 4px, transparent 2.4px, #fff 2.8px) -4px -4px / 8px 8px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .14)); }
+.stamp img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+.glance-top b { display: block; font: 600 18px/1.25 var(--font-head); letter-spacing: -.015em; }
+.glance-top span { font-size: 14px; color: var(--muted-fg); }
+.facts { margin: 0; }
+.facts > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.facts > div:last-child { border-bottom: 0; }
+.facts dt { font: 500 13px/1.55 var(--font-body); color: var(--subtle); }
+.facts dd { margin: 0; font: 500 15px/1.5 var(--font-body); }
+.facts dd small { display: block; margin-top: 2px; font: 400 13px/1.45 var(--font-body); color: var(--muted-fg); }
+
+/* ---------- sections: a sticky label on the left, the work on the right ---------- */
+.section { padding: 80px 0; border-top: 1px solid var(--border); }
+.section > .wrap { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
+.sec-head { position: sticky; top: 96px; align-self: start; }
+.sec-num { font: 500 13px/1 var(--font-head); color: var(--subtle); letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.sec-head h2 { margin: 14px 0 0; font: 600 30px/1.1 var(--font-head); letter-spacing: -.03em; }
+.sec-head p { margin: 10px 0 0; max-width: 22ch; font-size: 15px; line-height: 1.5; color: var(--muted-fg); }
+
+.items { display: grid; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) 236px; gap: 36px; padding: 36px 0; border-top: 1px solid var(--border); }
+.items > .item:first-child { padding-top: 0; border-top: 0; }
+.item.no-thumb { grid-template-columns: minmax(0, 1fr); }
+.item-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; }
+.logo { width: 26px; height: 26px; border-radius: 7px; box-shadow: var(--shadow-sm); }
+.item h3 { margin: 0; font: 600 22px/1.25 var(--font-head); letter-spacing: -.02em; }
+.tags { display: flex; gap: 6px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 9px; border-radius: var(--r-sm); background: var(--muted); color: var(--secondary); font: 500 12.5px/1 var(--font-body); white-space: nowrap; }
+.tag.now { background: color-mix(in srgb, var(--ok) 12%, var(--card)); color: color-mix(in srgb, var(--ok) 70%, var(--fg)); }
+.tag.now::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+.meta { margin: 8px 0 0; font-size: 14px; color: var(--subtle); font-variant-numeric: tabular-nums; }
+.desc { margin: 12px 0 0; max-width: 60ch; font-size: 16.5px; line-height: 1.65; color: var(--muted-fg); text-wrap: pretty; }
+.desc b { color: var(--fg); font-weight: 600; }
+.desc code { font: 500 .88em/1 ui-monospace, 'SF Mono', Consolas, monospace; padding: 2px 5px; border-radius: 5px; background: var(--muted); color: var(--fg); }
+.stats { display: flex; flex-wrap: wrap; gap: 14px 36px; margin: 22px 0 0; padding: 0; list-style: none; }
+.stats li { display: grid; gap: 4px; }
+.stats b { font: 600 30px/1 var(--font-head); letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.stats span { font-size: 13px; color: var(--muted-fg); }
+.links { display: flex; flex-wrap: wrap; gap: 0 22px; margin: 14px 0 -10px; }
+.thumb { margin: 0; aspect-ratio: 16 / 10; border-radius: var(--r); overflow: hidden; background: var(--muted); box-shadow: var(--shadow-sm); transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb.demon { background: linear-gradient(160deg, #7CCABC, #2E7F86); display: grid; place-items: end center; }
+.thumb.demon img { width: 78%; height: auto; object-fit: contain; }
+@media (hover: hover) { .item:hover .thumb { transform: translateY(-3px); box-shadow: var(--shadow-md); } }
+.also { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.also li { display: flex; gap: 12px; align-items: baseline; font-size: 16px; color: var(--muted-fg); }
+.also li b { color: var(--fg); font-weight: 600; }
+.also li::before { content: ''; flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--subtle); transform: translateY(-3px); }
+.sec-foot { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+/* projects: three cards */
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.card { display: flex; flex-direction: column; overflow: hidden; border-radius: var(--r-lg); background: var(--card); box-shadow: var(--shadow-sm); text-decoration: none; transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out); }
+@media (hover: hover) { .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); } }
+.card .thumb { border-radius: 0; box-shadow: none; }
+.card-body { padding: 16px 18px 20px; }
+.card h3 { margin: 0; font: 600 18px/1.3 var(--font-head); letter-spacing: -.015em; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.card .meta { margin-top: 4px; font-size: 13px; }
+.card p { margin: 10px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted-fg); }
+
+/* ---------- contact: the letter's sign-off ---------- */
+.contact { padding: 96px 0 112px; border-top: 1px solid var(--border); }
+.note { max-width: 760px; margin: 0 auto; padding: 48px 52px 40px; border-radius: 22px; background: var(--card); box-shadow: var(--shadow-md); }
+.note h2 { margin: 0; font: 600 clamp(32px, 4.4vw, 46px)/1.05 var(--font-head); letter-spacing: -.04em; }
+.note > p { margin: 16px 0 0; max-width: 46ch; font-size: 18px; line-height: 1.6; color: var(--muted-fg); }
+.mailrow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 28px; }
+.mail { font: 600 clamp(22px, 3vw, 30px)/1.1 var(--font-head); letter-spacing: -.025em; text-decoration: none; }
+.mail:hover { color: var(--accent); }
+.copy { position: relative; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 10px; background: var(--muted); color: var(--fg); cursor: pointer; transition: background-color var(--t-hover) var(--ease-out), transform 120ms var(--ease-out); }
+.copy:hover { background: color-mix(in srgb, var(--muted) 70%, var(--border)); }
+.copy:active { transform: scale(.94); }
+.copy svg { position: absolute; width: 18px; height: 18px; transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), filter 200ms var(--ease-out); }
+.copy .ok { opacity: 0; transform: scale(.8); filter: blur(4px); color: var(--ok); }
+.copy.done .ok { opacity: 1; transform: none; filter: none; }
+.copy.done .cp { opacity: 0; transform: scale(.8); filter: blur(4px); }
+.note .cta { margin-top: 28px; }
+.sign { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 20px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--border); }
+.sig { font: 400 60px/.9 'Mrs Saint Delafield', cursive; color: var(--fg); }
+.js .sig { clip-path: inset(0 100% 0 0); transition: clip-path 1.3s var(--ease-out) .15s; }
+.js .sig.in { clip-path: inset(-20% -10% -20% 0); }
+.clock { font-size: 14px; color: var(--subtle); font-variant-numeric: tabular-nums; }
+
+.foot { padding: 28px 0 40px; border-top: 1px solid var(--border); font-size: 14px; color: var(--subtle); }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+.foot nav { display: flex; gap: 20px; }
+.foot a { text-decoration: none; } .foot a:hover { color: var(--fg); }
+.tag-preview { position: fixed; left: 14px; bottom: 14px; z-index: 60; padding: 7px 12px; border-radius: 99px; background: rgba(9, 9, 11, .86); color: #fff; font: 600 12px/1 var(--font-body); }
+
+/* ---------- motion: things arrive once, softly ---------- */
+.js .reveal { opacity: 0; transform: translateY(8px); filter: blur(4px);
+  transition: opacity var(--t-enter) var(--ease-out), transform var(--t-enter) var(--ease-out), filter var(--t-enter) var(--ease-out); transition-delay: calc(var(--i, 0) * 50ms); }
+.js .reveal.in { opacity: 1; transform: none; filter: none; }
+
+/* ---------- smaller screens ---------- */
+@media (max-width: 980px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .glance { max-width: 520px; }
+  .section > .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .sec-head { position: static; }
+  .sec-head p { max-width: none; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .wrap { padding: 0 20px; }
+  .nav { display: none; }
+  .hero { padding: 48px 0 64px; }
+  .lede { font-size: 18px; }
+  .section { padding: 60px 0; }
+  .item { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 32px 0; }
+  .item .thumb { order: -1; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .stats { gap: 14px 28px; }
+  .stats b { font-size: 26px; }
+  .note { padding: 32px 24px 28px; border-radius: 18px; }
+  .sig { font-size: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  .js .sig { clip-path: none; transition: none; }
+  .thumb, .card, .btn, .copy, .copy svg, .arr { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="/assets/yogya-avatar.png" alt="" width="30" height="30">Yogya Chugh</a>
+    <nav class="nav" aria-label="Sections"><a href="#work">Work</a><a href="#open-source">Open source</a><a href="#projects">Projects</a><a href="#college">College</a></nav>
+    <a class="btn primary sm" href="mailto:build@yogya.dev">Email me</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ===== hero: who, what now, how to reach ===== -->
+  <section class="hero" aria-labelledby="hero-t">
+    <div class="wrap">
+      <div>
+        <p class="status reveal" style="--i:0"><i aria-hidden="true"></i>Open to freelance work</p>
+        <h1 id="hero-t" class="reveal" style="--i:1">Hi, I'm Yogya.</h1>
+        <p class="lede reveal" style="--i:2">I'm a software engineer in Delhi and a Computer Science student at PIET. Right now I'm a Software Engineering Intern at <b>Meant2Bae</b>, and I freelance as an app developer for <b>ScreenDemons</b>.</p>
+        <div class="cta reveal" style="--i:3">
+          <a class="btn primary" href="mailto:build@yogya.dev">Email me</a>
+          <a class="btn" href="/resume/">Résumé</a>
+          <a class="tlink" href="/intro"><span class="play" aria-hidden="true">▶</span>22-second intro</a>
+        </div>
+      </div>
+      <aside class="glance reveal" style="--i:3" aria-label="At a glance">
+        <div class="glance-top">
+          <div class="stamp" aria-hidden="true"><img src="/assets/yogya-avatar.png" alt="" width="52" height="64"></div>
+          <div><b>Yogya Chugh</b><span>Software engineer · Delhi, India</span></div>
+        </div>
+        <dl class="facts">
+          <div><dt>Studying</dt><dd>B.Tech in Computer Science<small>PIET, Panipat · 2023 – 2027</small></dd></div>
+          <div><dt>Languages</dt><dd>TypeScript, Python, Rust, C++, SQL</dd></div>
+          <div><dt>Builds with</dt><dd>React Native, Electron, Supabase, Cloudflare</dd></div>
+          <div><dt>Local time</dt><dd><span class="now-time">Delhi</span><small>India Standard Time</small></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== 01 work ===== -->
+  <section class="section" id="work" aria-labelledby="work-t">
+    <div class="wrap">
+      <header class="sec-head"><span class="sec-num">01</span><h2 id="work-t">Work</h2><p>Internships and freelance.</p></header>
+      <div class="items">
+        <article class="item reveal">
+          <div>
+            <div class="item-head"><img class="logo" src="/assets/logos/meant2bae.png" alt="" width="26" height="26"><h3>Meant2Bae</h3><span class="tags"><span class="tag now">Current</span><span class="tag">Internship</span></span></div>
+            <p class="meta">Software Engineering Intern · Paid, on-site · Sep 2026 – present</p>
+            <p class="desc">A curated dating service for professionals in India.</p>
+            <p class="links"><a class="tlink" href="https://meant2bae.com" target="_blank" rel="noopener">meant2bae.com <span class="arr ne" aria-hidden="true">↗</span></a></p>
+          </div>
+          <figure class="thumb"><img src="/assets/projects/meant2bae.jpg" alt="Meant2Bae's website: Love, handpicked for you" loading="lazy" width="960" height="504"></figure>
+        </article>
+
+        <article class="item reveal">
+          <div>
+            <div class="item-head"><img class="logo" src="/assets/logos/screendemons.png" alt="" width="26" height="26"><h3>ScreenDemons</h3><span class="tags"><span class="tag now">Current</span><span class="tag">Freelance</span></span></div>
+            <p class="meta">App developer · Remote · Jun 2026 – present</p>
+            <p class="desc">I'm building their iOS and Android app end to end. It cuts screen time through challenges with friends.</p>
+            <p class="links"><a class="tlink" href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app <span class="arr ne" aria-hidden="true">↗</span></a></p>
+          </div>
+          <figure class="thumb demon"><img src="/assets/projects/screendemons-demon.webp" alt="ScreenDemons' mascot, a friendly teal monster" loading="lazy" width="560" height="330"></figure>
+        </article>
+
+        <article class="item reveal">
+          <div>
+            <div class="item-head"><img class="logo" src="/assets/logos/vardhman.png" alt="" width="26" height="26"><h3>Vardhman Electricals</h3><span class="tags"><span class="tag">Internship</span></span></div>
+            <p class="meta">Software Developer Intern · Paid, remote · Mar – Jun 2026</p>
+            <p class="desc">I built their dealer loyalty platform end to end: <b>Vardhman Saathi</b>, a React Native app on Google Play, an Electron admin app for their staff, and the backend on Supabase and Cloudflare.</p>
+            <ul class="stats">
+              <li><b>200+</b><span>concurrent users</span></li>
+              <li><b>$0</b><span>a month to host, down from $7</span></li>
+              <li><b>3</b><span>admin dashboards in real-time sync</span></li>
+            </ul>
+            <p class="links"><a class="tlink" href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play <span class="arr ne" aria-hidden="true">↗</span></a><a class="tlink" href="/blogs/vardhman">How I built it <span class="arr" aria-hidden="true">→</span></a></p>
+          </div>
+          <figure class="thumb"><img src="/assets/projects/vardhman.jpg" alt="The Vardhman Saathi website and app" loading="lazy" width="1000" height="645"></figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 open source ===== -->
+  <section class="section" id="open-source" aria-labelledby="oss-t">
+    <div class="wrap">
+      <header class="sec-head"><span class="sec-num">02</span><h2 id="oss-t">Open source</h2><p>Fixes upstream, and projects built in public.</p></header>
+      <div>
+        <div class="items">
+          <article class="item reveal">
+            <div>
+              <div class="item-head"><img class="logo" src="/assets/logos/django.svg" alt="" width="26" height="26"><h3>Django</h3><span class="tags"><span class="tag">Contributor</span></span></div>
+              <p class="meta">Merged as #19295 · Mar 2025</p>
+              <p class="desc">I found and fixed a bug in Django's template engine. A relative <code>{% extends %}</code> path that couldn't be resolved raised an unrelated <code>AttributeError</code>; it now raises a clear <code>TemplateSyntaxError</code>.</p>
+              <p class="links"><a class="tlink" href="/blogs/first_open_source">The story <span class="arr" aria-hidden="true">→</span></a><a class="tlink" href="https://github.com/django/django/pull/19295" target="_blank" rel="noopener">Pull request <span class="arr ne" aria-hidden="true">↗</span></a></p>
+            </div>
+            <figure class="thumb"><img src="/assets/projects/django-oss.jpg" alt="The Django logo" loading="lazy" width="1200" height="546"></figure>
+          </article>
+          <article class="item reveal">
+            <div>
+              <div class="item-head"><h3>Summer of Making</h3><span class="tags"><span class="tag">Hack Club</span></span></div>
+              <p class="meta">450+ hours · Summer 2025</p>
+              <p class="desc">I shipped open-source projects all summer, including Webelo, Webber and Timberly, and earned a <b>Gigabyte Aero X16</b> laptop, $25 of Steam credit, RDR2 and Far Cry 4.</p>
+              <p class="links"><a class="tlink" href="/blogs/summer_of_making">The story <span class="arr" aria-hidden="true">→</span></a></p>
+            </div>
+            <figure class="thumb"><img src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop, still in its box" loading="lazy" width="760" height="350"></figure>
+          </article>
+        </div>
+        <p class="sec-foot reveal"><a class="tlink" href="https://github.com/YogyaChugh" target="_blank" rel="noopener">717 contributions on GitHub this year <span class="arr ne" aria-hidden="true">↗</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 projects ===== -->
+  <section class="section" id="projects" aria-labelledby="proj-t">
+    <div class="wrap">
+      <header class="sec-head"><span class="sec-num">03</span><h2 id="proj-t">Projects</h2><p>Things I build to learn how they work.</p></header>
+      <div>
+        <div class="cards">
+          <a class="card reveal" style="--i:0" href="/projects">
+            <figure class="thumb"><img src="/assets/projects/anystudio.jpg" alt="AnyStudio's app designer" loading="lazy" width="1200" height="749"></figure>
+            <div class="card-body"><h3>AnyStudio <span class="arr" aria-hidden="true">→</span></h3><p class="meta">Rust · In development</p><p>Turns a plain-English description or a drag-and-drop design into real native Android and iPhone apps.</p></div>
+          </a>
+          <a class="card reveal" style="--i:1" href="https://webelo.yogya.dev/">
+            <figure class="thumb"><img src="/assets/projects/webelo.jpg" alt="Webelo drawing a page's DOM as a tree" loading="lazy" width="1200" height="714"></figure>
+            <div class="card-body"><h3>Webelo <span class="arr ne" aria-hidden="true">↗</span></h3><p class="meta">C++ · Jul – Sep 2025</p><p>The WHATWG DOM standard in C++, with an HTML visualizer and Python bindings.</p></div>
+          </a>
+          <a class="card reveal" style="--i:2" href="https://timberly.yogya.dev/">
+            <figure class="thumb"><img src="/assets/projects/timberly.jpg" alt="Timberly's menu screen with the lumberjack" loading="lazy" width="1200" height="801"></figure>
+            <div class="card-body"><h3>Timberly <span class="arr ne" aria-hidden="true">↗</span></h3><p class="meta">Python · Game</p><p>A lumberjack game with an online leaderboard, on the web and every desktop.</p></div>
+          </a>
+        </div>
+        <p class="sec-foot reveal"><a class="tlink" href="/projects">See all 11 projects <span class="arr" aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 college ===== -->
+  <section class="section" id="college" aria-labelledby="col-t">
+    <div class="wrap">
+      <header class="sec-head"><span class="sec-num">04</span><h2 id="col-t">College</h2><p>PIET, Panipat · 2023 – 2027.</p></header>
+      <div class="items">
+        <article class="item no-thumb reveal">
+          <div>
+            <div class="item-head"><h3>B.Tech in Computer Science and Engineering</h3><span class="tags"><span class="tag">Degree</span></span></div>
+            <p class="meta">Panipat Institute of Engineering and Technology (Kurukshetra University) · CGPA 8.05</p>
+          </div>
+        </article>
+        <article class="item reveal">
+          <div>
+            <div class="item-head"><h3>Pippo</h3><span class="tags"><span class="tag">College team</span></span></div>
+            <p class="meta">Robot guide · 2024 – 2025</p>
+            <p class="desc">I built the companion app for a robot guide with voice and autonomous navigation. We placed <b>3rd at two international hackathons</b>, at the University of Derby and Ulster University, UK, winning $50 at each.</p>
+            <p class="links"><a class="tlink" href="https://github.com/YogyaChugh/RoboApp" target="_blank" rel="noopener">Code <span class="arr ne" aria-hidden="true">↗</span></a></p>
+          </div>
+          <figure class="thumb"><img src="/assets/projects/pippo.jpg" alt="Pippo, the robot, with its screen and wheels" loading="lazy" width="720" height="626"></figure>
+        </article>
+        <article class="item reveal">
+          <div>
+            <div class="item-head"><h3>PIET Comp Techies</h3><span class="tags"><span class="tag">Founder &amp; lead</span></span></div>
+            <p class="meta">College tech club</p>
+            <p class="desc">I started my college's tech club and organised Frontend Frenzy, a website-building contest.</p>
+          </div>
+          <figure class="thumb"><img src="/assets/projects/frontend-frenzy.jpg" alt="The Frontend Frenzy poster from PIET Comp Techies" loading="lazy" width="900" height="541"></figure>
+        </article>
+        <article class="item no-thumb reveal">
+          <ul class="also">
+            <li><span><b>1st place</b>, Pattern Coding Competition, 2023</span></li>
+            <li><span>Selected in the <b>Smart India Hackathon</b> internal rounds, 2024 and 2025</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== contact: the sign-off ===== -->
+  <section class="contact" id="connect" aria-labelledby="con-t">
+    <div class="wrap">
+      <div class="note reveal">
+        <h2 id="con-t">Got something to build?</h2>
+        <p>If you're building something and need a hand, write to me. I'm open to freelance work.</p>
+        <div class="mailrow">
+          <a class="mail" href="mailto:build@yogya.dev">build@yogya.dev</a>
+          <button type="button" class="copy" aria-label="Copy email address">
+            <svg class="cp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            <svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </button>
+          <span class="sr" aria-live="polite" id="copied"></span>
+        </div>
+        <div class="cta"><a class="btn primary" href="mailto:build@yogya.dev">Email me</a><a class="btn" href="https://calendly.com/yogya-chugh/30min">Book a 30-minute call</a><a class="btn" href="/resume/">Résumé</a></div>
+        <div class="sign"><span class="sig" aria-label="Signed, Yogya">Yogya</span><span class="clock" id="clock">Delhi</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><span>© 2026 Yogya Chugh</span>
+    <nav aria-label="Elsewhere"><a href="https://github.com/YogyaChugh">GitHub</a><a href="https://www.linkedin.com/in/yogyachugh">LinkedIn</a><a href="/writing">Writing</a><a href="/privacy">Privacy</a></nav></div>
+</footer>
+<span class="tag-preview">Preview · v6</span>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // the header gets its hairline once you scroll
+  const head = document.querySelector('.site-head');
+  const onScroll = () => head.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // things arrive once, softly: the hero on load, everything else as it scrolls into view
+  const hero = document.querySelectorAll('.hero .reveal');
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.forEach(el => el.classList.add('in'))));
+  document.querySelectorAll('.items').forEach(list => [...list.children].forEach((el, i) => el.style.setProperty('--i', Math.min(i, 3))));
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('.sig').forEach(s => s.classList.add('in'));
+    io.unobserve(e.target);
+  }), { rootMargin: '0px 0px -12% 0px' });
+  document.querySelectorAll('main .reveal:not(.hero .reveal)').forEach(el => io.observe(el));
+  if (reduce) document.querySelectorAll('.reveal, .sig').forEach(el => el.classList.add('in'));
+
+  // the real time in Delhi
+  const fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit' });
+  const hourOf = () => +new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', hour: 'numeric', hourCycle: 'h23' }).format(new Date());
+  const tick = () => {
+    const t = fmt.format(new Date()).toLowerCase(), h = hourOf(), awake = h >= 8 || h < 1;
+    document.querySelectorAll('.now-time').forEach(el => el.textContent = `${t} in Delhi`);
+    document.getElementById('clock').textContent = `It's ${t} in Delhi. ` + (awake ? "I'm probably around." : "I'm probably asleep, but I'll reply in the morning.");
+  };
+  tick(); setInterval(tick, 30000);
+
+  // copy the email address, with a quiet confirmation
+  const copy = document.querySelector('.copy'), live = document.getElementById('copied');
+  let timer;
+  copy.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText('build@yogya.dev'); } catch (e) { return; }
+    copy.classList.add('done'); live.textContent = 'Email address copied';
+    clearTimeout(timer); timer = setTimeout(() => { copy.classList.remove('done'); live.textContent = ''; }, 1600);
+  });
+})();
+</script>
+</body>
+</html>
