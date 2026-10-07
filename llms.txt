@@ -20,8 +20,6 @@ Key facts:
 ## Pages
 
 - [The comic résumé (home)](https://yogya.dev/): every internship and project as a comic episode, with results and links.
-- [About](https://yogya.dev/about): a plain, factual bio with quick facts.
-- [Projects](https://yogya.dev/projects): every project, each with its own site and code.
 - [22-second video intro](https://yogya.dev/intro): the short version, with chapters and a transcript.
 - [Résumé](https://yogya.dev/resume/): the same résumé as a one-page document.
 - [Résumé PDF (comic)](https://yogya.dev/Yogya_Chugh_Resume_Comic.pdf): printable comic version.
