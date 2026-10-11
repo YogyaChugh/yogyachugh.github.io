@@ -1,217 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yogya Chugh · Software Engineer</title>
-    <meta name="description" content="Yogya Chugh is a software engineer in Delhi. A fix merged into Django, apps used by 200+ people, and a résumé told as a comic.">
-    <link rel="icon" href="/favicon.ico" sizes="48x48">
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
-    
-    <style>
-        :root {
-            --bg-color: #09090b;
-            --card-bg: #18181b;
-            --card-border: #27272a;
-            --text-primary: #fafafa;
-            --text-secondary: #a1a1aa;
-            --accent: #5e6ad2;
-            --hover-glow: rgba(255, 255, 255, 0.05);
-            /* Motion Design (Jakub/Polish) */
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yogya Chugh · Software Engineer in Delhi, India</title>
+<meta name="description" content="Yogya Chugh is a software engineer in Delhi, interning at Meant2Bae. A fix merged into Django, apps used by 200+ people, and a laptop won by coding all summer.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://yogya.dev/">
+<meta name="author" content="Yogya Chugh">
+<meta name="theme-color" content="#FBF8F1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Yogya Chugh">
+<link rel="alternate" type="application/atom+xml" title="Yogya Chugh · Blog" href="https://yogya.dev/feed.xml">
+<link rel="me" href="https://github.com/YogyaChugh">
+<link rel="me" href="https://www.linkedin.com/in/yogyachugh">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yogya Chugh">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://yogya.dev/">
+<meta property="og:title" content="Yogya Chugh · Software Engineer">
+<meta property="og:description" content="Software engineer in Delhi. Two paid internships, a fix merged into Django, and a laptop won by coding all summer.">
+<meta property="og:image" content="https://yogya.dev/assets/cards/home.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yogya Chugh, software engineer, sketched in pencil, with a coffee and a laptop">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yogya Chugh · Software Engineer">
+<meta name="twitter:description" content="Software engineer in Delhi. Two paid internships, a fix merged into Django, and a laptop won by coding all summer.">
+<meta name="twitter:image" content="https://yogya.dev/assets/cards/home.jpg">
+<meta name="twitter:image:alt" content="Yogya Chugh, software engineer, sketched in pencil, with a coffee and a laptop">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yogya.dev/#website",
+      "url": "https://yogya.dev/",
+      "name": "Yogya Chugh",
+      "alternateName": [
+        "yogya.dev",
+        "Yogya Chugh's portfolio"
+      ],
+      "description": "The portfolio and résumé of Yogya Chugh, software engineer in Delhi.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://yogya.dev/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://yogya.dev/#webpage",
+      "url": "https://yogya.dev/",
+      "name": "Yogya Chugh · Software Engineer in Delhi, India",
+      "isPartOf": {
+        "@id": "https://yogya.dev/#website"
+      },
+      "about": {
+        "@id": "https://yogya.dev/#person"
+      },
+      "mainEntity": {
+        "@id": "https://yogya.dev/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://yogya.dev/assets/cards/home.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "dateModified": "2026-10-04T00:00:00+05:30",
+      "inLanguage": "en",
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#work",
+          "url": "https://yogya.dev/#work",
+          "cssSelector": "#work",
+          "name": "Volume 1 · On the job",
+          "description": "Two paid internships and a freelance client."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#vardhman",
+          "url": "https://yogya.dev/#vardhman",
+          "cssSelector": "#vardhman",
+          "name": "Software Developer Intern · Vardhman Electricals",
+          "description": "Paid, remote internship (March to June 2026): built the Vardhman Saathi Android app, the staff's desktop app and the backend. 200+ people use it at once and it runs for $0 a month."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#freelance",
+          "url": "https://yogya.dev/#freelance",
+          "cssSelector": "#freelance",
+          "name": "Freelance App Developer · ScreenDemons",
+          "description": "Since June 2026: building ScreenDemons (screendemons.app), an iPhone and Android app that cuts screen time through challenges with friends."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#meant2bae",
+          "url": "https://yogya.dev/#meant2bae",
+          "cssSelector": "#meant2bae",
+          "name": "Software Engineering Intern · Meant2Bae",
+          "description": "Paid, on-site internship since 21 September 2026 at Meant2Bae, a curated dating service for professionals in India."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#open-source",
+          "url": "https://yogya.dev/#open-source",
+          "cssSelector": "#open-source",
+          "name": "Volume 2 · Open source",
+          "description": "A fix merged into Django, and Yogya Chugh's GitHub activity."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#django",
+          "url": "https://yogya.dev/#django",
+          "cssSelector": "#django",
+          "name": "Merged into Django",
+          "description": "March 2025: hit a confusing template error while working on another ticket, reported it as ticket #36271 and fixed it; merged as pull request #19295 after review by Django Fellow Sarah Boyce."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#github",
+          "url": "https://yogya.dev/#github",
+          "cssSelector": "#github",
+          "name": "Still shipping: GitHub contributions",
+          "description": "Yogya Chugh's GitHub contributions per month over the past year, including private client work."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#built",
+          "url": "https://yogya.dev/#built",
+          "cssSelector": "#built",
+          "name": "Volume 3 · Things I build",
+          "description": "Side projects: AnyStudio, Webelo and Timberly."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#anystudio",
+          "url": "https://yogya.dev/#anystudio",
+          "cssSelector": "#anystudio",
+          "name": "AnyStudio",
+          "description": "In development, written in Rust: turns a plain-English description or a drag-and-drop design into real native Android and iPhone apps."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#webelo",
+          "url": "https://yogya.dev/#webelo",
+          "cssSelector": "#webelo",
+          "name": "Webelo",
+          "description": "The WHATWG DOM standard implemented in C++, with Python bindings and a viewer that draws any web page as a tree."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#timberly",
+          "url": "https://yogya.dev/#timberly",
+          "cssSelector": "#timberly",
+          "name": "Timberly",
+          "description": "A lumberjack game with an online leaderboard for the web, Windows, macOS and Linux."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#wins",
+          "url": "https://yogya.dev/#wins",
+          "cssSelector": "#wins",
+          "name": "Volume 4 · Wins",
+          "description": "Hack Club's Summer of Making, two international hackathon podiums, and the tech club Yogya founded."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#summer",
+          "url": "https://yogya.dev/#summer",
+          "cssSelector": "#summer",
+          "name": "The summer that blew me off! · Hack Club Summer of Making",
+          "description": "After a Google Summer of Code rejection: 450+ hours across 4 open-source projects in Hack Club's Summer of Making 2025, which won a ₹1.2 lakh Gigabyte Aero X16 laptop and $25 of Steam credit, plus Red Dead Redemption 2 and Far Cry 4."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#pippo",
+          "url": "https://yogya.dev/#pippo",
+          "cssSelector": "#pippo",
+          "name": "Pippo, the robot guide",
+          "description": "A college team's robot guide that talks and translates: 3rd place and a $50 prize at each of two international hackathons in 2025, the Cyber AI Hackathon (University of Derby) and the Agentic AI Hackathon (Ulster University). Built its companion app."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#club",
+          "url": "https://yogya.dev/#club",
+          "cssSelector": "#club",
+          "name": "Started a tech club: PIET Comp Techies",
+          "description": "Founded and led the college technical club PIET Comp Techies, and organised Frontend Frenzy, a website-building contest, in October 2024."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://yogya.dev/#connect",
+          "url": "https://yogya.dev/#connect",
+          "cssSelector": "#connect",
+          "name": "Let's work together",
+          "description": "Email Yogya Chugh or book a 30-minute call. Based in Delhi, studying B.Tech in Computer Science (2023–2027), open to freelance projects and collaborations."
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yogya.dev/#person",
+      "name": "Yogya Chugh",
+      "givenName": "Yogya",
+      "familyName": "Chugh",
+      "url": "https://yogya.dev/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://yogya.dev/assets/yogya-avatar.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "description": "Software engineer in Delhi, India. Software Engineering Intern at Meant2Bae; previously built Vardhman Electricals' rewards platform; contributor to Django.",
+      "jobTitle": "Software Engineer",
+      "email": "mailto:build@yogya.dev",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Delhi",
+        "addressCountry": "IN"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Meant2Bae",
+        "url": "https://www.meant2bae.com/"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Panipat Institute of Engineering and Technology"
+      },
+      "knowsAbout": [
+        "Software engineering",
+        "C++",
+        "Rust",
+        "Python",
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "Electron",
+        "PostgreSQL",
+        "Supabase",
+        "Cloudflare Workers",
+        "Django",
+        "WebAssembly"
+      ],
+      "award": [
+        "Gigabyte Aero X16 laptop, $25 Steam credit, Red Dead Redemption 2 and Far Cry 4, Hack Club Summer of Making 2025",
+        "3rd place and $50, Cyber AI Hackathon 2025 (international), University of Derby",
+        "3rd place and $50, Agentic AI Hackathon 2025 (international), Ulster University",
+        "1st place, Pattern Coding Competition 2023"
+      ],
+      "sameAs": [
+        "https://github.com/YogyaChugh",
+        "https://www.linkedin.com/in/yogyachugh",
+        "https://yogya-chugh.itch.io"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://yogya.dev/#projects",
+      "name": "Projects by Yogya Chugh",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Webelo",
+          "url": "https://webelo.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Timberly",
+          "url": "https://timberly.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Webber",
+          "url": "https://webber.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Safario",
+          "url": "https://safario.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Vote Leaderboard",
+          "url": "https://votes.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Western Upside-Down Island",
+          "url": "https://island.yogya.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Snake Hustle",
+          "url": "https://snake.yogya.dev/"
         }
-<<<<<<< HEAD
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            line-height: 1.5;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 220px;
-            gap: 1.5rem;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .bento-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            
-            /* Interaction Polish */
-            transition: var(--transition-smooth);
-            will-change: transform, box-shadow, border-color;
-            cursor: pointer;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1);
-            border-color: #3f3f46;
-        }
-
-        /* Prevent layout thrashing during hover */
-        .bento-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-            pointer-events: none;
-        }
-
-        /* Specific Grid Placements */
-        .card-intro {
-            grid-column: span 2;
-            grid-row: span 2;
-            background: linear-gradient(145deg, #18181b, #1f1f22);
-        }
-
-        .card-experience {
-            grid-column: span 2;
-            grid-row: span 1;
-        }
-
-        .card-pr {
-            grid-column: span 1;
-            grid-row: span 1;
-            background: linear-gradient(145deg, #062f17, #18181b);
-        }
-
-        .card-social {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-        
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .social-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        
-        .social-links a:hover {
-            color: var(--text-secondary);
-        }
-
-        .card-tech {
-            grid-column: span 2;
-            grid-row: span 1;
-        }
-        
-        .card-resume {
-            grid-column: span 2;
-            grid-row: span 1;
-            background: var(--text-primary);
-            color: var(--bg-color);
-        }
-        .card-resume:hover {
-            background: #e4e4e7;
-            box-shadow: 0 12px 40px rgba(255,255,255,0.15);
-        }
-
-        /* Typography & Layout inside cards */
-        h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.05em; margin-bottom: 0.5rem; line-height: 1.1; }
-        h2 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.03em; margin-bottom: 0.25rem; }
-        h3 { font-size: 1rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        
-        .card-resume h2 { color: var(--bg-color); }
-        .card-resume p { color: #3f3f46; font-weight: 500; }
-
-        p { color: var(--text-secondary); font-size: 1.05rem; }
-        
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            border-radius: 99px;
-            background: rgba(255,255,255,0.08);
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
-
-        /* Quick pulse animation for the PR card */
-        @keyframes pulse-border {
-            0% { border-color: #2ea043; }
-            50% { border-color: #40c463; }
-            100% { border-color: #2ea043; }
-        }
-        .card-pr {
-            border: 1px solid #2ea043;
-            animation: pulse-border 4s infinite;
-        }
-
-        /* Accessibility: Respect motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-            .bento-card {
-                transition: none;
-                transform: none !important;
-            }
-            .card-pr {
-                animation: none;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: minmax(200px, auto);
-            }
-            .card-intro, .card-experience, .card-tech, .card-resume {
-                grid-column: span 2;
-            }
-        }
-        @media (max-width: 600px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-            .bento-card {
-                grid-column: span 1 !important;
-                padding: 1.5rem;
-            }
-            h1 { font-size: 2.5rem; }
-        }
-    </style>
-=======
       ]
     }
   ]
@@ -219,334 +316,185 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/comic.css?v=13">
->>>>>>> parent of 84b1112 (New /projects and /about pages, in the menu and footer)
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/comic.css?v=24">
+<link rel="stylesheet" href="/sketch.css?v=24">
 </head>
-<body>
+<body class="sk home">
+<a class="sr" href="#work" style="position:absolute;left:-9999px">Skip to the work</a>
+<header class="sk-top">
+  <a class="brand" href="/" aria-label="Yogya Chugh, home"><img src="/assets/sketch/head-1.png" alt="" width="34" height="34"><span>Yogya Chugh</span></a>
+  <nav aria-label="Site"><a class="hide-sm" href="/#work">Work</a><a href="/projects">Projects</a><a href="/writing">Writing</a><a href="/resume/">Résumé</a></nav>
+</header>
 
-    <div class="bento-grid">
-        
-        <!-- Intro Card (Large) -->
-        <div class="bento-card card-intro">
-            <div>
-                <h1>Yogya<br>Chugh</h1>
-                <p style="font-size: 1.25rem; margin-top: 1rem; max-width: 90%;">Software Engineer building robust applications and writing clean code in Delhi, India.</p>
-                <div class="tag-container">
-                    <span class="tag">Python</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Django</span>
-                    <span class="tag">React</span>
-                </div>
-            </div>
-        </div>
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-text">
+      <p class="kick">hi, I'm</p>
+      <h1 id="h1"><span>Yogya</span><span>Chugh<svg class="swash" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 15 C60 6 120 5 190 9 S290 15 316 7"/></svg></span></h1>
+      <dl class="facts">
+        <div><dt>role</dt><dd>software engineer</dd></div>
+        <div><dt>now</dt><dd>intern at Meant2Bae, freelancing for ScreenDemons</dd></div>
+        <div><dt>studying</dt><dd>B.Tech in Computer Science, PIET, 2027</dd></div>
+      </dl>
+      <div class="hero-cta"><a class="btn" href="#work">See the work</a><a class="btn white" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="me"><img src="/assets/sketch/me-front.png" alt="" width="185" height="484"></div>
+      <img class="doodle d-coffee" src="/assets/sketch/coffee.png" alt="" width="66" height="100">
+      <img class="doodle d-laptop" src="/assets/sketch/laptop.png" alt="" width="222" height="220">
+      <img class="doodle d-bag" src="/assets/sketch/bag.png" alt="" width="158" height="188">
+      <p class="note n-hi"><svg viewBox="0 0 60 44" aria-hidden="true"><path d="M52 40 C30 40 12 30 10 6"/><path d="M3 14 L10 4 L18 12"/></svg>that's me, coffee and all</p>
+    </div>
+    <a class="cue" href="#work">scroll ↓</a>
+  </section>
 
-        <!-- Experience Card -->
-        <div class="bento-card card-experience">
-            <div>
-                <h3>Experience</h3>
-                <h2>Meant2Bae</h2>
-                <p>Software Engineering Intern</p>
-                <p style="margin-top: 0.75rem;">Built backend features and APIs utilized by 200+ active users.</p>
-            </div>
-        </div>
+  <section class="work" id="work" aria-labelledby="work-t">
+    
 
-<<<<<<< HEAD
-        <!-- Django PR Card -->
-        <a href="https://github.com/django/django/pulls?q=is%3Apr+author%3AYogyaChugh" target="_blank" rel="noopener noreferrer" class="bento-card card-pr">
-            <div>
-                <h3 style="color: #40c463;">Open Source</h3>
-                <h2>Django</h2>
-                <p style="color: #a1a1aa; margin-top: 0.5rem;">Core patch merged</p>
-            </div>
-=======
-  <!-- ================= COVER ================= -->
-  <section class="page cover" aria-label="Cover" style="--pr:.3deg">
-    <div class="cover-in">
-      <div class="mast">
-        <div class="mast-title">
-          <p class="series">A comic résumé · Issue #1</p>
-          <h1>Yogya Chugh</h1>
-          <div class="role-line"><span class="role">Software Engineer</span> <span class="where">Delhi, India</span></div>
-        </div>
-        <nav class="mast-nav" aria-label="Site">
-          <a href="/writing">Blog</a>
-          <a href="/resume/">Résumé</a>
-<<<<<<< HEAD
-          <a href="/about">About</a>
-=======
-          <a href="#connect">Contact</a>
-          <button type="button" class="install" hidden>Install</button>
->>>>>>> parent of 84b1112 (New /projects and /about pages, in the menu and footer)
-        </nav>
+    <div class="grp" id="internships">
+      <div class="gh"><span class="n">01</span><h3>Intern&shy;ships</h3><span class="cnt">2 · paid</span></div>
+      <div>
+        <article class="it" id="meant2bae">
+          <div><h4>Meant2Bae</h4>
+            <div class="role"><b>Software Engineering Intern</b><span class="now">Now</span><span>Sep 2026 – present</span><span>On-site</span></div>
+            <p>A curated dating service for professionals in India.</p>
+            <div class="links"><a href="https://meant2bae.com" target="_blank" rel="noopener">meant2bae.com ↗</a></div></div>
+          <figure><img src="/assets/projects/meant2bae.jpg" alt="Meant2Bae's website: Love, handpicked for you" width="960" height="504" loading="lazy"></figure>
+        </article>
+        <article class="it" id="vardhman">
+          <div><h4>Vardhman Electricals</h4>
+            <div class="role"><b>Software Developer Intern</b><span>Mar – Jun 2026</span><span>Remote</span></div>
+            <p>I built their dealer rewards platform end to end: an Android app on Google Play, an admin desktop app for their staff, and the backend. 200+ people use it at once, and I cut its hosting from $7 to $0 a month.</p>
+            <div class="links"><a href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play ↗</a><a href="/blogs/vardhman">How I built it →</a></div></div>
+          <figure><img src="/assets/projects/vardhman.jpg" alt="The Vardhman Saathi website and app" width="1000" height="645" loading="lazy"></figure>
+        </article>
       </div>
-      <div class="cover-art">
-        <div class="cover-copy">
-          <p class="blurb" id="blurb" aria-live="polite">I build things to find out how they work.</p>
-          <div class="cover-actions" data-for="none">
-            <a class="btn dark" href="#work">Start reading ↓</a>
-            <a class="btn red play" href="/intro" data-video><span class="play-dot" aria-hidden="true"></span>22-second intro</a>
-          </div>
-        </div>
-        <div class="starburst-ink" aria-hidden="true"></div>
-        <div class="starburst"><div>Now interning <br><span>@ Meant2Bae</span></div></div>
-        <div class="yo-wrap" data-expr="wink" id="cover-yo"></div>
+    </div>
+
+    <div class="grp" id="freelance">
+      <div class="gh"><span class="n">02</span><h3>Free&shy;lance</h3><span class="cnt">1 · ongoing</span></div>
+      <div>
+        <article class="it" id="freelance-app">
+          <div><h4>ScreenDemons</h4>
+            <div class="role"><b>App developer</b><span class="now">Now</span><span>Jun 2026 – present</span><span>Remote</span></div>
+            <p>I'm building their iOS and Android app end to end. It cuts screen time through challenges with friends.</p>
+            <div class="links"><a href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a></div></div>
+          <figure class="mascot"><img src="/assets/projects/screendemons-demon.webp" alt="ScreenDemons' mascot, a friendly teal monster" width="560" height="330" loading="lazy"></figure>
+        </article>
       </div>
+    </div>
+
+    <div class="grp" id="open-source">
+      <div class="gh"><span class="n">03</span><h3>Open source</h3><span class="cnt">3</span></div>
+      <div>
+        <article class="it" id="django">
+          <div><h4>Django</h4>
+            <div class="role"><b>Contributor</b><span>Merged as #19295</span><span>Mar 2025</span></div>
+            <p>I found, reported and fixed a bug in Django's template engine. A relative <code>{% extends %}</code> path that couldn't be resolved raised an unrelated <code>AttributeError</code>; it now raises a clear <code>TemplateSyntaxError</code>. Django Fellow Sarah Boyce merged it.</p>
+            <div class="links"><a href="/blogs/first_open_source">The story →</a><a href="https://github.com/django/django/pull/19295" target="_blank" rel="noopener">Pull request ↗</a></div></div>
+          <figure class="logo"><img src="/assets/projects/django-oss.jpg" alt="The Django logo" width="1200" height="546" loading="lazy"></figure>
+        </article>
+        <article class="it" id="summer">
+          <div><h4>Summer of Making</h4>
+            <div class="role"><b>Hack Club</b><span>450+ hours</span><span>Summer 2025</span></div>
+            <p>I shipped open-source projects all summer, like Webelo, Webber and Timberly. It earned me a Gigabyte Aero X16 laptop, $25 of Steam credit, and two games.</p>
+            <div class="links"><a href="/blogs/summer_of_making">The story →</a></div></div>
+          <figure><img src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop, still in its box" width="760" height="350" loading="lazy"></figure>
+        </article>
+        <article class="it nofig">
+          <div><h4><span class="gh-num" id="gh-num">717</span> contributions</h4>
+            <div class="role"><b>GitHub</b><span>this year</span><span class="gh-last" id="gh-last">Last one: 6 Oct 2026</span></div>
+            <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" title="September 2026: 163"><i></i></span><span class="" style="--h:0.261" title="October 2026: 57"><i></i></span></div>
+            <div class="links"><a href="https://github.com/YogyaChugh" target="_blank" rel="noopener">GitHub ↗</a></div></div>
+        </article>
+      </div>
+    </div>
+
+    <span id="wins"></span><div class="grp" id="college">
+      <div class="gh"><span class="n">04</span><h3>College</h3><span class="cnt">PIET · 2023–27</span></div>
+      <div>
+        <article class="it nofig" id="degree">
+          <div><h4>B.Tech, Computer Science</h4>
+            <div class="role"><b>Degree</b><span>2023 – 2027</span><span>CGPA 8.05</span></div>
+            <p>Panipat Institute of Engineering and Technology, under Kurukshetra University.</p></div>
+        </article>
+        <article class="it" id="club">
+          <div><h4>PIET Comp Techies</h4>
+            <div class="role"><b>Founder and lead</b><span>College tech club</span></div>
+            <p>I started my college's tech club, and organised Frontend Frenzy, a website-building contest.</p></div>
+          <figure><img src="/assets/projects/frontend-frenzy.jpg" alt="The Frontend Frenzy poster from PIET Comp Techies" width="900" height="541" loading="lazy"></figure>
+        </article>
+        <article class="it" id="pippo">
+          <div><h4>Pippo</h4>
+            <div class="role"><b>College team project</b><span>3rd place × 2</span><span>2024 – 2025</span></div>
+            <p>I built the companion app for a robot guide with voice and autonomous navigation. We placed 3rd at two international hackathons, at the University of Derby and Ulster University in the UK, winning $50 at each.</p>
+            <div class="links"><a href="https://github.com/YogyaChugh/RoboApp" target="_blank" rel="noopener">Code ↗</a></div></div>
+          <figure><img src="/assets/projects/pippo.jpg" alt="Pippo, the robot, with its screen and wheels" width="720" height="626" loading="lazy"></figure>
+        </article>
+        <article class="it nofig" id="contests">
+          <div><h4>Contests</h4>
+            <div class="role"><b>Competitions</b><span>2023 – 2025</span></div>
+            <p>1st place at the Pattern Coding Competition (2023). Selected in the Smart India Hackathon internal rounds (2024 and 2025).</p></div>
+        </article>
+      </div>
+    </div>
+
+    <span id="built"></span><div class="grp" id="projects">
+      <div class="gh"><span class="n">05</span><h3>Projects</h3><span class="cnt">11 built</span></div>
+      <div>
+        <div class="minis">
+          <a class="mini" id="anystudio" href="/projects"><figure><img src="/assets/projects/anystudio.jpg" alt="AnyStudio's app designer" width="1200" height="749" loading="lazy"></figure><b>AnyStudio</b><span>Rust · building now</span></a>
+          <a class="mini" id="webelo" href="https://webelo.yogya.dev/" target="_blank" rel="noopener"><figure><img src="/assets/projects/webelo.jpg" alt="Webelo drawing a page's DOM as a tree" width="1200" height="714" loading="lazy"></figure><b>Webelo</b><span>C++ · the web's DOM</span></a>
+          <a class="mini" id="timberly" href="https://timberly.yogya.dev/" target="_blank" rel="noopener"><figure><img src="/assets/projects/timberly.jpg" alt="Timberly's menu with the lumberjack" width="1200" height="801" loading="lazy"></figure><b>Timberly</b><span>Python · a game</span></a>
+        </div>
+        <p class="allp"><a href="/projects">See all 11 projects →</a></p>
       </div>
     </div>
   </section>
 
-  <!-- ================= VOLUME 1 · ON THE JOB ================= -->
-  <section class="page" id="work" style="--pr:.2deg" aria-labelledby="work-t">
-    <header class="page-title"><h2 id="work-t"><span class="ep">Vol. 1</span> On the job</h2><span class="when">Two paid internships and a freelance client</span></header>
-    <div class="eps two">
-      <article class="ep wide" id="vardhman" aria-labelledby="vardhman-t">
-        <div class="pn c-sky dots fan">
-          <div class="fan-ph" style="--dx:-86%; --r:-8deg"><img src="/assets/projects/vardhman-app-bill.jpg" alt="Vardhman Saathi's Submit Bill screen, with an invoice number field and a photo upload" loading="lazy" decoding="async"></div>
-          <div class="fan-ph" style="--dx:86%; --r:8deg"><img src="/assets/projects/vardhman-app-store.jpg" alt="Vardhman Saathi's Superstore, with rewards priced in V-Coins" loading="lazy" decoding="async"></div>
-          <div class="fan-ph front"><img src="/assets/projects/vardhman-app-home.jpg" alt="Vardhman Saathi's home screen, showing a V-Coins balance and featured brands" loading="lazy" decoding="async"></div>
-          <p class="nar bl fan-brand"><img src="/assets/logos/vardhman.png" alt="" width="22" height="22">Vardhman Saathi</p>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/vardhman.png" alt="" width="20" height="20">Vardhman Electricals · Mar – Jun 2026</p>
-          <h3 id="vardhman-t">Software Developer Intern</h3>
-          <p class="ep-line">Built Vardhman Saathi, a rewards app for their dealers, end to end: the Android app, the admin app and the backend.</p>
-          <div class="stats">
-            <p><b>200+</b>people at once</p>
-            <p><b>$0</b>a month to run</p>
-          </div>
-          <p class="built">React Native · Electron · Supabase · Cloudflare</p>
-          <div class="links">
-            <a class="btn sm" href="https://play.google.com/store/apps/details?id=com.vardhmanelectricals.saathi" target="_blank" rel="noopener">Google Play ↗</a>
-            <a class="btn sm white" href="/blogs/vardhman">The story →</a>
-          </div>
-        </div>
-      </article>
-      <article class="ep" id="freelance" aria-labelledby="freelance-t">
-        <div class="pn sd-art">
-          <p class="sd-word" aria-hidden="true">Screen Demons</p>
-          <img src="/assets/projects/screendemons-demon.webp" alt="The ScreenDemons mascot, a fuzzy teal monster with little horns, peeking over the edge" loading="lazy" decoding="async" width="560" height="330">
-        </div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/screendemons.png" alt="" width="20" height="20">Client project · June 2026 – now</p>
-          <h3 id="freelance-t">Freelance App Developer</h3>
-          <p class="ep-line">Building <mark>ScreenDemons</mark>, an iPhone and Android app that cuts screen time through challenges with friends.</p>
-          <div class="links"><a class="btn sm white" href="https://screendemons.app" target="_blank" rel="noopener">screendemons.app ↗</a></div>
-        </div>
-      </article>
-      <article class="ep" id="meant2bae" aria-labelledby="meant2bae-t">
-        <div class="pn">
-          <img class="fill" src="/assets/projects/meant2bae.jpg" alt="Meant2Bae: Love, handpicked for you" loading="lazy" decoding="async" style="object-position:0 0">
-          <p class="nar br" aria-hidden="true">To be continued…</p>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/meant2bae.png" alt="" width="20" height="20">Meant2Bae · September 2026 – now</p>
-          <h3 id="meant2bae-t">Software Engineering Intern</h3>
-          <p class="ep-line">Paid and <mark>on-site</mark>, at a curated dating service for professionals in India.</p>
-          <div class="links"><a class="btn sm white" href="https://meant2bae.com" target="_blank" rel="noopener">meant2bae.com ↗</a></div>
-        </div>
-      </article>
+  <section class="contact" id="contact" aria-labelledby="c-t">
+    <div>
+      <h2 id="c-t">Got something<br>to build?</h2>
+      <a class="mail" href="mailto:build@yogya.dev" data-gmail="Hey Yogya!">build@yogya.dev</a>
+      <div class="btns"><a class="btn" href="mailto:build@yogya.dev" data-gmail="Hey Yogya!">Email me</a><a class="btn white" href="https://calendly.com/yogya-chugh/30min" data-calendly>Book a 30-min call</a><a class="btn white" href="/resume/">Résumé</a></div>
     </div>
+    <div class="talk" aria-hidden="true"><img id="face" src="/assets/sketch/head-1.png" alt="" width="155" height="197"></div>
+    <p class="foot-note-home" style="grid-column:1/-1;margin:0;font:500 22px/1.3 var(--hand);color:var(--soft)">Delhi, India (IST) · open to freelance work</p>
   </section>
 
-  <!-- ================= VOLUME 2 · OPEN SOURCE ================= -->
-  <section class="page" id="open-source" style="--pr:-.25deg" aria-labelledby="open-source-t">
-    <header class="page-title"><h2 id="open-source-t"><span class="ep">Vol. 2</span> Open source</h2><span class="when">Out in the open, on GitHub</span></header>
-    <div class="eps two">
-      <article class="ep" id="django" aria-labelledby="django-t">
-        <div class="pn c-navy">
-<pre class="code">Template(
-  <span class="s">"{% extends './base.html' %}"</span>
-)
-
-<span class="err">AttributeError:
-'NoneType' object has
-no attribute 'lstrip'</span></pre>
-          <div class="yo-wrap" data-expr="confused" data-flip="1" style="left:auto; right:3%; transform:none; width:min(24%,96px)"></div>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when"><img class="co-logo" aria-hidden="true" src="/assets/logos/django.svg" alt="" width="20" height="20">django/django #19295 · March 2025</p>
-          <h3 id="django-t">Merged into Django</h3>
-          <p class="ep-line">Hit a confusing template error, then <mark>reported it and fixed it</mark>. Reviewed by Django Fellow Sarah Boyce.</p>
-          <div class="links">
-            <a class="btn sm" href="https://github.com/django/django/pull/19295" target="_blank" rel="noopener">Pull request ↗</a>
-            <a class="btn sm white" href="/blogs/first_open_source">The story →</a>
-          </div>
-        </div>
-      </article>
-      <article class="ep" id="github" aria-labelledby="github-t">
-        <div class="pn c-yellow burst gh-art" style="--bx:6%; --by:120%">
-          <div class="gh-big"><span class="gh-num" id="gh-num">761</span> <span class="gh-lbl">contributions</span></div>
-          <div class="gh-bars" id="gh-bars" role="img" aria-label="Bar chart of GitHub contributions per month over the past year"><span class="" style="--h:0.018" title="November 2025: 4"><i></i></span><span class="" style="--h:0.018" title="December 2025: 4"><i></i></span><span class="" style="--h:0.000" title="January 2026: 0"><i></i></span><span class="" style="--h:0.078" title="February 2026: 17"><i></i></span><span class="" style="--h:0.078" title="March 2026: 17"><i></i></span><span class="" style="--h:0.161" title="April 2026: 35"><i></i></span><span class="" style="--h:0.000" title="May 2026: 0"><i></i></span><span class="top" style="--h:1.000" title="June 2026: 218"><i></i></span><span class="hot" style="--h:0.491" title="July 2026: 107"><i></i></span><span class="" style="--h:0.390" title="August 2026: 85"><i></i></span><span class="hot" style="--h:0.748" title="September 2026: 163"><i></i></span><span class="hot" style="--h:0.463" title="October 2026: 101"><i></i></span></div>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when"><svg class="co-logo" aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg>GitHub · <span class="gh-last" id="gh-last">Last one: 10 Oct 2026</span></p>
-          <h3 id="github-t">Still shipping</h3>
-          <p class="ep-line">Each bar is a month of the past year, <mark>private client work included</mark>.</p>
-          <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github">My GitHub ↗</a></div>
-        </div>
-      </article>
+  <dialog class="cal" id="cal" aria-labelledby="cal-t">
+    <div class="cal-head">
+      <span class="face" aria-hidden="true"><img src="/assets/sketch/head-2.png" alt=""></span>
+      <p class="cal-bub">Pick any time that suits you. Talk soon!</p>
+      <h2 class="sr-only" id="cal-t">Book a call with Yogya</h2>
+      <button class="btn white sm" id="cal-close" type="button">Close ✕</button>
     </div>
-  </section>
-
-  <!-- ================= VOLUME 3 · THINGS I BUILD ================= -->
-  <section class="page" id="built" style="--pr:.25deg" aria-labelledby="built-t">
-    <header class="page-title"><h2 id="built-t"><span class="ep">Vol. 3</span> Things I build</h2><span class="when">To find out how things work</span></header>
-    <div class="eps">
-      <article class="ep" id="anystudio" aria-labelledby="anystudio-t">
-        <div class="pn">
-          <img class="fill" src="/assets/projects/anystudio.jpg" alt="AnyStudio's editor, with a component list, a phone preview and a properties panel" loading="lazy" decoding="async" style="object-position:50% 30%">
-          <div class="badge" style="right:10px; bottom:10px">Building<br>now</div>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when">Rust</p>
-          <h3 id="anystudio-t">AnyStudio</h3>
-          <p class="ep-line">Describe an app or drag it together, and get a <mark>real native Android and iPhone app</mark>.</p>
-        </div>
-      </article>
-      <article class="ep" id="webelo" aria-labelledby="webelo-t">
-        <div class="pn c-navy speed">
-          <div class="screen" style="inset:16px"><img src="/assets/projects/webelo.jpg" alt="Webelo drawing a web page's HTML as a tree" loading="lazy" decoding="async"></div>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when">C++ · 2025</p>
-          <h3 id="webelo-t">Webelo</h3>
-          <p class="ep-line">The heart of a web browser, the DOM, <mark>rebuilt from the official spec</mark>.</p>
-          <div class="links">
-            <a class="btn sm" href="https://webelo.yogya.dev/" target="_blank" rel="noopener">Website ↗</a>
-            <a class="btn sm white" href="/blogs/whatwg_dom">The story →</a>
-          </div>
-        </div>
-      </article>
-      <article class="ep" id="timberly" aria-labelledby="timberly-t">
-        <div class="pn">
-          <img class="fill" src="/assets/projects/timberly.jpg" alt="Timberly's main menu: a lumberjack next to Play, Leaderboard and Credits buttons" loading="lazy" decoding="async" style="object-position:50% 42%">
-          <p class="sfx" aria-hidden="true" style="right:6%; top:10%; font-size:clamp(1.4rem,2.6vw,2rem); --r:8deg">Chop! Chop!</p>
-        </div>
-        <div class="ep-body">
-          <p class="ep-when">Python · Pygame</p>
-          <h3 id="timberly-t">Timberly</h3>
-          <p class="ep-line">A lumberjack game with an <mark>online leaderboard</mark>, on web, Windows, macOS and Linux.</p>
-          <div class="links">
-            <a class="btn sm" href="https://timberly.yogya.dev/" target="_blank" rel="noopener">Website ↗</a>
-            <a class="btn sm white" href="https://github.com/YogyaChugh/Timberly" target="_blank" rel="noopener">Code ↗</a>
-          </div>
-        </div>
-      </article>
+    <div class="cal-wait" id="cal-wait" role="status">
+      <span class="cal-spin" aria-hidden="true"></span>
+      <p>Opening my calendar…</p>
+      <a href="https://calendly.com/yogya-chugh/30min" target="_blank" rel="noopener">Taking long? Open it on Calendly ↗</a>
     </div>
-    <div class="more">
-      <h3 class="more-h">More from my GitHub</h3>
-      <a class="more-all" href="https://github.com/YogyaChugh?tab=repositories" target="_blank" rel="noopener" data-track="github">All repositories ↗</a>
+    <iframe id="cal-frame" title="Book a 30-minute call with Yogya on Calendly" loading="lazy"></iframe>
+  </dialog>
+
+  <dialog class="cal vid" id="vid" aria-labelledby="vid-t">
+    <div class="cal-head">
+      <span class="face" aria-hidden="true"><img src="/assets/sketch/head-2.png" alt=""></span>
+      <p class="cal-bub">The short version, in 22 seconds!</p>
+      <h2 class="sr-only" id="vid-t">Meet Yogya Chugh in 22 seconds</h2>
+      <a class="btn white sm" href="/intro">Transcript</a>
+      <button class="btn white sm" id="vid-close" type="button">Close ✕</button>
     </div>
-    <ul class="micro">
-      <li><a class="mc" href="https://webber.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Webber</span> <span class="mc-d">Saves whole websites so you can read them offline.</span> <span class="mc-l"><i style="--lc:#3572A5"></i>Python</span></a></li>
-      <li><a class="mc" href="https://safario.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Safario</span> <span class="mc-d">Blockchain IDs for tourists, built for Smart India Hackathon.</span> <span class="mc-l"><i style="--lc:#3178C6"></i>TypeScript · React</span></a></li>
-      <li><a class="mc" href="https://github.com/YogyaChugh/Ticket-Chatbot" target="_blank" rel="noopener"><span class="mc-t">Ticket Chatbot</span> <span class="mc-d">A Rasa chatbot for booking tickets, for Smart India Hackathon.</span> <span class="mc-l"><i style="--lc:#3572A5"></i>Python · Rasa</span></a></li>
-      <li><a class="mc" href="https://votes.yogya.dev/" target="_blank" rel="noopener"><span class="mc-t">Vote Leaderboard</span> <span class="mc-d">Live voter rankings for Hack Club's Summer of Making.</span> <span class="mc-l"><i style="--lc:#3572A5"></i>Python</span></a></li>
-      <li><a class="mc" href="https://github.com/YogyaChugh/Hangman-Game" target="_blank" rel="noopener"><span class="mc-t">Hangman</span> <span class="mc-d">Classic Hangman in the terminal, drawn in ASCII.</span> <span class="mc-l"><i style="--lc:#555555"></i>C</span></a></li>
-    </ul>
-  </section>
+    <video controls playsinline preload="none" data-poster="/assets/video/yogya-intro-poster.webp" width="1920" height="1080" data-track="intro-video-play">
+      <source src="/assets/video/yogya-intro.mp4" type="video/mp4">
+      <track kind="captions" src="/assets/video/yogya-intro.en.vtt" srclang="en" label="English">
+    </video>
+  </dialog>
 
-  <!-- ================= VOLUME 4 · WINS ================= -->
-  <section class="page" id="wins" style="--pr:-.2deg" aria-labelledby="wins-t">
-    <header class="page-title"><h2 id="wins-t"><span class="ep">Vol. 4</span> Wins</h2><span class="when">Prizes, podiums and a club of my own</span></header>
-    <div class="eps">
-      <article class="ep" id="summer" aria-labelledby="summer-t">
-        <div class="pn">
-          <img class="fill" src="/assets/projects/laptop-won.jpg" alt="The Gigabyte Aero X16 laptop I won, still in its box" loading="lazy" decoding="async" width="760" height="350" style="object-position:12% 62%">
-        </div>
-        <div class="ep-body">
-          <p class="ep-when">Hack Club Summer of Making · 2025</p>
-          <h3 id="summer-t">The summer that blew me off!</h3>
-          <p class="ep-line">Google Summer of Code said no, so I coded 450+ hours instead. I won <mark>a ₹1.2 lakh laptop</mark> and $25 of Steam credit.</p>
-          <div class="links"><a class="btn sm white" href="/blogs/summer_of_making">The story →</a></div>
-        </div>
-      </article>
-      <article class="ep" id="pippo" aria-labelledby="pippo-t">
-        <div class="pn" style="--c:#3E3E41">
-          <img class="fill" src="/assets/projects/pippo.jpg" alt="Pippo, the robot: a four-wheeled base with a screen for a face and a bundle of wires" loading="lazy" decoding="async" width="720" height="626" style="object-fit:contain">
-        </div>
-        <div class="ep-body">
-          <p class="ep-when">College team · 2025</p>
-          <h3 id="pippo-t">Pippo, the robot guide</h3>
-          <p class="ep-line">A robot guide that talks and translates. <mark>3rd at two international hackathons</mark>, $50 each. I built its app.</p>
-          <div class="links"><a class="btn sm white" href="https://github.com/YogyaChugh/RoboApp" target="_blank" rel="noopener">App code ↗</a></div>
-        </div>
-      </article>
-      <article class="ep" id="club" aria-labelledby="club-t">
-        <div class="pn">
-          <img class="fill" src="/assets/projects/frontend-frenzy.jpg" alt="Poster: PIET Comp Techies presents Frontend Frenzy" loading="lazy" decoding="async" width="900" height="541" style="object-position:50% 12%">
-        </div>
-        <div class="ep-body">
-          <p class="ep-when">PIET Comp Techies · Founder and lead</p>
-          <h3 id="club-t">Started a tech club</h3>
-          <p class="ep-line">Founded and led my college's tech club, and ran <mark>Frontend Frenzy</mark>, a website-building contest, in October 2024.</p>
-        </div>
-      </article>
-    </div>
-    <div class="loot">
-      <div class="loot-covers">
-        <img src="/assets/projects/game-rdr2.jpg" alt="Red Dead Redemption 2" title="Red Dead Redemption 2" width="276" height="129" loading="lazy" decoding="async">
-        <img src="/assets/projects/game-far-cry-4.jpg" alt="Far Cry 4" title="Far Cry 4" width="276" height="129" loading="lazy" decoding="async">
-      </div>
-      <p><b>Plus two games</b>Red Dead Redemption 2 and Far Cry 4, also from Summer of Making.</p>
-      <span class="loot-sfx" aria-hidden="true">GG!</span>
-    </div>
-  </section>
-
-  <!-- ================= LET'S CONNECT ================= -->
-  <section class="page" id="connect" style="--pr:.2deg" aria-labelledby="connect-t">
-    <header class="page-title"><h2 id="connect-t"><span class="ep">Your turn</span> Let's work together</h2></header>
-    <div class="connect">
-      <div class="pn c-yellow burst" style="--by:92%">
-        <p class="bub" style="left:12px; right:12px; top:12px; --t:54%">That's the story so far. Want to be in the next issue?</p>
-        <div class="yo-wrap" data-expr="happy" style="width:min(70%,210px)"></div>
-      </div>
-      <div class="ways">
-        <a class="way main" id="gmail-link" href="mailto:build@yogya.dev" data-gmail="Hey Yogya!" target="_blank" rel="noopener">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 28 28"><rect x="3" y="6" width="22" height="16" rx="2" fill="#fff" stroke="#111318" stroke-width="2.5"/><path d="M4 8 L14 16 L24 8" fill="none" stroke="#E8473F" stroke-width="2.5" stroke-linejoin="round"/></svg></span>
-          <span><span class="t">Email me</span> <span class="s">build@yogya.dev · opens in Gmail</span></span>
-          <span class="arrow" aria-hidden="true">→</span>
->>>>>>> parent of 94279fe (Refresh GitHub contribution numbers)
-        </a>
-
-        <!-- Social / Links -->
-        <div class="bento-card card-social">
-            <div>
-                <h3>Connect</h3>
-                <div class="social-links" style="margin-top: 1rem;">
-                    <a href="https://github.com/YogyaChugh" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                    <a href="mailto:yogyachugh@gmail.com">Email ↗</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tech Stack / Projects -->
-        <a href="/projects.html" class="bento-card card-tech">
-            <div>
-                <h3>Projects</h3>
-                <h2>Won a laptop by coding all summer.</h2>
-                <p style="margin-top: 0.75rem;">Interactive apps, robust backends, and creative frontends.</p>
-            </div>
-        </a>
-
-        <!-- Resume Action -->
-        <a href="/comic.html" class="bento-card card-resume">
-            <div>
-                <h2>Experience the Comic Resume</h2>
-                <p>The full story behind the code.</p>
-            </div>
-            <p style="font-weight: 600; margin-top: 1rem;">→ Enter the Room</p>
-        </a>
-
-    </div>
-
-<<<<<<< HEAD
-=======
 <!-- site-foot -->
 <footer class="site-foot">
-  <nav class="foot-links" aria-label="Footer"><a href="/">The comic</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
+  <nav class="foot-links" aria-label="Footer"><a href="/">Home</a><a href="/projects">Projects</a><a href="/about">About</a><a href="/resume/">Résumé</a><a href="/writing">Blog</a><a href="/#connect">Contact</a><a href="/privacy">Privacy</a></nav>
   <ul class="socials-ic" aria-label="Find me online">
     <li><a class="ic-btn" href="https://github.com/YogyaChugh" target="_blank" rel="noopener" data-track="github" style="--brand:#181717" aria-label="Yogya Chugh on GitHub"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-github"/></svg><span>GitHub</span></a></li>
     <li><a class="ic-btn" href="https://www.linkedin.com/in/yogyachugh" target="_blank" rel="noopener" data-track="linkedin" style="--brand:#0A66C2" aria-label="Yogya Chugh on LinkedIn"><svg aria-hidden="true" focusable="false"><use href="/assets/icons.svg#i-linkedin"/></svg><span>LinkedIn</span></a></li>
@@ -559,7 +507,7 @@ no attribute 'lstrip'</span></pre>
 <!-- /site-foot -->
 </main>
 
-<script src="/comic.js?v=13" defer></script>
->>>>>>> parent of 84b1112 (New /projects and /about pages, in the menu and footer)
+<script src="/comic.js?v=24" defer></script>
+<script src="/sketch.js?v=24" defer></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 {
-  "name": "Yogya Chugh · Comic Résumé",
+  "name": "Yogya Chugh · Software Engineer",
   "short_name": "Yogya",
-  "description": "Yogya Chugh's résumé and portfolio, told as a comic. Installs like an app and works offline.",
+  "description": "Yogya Chugh's portfolio and résumé. Installs like an app and works offline.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#FFD84A",
-  "theme_color": "#E8473F",
+  "background_color": "#FBF8F1",
+  "theme_color": "#FBF8F1",
   "icons": [
     {
       "src": "/assets/icon-192.png",
@@ -82,14 +82,14 @@
       "sizes": "1280x720",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "The cover of the comic résumé"
+      "label": "The homepage on a computer"
     },
     {
       "src": "/assets/screenshot-narrow.jpg",
       "sizes": "780x1688",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "The comic résumé on a phone"
+      "label": "The homepage on a phone"
     }
   ],
   "display_override": [

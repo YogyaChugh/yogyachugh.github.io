@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Yogya Chugh · Blog</title>
-  <subtitle>The full stories behind the comic résumé.</subtitle>
+  <subtitle>The full stories behind my work.</subtitle>
   <link href="https://yogya.dev/feed.xml" rel="self"/>
   <link href="https://yogya.dev/writing"/>
   <id>https://yogya.dev/writing</id>
