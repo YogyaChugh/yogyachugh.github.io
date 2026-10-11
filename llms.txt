@@ -22,7 +22,7 @@ Key facts:
 - [Home](https://yogya.dev/): every internship, freelance project, open-source fix, college project and win, with results and links.
 - [22-second video intro](https://yogya.dev/intro): the short version, with chapters and a transcript.
 - [Résumé](https://yogya.dev/resume/): the same résumé as a one-page document.
-- [Résumé PDF (illustrated)](https://yogya.dev/Yogya_Chugh_Resume_Comic.pdf): printable illustrated version.
+- [Résumé PDF (illustrated)](https://yogya.dev/Yogya_Chugh_Resume_Illustrated.pdf): printable illustrated version.
 - [Résumé PDF (plain)](https://yogya.dev/Yogya_Chugh_Resume.pdf): plain, ATS-friendly version.
 - [Blog](https://yogya.dev/writing): the longer stories behind the work.
 

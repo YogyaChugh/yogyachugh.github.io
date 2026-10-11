@@ -350,3 +350,35 @@ body.home .contact .mail { color: var(--ink); text-shadow: none; -webkit-text-st
   body.sk .sheet-head .corner-box { width: 96px; padding: 10px 0 0 10px; }
 }
 @media (max-width: 400px) { .sk-top .brand span { display: none; } }
+
+/* ---------- the résumé prints as one A4 page, in the same sketchbook style ---------- */
+@media print {
+  @page { size: A4; margin: 0; }
+  body.sk { background: var(--paper) !important; }
+  body.sk::before { display: block !important; }
+  .sk-top, .sk-progress { display: none !important; }
+  body.sk .sheet { border: 0; box-shadow: none; min-height: 0; background: transparent; }
+  body.sk .sheet-head { background: transparent; border-bottom: 1.2pt solid var(--ink); }
+  body.sk .sheet-head .corner-box { width: 30mm; padding: 5mm 0 0 8mm; }
+  body.sk .corner-box .no { font-size: 13pt; padding-bottom: 1mm; }
+  body.sk .mast-title { padding: 4mm 8mm 3mm 3mm; }
+  body.sk .sheet-head h1, body.sk .mast-title h1 { font-size: 40pt; }
+  body.sk .role-line .role { font-size: 17pt; }
+  body.sk .role-line .where { font-size: 13pt; }
+  body.sk .sheet .contact { font-size: 8.2pt; gap: 0 9px; margin-top: 1.2mm; }
+  body.sk .sheet-body { background: transparent; font-size: 8.7pt; line-height: 1.32; padding: 3.5mm 10mm 3mm; }
+  body.sk .rs { margin-top: 2.4mm; }
+  body.sk .rs-h { font-size: 19pt; margin-bottom: 1mm; }
+  body.sk .rs-item { border-left-width: 1.6pt; margin-bottom: 1.6mm; }
+  body.sk .rs-title { font-size: 9.3pt; } body.sk .rs-date { font-size: 8.2pt; } body.sk .rs-sub { font-size: 8.3pt; }
+  body.sk .sheet .now { font-size: 10.5pt; padding: 0 5px; margin-left: 5px; border-width: 1pt; }
+}
+body.sk .sheet-head .corner-box { background: transparent; }
+@media print {
+  body.sk .sheet-body { font-size: 8.5pt; line-height: 1.28; padding: 3mm 10mm 2mm; }
+  body.sk .rs { margin-top: 1.9mm; }
+  body.sk .rs-h { font-size: 17.5pt; margin-bottom: .6mm; }
+  body.sk .rs-item { margin-bottom: 1.3mm; }
+  body.sk .sheet-head .corner-box { padding-top: 4mm; }
+  body.sk .mast-title { padding-top: 3mm; padding-bottom: 2mm; }
+}
