@@ -1,0 +1,33 @@
+# Yogya Chugh
+
+> Software engineer based in India, working with teams anywhere, who builds whole products: the mobile app, the admin tools behind it, the backend and the deploy, and keeps them cheap to run. Software Engineering Intern at Meant2Bae since September 2026, and open to freelance work.
+
+Key facts:
+
+- Meant2Bae (September 2026 to present): software engineering intern, paid and on-site, at a curated dating service for professionals in India. https://meant2bae.com
+- ScreenDemons (June 2026 to present): freelance app developer building an iOS and Android app that cuts screen time through challenges between friends. https://screendemons.app
+- Vardhman Electricals (March to June 2026): paid remote internship. Built Vardhman Saathi end to end: a React Native (Expo) Android app on Google Play, an Electron admin console, and a backend on Supabase and Cloudflare deployed by GitHub Actions. 200+ concurrent users; hosting costs ₹0 a month. https://vardhmansaathi.shop
+- Open source: django/django pull request #19295, merged 24 March 2025, which raises a clear TemplateSyntaxError for relative template paths with an unknown origin (ticket #36271).
+- Hackathons: third place at two international hackathons in 2025 (University of Derby and Ulster University) with Pippo, a multilingual guide robot; Yogya built its companion app.
+- Hack Club Summer of Making 2025: 450+ hours, four projects shipped, 6,612 shells, traded for a Gigabyte Aero X16 laptop.
+- Founder and lead of PIET Comp Techies, a college tech club; ran Frontend Frenzy, a website-building contest (October 2024).
+- Education: B.Tech in Computer Science and Engineering, Panipat Institute of Engineering and Technology (Kurukshetra University), 2023 to 2027, CGPA 8.05/10.
+- Tools: TypeScript, JavaScript, Python, C++, Rust, SQL; React, React Native, Expo, Electron; Node.js, Hono, Django, FastAPI, Flask; PostgreSQL, Supabase, Firebase, Cloudflare Workers, R2, D1, Pages; Git, GitHub Actions, Docker, Linux.
+
+## Pages
+
+- [Home](https://yogya.dev/): work, proof, background, notes and contact on one page.
+- [Résumé (PDF)](https://yogya.dev/Yogya_Chugh_Resume.pdf)
+
+## Notes
+
+- [Running a real product for ₹0 a month](https://yogya.dev/blogs/vardhman)
+- [450 hours, four ships, one laptop](https://yogya.dev/blogs/summer_of_making)
+- [My first open-source contribution](https://yogya.dev/blogs/first_open_source)
+
+## Contact
+
+- Email: build@yogya.dev
+- Book a 30-minute call: https://calendly.com/yogya-chugh/30min
+- GitHub: https://github.com/YogyaChugh
+- LinkedIn: https://www.linkedin.com/in/yogyachugh

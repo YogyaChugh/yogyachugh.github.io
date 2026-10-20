@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Running a real product for ₹0 a month, by Yogya Chugh</title>
+<meta name="description" content="How Vardhman Saathi's Android app, admin console and backend run entirely on free tiers while serving 200+ people at once.">
+<link rel="canonical" href="https://yogya.dev/blogs/vardhman">
+<meta name="theme-color" content="#1e1f21">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running a real product for ₹0 a month">
+<meta property="og:description" content="How an Android app, an admin console and a backend stopped paying for servers.">
+<meta property="og:image" content="https://yogya.dev/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<script>document.documentElement.classList.replace("no-js","js")</script>
+<script src="/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Yogya Chugh</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-optional" href="/#notes">Notes</a>
+      <a href="/Yogya_Chugh_Resume.pdf">Résumé</a>
+      <a class="btn btn-solid btn-small" href="mailto:build@yogya.dev">Email me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="article">
+  <article class="wrap">
+    <a class="crumb" href="/#notes">All notes</a>
+    <h1>Running a real product for ₹0 a month</h1>
+    <p class="meta"><time datetime="2026-06">June 2026</time>. Vardhman Saathi, built with React Native, Electron, Supabase and Cloudflare.</p>
+
+    <div class="article-art wide"><div class="fan">
+      <img src="/assets/work/vardhman-app-home.jpg" alt="Vardhman Saathi home screen with a dealer's V-Coin balance" width="400" height="853">
+      <img src="/assets/work/vardhman-app-bill.jpg" alt="Screen for submitting a purchase bill" width="400" height="853">
+      <img src="/assets/work/vardhman-app-store.jpg" alt="Rewards store priced in V-Coins" width="400" height="853">
+      <img src="/assets/work/vardhman-app-checkout.jpg" alt="Checkout for redeeming rewards" width="400" height="853">
+    </div></div>
+
+    <div class="prose">
+      <p class="lead">At my Vardhman Electricals internship I shipped more than an app: an Android product, desktop software for the admin team, a backend, and the deployment system that keeps all of it moving.</p>
+
+      <h2>What I built</h2>
+      <p>Everything lives in one repository but serves different people. Dealers use an Android app built with React Native and Expo to scan invoices, see their V-Coin balance and claim rewards. Staff use an Electron and React desktop app to verify bills, manage users and handle inventory. The public website runs on React and Vite.</p>
+      <p>Behind all of that is PostgreSQL on Supabase with server code in Edge Functions, plus small Cloudflare Workers where they make sense. The result is a product with phone users and three admin dashboards syncing in real time.</p>
+
+      <h2>Why the bill is ₹0</h2>
+      <p>The original server cost about $7 a month. Small, but unnecessary for a product at this stage. I moved the database and functions to Supabase, files and the desktop installer to Cloudflare R2, photo optimisation and protected downloads to Workers, and the website to Cloudflare Pages.</p>
+      <ul>
+        <li><strong>Supabase:</strong> PostgreSQL, Edge Functions and Row Level Security.</li>
+        <li><strong>Cloudflare R2:</strong> invoice photos and the desktop installer, without egress surprises.</li>
+        <li><strong>Cloudflare Workers:</strong> image optimisation and installer access control.</li>
+        <li><strong>Cloudflare Pages:</strong> the public website.</li>
+      </ul>
+      <p>Cost is not the only reason to simplify an architecture, but it is a good forcing function. Every service needs a job worth its complexity.</p>
+
+      <h2>Shipping without touching a server</h2>
+      <p>Every push to <code>main</code> goes through GitHub Actions. Database changes and functions deploy to Supabase; Workers deploy to Cloudflare; a Windows runner builds the desktop installer and uploads it to R2. Cloudflare Pages deploys the site on its own.</p>
+      <p>The Android app is the deliberate exception. I build it with Expo EAS, test it properly, and only then move it toward the Play Store. Automation should remove repetition, not judgement.</p>
+
+      <h2>Did it hold up?</h2>
+      <p>Yes. The system supports 200+ concurrent users across the app and the admin dashboards. More importantly, it gives the business software it can actually run without a large operations burden.</p>
+    </div>
+
+    <div class="article-end">
+      <a href="https://vardhmansaathi.shop">Visit Vardhman Saathi</a>
+      <a href="/blogs/summer_of_making">Next note: 450 hours, four ships, one laptop</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Yogya Chugh</p>
+    <p>Want something like this built? <a href="mailto:build@yogya.dev">build@yogya.dev</a></p>
+  </div>
+</footer>
+</body>
+</html>

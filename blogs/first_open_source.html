@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My first open-source contribution, by Yogya Chugh</title>
+<meta name="description" content="How a confusing error in Django's template engine became Yogya Chugh's first merged pull request, django/django #19295.">
+<link rel="canonical" href="https://yogya.dev/blogs/first_open_source">
+<meta name="theme-color" content="#1e1f21">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My first open-source contribution">
+<meta property="og:description" content="A confusing error became a Django ticket, a patch, and a merged fix.">
+<meta property="og:image" content="https://yogya.dev/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<script>document.documentElement.classList.replace("no-js","js")</script>
+<script src="/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Yogya Chugh</a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="nav-optional" href="/#notes">Notes</a>
+      <a href="/Yogya_Chugh_Resume.pdf">Résumé</a>
+      <a class="btn btn-solid btn-small" href="mailto:build@yogya.dev">Email me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="article">
+  <article class="wrap">
+    <a class="crumb" href="/#notes">All notes</a>
+    <h1>My first open-source contribution</h1>
+    <p class="meta"><time datetime="2025-03">March 2025</time>. django/django #19295, in Python.</p>
+
+    <figure class="article-art diff">
+      <figcaption class="diff-head"><span>django/template/loader_tags.py</span><span>#19295</span></figcaption>
+      <pre tabindex="0" aria-label="The merged change to django/template/loader_tags.py"><code><span class="ln hunk">@@ -257,6 +257,13 @@ def construct_relative_path(</span><span class="ln ctx">        return relative_name</span><span class="ln ctx"></span><span class="ln add">    if current_template_name is None:</span><span class="ln add">        # Unknown origin (e.g. Template('...').render(Context({...})).</span><span class="ln add">        raise TemplateSyntaxError(</span><span class="ln add">            f"The relative path {relative_name} cannot be evaluated due to "</span><span class="ln add">            "an unknown template origin."</span><span class="ln add">        )</span></code></pre>
+    </figure>
+
+    <div class="prose">
+      <p class="lead">I was working on another Django ticket when I ran into an error that was technically true but practically useless. That annoyance turned into my first upstream patch.</p>
+
+      <h2>The bug I stumbled on</h2>
+      <p>A template created directly in code can have an unknown origin. If that template used a relative path like <code>./base.html</code>, Django raised an <code>AttributeError</code> that pointed away from the actual problem.</p>
+      <p>The real issue was that the template had no location to resolve the path against, and that was the error people needed to see. I traced the cause, reported it as <a href="https://code.djangoproject.com/ticket/36271">ticket #36271</a>, and took it on.</p>
+
+      <h2>Writing the fix and the tests</h2>
+      <p>Setting up Django’s contributor workflow was its own lesson. The test suite is large, and the project has standards for good reasons. Once it ran locally, I found the issue in <code>django/template/loader_tags.py</code>.</p>
+      <p>The code change was short: detect the missing template name and raise a clear <code>TemplateSyntaxError</code>. The important part was the regression test, which proves the new behaviour and protects it from being broken later.</p>
+
+      <h2>Review is part of the work</h2>
+      <p>Sarah Boyce, a Django Fellow, reviewed the pull request and asked for a change to the test structure. I updated it, the checks passed, and on 24 March 2025 it merged as <a href="https://github.com/django/django/pull/19295">django/django #19295</a>.</p>
+      <p>Open source taught me that a small fix can still demand careful reading, test discipline and good collaboration. The first contribution doesn’t have to be huge. It has to make something clearer or better.</p>
+    </div>
+
+    <div class="article-end">
+      <a href="https://github.com/django/django/pull/19295">Open the pull request</a>
+      <a href="/blogs/vardhman">Next note: Running a real product for ₹0 a month</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Yogya Chugh</p>
+    <p>Want something like this built? <a href="mailto:build@yogya.dev">build@yogya.dev</a></p>
+  </div>
+</footer>
+</body>
+</html>

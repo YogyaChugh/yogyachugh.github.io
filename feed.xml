@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Notes by Yogya Chugh</title>
+  <link href="https://yogya.dev/"/>
+  <link rel="self" href="https://yogya.dev/feed.xml"/>
+  <id>https://yogya.dev/</id>
+  <updated>2026-10-20T00:00:00Z</updated>
+  <author><name>Yogya Chugh</name></author>
+  <entry>
+    <title>Running a real product for ₹0 a month</title>
+    <link href="https://yogya.dev/blogs/vardhman"/>
+    <id>https://yogya.dev/blogs/vardhman</id>
+    <updated>2026-06-30T00:00:00Z</updated>
+    <summary>How an Android app, an admin console and a backend stopped paying for servers.</summary>
+  </entry>
+  <entry>
+    <title>450 hours, four ships, one laptop</title>
+    <link href="https://yogya.dev/blogs/summer_of_making"/>
+    <id>https://yogya.dev/blogs/summer_of_making</id>
+    <updated>2025-09-30T00:00:00Z</updated>
+    <summary>What a long summer of building taught me about finishing.</summary>
+  </entry>
+  <entry>
+    <title>My first open-source contribution</title>
+    <link href="https://yogya.dev/blogs/first_open_source"/>
+    <id>https://yogya.dev/blogs/first_open_source</id>
+    <updated>2025-03-24T00:00:00Z</updated>
+    <summary>A confusing error became a Django ticket, a patch, and a merged fix.</summary>
+  </entry>
+</feed>
