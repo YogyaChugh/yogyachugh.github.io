@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work section lab — Vardhman Saathi</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family:"Bricolage Grotesque"; src:url("/fonts/bricolage.woff2") format("woff2"); font-weight:400 800; font-stretch:75% 100%; font-display:swap; }
+@font-face { font-family:"Newsreader"; src:url("/fonts/newsreader.woff2") format("woff2"); font-weight:350 600; font-display:swap; }
+@font-face { font-family:"Newsreader"; src:url("/fonts/newsreader-italic.woff2") format("woff2"); font-weight:350 600; font-style:italic; font-display:swap; }
+@font-face { font-family:"Martian Mono"; src:url("/fonts/martian-mono.woff2") format("woff2"); font-weight:300 800; font-display:swap; }
+
+*,*::before,*::after { box-sizing:border-box; }
+html,body { margin:0; height:100%; }
+body {
+  --accent:#ff3b30; --on-accent:#fff;
+  --ink:#f7f7f4; --ink2:#a9a9a3; --ink3:#7c7c76; --paper:#f2ede2;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Bricolage Grotesque",system-ui,sans-serif;
+  --mono:"Martian Mono",ui-monospace,Consolas,monospace;
+  /* the vertical budget — nothing may cross these lines */
+  --gut:clamp(1.25rem,5vw,3.5rem);
+  --low-h:14.5rem;   /* the bottom band, including clearance for the lab bar */
+  --mark-h:4.25rem;  /* the strip at the top holding yogya.dev */
+  background:#000; color:var(--ink);
+  font:400 1.0625rem/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased; overflow-x:clip;
+}
+a { color:inherit; text-decoration:none; }
+h1,h2,h3,p,ul,figure,dl,dd { margin:0; }
+ul { list-style:none; padding:0; }
+img { display:block; max-width:100%; }
+::selection { background:var(--accent); color:var(--on-accent); }
+
+/* ── the giant type: the hero's engine, unchanged ───────────── */
+.big { margin:0; white-space:nowrap;
+  font:800 100px/0.8 var(--sans); font-stretch:75%; font-optical-sizing:none;
+  font-variation-settings:"opsz" 96; letter-spacing:-.045em; text-transform:uppercase; }
+.big .ln { display:block; width:fit-content; vertical-align:top; overflow:hidden; }
+.big .ln > i { display:block; font-style:inherit; transform:translateY(104%); }
+.big.masked .ln > i { animation:up .95s cubic-bezier(.22,1,.36,1) forwards; }
+.big.masked .ln:nth-child(2) > i { animation-delay:.09s; }
+@keyframes up { to { transform:translateY(0); } }
+
+/* ── supporting bits ─────────────────────────────────────────── */
+.claim { font:400 clamp(1.05rem,1.7vw,1.5rem)/1.22 var(--serif); letter-spacing:-.02em; max-width:30ch; text-wrap:balance; }
+.meta { font:700 .68rem/1.3 var(--mono); letter-spacing:.14em; text-transform:uppercase; }
+.meta.a { color:var(--accent); }
+.btn { display:inline-flex; align-items:center; justify-content:center; min-height:2.9rem; padding:.5rem 1.4rem;
+  border-radius:999px; font:650 .98rem/1.2 var(--sans); border:2px solid currentColor; color:inherit;
+  background:transparent; cursor:pointer; white-space:nowrap; transition:.25s cubic-bezier(.22,1,.36,1); }
+.btn:hover { transform:translateY(-3px); }
+.btn.solid { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+.btn.solid:hover { background:color-mix(in srgb,var(--accent) 78%,white); border-color:color-mix(in srgb,var(--accent) 78%,white); }
+.btns { display:flex; flex-wrap:wrap; gap:.55rem .75rem; align-items:center; }
+.mark { position:absolute; z-index:9; top:clamp(1.25rem,3vw,2rem); left:var(--gut);
+  font:800 1rem/1 var(--sans); font-stretch:78%; letter-spacing:.04em; }
+.mark.mono { font:600 .8125rem/1 var(--mono); letter-spacing:.06em; text-transform:lowercase; }
+.mark .d { display:block; margin-top:.45rem; font:700 .64rem/1.3 var(--mono); letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink3); }
+
+/* ── the stage: two bands, no absolutes except decoration ───── */
+.stage { position:fixed; inset:0; overflow:hidden; visibility:hidden; opacity:0;
+  display:flex; flex-direction:column; }
+.stage.on { visibility:visible; opacity:1; transition:opacity .45s ease; }
+.content { flex:1; min-height:0; position:relative; overflow:hidden; }
+
+.low { flex:none; height:var(--low-h); position:relative; z-index:8;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:1rem clamp(2rem,5vw,4rem);
+  padding:1rem var(--gut) 5.5rem; background:var(--stage-bg,#000); }
+.low .col { width:min(100%,31rem); }
+.low .col .meta { margin-bottom:.5rem; }
+
+/* ── imagery: hard edges, cropped to the top of the screen ──── */
+.crop { position:relative; overflow:hidden; background:#0d0d0d; }
+.crop img { width:100%; height:100%; object-fit:cover; object-position:top center; }
+.plate { position:relative; }
+.cap { display:block; margin-top:.5rem; font:700 .62rem/1.3 var(--mono); letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink3); }
+
+/* a filmstrip of the four screens — 1px gaps, no rounding */
+.film { display:grid; grid-template-columns:repeat(4,1fr); flex:none;
+  gap:1px; background:rgba(247,247,244,.16); position:relative; z-index:3; }
+.film .crop { height:100%; }
+.film .plate { animation:card .7s both; }
+.film .plate:nth-child(1) { animation-delay:.16s; }
+.film .plate:nth-child(2) { animation-delay:.25s; }
+.film .plate:nth-child(3) { animation-delay:.34s; }
+.film .plate:nth-child(4) { animation-delay:.43s; }
+
+@keyframes wipe { to { transform:scaleX(1); } }
+@keyframes wipey { to { transform:scaleY(1); } }
+@keyframes draw { to { transform:scaleX(1); } }
+@keyframes pop { to { transform:scale(1); } }
+@keyframes rise { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+@keyframes fadein { from { opacity:0; } to { opacity:1; } }
+@keyframes up3 { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:none; } }
+@keyframes gridin { from { opacity:0; letter-spacing:.08em; } to { opacity:1; } }
+@keyframes card { from { opacity:0; transform:translateY(34px); } to { opacity:1; transform:none; } }
+
+/* ═════════ 1 · SEAM — a rule down the middle, type left, screens right ═════════ */
+#w1 { background:#000; --stage-bg:#000; }
+#w1 .seam { position:absolute; z-index:2; left:50%; top:0; bottom:0; width:1px;
+  background:rgba(247,247,244,.22); transform:scaleY(0); transform-origin:top;
+  animation:wipey .8s .15s cubic-bezier(.72,0,.18,1) forwards; }
+#w1 .text { position:absolute; z-index:5; left:var(--gut); top:var(--mark-h);
+  width:calc(50% - var(--gut) - 2.5rem); padding-top:clamp(1rem,3vh,2.5rem); }
+#w1 .big { margin:1rem 0 1.2rem; }
+#w1 .big .ln { overflow:visible; }
+#w1 .big .ln > i { transform:none; }
+#w1 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w1 .text .meta { color:var(--accent); }
+#w1 .grid2 { position:absolute; z-index:3; left:50%; right:0; top:0; bottom:0;
+  display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:1px; background:rgba(247,247,244,.16); }
+#w1 .grid2 .crop { height:100%; }
+#w1 .grid2 .plate { animation:card .7s both; }
+#w1 .grid2 .plate:nth-child(1) { animation-delay:.18s; }
+#w1 .grid2 .plate:nth-child(2) { animation-delay:.28s; }
+#w1 .grid2 .plate:nth-child(3) { animation-delay:.38s; }
+#w1 .grid2 .plate:nth-child(4) { animation-delay:.48s; }
+#w1 .low .col { width:min(100%,26rem); }
+#w1 .low .col .meta { color:var(--accent); }
+
+/* ═════════ 2 · FIELD — colour on top, the name sits on it, filmstrip below ═════════ */
+#w2 { background:#000; --stage-bg:#000; }
+#w2 .field { position:absolute; z-index:2; left:0; right:0; top:0; height:46%; background:var(--accent);
+  transform:scaleY(0); transform-origin:top; animation:wipey .8s cubic-bezier(.72,0,.18,1) forwards; }
+#w2 .mark { color:#fff; z-index:9; }
+#w2 .mark .d { color:rgba(255,255,255,.7); }
+#w2 .text { position:absolute; z-index:5; left:var(--gut); right:var(--gut); top:calc(var(--mark-h) + clamp(.5rem,2vh,1.5rem)); }
+#w2 .big { color:#fff; }
+#w2 .big .ln { overflow:visible; }
+#w2 .big .ln > i { transform:none; }
+#w2 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w2 .text .meta { color:rgba(255,255,255,.8); margin-bottom:.9rem; }
+#w2 .text .claim { color:#fff; margin-top:1rem; max-width:34ch; }
+#w2 .film { height:44%; }
+#w2 .low .col { width:min(100%,26rem); }
+#w2 .low .col .meta { color:var(--accent); }
+#w2 .low .btns .btn { border-color:var(--ink); }
+#w2 .low .btns .btn.solid { background:var(--ink); border-color:var(--ink); color:#000; }
+#w2 .low .btns .btn.solid:hover { background:#fff; border-color:#fff; }
+
+/* ═════════ 3 · LEDGER — cream, editorial, captioned plates ═════════ */
+#w3 { background:var(--paper); color:#12120f; --accent:#d92b1f; --on-accent:#fff; --stage-bg:var(--paper); }
+#w3 .mark { color:#12120f; }
+#w3 .mark .d { color:#6b6b63; }
+#w3 .text { position:absolute; z-index:5; left:clamp(1.5rem,4vw,3.5rem); top:var(--mark-h);
+  width:calc(100% - clamp(1.5rem,4vw,3.5rem) * 2); padding-top:clamp(1rem,3vh,2.5rem); }
+#w3 .big { font-family:var(--serif); font-weight:600; line-height:.9; letter-spacing:-.03em;
+  text-transform:none; font-stretch:normal; font-optical-sizing:auto; }
+#w3 .big .ln { overflow:visible; }
+#w3 .big .ln > i { transform:none; }
+#w3 .big .ln:nth-child(2) { font-style:italic; font-weight:350; }
+#w3 .big .ln:nth-child(2) > i { color:var(--accent); }
+#w3 .big.masked .ln > i { animation:up3 .9s cubic-bezier(.22,1,.36,1) forwards; }
+#w3 .text .meta { color:var(--accent); margin-bottom:1rem; }
+#w3 .rule { position:absolute; z-index:2; left:clamp(1.5rem,4vw,3.5rem); right:clamp(1.5rem,4vw,3.5rem);
+  height:1px; background:rgba(18,18,15,.22); transform:scaleX(0); transform-origin:left;
+  animation:draw 1s .55s cubic-bezier(.22,1,.36,1) forwards; }
+#w3 .film { height:40%; background:rgba(18,18,15,.16); }
+#w3 .film .crop { box-shadow:inset 0 0 0 1px rgba(18,18,15,.1); }
+#w3 .low .col { width:min(100%,26rem); }
+#w3 .low .col .meta { color:#6b6b63; }
+#w3 .low .btns .btn { border-color:#12120f; }
+#w3 .low .btns .btn.solid { background:#12120f; border-color:#12120f; color:var(--paper); }
+#w3 .low .btns .btn.solid:hover { background:#000; border-color:#000; }
+
+/* ═════════ 4 · STACK — a colour slab on the left, the screens fanned on the right ═════════ */
+#w4 { background:#000; --stage-bg:#000; }
+#w4 .field { position:absolute; z-index:2; left:0; top:0; bottom:0; width:38%; background:var(--accent);
+  transform:scaleX(0); transform-origin:left; animation:wipe .85s cubic-bezier(.72,0,.18,1) forwards; }
+#w4 .mark { color:#fff; z-index:9; }
+#w4 .mark .d { color:rgba(255,255,255,.7); }
+#w4 .text { position:absolute; z-index:6; left:var(--gut);
+  width:calc(38% - var(--gut) - 1.5rem); top:var(--mark-h); padding-top:clamp(1rem,3vh,2.5rem); color:#fff; }
+#w4 .big { margin:1rem 0 1.2rem; }
+#w4 .big .ln { overflow:visible; }
+#w4 .big .ln > i { transform:none; }
+#w4 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w4 .text .claim { color:rgba(255,255,255,.9); }
+#w4 .text .meta { color:rgba(255,255,255,.78); }
+#w4 .stack { position:absolute; z-index:4; right:0; top:0; bottom:0; width:60%; }
+#w4 .stack .plate { position:absolute; width:33%; }
+#w4 .stack .crop { aspect-ratio:400/853; box-shadow:0 0 0 1px rgba(247,247,244,.16); }
+#w4 .stack .plate:nth-child(1) { left:0;  top:6%;  z-index:2; transform:rotate(-6deg); animation:card .8s .2s both; }
+#w4 .stack .plate:nth-child(2) { left:20%; top:0;   z-index:3; transform:rotate(-2deg); animation:card .8s .3s both; }
+#w4 .stack .plate:nth-child(3) { left:40%; top:4%;  z-index:4; transform:rotate(3deg);  animation:card .8s .4s both; }
+#w4 .stack .plate:nth-child(4) { left:60%; top:8%;  z-index:5; transform:rotate(7deg);  animation:card .8s .5s both; }
+#w4 .low .col { width:min(100%,24rem); }
+#w4 .low .col .meta { color:var(--accent); }
+
+/* ═════════ 5 · HERO PHONE — one screen standing on a filmstrip ═════════ */
+#w5 { background:#000; --stage-bg:#000; }
+#w5 .content { display:flex; flex-direction:column; }
+#w5 .text { flex:none; position:relative; z-index:5; margin:calc(var(--mark-h) + clamp(1rem,3vh,2.5rem)) var(--gut) 0; }
+#w5 .big { margin:1rem 0 0; }
+#w5 .big .ln { overflow:visible; }
+#w5 .big .ln > i { transform:none; }
+#w5 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w5 .text .meta { color:var(--accent); }
+#w5 .film { margin-top:auto; height:34%; }
+#w5 .hero { position:absolute; z-index:6; right:clamp(1.5rem,5vw,4rem); bottom:0;
+  width:clamp(170px,19vw,270px); }
+#w5 .hero .crop { aspect-ratio:400/853; box-shadow:0 0 0 1px rgba(247,247,244,.22), 0 30px 60px -30px #000; }
+#w5 .hero .plate { animation:card .9s .25s both; }
+#w5 .low .col { width:min(100%,26rem); }
+#w5 .low .col .meta { color:var(--accent); }
+
+/* ═════════ 6 · COUNT — the number is the section ═════════ */
+#w6 { background:#000; --stage-bg:#000; }
+#w6 .band { position:absolute; z-index:2; left:0; right:0; top:0; height:58%; background:var(--accent);
+  transform:scaleY(0); transform-origin:bottom; animation:wipey .8s cubic-bezier(.72,0,.18,1) forwards; }
+#w6 .mark { z-index:9; }
+#w6 .text { position:absolute; z-index:5; left:var(--gut); right:var(--gut); top:calc(var(--mark-h) + clamp(.5rem,2vh,1.5rem)); }
+#w6 .big { color:#fff; }
+#w6 .big .ln { overflow:visible; }
+#w6 .big .ln > i { transform:none; }
+#w6 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w6 .text .meta { color:rgba(255,255,255,.8); margin-bottom:.9rem; }
+#w6 .text .claim { color:#fff; margin-top:1rem; max-width:36ch; }
+#w6 .film { height:38%; }
+#w6 .low .col { width:min(100%,26rem); }
+#w6 .low .col .meta { color:var(--accent); }
+#w6 .low .btns .btn { border-color:var(--ink); }
+#w6 .low .btns .btn.solid { background:var(--ink); border-color:var(--ink); color:#000; }
+#w6 .low .btns .btn.solid:hover { background:#fff; border-color:#fff; }
+
+/* ═════════ 7 · RULES — the name breaks across two rules, filmstrip below ═════════ */
+#w7 { background:#000; --stage-bg:#000; }
+#w7 .r1, #w7 .r2 { position:absolute; z-index:1; left:0; right:0; height:1px; background:rgba(247,247,244,.18); }
+#w7 .r1 { top:30%; transform:scaleX(0); transform-origin:left; animation:draw .8s .1s cubic-bezier(.22,1,.36,1) forwards; }
+#w7 .r2 { top:62%; transform:scaleX(0); transform-origin:left; animation:draw .8s .25s cubic-bezier(.22,1,.36,1) forwards; }
+#w7 .mark { z-index:9; }
+#w7 .text { position:absolute; z-index:5; left:var(--gut); right:var(--gut); top:clamp(5.5rem,13vh,9rem); }
+#w7 .big { color:#fff; }
+#w7 .big .ln { overflow:visible; }
+#w7 .big .ln > i { transform:none; }
+#w7 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w7 .text .meta { color:var(--accent); margin-bottom:.9rem; }
+#w7 .text .claim { margin-top:1rem; max-width:34ch; }
+#w7 .film { height:34%; }
+#w7 .low .col { width:min(100%,26rem); }
+#w7 .low .col .meta { color:var(--accent); }
+
+/* ═════════ 8 · PLATE — one big screen, a narrow column beside it ═════════ */
+#w8 { background:#000; --stage-bg:#000; }
+#w8 .text { position:absolute; z-index:5; left:var(--gut); top:var(--mark-h);
+  width:min(100%,32rem); padding-top:clamp(1rem,3vh,2.5rem); }
+#w8 .big { margin:1rem 0 1.2rem; }
+#w8 .big .ln { overflow:visible; }
+#w8 .big .ln > i { transform:none; }
+#w8 .big.masked .ln > i { animation:gridin 1s cubic-bezier(.22,1,.36,1) forwards; }
+#w8 .text .meta { color:var(--accent); }
+#w8 .col2 { position:absolute; z-index:3; right:calc(clamp(1rem,4vw,3rem) + clamp(200px,23vw,330px) + 1.5rem);
+  top:50%; translate:0 -50%; width:clamp(96px,11vw,150px); display:grid; gap:1px; background:rgba(247,247,244,.16); }
+#w8 .col2 .crop { aspect-ratio:4/3; }
+#w8 .col2 .plate { animation:card .7s both; }
+#w8 .col2 .plate:nth-child(1) { animation-delay:.3s; }
+#w8 .col2 .plate:nth-child(2) { animation-delay:.38s; }
+#w8 .col2 .plate:nth-child(3) { animation-delay:.46s; }
+#w8 .bigplate { position:absolute; z-index:4; right:clamp(1rem,4vw,3rem); top:50%; translate:0 -50%;
+  width:clamp(200px,23vw,330px); }
+#w8 .bigplate .crop { aspect-ratio:400/853; box-shadow:0 0 0 1px rgba(247,247,244,.22), 0 30px 60px -30px #000; }
+#w8 .bigplate .plate { animation:card .9s .2s both; }
+#w8 .low .col { width:min(100%,26rem); }
+#w8 .low .col .meta { color:var(--accent); }
+
+/* ═════════ lab chrome ═════════ */
+.lab { position:fixed; z-index:100; left:50%; bottom:calc(.75rem + env(safe-area-inset-bottom,0px)); translate:-50% 0;
+  width:min(100% - 1.5rem,68rem); background:rgba(16,16,16,.94); color:#f2f2f2;
+  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,.14);
+  border-radius:18px; padding:.55rem .6rem; font:500 .8125rem/1.3 system-ui,sans-serif;
+  box-shadow:0 20px 50px -15px rgba(0,0,0,.7); }
+.lab-row { display:flex; align-items:center; gap:.5rem; }
+.lab button { font:inherit; color:inherit; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
+  border-radius:999px; min-height:2.25rem; padding:.3rem .85rem; cursor:pointer; white-space:nowrap; }
+.lab button:hover { background:rgba(255,255,255,.17); }
+.lab .lname { flex:none; min-width:8rem; font-weight:650; }
+.lab .lcount { flex:none; opacity:.55; font-variant-numeric:tabular-nums; }
+.lab .chips { display:flex; gap:.35rem; overflow-x:auto; flex:1; scrollbar-width:none; padding:.1rem; }
+.lab .chips::-webkit-scrollbar { display:none; }
+.lab .chip[aria-pressed="true"] { background:#fff; color:#000; border-color:#fff; font-weight:650; }
+.lab .sw { display:flex; gap:.35rem; flex:none; }
+.lab .sw button { width:1.9rem; height:1.9rem; padding:0; min-height:0; border-radius:50%; position:relative; overflow:hidden; }
+.lab .sw button::after { content:""; position:absolute; right:0; bottom:0; width:52%; height:52%; background:#fff; border-top-left-radius:100%; }
+.lab .sw button[aria-pressed="true"] { outline:2px solid #fff; outline-offset:2px; }
+.lab .vr { width:1px; align-self:stretch; background:rgba(255,255,255,.14); margin-inline:.2rem; }
+@media (max-width:52rem) {
+  :root { --low-h:12.5rem; --mark-h:3.75rem; }
+  .lab { padding:.4rem .45rem; border-radius:14px; }
+  .lab-row { gap:.35rem; }
+  .lab .lname { min-width:0; font-size:.75rem; }
+  .lab .lcount, .lab .vr { display:none; }
+  .lab button { min-height:2rem; padding:.25rem .6rem; font-size:.75rem; }
+  .lab .sw button { width:1.6rem; height:1.6rem; }
+  .btn { min-height:2.5rem; padding:.45rem 1rem; font-size:.9rem; }
+  .claim { font-size:1rem; }
+  #w1 .text, #w3 .text, #w5 .text, #w8 .text { width:min(100%,26rem); }
+  #w4 .text { width:calc(100% - var(--gut) * 2); }
+  #w1 .grid2 { grid-template-columns:1fr; grid-template-rows:repeat(4,1fr); }
+}
+@media (prefers-reduced-motion:reduce) { * { animation-duration:.01ms !important; animation-delay:0s !important; } }
+</style>
+</head>
+<body>
+
+<!-- 1 SEAM -->
+<section class="stage on" id="w1" data-name="Seam">
+  <div class="content">
+    <div class="seam"></div>
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".30"><span class="ln"><i>Vardhman</i></span><span class="ln"><i>Saathi</i></span></h2>
+    </div>
+    <div class="grid2">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Home screen with the V-Coin balance" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">Scan a bill, earn V-Coins, spend them in the store. The Android app, the staff console and the backend — one repo, one pipeline, ₹0 a month to run.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 2 FIELD -->
+<section class="stage" id="w2" data-name="Field">
+  <div class="content">
+    <div class="field"></div>
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".26"><span class="ln"><i>Vardhman Saathi</i></span></h2>
+    </div>
+    <div class="film">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Home screen with the V-Coin balance" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">The dealer's rebate app — the Android app, the staff console and the backend, all built end to end. ₹0 a month to run.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 3 LEDGER -->
+<section class="stage" id="w3" data-name="Ledger">
+  <div class="content">
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".34"><span class="ln"><i>Vardhman</i></span><span class="ln"><i>Saathi</i></span></h2>
+    </div>
+    <div class="rule" data-under></div>
+    <div class="film">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Home screen with the V-Coin balance" width="400" height="853" loading="lazy" decoding="async"></div><figcaption class="cap">Balance</figcaption></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div><figcaption class="cap">Submit bill</figcaption></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div><figcaption class="cap">Redeem</figcaption></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div><figcaption class="cap">Checkout</figcaption></figure>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">Dealers scan an invoice, staff verify it, rewards come back as V-Coins. One repo, one pipeline, ₹0 a month to run.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 4 STACK -->
+<section class="stage" id="w4" data-name="Stack">
+  <div class="content">
+    <div class="field"></div>
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".30"><span class="ln"><i>Vardhman</i></span><span class="ln"><i>Saathi</i></span></h2>
+    </div>
+    <div class="stack">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Home screen with the V-Coin balance" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">Dealers scan a bill, earn V-Coins, spend them in the store. The same backend runs the staff's desktop console.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 5 HERO PHONE -->
+<section class="stage" id="w5" data-name="Hero phone">
+  <div class="content">
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".30"><span class="ln"><i>The app</i></span><span class="ln"><i>dealers use</i></span></h2>
+    </div>
+    <div class="back">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+    <figure class="plate hero"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Vardhman Saathi home screen showing a dealer's V-Coin balance of 15,712" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">React Native and Expo on the phone, Electron for the staff desk, the same Supabase backend under both.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 6 COUNT -->
+<section class="stage" id="w6" data-name="Count">
+  <div class="content">
+    <div class="band"></div>
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".30"><span class="ln"><i>200+ dealers</i></span></h2>
+    </div>
+    <div class="film">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Home screen with the V-Coin balance" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">Dealers scan a bill, earn V-Coins, spend them in the store.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 7 RULES -->
+<section class="stage" id="w7" data-name="Rules">
+  <div class="content">
+    <div class="r1"></div><div class="r2"></div>
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".24"><span class="ln"><i>Vardhman Saathi</i></span></h2>
+    </div>
+    <div class="film">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Home screen with the V-Coin balance" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">Scan a bill, earn V-Coins, spend them in the store. The Android app, the staff console and the backend — ₹0 a month to run.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<!-- 8 PLATE -->
+<section class="stage" id="w8" data-name="Plate">
+  <div class="content">
+    <span class="mark mono">yogya.dev<span class="d">The work</span></span>
+    <div class="text">
+      <p class="meta">Vardhman Saathi</p>
+      <h2 class="big" data-fit data-cap=".30"><span class="ln"><i>Vardhman</i></span><span class="ln"><i>Saathi</i></span></h2>
+    </div>
+    <div class="col2">
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-bill.webp" alt="Submit Bill screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-store.webp" alt="Rewards store priced in V-Coins" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+      <figure class="plate"><div class="crop"><img src="/assets/work/vardhman-app-checkout.webp" alt="Checkout screen" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+    </div>
+    <figure class="plate bigplate"><div class="crop"><img src="/assets/work/vardhman-app-home.webp" alt="Vardhman Saathi home screen showing a dealer's V-Coin balance of 15,712" width="400" height="853" loading="lazy" decoding="async"></div></figure>
+  </div>
+  <div class="low">
+    <div class="col">
+      <p class="meta">Vardhman Electricals · 2026</p>
+      <p class="claim">200+ dealers use it, and it costs ₹0 a month to run.</p>
+    </div>
+    <div class="btns"><a class="btn solid" href="#">Live app</a><a class="btn" href="#">How it runs for free</a></div>
+  </div>
+</section>
+
+<div class="lab" role="region" aria-label="Work section variations">
+  <div class="lab-row">
+    <button type="button" id="prev" aria-label="Previous">‹</button>
+    <span class="lname" id="label" aria-live="polite"></span>
+    <span class="lcount" id="count"></span>
+    <button type="button" id="next" aria-label="Next">›</button>
+    <span class="vr"></span>
+    <div class="chips" id="chips"></div>
+    <span class="vr"></span>
+    <div class="sw" id="sw"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const stages = [...document.querySelectorAll(".stage")];
+  const chips = document.getElementById("chips");
+  const sw = document.getElementById("sw");
+  const label = document.getElementById("label");
+  const count = document.getElementById("count");
+  let cur = 0;
+
+  const SWATCHES = ["#ff3b30", "#ff8a1f", "#1fd17a", "#ff4d9d", "#111111"];
+  const ON = { "#ff3b30":"#fff", "#ff8a1f":"#140900", "#1fd17a":"#00180a", "#ff4d9d":"#fff", "#111111":"#fff" };
+  let accent = "#ff3b30";
+
+  stages.forEach((s, i) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = s.dataset.name;
+    b.setAttribute("aria-pressed", String(i === 0));
+    b.addEventListener("click", () => go(i));
+    chips.append(b);
+  });
+  SWATCHES.forEach((c) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.style.background = c; b.setAttribute("aria-label", c);
+    b.addEventListener("click", () => { accent = c; applyAccent(); replay(stages[cur]); });
+    sw.append(b);
+  });
+
+  function applyAccent() {
+    const s = stages[cur];
+    [...sw.children].forEach((x, i) => x.setAttribute("aria-pressed", String(SWATCHES[i] === accent)));
+    s.style.setProperty("--accent", accent);
+    s.style.setProperty("--on-accent", ON[accent] || "#fff");
+  }
+
+  function replay(s) {
+    s.querySelectorAll(".big").forEach((n) => { n.classList.remove("masked"); void n.offsetWidth; n.classList.add("masked"); });
+    s.querySelectorAll("*").forEach((el) => {
+      const cs = getComputedStyle(el);
+      if (cs.animationName && cs.animationName !== "none") {
+        el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
+      }
+    });
+  }
+
+  /* ── the fitting engine, straight from the hero ─────────────── */
+  const ruler = document.createElement("span");
+  ruler.setAttribute("aria-hidden", "true");
+  ruler.style.cssText = "position:absolute;left:-99999px;top:0;white-space:nowrap;visibility:hidden;";
+  document.body.append(ruler);
+
+  function widthAt(line, text, size) {
+    const cs = getComputedStyle(line);
+    ruler.style.fontFamily = cs.fontFamily;
+    ruler.style.fontWeight = cs.fontWeight;
+    ruler.style.fontStretch = cs.fontStretch;
+    ruler.style.fontStyle = cs.fontStyle;
+    ruler.style.fontVariationSettings = cs.fontVariationSettings;
+    ruler.style.textTransform = cs.textTransform;
+    const fs = parseFloat(cs.fontSize) || 100;
+    const ls = parseFloat(cs.letterSpacing);
+    const lsEm = isNaN(ls) ? 0 : ls / fs;
+    ruler.style.fontSize = size + "px";
+    ruler.style.letterSpacing = (lsEm * size).toFixed(3) + "px";
+    ruler.textContent = text;
+    const r = document.createRange();
+    r.selectNodeContents(ruler);
+    return r.getBoundingClientRect().width;
+  }
+
+  /* the name has to fit its box on BOTH axes — width and height */
+  function fit(el) {
+    const lines = [...el.querySelectorAll(".ln")];
+    if (!lines.length) return;
+    const stage = el.closest(".stage");
+    const room = el.clientWidth - 14;
+    if (room <= 0) return;
+    const box = el.closest(".content");
+    const boxH = box ? box.clientHeight : innerHeight;
+    const cap = boxH * parseFloat(el.dataset.cap || "0.4");
+    const MEASURE = 100;
+
+    el.style.fontSize = MEASURE + "px";
+    const LH = (parseFloat(getComputedStyle(el).lineHeight) || 80) / MEASURE;
+
+    const widths = lines.map((l) => widthAt(l, l.querySelector("i").textContent, MEASURE));
+    const widest = Math.max(...widths);
+    if (!widest) return;
+
+    let size = Math.min((MEASURE * room) / widest, cap / (LH * lines.length));
+    el.style.fontSize = size + "px";
+    for (let i = 0; i < 2; i++) {
+      const used = Math.max(...lines.map((l) => widthAt(l, l.querySelector("i").textContent, size)));
+      if (used > room + 0.5) { size *= room / used; el.style.fontSize = size + "px"; }
+    }
+
+    /* the rule under the name, measured from where the name actually landed */
+    const rects = lines.map((l) => l.getBoundingClientRect());
+    const bottom = Math.max(...rects.map((r) => r.bottom));
+    const under = stage.querySelector("[data-under]");
+    if (under) under.style.top = (bottom - box.getBoundingClientRect().top + 22) + "px";
+  }
+
+  function fitAll() { stages[cur].querySelectorAll("[data-fit]").forEach(fit); }
+
+  function go(i, keepHash) {
+    cur = (i + stages.length) % stages.length;
+    stages.forEach((s, k) => s.classList.toggle("on", k === cur));
+    [...chips.children].forEach((b, k) => b.setAttribute("aria-pressed", String(k === cur)));
+    label.textContent = stages[cur].dataset.name;
+    count.textContent = (cur + 1) + "/" + stages.length;
+    chips.children[cur].scrollIntoView({ block:"nearest", inline:"nearest" });
+    applyAccent();
+    if (!keepHash) history.replaceState(null, "", "#" + stages[cur].id);
+    replay(stages[cur]);
+    fitAll();
+  }
+
+  document.getElementById("next").addEventListener("click", () => go(cur + 1));
+  document.getElementById("prev").addEventListener("click", () => go(cur - 1));
+  addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") go(cur + 1);
+    else if (e.key === "ArrowLeft") go(cur - 1);
+    else if (/^\d$/.test(e.key)) go(+e.key - 1);
+  });
+
+  addEventListener("resize", fitAll);
+
+  function fromHash() {
+    const id = location.hash.slice(1);
+    const i = stages.findIndex((s) => s.id === id);
+    go(i >= 0 ? i : 0, true);
+  }
+  addEventListener("hashchange", fromHash);
+  (document.fonts ? document.fonts.ready : Promise.resolve())
+    .then(() => { fromHash(); });
+})();
+</script>
+</body>
+</html>
