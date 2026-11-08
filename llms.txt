@@ -4,15 +4,17 @@
 
 Key facts:
 
-- Meant2Bae (September 2026 to present): software engineering intern, paid and on-site, at a curated dating service for professionals in India. https://meant2bae.com
-- ScreenDemons (June 2026 to present): freelance app developer building an iOS and Android app that cuts screen time through challenges between friends. https://screendemons.app
+- Meant2Bae (September 2026 to present): software engineering intern, paid and on-site, at a curated dating service for professionals in India. Builds the admin dashboard (React, TypeScript, Supabase) that runs the matchmaking pipeline from signup to dates; wrote 40+ PostgreSQL migrations (permission-checked admin functions, Row Level Security, a delta sync of changed rows); built automated reminder emails (pg_cron, Edge Functions), a Calendly webhook, a Google Sheets sync and the readiness quiz on meant2bae.com. https://meant2bae.com
+- ScreenDemons (June 2026 to present): freelance mobile app developer building a social screen-time app end to end (React Native, Expo, Supabase). Live on the App Store, with Android in progress. Integrated Apple's Family Controls and DeviceActivity APIs to enforce screen-time limits on the device. https://screendemons.app
 - Vardhman Electricals (March to June 2026): paid remote internship. Built Vardhman Saathi end to end: a React Native (Expo) Android app on Google Play, an Electron admin console, and a backend on Supabase and Cloudflare deployed by GitHub Actions. 200+ concurrent users; hosting costs ₹0 a month. https://vardhmansaathi.shop
+- Burrow (formerly AnyStudio), in development: a compiler, written in Kotlin, that turns a JSON app description into one Kotlin Multiplatform project for Android, iOS and desktop. It has a web editor, a Model Context Protocol (MCP) server for Claude Code, Codex and Cursor, an AI agent, and importers for Figma, Compose, SwiftUI and GraphQL. It began in Rust, with a DEX writer that built Android bytecode without the JDK.
+- Webelo: the WHATWG DOM Living Standard implemented in C++, with Python bindings and a visualizer. https://github.com/YogyaChugh/Webelo
 - Open source: django/django pull request #19295, merged 24 March 2025, which raises a clear TemplateSyntaxError for relative template paths with an unknown origin (ticket #36271).
 - Hackathons: third place at two international hackathons in 2025 (University of Derby and Ulster University) with Pippo, a multilingual guide robot; Yogya built its companion app.
-- Hack Club Summer of Making 2025: 450+ hours, four projects shipped, 6,612 shells, traded for a Gigabyte Aero X16 laptop.
-- Founder and lead of PIET Comp Techies, a college tech club; ran Frontend Frenzy, a website-building contest (October 2024).
+- Hack Club Summer of Making 2025: 450+ hours and four projects shipped, including Webber (a website downloader) and Timberly (a game); finished with 6,612 shells and a $1,322 grant, which bought a Gigabyte Aero X16 laptop.
+- Founder and President of PIET Comp Techies, a college tech club; ran Frontend Frenzy, a website-building contest (October 2024).
 - Education: B.Tech in Computer Science and Engineering, Panipat Institute of Engineering and Technology (Kurukshetra University), 2023 to 2027, CGPA 8.05/10.
-- Tools: TypeScript, JavaScript, Python, C++, Rust, SQL; React, React Native, Expo, Electron; Node.js, Hono, Django, FastAPI, Flask; PostgreSQL, Supabase, Firebase, Cloudflare Workers, R2, D1, Pages; Git, GitHub Actions, Docker, Linux.
+- Tools: TypeScript, JavaScript, Kotlin, Python, C++, Rust, SQL; React Native, Expo, Kotlin Multiplatform, React, Electron; Node.js, Express, Hono, Django, FastAPI, Flask; PostgreSQL, Supabase, Firebase, Cloudflare Workers, R2, D1, Pages, Vercel; Git, GitHub Actions, Docker, Gradle, Linux.
 
 ## Pages
 
