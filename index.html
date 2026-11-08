@@ -18,6 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,16 +29,67 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Yogya Chugh",
-  "url": "https://yogya.dev",
-  "email": "mailto:build@yogya.dev",
-  "jobTitle": "Software Engineer",
-  "address": { "@type": "PostalAddress", "addressCountry": "IN" },
-  "alumniOf": "Panipat Institute of Engineering and Technology",
-  "worksFor": { "@type": "Organization", "name": "Meant2Bae", "url": "https://meant2bae.com" },
-  "knowsAbout": ["React Native", "TypeScript", "Kotlin Multiplatform", "PostgreSQL", "Supabase", "Cloudflare Workers", "Django"],
-  "sameAs": ["https://github.com/YogyaChugh", "https://www.linkedin.com/in/yogyachugh"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://yogya.dev/#person",
+      "name": "Yogya Chugh",
+      "url": "https://yogya.dev/",
+      "email": "mailto:build@yogya.dev",
+      "jobTitle": "Software Engineer",
+      "description": "Software engineer who builds whole products: the mobile app, the admin tools behind it, the backend and the deploy.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Delhi",
+        "addressCountry": "IN"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Panipat Institute of Engineering and Technology"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Meant2Bae",
+        "url": "https://meant2bae.com"
+      },
+      "knowsAbout": [
+        "React Native",
+        "TypeScript",
+        "Kotlin Multiplatform",
+        "PostgreSQL",
+        "Supabase",
+        "Cloudflare Workers",
+        "Django"
+      ],
+      "sameAs": [
+        "https://github.com/YogyaChugh",
+        "https://www.linkedin.com/in/yogyachugh"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yogya.dev/#website",
+      "url": "https://yogya.dev/",
+      "name": "Yogya Chugh",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://yogya.dev/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://yogya.dev/#webpage",
+      "url": "https://yogya.dev/",
+      "name": "Yogya Chugh",
+      "isPartOf": {
+        "@id": "https://yogya.dev/#website"
+      },
+      "mainEntity": {
+        "@id": "https://yogya.dev/#person"
+      },
+      "dateModified": "2026-11-08"
+    }
+  ]
 }
 </script>
 <script src="/site.js" defer></script>

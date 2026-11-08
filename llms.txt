@@ -21,6 +21,16 @@ Key facts:
 - [Home](https://yogya.dev/): work, proof, background, notes and contact on one page.
 - [Résumé (PDF)](https://yogya.dev/Yogya_Chugh_Resume.pdf)
 
+## Projects
+
+- [Timberly](https://timberly.yogya.dev/): a lumberjack game with an online leaderboard (Python, Pygame).
+- [Webber](https://webber.yogya.dev/): save websites to read offline (Python).
+- [Webelo](https://webelo.yogya.dev/): the DOM, rebuilt in C++.
+- [Safario](https://safario.yogya.dev/): a digital ID for tourists (React, Web3).
+- [Vote Leaderboard](https://votes.yogya.dev/): voter rankings for Hack Club's Summer of Making.
+- [Snake Hustle](https://snake.yogya.dev/): Nokia's Snake, taken further.
+- [Western Upside-Down Island](https://island.yogya.dev/): a game where gravity runs backwards.
+
 ## Notes
 
 - [Running a real product for ₹0 a month](https://yogya.dev/blogs/vardhman)
